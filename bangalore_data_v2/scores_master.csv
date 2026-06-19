@@ -1,0 +1,1113 @@
+segment_id,road_name,start_km_helper,functional_class,urban_rural_flag,posted_speed_limit,operating_speed_mean,speed_p85,road_function_score,infrastructure_score,exposure_score,pedestrian_exposure_score,ptw_share,exposure_tier,human_tolerance_limit,operating_speed_score,crash_risk_score,misalignment_score,misalignment_category,congestion_index,congestion_category,speed_safety_score
+1,NH-44 (Bellary Rd -> Hosur Rd) Seg-1,26.65,Highway,Rural,80,50.69327137565736,60.1,100.0,7.1,16.2,11.4,0.351,Side Impact Potential,50,56.0,6.0,56.5,High Misalignment,0.0,None,46.3
+2,NH-44 (Bellary Rd -> Hosur Rd) Seg-2,24.84,Highway,Rural,90,60.994647280732444,72.8,100.0,5.9,13.4,3.5,0.381,Separated Traffic,80,56.5,0.0,29.8,Moderate Misalignment,0.0,None,63.3
+3,NH-44 (Bellary Rd -> Hosur Rd) Seg-3,23.04,Highway,Rural,70,67.09601635174475,76.5,100.0,0.0,11.5,2.5,0.339,Separated Traffic,80,95.6,0.0,23.7,Aligned,0.0,None,65.8
+4,NH-44 (Bellary Rd -> Hosur Rd) Seg-4,21.23,Highway,Rural,90,63.72629154300616,73.9,100.0,29.4,19.9,16.1,0.37,Separated Traffic,80,60.6,0.0,29.0,Moderate Misalignment,0.0,None,68.5
+5,NH-44 (Bellary Rd -> Hosur Rd) Seg-5,19.43,Highway,Peri-Urban,60,33.29157484091552,45.5,100.0,0.0,15.1,1.2,0.481,Separated Traffic,80,59.9,12.0,18.2,Aligned,0.218,Light,66.7
+6,NH-44 (Bellary Rd -> Hosur Rd) Seg-6,17.63,Highway,Peri-Urban,80,86.57460149147548,96.0,100.0,0.0,23.9,11.6,0.598,Separated Traffic,80,90.1,0.0,37.8,Moderate Misalignment,0.0,None,57.3
+7,NH-44 (Bellary Rd -> Hosur Rd) Seg-7,15.84,Highway,Peri-Urban,80,78.59774680198957,92.1,100.0,21.2,21.2,11.3,0.518,Separated Traffic,80,97.9,0.0,30.1,Moderate Misalignment,0.0,None,66.2
+8,NH-44 (Bellary Rd -> Hosur Rd) Seg-8,14.06,Highway,Peri-Urban,60,44.954595843504855,59.2,100.0,0.0,15.2,0.5,0.497,Separated Traffic,80,77.4,0.0,18.2,Aligned,0.179,Light,69.1
+9,NH-44 (Bellary Rd -> Hosur Rd) Seg-9,12.3,Highway,Peri-Urban,70,37.934816077801585,50.6,100.0,9.4,22.1,9.6,0.568,Separated Traffic,80,51.9,0.0,19.4,Aligned,0.195,Light,70.2
+10,NH-44 (Bellary Rd -> Hosur Rd) Seg-10,10.54,Highway,Peri-Urban,90,52.788725496588285,67.4,100.0,25.9,28.2,22.2,0.545,Separated Traffic,80,44.2,3.0,32.3,Moderate Misalignment,0.15,Light,65.2
+11,NH-44 (Bellary Rd -> Hosur Rd) Seg-11,8.78,Highway,Urban,80,46.696600073838,63.5,100.0,42.4,39.2,34.9,0.648,Separated Traffic,80,50.0,0.0,21.0,Aligned,0.206,Light,75.9
+12,NH-44 (Bellary Rd -> Hosur Rd) Seg-12,8.16,Highway,Urban,80,43.26716714954329,55.3,100.0,15.3,24.5,11.1,0.624,Separated Traffic,80,44.9,0.0,19.4,Aligned,0.155,Light,71.4
+13,NH-44 (Bellary Rd -> Hosur Rd) Seg-13,7.03,Highway,Urban,80,50.45640106671902,58.4,100.0,30.6,35.0,33.2,0.612,Separated Traffic,80,55.7,0.0,21.1,Aligned,0.0,None,73.5
+14,NH-44 (Bellary Rd -> Hosur Rd) Seg-14,5.27,Highway,Urban,70,42.87687890191997,55.5,100.0,20.0,29.0,18.3,0.653,Separated Traffic,80,59.3,3.0,20.4,Aligned,0.165,Light,71.2
+15,NH-44 (Bellary Rd -> Hosur Rd) Seg-15,3.51,Highway,Urban,60,42.523772925109654,51.3,100.0,35.3,30.9,23.4,0.641,Separated Traffic,80,73.8,0.0,19.1,Aligned,0.0,None,75.6
+16,NH-44 (Bellary Rd -> Hosur Rd) Seg-16,2.58,Highway,Urban,90,62.85917334130083,75.4,100.0,65.9,43.9,48.7,0.601,Side Impact Potential,50,59.3,0.0,71.4,High Misalignment,0.0,None,50.3
+17,NH-44 (Bellary Rd -> Hosur Rd) Seg-17,1.76,Highway,Urban,60,52.491501967112114,64.8,100.0,9.4,22.5,4.0,0.681,Side Impact Potential,50,88.7,0.0,37.4,Moderate Misalignment,0.0,None,59.4
+18,NH-44 (Bellary Rd -> Hosur Rd) Seg-18,0.0,Highway,Urban,70,53.062563842605655,62.1,100.0,28.2,24.7,15.2,0.557,Side Impact Potential,50,74.6,0.0,43.8,Moderate Misalignment,0.0,None,59.4
+19,NH-44 (Bellary Rd -> Hosur Rd) Seg-19,1.48,Highway,Urban,90,80.022444856602,100.5,100.0,78.8,33.1,24.8,0.666,Separated Traffic,80,85.0,3.0,38.0,Moderate Misalignment,0.13,Light,72.4
+20,NH-44 (Bellary Rd -> Hosur Rd) Seg-20,1.61,Highway,Urban,60,38.303732037609656,44.6,100.0,40.0,31.2,24.3,0.578,Separated Traffic,80,67.5,0.0,18.6,Aligned,0.0,None,76.8
+21,NH-44 (Bellary Rd -> Hosur Rd) Seg-21,3.22,Highway,Urban,80,71.72620556520721,93.4,100.0,15.3,26.5,13.8,0.623,Separated Traffic,80,87.6,0.0,34.0,Moderate Misalignment,0.169,Light,62.7
+22,NH-44 (Bellary Rd -> Hosur Rd) Seg-22,4.82,Highway,Urban,60,43.35287023624725,52.1,100.0,20.0,34.9,28.0,0.663,Separated Traffic,80,75.0,0.0,22.4,Aligned,0.0,None,70.6
+23,NH-44 (Bellary Rd -> Hosur Rd) Seg-23,6.43,Highway,Urban,60,40.939485244393836,47.6,100.0,54.1,41.4,40.8,0.627,Side Impact Potential,50,71.4,0.0,33.2,Moderate Misalignment,0.0,None,70.9
+24,NH-44 (Bellary Rd -> Hosur Rd) Seg-24,8.04,Highway,Urban,60,45.72262542608375,56.4,100.0,0.0,19.7,1.5,0.631,Separated Traffic,80,78.6,0.0,19.8,Aligned,0.0,None,68.1
+25,NH-44 (Bellary Rd -> Hosur Rd) Seg-25,9.24,Highway,Urban,70,37.0796928808038,45.7,100.0,24.7,23.1,10.4,0.583,Side Impact Potential,50,50.6,0.0,43.7,Moderate Misalignment,0.0,None,58.7
+26,NH-44 (Bellary Rd -> Hosur Rd) Seg-26,9.7,Highway,Urban,80,60.84751489180723,67.2,100.0,52.9,32.9,27.2,0.594,Side Impact Potential,50,71.3,0.0,56.3,High Misalignment,0.0,None,56.8
+27,NH-44 (Bellary Rd -> Hosur Rd) Seg-27,11.39,Highway,Peri-Urban,70,44.049258156958906,54.0,100.0,20.0,25.3,12.9,0.612,Separated Traffic,80,61.1,0.0,19.1,Aligned,0.0,None,72.5
+28,NH-44 (Bellary Rd -> Hosur Rd) Seg-28,13.1,Highway,Peri-Urban,90,61.77577369261743,65.2,100.0,30.6,29.6,27.8,0.489,Separated Traffic,80,57.7,0.0,32.2,Moderate Misalignment,0.0,None,66.8
+29,NH-44 (Bellary Rd -> Hosur Rd) Seg-29,14.83,Highway,Peri-Urban,60,42.58158353415305,57.2,100.0,10.6,25.9,14.0,0.602,Separated Traffic,80,73.9,0.0,20.5,Aligned,0.194,Light,69.8
+30,NH-44 (Bellary Rd -> Hosur Rd) Seg-30,16.56,Highway,Peri-Urban,60,55.13375470142067,65.0,100.0,16.5,24.7,12.3,0.611,Separated Traffic,80,92.7,0.0,24.5,Aligned,0.0,None,68.6
+31,NH-44 (Bellary Rd -> Hosur Rd) Seg-31,18.3,Highway,Peri-Urban,60,58.940300550363766,73.3,100.0,0.0,21.1,11.9,0.502,Side Impact Potential,50,98.4,0.0,47.0,Moderate Misalignment,0.0,None,51.8
+32,NH-44 (Bellary Rd -> Hosur Rd) Seg-32,20.04,Highway,Rural,60,45.44848550808659,56.9,100.0,5.9,15.0,2.0,0.465,Side Impact Potential,50,78.2,0.0,30.3,Moderate Misalignment,0.143,Light,63.0
+33,NH-44 (Bellary Rd -> Hosur Rd) Seg-33,21.78,Highway,Rural,70,54.30915692729677,69.2,100.0,0.0,15.4,9.7,0.332,Separated Traffic,80,76.5,0.0,18.3,Aligned,0.153,Light,69.0
+34,NH-44 (Bellary Rd -> Hosur Rd) Seg-34,23.51,Highway,Rural,80,43.7701914041777,55.3,100.0,23.5,17.1,13.5,0.336,Separated Traffic,80,45.7,0.0,15.8,Aligned,0.137,Light,75.2
+35,NH-44 (Bellary Rd -> Hosur Rd) Seg-35,25.24,Highway,Rural,80,44.29854500393992,56.4,100.0,0.0,16.2,8.0,0.395,Separated Traffic,80,46.4,0.0,18.6,Aligned,0.143,Light,68.8
+36,NH-44 (Bellary Rd -> Hosur Rd) Seg-36,26.98,Highway,Rural,70,42.168652493617564,47.6,100.0,15.3,14.5,5.9,0.38,Separated Traffic,80,58.3,6.0,16.0,Aligned,0.0,None,72.3
+37,NH-44 (Bellary Rd -> Hosur Rd) Seg-37,28.72,Highway,Rural,70,47.943154411787866,53.4,100.0,5.9,14.3,2.3,0.433,Side Impact Potential,50,66.9,0.0,43.0,Moderate Misalignment,0.0,None,55.4
+38,NH-44 (Bellary Rd -> Hosur Rd) Seg-38,28.89,Highway,Rural,70,56.6028136451602,67.7,100.0,0.0,16.5,4.9,0.462,Separated Traffic,80,79.9,0.0,18.7,Aligned,0.0,None,68.8
+39,NH-44 (Bellary Rd -> Hosur Rd) Seg-39,30.44,Highway,Rural,80,59.67674171899543,70.0,100.0,0.0,15.0,8.6,0.337,Separated Traffic,80,69.5,0.0,18.1,Aligned,0.0,None,69.1
+40,NH-44 (Bellary Rd -> Hosur Rd) Seg-40,32.22,Highway,Rural,90,52.99890703711524,63.4,100.0,0.0,13.7,1.8,0.424,Separated Traffic,80,44.5,0.0,30.6,Moderate Misalignment,0.0,None,61.6
+41,NH-44 (Bellary Rd -> Hosur Rd) Seg-41,33.98,Highway,Rural,60,35.69505441756769,41.2,100.0,0.0,12.9,3.5,0.371,Separated Traffic,80,63.5,0.0,17.4,Aligned,0.0,None,69.6
+42,NH-44 (Bellary Rd -> Hosur Rd) Seg-42,35.74,Highway,Rural,90,22.191187548665447,82.1,100.0,7.1,20.2,13.5,0.433,Separated Traffic,80,0.0,0.0,32.0,Moderate Misalignment,0.749,Severe,62.2
+43,NH-44 (Bellary Rd -> Hosur Rd) Seg-43,37.5,Highway,Rural,70,48.06576790379441,60.8,100.0,0.0,12.5,0.3,0.412,Separated Traffic,80,67.1,22.0,17.3,Aligned,0.145,Light,65.2
+44,NH-44 (Bellary Rd -> Hosur Rd) Seg-44,39.26,Highway,Rural,90,48.653992343316254,58.6,100.0,14.1,24.5,27.4,0.361,Separated Traffic,80,38.0,3.0,32.6,Moderate Misalignment,0.0,None,62.7
+45,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-1",0.0,Highway,Urban,70,49.25263318410212,59.9,100.0,20.0,25.5,10.4,0.66,Side Impact Potential,50,68.9,0.0,45.1,Moderate Misalignment,0.0,None,56.9
+46,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-2",1.65,Highway,Urban,90,50.422043520976366,64.5,100.0,34.1,28.8,22.0,0.574,Separated Traffic,80,40.6,0.0,31.4,Moderate Misalignment,0.158,Light,68.0
+47,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-3",2.02,Highway,Urban,70,45.280946622094085,52.7,100.0,18.8,21.5,7.5,0.582,Separated Traffic,80,62.9,0.0,17.9,Aligned,0.0,None,73.0
+48,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-4",3.3,Highway,Urban,60,35.08915708415822,41.1,100.0,52.9,42.9,39.8,0.677,Side Impact Potential,50,62.6,12.0,33.9,Moderate Misalignment,0.0,None,67.8
+49,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-5",4.95,Highway,Urban,60,53.35450475996806,59.8,100.0,4.7,20.1,5.5,0.572,Separated Traffic,80,90.0,0.0,19.3,Aligned,0.0,None,69.4
+50,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-6",6.6,Highway,Urban,60,37.3392740971195,48.6,100.0,55.3,47.7,54.0,0.608,Side Impact Potential,50,66.0,0.0,35.2,Moderate Misalignment,0.17,Light,69.9
+51,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-7",8.26,Highway,Urban,80,58.330803388818005,69.3,100.0,65.9,30.1,25.6,0.557,Separated Traffic,80,67.5,0.0,14.8,Aligned,0.0,None,84.3
+52,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-8",9.57,Highway,Urban,80,49.442031075579465,57.7,100.0,7.1,22.1,3.7,0.667,Separated Traffic,80,54.2,3.0,19.7,Aligned,0.0,None,69.0
+53,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-9",9.91,Highway,Urban,60,62.78628431609362,73.7,100.0,29.4,24.9,11.6,0.616,Side Impact Potential,50,95.8,0.0,44.9,Moderate Misalignment,0.0,None,58.9
+54,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-10",11.61,Highway,Peri-Urban,90,91.50851912309186,108.7,100.0,10.6,23.3,13.1,0.529,Separated Traffic,80,97.7,9.0,52.0,High Misalignment,0.0,None,49.1
+55,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-11",13.31,Highway,Peri-Urban,70,51.35258696120156,63.8,100.0,21.2,21.9,13.4,0.482,Side Impact Potential,50,72.0,9.0,43.7,Moderate Misalignment,0.0,None,56.2
+56,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-12",15.01,Highway,Peri-Urban,60,49.467650242881476,58.0,100.0,10.6,18.9,5.6,0.523,Separated Traffic,80,84.2,0.0,18.1,Aligned,0.0,None,71.3
+57,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-13",16.72,Highway,Peri-Urban,80,48.73243600002358,58.9,100.0,31.8,24.8,16.4,0.518,Side Impact Potential,50,53.1,0.0,56.3,High Misalignment,0.0,None,52.6
+58,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-14",18.42,Highway,Peri-Urban,80,49.900231466366066,58.7,100.0,30.6,35.1,35.4,0.578,Side Impact Potential,50,54.9,0.0,60.0,High Misalignment,0.0,None,50.1
+59,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-15",20.12,Highway,Rural,60,43.61214360238051,47.5,100.0,25.9,19.9,16.3,0.367,Separated Traffic,80,75.4,0.0,16.5,Aligned,0.0,None,75.3
+60,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-16",21.83,Highway,Rural,70,41.51057840649749,53.1,100.0,0.0,12.8,2.8,0.375,Separated Traffic,80,57.3,0.0,17.4,Aligned,0.158,Light,69.6
+61,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-17",23.53,Highway,Rural,80,25.014178796629402,85.4,100.0,0.0,16.9,12.0,0.339,Separated Traffic,80,17.5,9.0,24.4,Aligned,0.717,Severe,63.6
+62,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-18",25.23,Highway,Rural,70,66.76728157443623,78.7,100.0,0.0,11.9,2.3,0.354,Separated Traffic,80,95.2,6.0,26.1,Moderate Misalignment,0.0,None,63.1
+63,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-19",26.91,Highway,Rural,70,49.31395497194289,54.7,100.0,0.0,12.8,3.6,0.36,Separated Traffic,80,69.0,0.0,17.4,Aligned,0.0,None,69.6
+64,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-20",28.59,Highway,Rural,70,21.456283885737506,57.8,100.0,0.0,15.6,9.5,0.36,Separated Traffic,80,27.2,3.0,18.3,Aligned,0.63,Severe,68.4
+65,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-21",30.28,Highway,Rural,70,53.14314225942663,59.3,100.0,0.0,14.7,3.5,0.432,Separated Traffic,80,74.7,0.0,18.0,Aligned,0.0,None,69.2
+66,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-22",31.96,Highway,Rural,70,54.38133236544398,77.4,100.0,0.0,14.4,8.1,0.33,Separated Traffic,80,76.6,0.0,25.6,Moderate Misalignment,0.254,Moderate,64.6
+67,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-23",33.65,Highway,Rural,60,31.58452862948844,39.2,100.0,0.0,13.5,2.2,0.408,Side Impact Potential,50,57.4,15.0,30.6,Moderate Misalignment,0.0,None,58.6
+68,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-24",35.34,Highway,Rural,60,52.87191788642259,62.5,100.0,0.0,11.2,0.6,0.363,Separated Traffic,80,89.3,0.0,19.4,Aligned,0.0,None,68.4
+69,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-25",37.03,Highway,Rural,60,31.634434396386098,41.4,100.0,10.6,18.0,10.1,0.425,Separated Traffic,80,57.5,0.0,17.8,Aligned,0.174,Light,71.4
+70,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-26",38.72,Highway,Rural,60,50.09479151070258,56.9,100.0,0.0,13.6,0.2,0.451,Separated Traffic,80,85.1,0.0,17.7,Aligned,0.0,None,69.4
+71,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-27",40.41,Highway,Rural,70,65.25973963781037,73.2,100.0,0.0,13.4,2.5,0.402,Separated Traffic,80,92.9,0.0,20.9,Aligned,0.0,None,67.5
+72,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-28",42.11,Highway,Rural,80,53.820821619681084,59.2,100.0,0.0,18.1,11.5,0.406,Separated Traffic,80,60.7,0.0,19.2,Aligned,0.0,None,68.5
+73,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-29",43.87,Highway,Rural,60,45.35424226273619,50.2,100.0,14.1,26.3,22.8,0.457,Separated Traffic,80,78.0,0.0,20.2,Aligned,0.0,None,70.7
+74,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-30",45.63,Highway,Rural,70,54.93537175834782,67.7,100.0,10.6,15.3,9.8,0.331,Separated Traffic,80,77.4,0.0,16.9,Aligned,0.0,None,72.0
+75,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-31",47.39,Highway,Rural,80,79.37761842882631,101.0,100.0,0.0,14.7,8.4,0.345,Separated Traffic,80,99.1,0.0,39.8,Moderate Misalignment,0.144,Light,56.1
+76,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-32",49.15,Highway,Rural,80,59.149760634949196,65.5,100.0,5.9,14.6,8.9,0.338,Separated Traffic,80,68.7,0.0,17.2,Aligned,0.0,None,70.9
+77,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-33",50.92,Highway,Rural,70,44.10124688325812,55.7,100.0,9.4,17.9,11.3,0.397,Separated Traffic,80,61.2,0.0,17.9,Aligned,0.139,Light,71.1
+78,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-34",52.68,Highway,Rural,80,51.205869386230894,55.1,100.0,10.6,17.4,8.0,0.443,Separated Traffic,80,56.8,0.0,17.6,Aligned,0.0,None,71.6
+79,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-35",54.44,Highway,Rural,80,73.5649568164901,89.9,100.0,9.4,19.2,13.5,0.381,Separated Traffic,80,90.3,0.0,28.6,Moderate Misalignment,0.0,None,64.7
+80,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-36",56.21,Highway,Rural,90,39.777041404512076,112.4,100.0,0.0,12.9,1.8,0.398,Separated Traffic,80,24.7,6.0,53.6,High Misalignment,0.638,Severe,46.6
+81,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-37",57.97,Highway,Rural,90,66.52476462417788,88.1,100.0,0.0,17.9,8.0,0.456,Separated Traffic,80,64.8,0.0,32.1,Moderate Misalignment,0.179,Light,60.7
+82,"NH-75 (Bangalore-Mangalore, Tumkur Rd) Seg-38",59.74,Highway,Rural,70,77.05841437499247,91.8,100.0,4.7,13.9,1.7,0.433,Separated Traffic,80,89.4,0.0,39.7,Moderate Misalignment,0.0,None,57.1
+83,NH-948 (Nelamangala Bypass) Seg-1,26.36,Highway,Rural,60,56.077982144868166,66.9,100.0,0.0,15.2,4.7,0.428,Separated Traffic,80,94.1,0.0,25.4,Moderate Misalignment,0.0,None,64.8
+84,NH-948 (Nelamangala Bypass) Seg-2,27.7,Highway,Rural,90,91.93041637755707,107.6,100.0,10.6,13.6,4.0,0.378,Side Impact Potential,50,97.1,0.0,86.4,Critical Misalignment,0.0,None,30.3
+85,NH-948 (Nelamangala Bypass) Seg-3,29.06,Highway,Rural,60,43.24587276825077,54.1,100.0,10.6,17.7,7.5,0.46,Separated Traffic,80,74.9,19.0,17.7,Aligned,0.127,Light,67.7
+86,NH-948 (Nelamangala Bypass) Seg-4,30.45,Highway,Rural,70,35.271733236025185,46.1,100.0,7.1,13.9,7.3,0.34,Separated Traffic,80,47.9,0.0,16.8,Aligned,0.17,Light,71.3
+87,NH-948 (Nelamangala Bypass) Seg-5,31.86,Highway,Rural,60,43.298200836087545,47.9,100.0,10.6,13.8,6.5,0.337,Separated Traffic,80,74.9,0.0,16.4,Aligned,0.0,None,72.3
+88,NH-948 (Nelamangala Bypass) Seg-6,33.29,Highway,Rural,80,52.61486369389457,63.6,100.0,0.0,18.0,9.2,0.44,Separated Traffic,80,58.9,0.0,19.2,Aligned,0.0,None,68.5
+89,NH-948 (Nelamangala Bypass) Seg-7,34.74,Highway,Rural,60,66.13323527525242,75.3,100.0,0.0,18.1,8.1,0.456,Separated Traffic,80,90.8,0.0,35.1,Moderate Misalignment,0.0,None,58.9
+90,NH-948 (Nelamangala Bypass) Seg-8,36.13,Highway,Rural,90,79.7481276379731,88.1,100.0,0.0,15.4,7.1,0.39,Separated Traffic,80,84.6,0.0,31.2,Moderate Misalignment,0.0,None,61.3
+91,NH-948 (Nelamangala Bypass) Seg-9,37.56,Highway,Rural,80,48.98968222504106,61.9,100.0,0.0,13.9,0.1,0.463,Separated Traffic,80,53.5,0.0,17.8,Aligned,0.146,Light,69.3
+92,NH-948 (Nelamangala Bypass) Seg-10,39.02,Highway,Rural,70,35.31163560276773,45.9,100.0,10.6,16.3,5.5,0.439,Separated Traffic,80,48.0,0.0,17.2,Aligned,0.173,Light,71.8
+93,NH-948 (Nelamangala Bypass) Seg-11,40.51,Highway,Rural,60,31.88358615018502,41.3,100.0,0.0,16.3,4.6,0.456,Separated Traffic,80,57.8,0.0,18.6,Aligned,0.163,Light,68.8
+94,NH-209 (Bannerghatta Rd) Seg-1,0.0,Highway,Urban,70,52.43145721663383,63.9,100.0,34.1,26.5,13.0,0.661,Side Impact Potential,50,73.6,0.0,43.6,Moderate Misalignment,0.0,None,60.7
+95,NH-209 (Bannerghatta Rd) Seg-2,1.44,Highway,Urban,80,87.99389623961623,97.9,100.0,48.2,32.6,23.7,0.653,Separated Traffic,80,88.0,9.0,36.5,Moderate Misalignment,0.0,None,65.9
+96,NH-209 (Bannerghatta Rd) Seg-3,1.72,Highway,Urban,80,45.44564961892837,53.6,100.0,49.4,34.1,33.3,0.565,Separated Traffic,80,48.2,0.0,18.3,Aligned,0.0,None,78.9
+97,NH-209 (Bannerghatta Rd) Seg-4,3.44,Highway,Urban,70,40.75653326686949,50.3,100.0,31.8,27.0,16.8,0.587,Separated Traffic,80,56.1,0.0,18.2,Aligned,0.0,None,75.4
+98,NH-209 (Bannerghatta Rd) Seg-5,5.16,Highway,Urban,60,45.590542087561445,59.5,100.0,56.5,38.9,40.3,0.586,Side Impact Potential,50,78.4,0.0,32.0,Moderate Misalignment,0.177,Light,72.1
+99,NH-209 (Bannerghatta Rd) Seg-6,6.87,Highway,Urban,60,36.600508284531294,48.3,100.0,21.2,32.7,27.5,0.618,Separated Traffic,80,64.9,0.0,21.5,Aligned,0.181,Light,71.3
+100,NH-209 (Bannerghatta Rd) Seg-7,8.6,Highway,Urban,80,42.6663009858062,56.1,100.0,27.1,28.7,18.9,0.622,Side Impact Potential,50,44.0,0.0,58.2,High Misalignment,0.184,Light,50.5
+101,NH-209 (Bannerghatta Rd) Seg-8,9.07,Highway,Urban,60,42.30211041161783,52.8,100.0,38.8,37.7,33.5,0.679,Separated Traffic,80,73.5,0.0,21.0,Aligned,0.0,None,75.2
+102,NH-209 (Bannerghatta Rd) Seg-9,10.34,Highway,Peri-Urban,60,15.358237738663778,46.9,100.0,14.1,24.8,17.7,0.495,Separated Traffic,80,33.0,0.0,19.7,Aligned,0.685,Severe,71.0
+103,NH-209 (Bannerghatta Rd) Seg-10,12.1,Highway,Peri-Urban,70,44.901478762295405,59.0,100.0,0.0,21.5,6.0,0.616,Separated Traffic,80,62.4,0.0,20.4,Aligned,0.183,Light,67.8
+104,NH-209 (Bannerghatta Rd) Seg-11,13.86,Highway,Peri-Urban,60,48.109691548003944,59.9,100.0,27.1,23.2,12.6,0.547,Separated Traffic,80,82.2,0.0,17.5,Aligned,0.0,None,74.9
+105,NH-209 (Bannerghatta Rd) Seg-12,15.63,Highway,Peri-Urban,70,50.782380082679026,62.6,100.0,14.1,32.9,26.9,0.615,Separated Traffic,80,71.2,0.0,22.5,Aligned,0.0,None,69.3
+106,NH-209 (Bannerghatta Rd) Seg-13,17.39,Highway,Peri-Urban,80,82.75378379411612,99.7,100.0,36.5,22.2,13.1,0.515,Separated Traffic,80,95.9,0.0,36.3,Moderate Misalignment,0.0,None,65.5
+107,NH-209 (Bannerghatta Rd) Seg-14,19.17,Highway,Peri-Urban,60,48.969001964235915,60.0,100.0,10.6,20.7,7.0,0.569,Separated Traffic,80,83.5,0.0,18.7,Aligned,0.0,None,70.9
+108,NH-209 (Bannerghatta Rd) Seg-15,20.85,Highway,Rural,90,67.3487651681204,74.4,100.0,0.0,14.4,3.2,0.421,Separated Traffic,80,66.0,0.0,30.9,Moderate Misalignment,0.0,None,61.5
+109,NH-209 (Bannerghatta Rd) Seg-16,22.53,Highway,Rural,60,38.40924394671848,48.5,100.0,5.9,17.7,10.8,0.395,Separated Traffic,80,67.6,0.0,18.3,Aligned,0.135,Light,70.2
+110,NH-209 (Bannerghatta Rd) Seg-17,24.22,Highway,Rural,100,88.14226291052016,114.4,100.0,0.0,14.1,2.3,0.432,Separated Traffic,80,82.2,0.0,58.7,High Misalignment,0.167,Light,44.8
+111,NH-209 (Bannerghatta Rd) Seg-18,25.9,Highway,Rural,70,62.72818593116764,82.7,100.0,9.4,19.7,12.4,0.422,Separated Traffic,80,89.1,3.0,31.7,Moderate Misalignment,0.183,Light,62.3
+112,NH-209 (Bannerghatta Rd) Seg-19,27.59,Highway,Rural,70,47.23971836505605,63.1,100.0,14.1,27.5,28.3,0.383,Side Impact Potential,50,65.9,0.0,46.5,Moderate Misalignment,0.188,Light,54.9
+113,NH-209 (Bannerghatta Rd) Seg-20,29.27,Highway,Rural,80,24.047259657246475,62.2,100.0,10.6,14.2,7.4,0.338,Separated Traffic,80,16.1,0.0,16.5,Aligned,0.609,Severe,72.2
+114,NH-209 (Bannerghatta Rd) Seg-21,30.96,Highway,Rural,60,52.035942667805514,68.1,100.0,0.0,17.6,11.9,0.366,Separated Traffic,80,88.1,0.0,27.4,Moderate Misalignment,0.172,Light,63.6
+115,NH-209 (Bannerghatta Rd) Seg-22,32.64,Highway,Rural,80,42.715246750247104,52.2,100.0,10.6,16.5,6.2,0.436,Separated Traffic,80,44.1,0.0,17.3,Aligned,0.0,None,71.7
+116,NH-209 (Bannerghatta Rd) Seg-23,34.47,Highway,Rural,80,84.88202896756644,103.8,100.0,0.0,14.1,7.7,0.338,Separated Traffic,80,92.7,6.0,42.5,Moderate Misalignment,0.0,None,53.3
+117,NH-209 (Bannerghatta Rd) Seg-24,36.29,Highway,Rural,90,28.668544140393102,83.0,100.0,37.6,26.6,28.9,0.389,Separated Traffic,80,8.0,0.0,30.2,Moderate Misalignment,0.657,Severe,69.4
+118,NH-209 (Bannerghatta Rd) Seg-25,38.12,Highway,Rural,70,51.28189358778614,57.5,100.0,0.0,13.0,2.5,0.385,Side Impact Potential,50,71.9,3.0,43.4,Moderate Misalignment,0.0,None,53.4
+119,NH-209 (Bannerghatta Rd) Seg-26,39.95,Highway,Rural,60,51.5372843316612,57.0,100.0,0.0,16.3,8.3,0.395,Separated Traffic,80,87.3,0.0,18.6,Aligned,0.0,None,68.8
+120,NH-209 (Bannerghatta Rd) Seg-27,41.77,Highway,Rural,70,52.5579184410982,61.9,100.0,7.1,17.9,10.3,0.402,Separated Traffic,80,73.8,0.0,18.2,Aligned,0.0,None,70.5
+121,NH-209 (Bannerghatta Rd) Seg-28,43.6,Highway,Rural,60,43.03101567853027,50.9,100.0,5.9,17.8,11.8,0.392,Separated Traffic,80,74.5,0.0,18.3,Aligned,0.0,None,70.2
+122,NH-209 (Bannerghatta Rd) Seg-29,45.43,Highway,Rural,90,87.13819702182728,108.1,100.0,0.0,17.8,11.1,0.394,Separated Traffic,80,95.7,0.0,50.8,High Misalignment,0.0,None,49.5
+123,SH-17 (Old Madras Rd) Seg-1,6.34,Highway,Urban,60,40.23644932837804,49.5,100.0,34.1,26.4,12.8,0.638,Side Impact Potential,50,70.4,0.0,30.6,Moderate Misalignment,0.0,None,68.5
+124,SH-17 (Old Madras Rd) Seg-2,7.22,Highway,Urban,80,64.06742519502048,70.7,100.0,41.2,27.7,13.5,0.685,Side Impact Potential,50,76.1,0.0,56.1,High Misalignment,0.0,None,54.6
+125,SH-17 (Old Madras Rd) Seg-3,8.1,Highway,Urban,70,70.28908062030592,84.8,100.0,42.4,33.9,25.5,0.67,Separated Traffic,80,99.6,0.0,34.5,Moderate Misalignment,0.0,None,67.8
+126,SH-17 (Old Madras Rd) Seg-4,8.97,Highway,Urban,80,53.001085651540436,61.9,100.0,50.6,26.3,18.0,0.55,Separated Traffic,80,59.5,0.0,15.5,Aligned,0.0,None,80.8
+127,SH-17 (Old Madras Rd) Seg-5,9.85,Highway,Urban,70,59.63336951219719,64.2,100.0,0.0,18.6,3.4,0.563,Separated Traffic,80,84.5,0.0,19.4,Aligned,0.0,None,68.4
+128,SH-17 (Old Madras Rd) Seg-6,9.95,Highway,Urban,80,45.95215177158941,54.0,100.0,27.1,35.7,29.9,0.675,Separated Traffic,80,48.9,0.0,21.8,Aligned,0.0,None,72.3
+129,SH-17 (Old Madras Rd) Seg-7,10.73,Highway,Peri-Urban,90,70.91976428427436,89.3,100.0,24.7,27.9,19.7,0.572,Separated Traffic,80,71.4,0.0,32.4,Moderate Misalignment,0.142,Light,65.5
+130,SH-17 (Old Madras Rd) Seg-8,11.61,Highway,Peri-Urban,80,25.54756623201282,92.3,100.0,48.2,27.0,22.6,0.487,Separated Traffic,80,18.3,0.0,28.8,Moderate Misalignment,0.737,Severe,72.4
+131,SH-17 (Old Madras Rd) Seg-9,12.49,Highway,Peri-Urban,80,78.87401980635624,100.3,100.0,9.4,20.8,10.7,0.506,Separated Traffic,80,98.3,0.0,40.0,Moderate Misalignment,0.149,Light,57.9
+132,SH-17 (Old Madras Rd) Seg-10,13.36,Highway,Peri-Urban,80,60.76176498342775,65.1,100.0,44.7,33.2,30.3,0.532,Separated Traffic,80,71.1,0.0,18.6,Aligned,0.0,None,77.8
+133,SH-17 (Old Madras Rd) Seg-11,14.24,Highway,Peri-Urban,70,49.03234681145478,56.5,100.0,0.0,19.0,7.1,0.506,Separated Traffic,80,68.5,0.0,19.5,Aligned,0.0,None,68.3
+134,SH-17 (Old Madras Rd) Seg-12,15.11,Highway,Peri-Urban,90,52.78862002378787,71.2,100.0,7.1,20.9,8.4,0.537,Side Impact Potential,50,44.2,0.0,71.1,High Misalignment,0.197,Light,38.8
+135,SH-17 (Old Madras Rd) Seg-13,15.99,Highway,Peri-Urban,60,44.23035233010183,48.6,100.0,4.7,21.3,10.6,0.523,Separated Traffic,80,76.3,0.0,19.7,Aligned,0.0,None,69.1
+136,SH-17 (Old Madras Rd) Seg-14,16.86,Highway,Peri-Urban,90,52.05921146768926,65.5,100.0,0.0,18.6,0.8,0.605,Separated Traffic,80,43.1,0.0,32.3,Moderate Misalignment,0.134,Light,60.6
+137,SH-17 (Old Madras Rd) Seg-15,17.73,Highway,Peri-Urban,60,51.316287235995624,55.8,100.0,0.0,17.5,3.9,0.51,Separated Traffic,80,87.0,0.0,19.0,Aligned,0.0,None,68.6
+138,SH-17 (Old Madras Rd) Seg-16,18.6,Highway,Peri-Urban,100,21.756539366300412,95.8,100.0,37.6,27.9,22.5,0.502,Separated Traffic,80,0.0,0.0,43.6,Moderate Misalignment,0.791,Severe,61.4
+139,SH-17 (Old Madras Rd) Seg-17,19.47,Highway,Peri-Urban,80,62.4584346085616,82.1,100.0,10.6,17.3,4.3,0.503,Separated Traffic,80,73.7,0.0,19.7,Aligned,0.178,Light,70.3
+140,SH-17 (Old Madras Rd) Seg-18,20.35,Highway,Rural,90,80.00134385398093,85.4,100.0,20.0,17.8,9.0,0.43,Separated Traffic,80,85.0,0.0,29.5,Moderate Misalignment,0.0,None,66.3
+141,SH-17 (Old Madras Rd) Seg-19,21.22,Highway,Rural,60,67.11954338778177,73.8,100.0,20.0,19.9,14.3,0.414,Side Impact Potential,50,89.3,0.0,44.5,Moderate Misalignment,0.0,None,57.3
+142,SH-17 (Old Madras Rd) Seg-20,22.09,Highway,Rural,60,59.005421371097356,67.8,100.0,10.6,15.6,3.3,0.466,Separated Traffic,80,98.5,0.0,25.1,Moderate Misalignment,0.0,None,67.1
+143,SH-17 (Old Madras Rd) Seg-21,22.96,Highway,Rural,60,54.316869111438955,59.4,100.0,9.4,13.9,3.4,0.399,Separated Traffic,80,91.5,0.0,16.5,Aligned,0.0,None,72.0
+144,SH-17 (Old Madras Rd) Seg-22,23.83,Highway,Rural,70,45.216924750525365,61.9,100.0,10.6,14.2,7.0,0.34,Separated Traffic,80,62.8,16.0,16.5,Aligned,0.212,Light,69.0
+145,SH-17 (Old Madras Rd) Seg-23,24.71,Highway,Rural,60,58.961118719236964,75.9,100.0,14.1,26.6,25.1,0.435,Separated Traffic,80,98.4,0.0,36.8,Moderate Misalignment,0.156,Light,60.7
+146,SH-17 (Old Madras Rd) Seg-24,25.58,Highway,Rural,90,76.22622938206587,81.4,100.0,0.0,15.5,9.1,0.364,Separated Traffic,80,79.3,0.0,31.3,Moderate Misalignment,0.0,None,61.2
+147,SH-17 (Old Madras Rd) Seg-25,26.46,Highway,Rural,90,98.91280457745911,110.5,100.0,9.4,20.6,13.2,0.434,Separated Traffic,80,86.6,0.0,53.1,High Misalignment,0.0,None,50.0
+148,SH-17 (Old Madras Rd) Seg-26,27.34,Highway,Rural,70,47.271620115164474,57.1,100.0,0.0,14.7,2.6,0.447,Separated Traffic,80,65.9,0.0,18.0,Aligned,0.0,None,69.2
+149,SH-17 (Old Madras Rd) Seg-27,28.23,Highway,Rural,70,36.862568627168336,47.0,100.0,29.4,25.8,31.2,0.337,Separated Traffic,80,50.3,0.0,18.1,Aligned,0.145,Light,75.0
+150,SH-17 (Old Madras Rd) Seg-28,29.11,Highway,Rural,80,81.40868276292366,91.3,100.0,0.0,10.2,0.2,0.336,Separated Traffic,80,97.9,6.0,28.2,Moderate Misalignment,0.0,None,61.9
+151,SH-17 (Old Madras Rd) Seg-29,30.0,Highway,Rural,90,60.43940282759959,84.6,100.0,22.4,18.1,7.8,0.468,Separated Traffic,80,55.7,0.0,29.3,Moderate Misalignment,0.233,Light,66.9
+152,SH-17 (Old Madras Rd) Seg-30,30.88,Highway,Rural,60,32.32368372809582,42.8,100.0,0.0,13.9,0.8,0.449,Separated Traffic,80,58.5,0.0,17.8,Aligned,0.186,Light,69.3
+153,SH-17 (Old Madras Rd) Seg-31,31.76,Highway,Rural,80,83.98109596629594,90.7,100.0,0.0,14.9,2.9,0.443,Separated Traffic,80,94.0,0.0,29.2,Moderate Misalignment,0.0,None,62.5
+154,SH-17 (Old Madras Rd) Seg-32,32.65,Highway,Rural,60,34.84333191910663,42.4,100.0,0.0,18.0,10.4,0.406,Separated Traffic,80,62.3,0.0,19.2,Aligned,0.0,None,68.5
+155,SH-17 (Old Madras Rd) Seg-33,33.53,Highway,Rural,80,85.03466805325375,107.1,100.0,0.0,14.2,3.4,0.41,Separated Traffic,80,92.4,0.0,46.0,Moderate Misalignment,0.136,Light,52.4
+156,SH-17 (Old Madras Rd) Seg-34,34.41,Highway,Rural,70,78.23024550748057,91.7,100.0,10.6,16.3,5.6,0.446,Separated Traffic,80,87.7,3.0,39.7,Moderate Misalignment,0.0,None,57.7
+157,SH-17 (Old Madras Rd) Seg-35,35.3,Highway,Rural,70,53.27502846374786,60.6,100.0,0.0,11.9,2.4,0.353,Separated Traffic,80,74.9,0.0,17.1,Aligned,0.0,None,69.7
+158,SH-17 (Old Madras Rd) Seg-36,36.18,Highway,Rural,60,59.65555877891476,74.7,100.0,10.6,15.4,4.1,0.441,Separated Traffic,80,99.5,0.0,32.1,Moderate Misalignment,0.14,Light,62.9
+159,SH-17 (Old Madras Rd) Seg-37,37.06,Highway,Rural,90,73.2816431380715,81.7,100.0,7.1,19.8,13.4,0.434,Separated Traffic,80,74.9,0.0,31.8,Moderate Misalignment,0.0,None,62.3
+160,SH-35 (Kanakapura Rd) Seg-1,4.41,Highway,Urban,70,52.808198897622006,57.2,100.0,35.3,24.6,12.1,0.593,Separated Traffic,80,74.2,6.0,16.9,Aligned,0.0,None,75.7
+161,SH-35 (Kanakapura Rd) Seg-2,5.28,Highway,Urban,90,65.3930535326012,85.8,100.0,77.6,45.1,53.6,0.555,Side Impact Potential,50,63.1,0.0,70.3,High Misalignment,0.182,Light,53.3
+162,SH-35 (Kanakapura Rd) Seg-3,6.15,Highway,Urban,60,59.97562997976215,77.0,100.0,87.1,55.1,67.7,0.66,Significant Pedestrian Interaction,30,100.0,0.0,77.2,Critical Misalignment,0.155,Light,51.1
+163,SH-35 (Kanakapura Rd) Seg-4,7.02,Highway,Urban,90,60.92099059336427,67.3,100.0,20.0,23.3,11.8,0.574,Separated Traffic,80,56.4,0.0,31.4,Moderate Misalignment,0.0,None,65.2
+164,SH-35 (Kanakapura Rd) Seg-5,7.89,Highway,Urban,90,78.89265389582569,94.3,100.0,28.2,37.3,30.2,0.684,Separated Traffic,80,83.3,0.0,39.6,Moderate Misalignment,0.0,None,61.9
+165,SH-35 (Kanakapura Rd) Seg-6,8.1,Highway,Urban,90,77.9503248781462,84.9,100.0,61.2,44.9,50.2,0.588,Significant Pedestrian Interaction,30,81.9,0.0,98.3,Critical Misalignment,0.0,None,33.3
+166,SH-35 (Kanakapura Rd) Seg-7,8.76,Highway,Urban,70,53.29810262171895,67.8,100.0,12.9,20.8,4.1,0.623,Separated Traffic,80,74.9,0.0,18.5,Aligned,0.151,Light,71.5
+167,SH-35 (Kanakapura Rd) Seg-8,9.64,Highway,Urban,80,15.733590306942697,66.6,100.0,9.4,25.8,9.6,0.687,Side Impact Potential,50,3.6,0.0,59.5,High Misalignment,0.784,Severe,46.2
+168,SH-35 (Kanakapura Rd) Seg-9,10.51,Highway,Peri-Urban,70,52.476080317543456,62.0,100.0,14.1,19.9,10.1,0.489,Separated Traffic,80,73.7,0.0,18.0,Aligned,0.0,None,72.0
+169,SH-35 (Kanakapura Rd) Seg-10,11.38,Highway,Peri-Urban,90,72.56245665386805,87.9,100.0,28.2,33.2,27.0,0.605,Separated Traffic,80,73.8,0.0,33.7,Moderate Misalignment,0.0,None,65.4
+170,SH-35 (Kanakapura Rd) Seg-11,12.26,Highway,Peri-Urban,90,26.11478443649845,79.3,100.0,11.8,22.1,7.6,0.608,Separated Traffic,80,4.2,0.0,32.0,Moderate Misalignment,0.675,Severe,63.2
+171,SH-35 (Kanakapura Rd) Seg-12,13.13,Highway,Peri-Urban,70,38.80078636602189,47.6,100.0,10.6,22.1,14.4,0.491,Separated Traffic,80,53.2,0.0,19.2,Aligned,0.0,None,70.6
+172,SH-35 (Kanakapura Rd) Seg-13,14.01,Highway,Peri-Urban,80,88.46372849897415,101.3,100.0,14.1,31.2,27.4,0.564,Side Impact Potential,50,87.3,0.0,82.9,Critical Misalignment,0.0,None,33.1
+173,SH-35 (Kanakapura Rd) Seg-14,14.88,Highway,Peri-Urban,90,49.25469463046401,58.6,100.0,24.7,26.0,16.1,0.584,Separated Traffic,80,38.9,0.0,31.7,Moderate Misalignment,0.0,None,65.9
+174,SH-35 (Kanakapura Rd) Seg-15,15.75,Highway,Peri-Urban,60,55.69506006170876,67.0,100.0,14.1,26.4,16.6,0.574,Separated Traffic,80,93.5,0.0,27.5,Moderate Misalignment,0.0,None,66.3
+175,SH-35 (Kanakapura Rd) Seg-16,16.66,Highway,Peri-Urban,60,33.69791268639503,39.6,100.0,23.5,24.6,19.0,0.487,Separated Traffic,80,60.5,19.0,18.4,Aligned,0.0,None,69.9
+176,SH-35 (Kanakapura Rd) Seg-17,17.56,Highway,Peri-Urban,60,56.39501677289363,77.4,100.0,24.7,31.2,30.1,0.508,Separated Traffic,80,94.6,0.0,38.6,Moderate Misalignment,0.214,Light,61.8
+177,SH-35 (Kanakapura Rd) Seg-18,18.46,Highway,Peri-Urban,60,45.477109960898915,61.7,100.0,62.4,45.0,57.6,0.529,Significant Pedestrian Interaction,30,78.2,0.0,61.1,High Misalignment,0.213,Light,55.8
+178,SH-35 (Kanakapura Rd) Seg-19,19.37,Highway,Peri-Urban,80,75.07277299870584,87.8,100.0,10.6,25.9,14.6,0.61,Separated Traffic,80,92.6,0.0,28.6,Moderate Misalignment,0.0,None,65.0
+179,SH-35 (Kanakapura Rd) Seg-20,20.27,Highway,Rural,80,52.93010010500991,63.4,100.0,5.9,15.1,9.1,0.342,Separated Traffic,80,59.4,0.0,17.4,Aligned,0.0,None,70.7
+180,SH-35 (Kanakapura Rd) Seg-21,21.17,Highway,Rural,60,68.14403654322147,76.5,100.0,4.7,17.7,7.0,0.465,Separated Traffic,80,87.8,0.0,35.6,Moderate Misalignment,0.0,None,59.6
+181,SH-35 (Kanakapura Rd) Seg-22,22.07,Highway,Rural,90,81.69034028474,87.1,100.0,0.0,11.0,1.2,0.347,Separated Traffic,80,87.5,16.0,29.7,Moderate Misalignment,0.0,None,59.0
+182,SH-35 (Kanakapura Rd) Seg-23,22.98,Highway,Rural,70,75.54592635383507,90.8,100.0,0.0,15.8,10.3,0.332,Separated Traffic,80,91.7,9.0,40.0,Moderate Misalignment,0.0,None,54.2
+183,SH-35 (Kanakapura Rd) Seg-24,23.88,Highway,Rural,90,85.33569165309689,89.3,100.0,0.0,15.8,9.5,0.361,Separated Traffic,80,93.0,0.0,31.4,Moderate Misalignment,0.0,None,61.2
+184,SH-35 (Kanakapura Rd) Seg-25,24.78,Highway,Rural,80,84.66921634869165,103.9,100.0,0.0,14.5,7.5,0.354,Separated Traffic,80,93.0,0.0,42.7,Moderate Misalignment,0.0,None,54.4
+185,SH-35 (Kanakapura Rd) Seg-26,25.69,Highway,Rural,70,44.40576076821322,60.0,100.0,0.0,19.4,12.2,0.415,Separated Traffic,80,61.6,0.0,19.7,Aligned,0.205,Light,68.2
+186,SH-35 (Kanakapura Rd) Seg-27,26.59,Highway,Rural,80,89.9022652292317,104.8,100.0,0.0,16.0,4.4,0.451,Side Impact Potential,50,85.1,0.0,83.1,Critical Misalignment,0.0,None,30.1
+187,SH-35 (Kanakapura Rd) Seg-28,27.49,Highway,Rural,60,38.67905900206415,50.2,100.0,10.6,18.6,13.7,0.37,Separated Traffic,80,68.0,0.0,18.0,Aligned,0.166,Light,71.3
+188,SH-35 (Kanakapura Rd) Seg-29,28.39,Highway,Rural,70,41.404136859187645,50.1,100.0,0.0,17.5,8.5,0.433,Separated Traffic,80,57.1,0.0,19.0,Aligned,0.0,None,68.6
+189,SH-35 (Kanakapura Rd) Seg-30,29.3,Highway,Rural,70,57.79032640010304,68.1,100.0,0.0,13.3,6.4,0.335,Separated Traffic,80,81.7,0.0,17.6,Aligned,0.0,None,69.4
+190,SH-35 (Kanakapura Rd) Seg-31,30.2,Highway,Rural,80,54.61890501613055,67.0,100.0,0.0,15.3,9.6,0.331,Separated Traffic,80,61.9,0.0,18.2,Aligned,0.0,None,69.1
+191,SH-35 (Kanakapura Rd) Seg-32,31.1,Highway,Rural,70,77.94021332409164,89.4,100.0,0.0,12.4,0.9,0.398,Separated Traffic,80,88.1,0.0,37.3,Moderate Misalignment,0.0,None,57.6
+192,SH-35 (Kanakapura Rd) Seg-33,32.0,Highway,Rural,80,50.102004818832555,61.7,100.0,0.0,16.9,12.0,0.34,Separated Traffic,80,55.2,0.0,18.8,Aligned,0.0,None,68.7
+193,SH-35 (Kanakapura Rd) Seg-34,32.9,Highway,Rural,90,81.03934291987886,100.9,100.0,0.0,17.3,10.6,0.377,Side Impact Potential,50,86.6,0.0,82.1,Critical Misalignment,0.0,None,30.7
+194,SH-35 (Kanakapura Rd) Seg-35,33.8,Highway,Rural,60,33.95062479898307,43.3,100.0,15.3,15.1,7.8,0.359,Separated Traffic,80,60.9,12.0,16.2,Aligned,0.152,Light,70.9
+195,SH-35 (Kanakapura Rd) Seg-36,34.71,Highway,Rural,90,99.32202450662098,113.8,100.0,0.0,16.1,9.2,0.364,Separated Traffic,80,86.0,0.0,56.1,High Misalignment,0.0,None,46.3
+196,SH-35 (Kanakapura Rd) Seg-37,35.61,Highway,Rural,70,42.17559256204323,50.6,100.0,0.0,12.1,2.8,0.352,Separated Traffic,80,58.3,0.0,17.1,Aligned,0.0,None,69.7
+197,SH-35 (Kanakapura Rd) Seg-38,36.51,Highway,Rural,60,41.400203483770554,48.1,100.0,0.0,19.2,9.3,0.463,Separated Traffic,80,72.1,0.0,19.6,Aligned,0.0,None,68.2
+198,SH-35 (Kanakapura Rd) Seg-39,37.42,Highway,Rural,70,62.41068348667721,72.7,100.0,0.0,12.1,1.7,0.37,Separated Traffic,80,88.6,22.0,19.9,Aligned,0.0,None,63.7
+199,SH-35 (Kanakapura Rd) Seg-40,38.32,Highway,Rural,90,74.67125958503323,92.5,100.0,0.0,14.5,6.7,0.369,Separated Traffic,80,77.0,0.0,33.5,Moderate Misalignment,0.0,None,59.9
+200,SH-35 (Kanakapura Rd) Seg-41,39.23,Highway,Rural,90,77.81483006763771,86.3,100.0,0.0,13.0,1.6,0.404,Separated Traffic,80,81.7,0.0,30.4,Moderate Misalignment,0.0,None,61.8
+201,SH-35 (Kanakapura Rd) Seg-42,40.13,Highway,Rural,90,83.97929759922356,99.9,100.0,0.0,17.8,10.2,0.413,Separated Traffic,80,91.0,0.0,42.3,Moderate Misalignment,0.0,None,54.6
+202,SH-35 (Kanakapura Rd) Seg-43,41.04,Highway,Rural,60,49.85237578219161,54.8,100.0,0.0,12.0,0.4,0.394,Separated Traffic,80,84.8,0.0,17.1,Aligned,0.0,None,69.7
+203,SH-35 (Kanakapura Rd) Seg-44,41.94,Highway,Rural,60,46.76081806007431,62.2,100.0,0.0,16.8,11.5,0.359,Separated Traffic,80,80.1,0.0,21.0,Aligned,0.189,Light,67.4
+204,SH-35 (Kanakapura Rd) Seg-45,42.85,Highway,Rural,70,44.34931785200539,52.4,100.0,0.0,14.9,8.3,0.354,Separated Traffic,80,61.5,0.0,18.1,Aligned,0.0,None,69.1
+205,SH-35 (Kanakapura Rd) Seg-46,43.76,Highway,Rural,60,10.289517743807036,39.1,100.0,14.1,15.1,8.1,0.348,Separated Traffic,80,25.4,0.0,16.3,Aligned,0.742,Severe,73.0
+206,SH-35 (Kanakapura Rd) Seg-47,44.67,Highway,Rural,60,44.00446684662255,50.0,100.0,14.1,23.5,25.1,0.334,Separated Traffic,80,76.0,0.0,19.2,Aligned,0.0,None,71.3
+207,SH-35 (Kanakapura Rd) Seg-48,45.57,Highway,Rural,70,41.932360329134184,51.3,100.0,9.4,16.9,6.2,0.448,Separated Traffic,80,57.9,0.0,17.6,Aligned,0.0,None,71.3
+208,SH-35 (Kanakapura Rd) Seg-49,46.48,Highway,Rural,80,80.25718833676927,93.2,100.0,22.4,17.2,12.5,0.339,Separated Traffic,80,99.6,3.0,29.7,Moderate Misalignment,0.0,None,66.1
+209,SH-87 (Magadi Rd) Seg-1,3.21,Highway,Urban,80,44.80682860944866,56.6,100.0,49.4,31.7,20.2,0.683,Separated Traffic,80,47.2,0.0,17.5,Aligned,0.147,Light,79.4
+210,SH-87 (Magadi Rd) Seg-2,4.07,Highway,Urban,90,102.47459970031124,117.7,100.0,36.5,28.1,16.0,0.664,Separated Traffic,80,81.3,0.0,59.6,High Misalignment,0.0,None,51.5
+211,SH-87 (Magadi Rd) Seg-3,4.95,Highway,Urban,60,33.52757362244464,39.5,100.0,23.5,29.5,16.8,0.664,Separated Traffic,80,60.3,0.0,20.1,Aligned,0.0,None,72.6
+212,SH-87 (Magadi Rd) Seg-4,5.83,Highway,Urban,60,40.12348682300988,44.7,100.0,44.7,38.0,38.9,0.604,Side Impact Potential,50,70.2,0.0,33.3,Moderate Misalignment,0.0,None,69.0
+213,SH-87 (Magadi Rd) Seg-5,6.72,Highway,Urban,80,69.41093685708489,88.7,100.0,23.5,29.2,23.4,0.563,Separated Traffic,80,84.1,6.0,29.0,Moderate Misalignment,0.147,Light,66.1
+214,SH-87 (Magadi Rd) Seg-6,7.61,Highway,Urban,90,73.751467477695,85.3,100.0,21.2,28.3,16.9,0.654,Separated Traffic,80,75.6,0.0,32.9,Moderate Misalignment,0.0,None,64.5
+215,SH-87 (Magadi Rd) Seg-7,8.5,Highway,Urban,80,70.16448124335507,92.4,100.0,50.6,46.2,50.0,0.597,Significant Pedestrian Interaction,30,85.2,0.0,100.0,Critical Misalignment,0.178,Light,30.1
+216,SH-87 (Magadi Rd) Seg-8,9.19,Highway,Urban,80,57.88665918749376,70.5,100.0,16.5,23.9,7.0,0.668,Side Impact Potential,50,66.8,0.0,57.9,High Misalignment,0.0,None,48.6
+217,SH-87 (Magadi Rd) Seg-9,9.39,Highway,Urban,90,48.9921171579815,61.1,100.0,57.6,46.4,52.0,0.596,Significant Pedestrian Interaction,30,38.5,0.0,99.3,Critical Misalignment,0.0,None,31.9
+218,SH-87 (Magadi Rd) Seg-10,10.29,Highway,Peri-Urban,60,58.11762396065517,74.2,100.0,0.0,19.4,7.4,0.515,Separated Traffic,80,97.2,0.0,34.4,Moderate Misalignment,0.15,Light,59.4
+219,SH-87 (Magadi Rd) Seg-11,11.18,Highway,Peri-Urban,90,66.61464847216456,86.6,100.0,24.7,26.7,21.0,0.513,Separated Traffic,80,64.9,0.0,31.9,Moderate Misalignment,0.161,Light,65.8
+220,SH-87 (Magadi Rd) Seg-12,12.08,Highway,Peri-Urban,90,16.60253474734582,77.8,100.0,4.7,21.5,12.5,0.492,Separated Traffic,80,0.0,0.0,32.7,Moderate Misalignment,0.805,Severe,61.3
+221,SH-87 (Magadi Rd) Seg-13,12.97,Highway,Peri-Urban,90,63.740081324721565,82.4,100.0,31.8,29.5,21.5,0.614,Separated Traffic,80,60.6,0.0,32.0,Moderate Misalignment,0.158,Light,67.2
+222,SH-87 (Magadi Rd) Seg-14,13.86,Highway,Peri-Urban,70,50.9885876780985,57.8,100.0,24.7,23.1,15.2,0.497,Separated Traffic,80,71.5,0.0,17.7,Aligned,0.0,None,74.3
+223,SH-87 (Magadi Rd) Seg-15,14.78,Highway,Peri-Urban,60,36.757053503216675,43.3,100.0,9.4,18.5,7.1,0.492,Side Impact Potential,50,65.1,0.0,31.1,Moderate Misalignment,0.0,None,63.2
+224,SH-87 (Magadi Rd) Seg-16,15.69,Highway,Peri-Urban,90,79.15246809876551,110.1,100.0,24.7,21.0,9.7,0.527,Separated Traffic,80,83.7,0.0,50.8,High Misalignment,0.233,Light,54.5
+225,SH-87 (Magadi Rd) Seg-17,16.6,Highway,Peri-Urban,60,15.292263161812873,44.5,100.0,16.5,23.6,12.0,0.577,Separated Traffic,80,32.9,0.0,19.0,Aligned,0.662,Severe,71.9
+226,SH-87 (Magadi Rd) Seg-18,17.51,Highway,Peri-Urban,60,31.6792622688884,42.6,100.0,25.9,28.4,18.5,0.61,Separated Traffic,80,57.5,0.0,19.4,Aligned,0.198,Light,73.5
+227,SH-87 (Magadi Rd) Seg-19,18.43,Highway,Peri-Urban,80,82.77873868120567,93.8,100.0,24.7,26.1,13.5,0.613,Separated Traffic,80,95.8,0.0,33.1,Moderate Misalignment,0.0,None,65.1
+228,SH-87 (Magadi Rd) Seg-20,19.34,Highway,Peri-Urban,70,69.156275758252,75.3,100.0,0.0,16.4,1.6,0.519,Side Impact Potential,50,98.7,0.0,50.0,High Misalignment,0.0,None,50.0
+229,SH-87 (Magadi Rd) Seg-21,20.26,Highway,Rural,80,67.54779506839678,73.4,100.0,0.0,13.6,3.0,0.398,Separated Traffic,80,81.3,0.0,17.7,Aligned,0.0,None,69.4
+230,SH-87 (Magadi Rd) Seg-22,21.17,Highway,Rural,80,61.723460883020124,71.9,100.0,7.1,19.7,13.1,0.41,Separated Traffic,80,72.6,0.0,18.8,Aligned,0.0,None,70.1
+231,SH-87 (Magadi Rd) Seg-23,22.08,Highway,Rural,60,66.19994231537206,79.9,100.0,0.0,15.7,4.0,0.448,Side Impact Potential,50,90.7,0.0,52.0,High Misalignment,0.0,None,48.8
+232,SH-87 (Magadi Rd) Seg-24,23.0,Highway,Rural,90,80.0612939869676,102.5,100.0,0.0,12.9,0.6,0.419,Separated Traffic,80,85.1,6.0,43.3,Moderate Misalignment,0.153,Light,52.8
+233,SH-87 (Magadi Rd) Seg-25,23.91,Highway,Rural,70,42.81736552099512,57.4,100.0,4.7,16.8,8.1,0.421,Separated Traffic,80,59.2,0.0,18.2,Aligned,0.201,Light,70.0
+234,SH-87 (Magadi Rd) Seg-26,24.83,Highway,Rural,90,49.51315483468607,60.9,100.0,5.9,17.4,7.9,0.449,Separated Traffic,80,39.3,0.0,31.2,Moderate Misalignment,0.0,None,62.5
+235,SH-87 (Magadi Rd) Seg-27,25.74,Highway,Rural,80,43.4681408367348,54.2,100.0,0.0,14.8,4.8,0.407,Side Impact Potential,50,45.2,0.0,56.9,High Misalignment,0.0,None,45.9
+236,SH-87 (Magadi Rd) Seg-28,26.66,Highway,Rural,80,50.41945758207087,61.9,100.0,34.1,23.7,21.9,0.379,Separated Traffic,80,55.6,6.0,16.7,Aligned,0.0,None,75.6
+237,Hosur Road Extension Seg-1,6.01,Highway,Urban,70,36.575806900522075,45.7,100.0,43.5,37.0,30.9,0.679,Side Impact Potential,50,49.9,0.0,46.0,Moderate Misalignment,0.133,Light,61.1
+238,Hosur Road Extension Seg-2,7.77,Highway,Urban,60,35.08440867469507,42.9,100.0,21.2,25.7,11.7,0.647,Separated Traffic,80,62.6,0.0,19.1,Aligned,0.0,None,72.8
+239,Hosur Road Extension Seg-3,9.55,Highway,Urban,60,40.75766803904322,46.7,100.0,29.4,30.3,17.4,0.688,Separated Traffic,80,71.1,0.0,19.6,Aligned,0.0,None,74.1
+240,Hosur Road Extension Seg-4,10.75,Highway,Peri-Urban,70,50.92438624996658,60.9,100.0,0.0,23.7,9.1,0.618,Separated Traffic,80,71.4,0.0,21.1,Aligned,0.0,None,67.3
+241,Hosur Road Extension Seg-5,11.35,Highway,Peri-Urban,70,42.89551792553886,58.1,100.0,18.8,19.2,5.9,0.54,Separated Traffic,80,59.3,0.0,17.2,Aligned,0.201,Light,73.4
+242,Hosur Road Extension Seg-6,13.15,Highway,Peri-Urban,70,38.34499590241193,49.8,100.0,24.7,30.2,22.7,0.607,Separated Traffic,80,52.5,6.0,20.2,Aligned,0.171,Light,71.6
+243,Hosur Road Extension Seg-7,14.95,Highway,Peri-Urban,90,30.188150208874198,82.4,100.0,32.9,27.5,24.2,0.482,Separated Traffic,80,10.3,0.0,31.2,Moderate Misalignment,0.635,Severe,67.9
+244,Hosur Road Extension Seg-8,16.76,Highway,Peri-Urban,100,111.62579762309936,116.3,100.0,21.2,30.2,25.4,0.568,Separated Traffic,80,82.6,0.0,63.5,High Misalignment,0.0,None,46.1
+245,Hosur Road Extension Seg-9,18.45,Highway,Peri-Urban,60,57.247057742387454,72.4,100.0,9.4,24.7,11.9,0.619,Side Impact Potential,50,95.9,0.0,46.1,Moderate Misalignment,0.151,Light,54.2
+246,Hosur Road Extension Seg-10,20.14,Highway,Rural,80,65.69262039621847,86.0,100.0,0.0,17.1,8.9,0.421,Separated Traffic,80,78.5,0.0,25.1,Moderate Misalignment,0.167,Light,64.9
+247,Hosur Road Extension Seg-11,21.84,Highway,Rural,90,56.30942045066199,66.5,100.0,0.0,15.1,7.3,0.368,Separated Traffic,80,49.5,0.0,31.1,Moderate Misalignment,0.0,None,61.3
+248,Hosur Road Extension Seg-12,23.54,Highway,Rural,70,49.62284628481903,66.0,100.0,0.0,13.2,4.6,0.362,Separated Traffic,80,69.4,0.0,17.5,Aligned,0.184,Light,69.5
+249,Hosur Road Extension Seg-13,25.23,Highway,Rural,70,43.54606877594683,59.8,100.0,0.0,13.0,1.8,0.401,Separated Traffic,80,60.3,0.0,17.4,Aligned,0.215,Light,69.6
+250,Hosur Road Extension Seg-14,26.93,Highway,Rural,70,59.618000813532845,73.6,100.0,0.0,12.1,3.6,0.341,Side Impact Potential,50,84.4,3.0,46.8,Moderate Misalignment,0.0,None,51.3
+251,Hosur Road Extension Seg-15,28.63,Highway,Rural,70,68.76076282783319,94.3,100.0,0.0,12.1,4.1,0.332,Side Impact Potential,50,98.1,0.0,68.2,High Misalignment,0.22,Light,39.1
+252,Hosur Road Extension Seg-16,30.3,Highway,Rural,90,62.52851653752787,78.3,100.0,14.1,15.6,7.8,0.389,Separated Traffic,80,58.8,9.0,29.5,Moderate Misalignment,0.13,Light,63.3
+253,Hosur Road Extension Seg-17,30.5,Highway,Rural,90,62.414164852497095,76.4,100.0,7.1,17.1,11.4,0.377,Separated Traffic,80,58.6,0.0,30.9,Moderate Misalignment,0.0,None,62.9
+254,Hosur Road Extension Seg-18,31.97,Highway,Rural,60,46.99239989110678,62.7,100.0,5.9,16.6,8.0,0.407,Side Impact Potential,50,80.5,0.0,33.7,Moderate Misalignment,0.196,Light,61.0
+255,Hosur Road Extension Seg-19,33.65,Highway,Rural,60,69.11685374034327,79.3,100.0,0.0,16.3,9.0,0.383,Side Impact Potential,50,86.3,0.0,51.6,High Misalignment,0.0,None,49.0
+256,Hosur Road Extension Seg-20,35.32,Highway,Rural,90,28.382587102483974,81.5,100.0,24.7,15.5,8.6,0.365,Separated Traffic,80,7.6,0.0,28.1,Moderate Misalignment,0.66,Severe,68.1
+257,Hosur Road Extension Seg-21,36.99,Highway,Rural,60,40.678855901028555,51.4,100.0,0.0,19.8,11.0,0.46,Side Impact Potential,50,71.0,0.0,32.8,Moderate Misalignment,0.138,Light,60.3
+258,Hosur Road Extension Seg-22,38.66,Highway,Rural,80,79.39945569126469,95.5,100.0,0.0,10.5,0.5,0.341,Separated Traffic,80,99.1,3.0,32.7,Moderate Misalignment,0.0,None,59.8
+259,Hosur Road Extension Seg-23,40.33,Highway,Rural,60,35.86954157247985,43.9,100.0,0.0,15.0,7.9,0.357,Separated Traffic,80,63.8,0.0,18.1,Aligned,0.0,None,69.1
+260,Mysore Road (NH-275) Seg-1,5.17,Highway,Urban,70,53.52107899975461,69.5,100.0,55.3,45.4,54.0,0.562,Side Impact Potential,50,75.3,22.0,47.4,Moderate Misalignment,0.167,Light,58.2
+261,Mysore Road (NH-275) Seg-2,6.83,Highway,Urban,60,37.24673569344175,47.5,100.0,35.3,28.8,14.7,0.686,Separated Traffic,80,65.9,19.0,18.3,Aligned,0.148,Light,72.3
+262,Mysore Road (NH-275) Seg-3,8.48,Highway,Urban,80,63.90730575541312,69.7,100.0,49.4,29.2,18.7,0.624,Separated Traffic,80,75.9,0.0,16.6,Aligned,0.0,None,79.9
+263,Mysore Road (NH-275) Seg-4,10.15,Highway,Peri-Urban,80,42.634004417493706,55.7,100.0,21.2,22.6,9.8,0.569,Separated Traffic,80,44.0,0.0,18.0,Aligned,0.174,Light,73.4
+264,Mysore Road (NH-275) Seg-5,11.81,Highway,Peri-Urban,70,46.58419281358923,59.5,100.0,11.8,23.5,14.1,0.518,Separated Traffic,80,64.9,0.0,19.5,Aligned,0.154,Light,70.7
+265,Mysore Road (NH-275) Seg-6,13.48,Highway,Peri-Urban,80,55.68181213112275,69.0,100.0,14.1,28.0,22.5,0.531,Separated Traffic,80,63.5,0.0,20.8,Aligned,0.0,None,70.3
+266,Mysore Road (NH-275) Seg-7,15.14,Highway,Peri-Urban,60,48.86943803343521,55.0,100.0,9.4,25.7,14.3,0.59,Separated Traffic,80,83.3,0.0,20.6,Aligned,0.0,None,69.5
+267,Mysore Road (NH-275) Seg-8,16.85,Highway,Peri-Urban,80,66.44050497931897,79.1,100.0,20.0,22.1,8.9,0.572,Separated Traffic,80,79.7,0.0,18.0,Aligned,0.0,None,73.2
+268,Mysore Road (NH-275) Seg-9,18.55,Highway,Peri-Urban,70,51.59258208516435,56.7,100.0,9.4,20.8,11.1,0.506,Separated Traffic,80,72.4,0.0,18.9,Aligned,0.0,None,70.5
+269,Mysore Road (NH-275) Seg-10,20.26,Highway,Rural,70,43.48630727988339,53.2,100.0,0.0,17.1,8.0,0.431,Separated Traffic,80,60.2,19.0,18.9,Aligned,0.0,None,64.9
+270,Mysore Road (NH-275) Seg-11,21.97,Highway,Rural,60,65.06043705143846,73.6,100.0,0.0,16.5,11.2,0.342,Separated Traffic,80,92.4,0.0,32.8,Moderate Misalignment,0.0,None,60.3
+271,Mysore Road (NH-275) Seg-12,23.68,Highway,Rural,90,79.27699406264495,93.8,100.0,10.6,17.5,13.0,0.337,Separated Traffic,80,83.9,0.0,34.5,Moderate Misalignment,0.0,None,61.4
+272,Mysore Road (NH-275) Seg-13,25.38,Highway,Rural,60,37.16916932127012,48.3,100.0,0.0,15.1,10.1,0.332,Separated Traffic,80,65.8,0.0,18.2,Aligned,0.164,Light,69.1
+273,Mysore Road (NH-275) Seg-14,27.09,Highway,Rural,70,54.18676333079113,69.1,100.0,10.6,14.8,6.2,0.386,Separated Traffic,80,76.3,0.0,16.7,Aligned,0.149,Light,72.1
+274,Mysore Road (NH-275) Seg-15,28.8,Highway,Rural,70,48.957495153806946,58.0,100.0,0.0,18.9,9.5,0.454,Separated Traffic,80,68.4,0.0,19.5,Aligned,0.0,None,68.3
+275,Mysore Road (NH-275) Seg-16,30.5,Highway,Rural,80,60.43640963607741,70.9,100.0,0.0,14.1,0.8,0.456,Separated Traffic,80,70.7,0.0,17.8,Aligned,0.0,None,69.3
+276,Mysore Road (NH-275) Seg-17,32.21,Highway,Rural,90,59.90836568015833,81.6,100.0,5.9,14.8,8.5,0.348,Separated Traffic,80,54.9,0.0,30.3,Moderate Misalignment,0.218,Light,63.0
+277,Mysore Road (NH-275) Seg-18,33.92,Highway,Rural,60,30.748249618357715,39.3,100.0,9.4,13.5,2.9,0.396,Separated Traffic,80,56.1,0.0,16.4,Aligned,0.155,Light,72.0
+278,Mysore Road (NH-275) Seg-19,35.62,Highway,Rural,60,63.310579389835,80.7,100.0,0.0,19.2,9.7,0.459,Separated Traffic,80,95.0,0.0,41.0,Moderate Misalignment,0.154,Light,55.4
+279,Mysore Road (NH-275) Seg-20,37.33,Highway,Rural,70,51.61830954726251,58.7,100.0,10.6,12.9,4.3,0.353,Separated Traffic,80,72.4,0.0,16.0,Aligned,0.0,None,72.5
+280,Mysore Road (NH-275) Seg-21,39.03,Highway,Rural,80,41.040749402365016,53.6,100.0,0.0,16.2,10.2,0.352,Separated Traffic,80,41.6,12.0,18.6,Aligned,0.171,Light,66.4
+281,Mysore Road (NH-275) Seg-22,40.74,Highway,Rural,60,33.57629621959966,42.2,100.0,0.0,15.3,3.1,0.456,Separated Traffic,80,60.4,15.0,18.2,Aligned,0.132,Light,66.1
+282,Mysore Road (NH-275) Seg-23,42.44,Highway,Rural,100,80.8523744187449,91.3,100.0,9.4,17.4,10.5,0.389,Separated Traffic,80,71.3,16.0,43.7,Moderate Misalignment,0.0,None,52.5
+283,Mysore Road (NH-275) Seg-24,44.15,Highway,Rural,70,47.301975021572986,62.0,100.0,0.0,13.3,1.5,0.418,Separated Traffic,80,66.0,0.0,17.6,Aligned,0.184,Light,69.4
+284,Sarjapur Road Seg-1,9.22,Highway,Urban,90,82.45281382232332,93.2,100.0,35.3,37.2,31.7,0.67,Separated Traffic,80,88.7,0.0,37.5,Moderate Misalignment,0.0,None,64.6
+285,Sarjapur Road Seg-2,10.15,Highway,Peri-Urban,90,57.134797293936465,62.2,100.0,5.9,21.9,12.9,0.493,Separated Traffic,80,50.7,6.0,32.7,Moderate Misalignment,0.0,None,60.4
+286,Sarjapur Road Seg-3,10.85,Highway,Peri-Urban,90,74.06772240698868,85.1,100.0,28.2,24.9,15.2,0.539,Separated Traffic,80,76.1,0.0,30.9,Moderate Misalignment,0.0,None,67.1
+287,Sarjapur Road Seg-4,11.08,Highway,Peri-Urban,90,85.45201779888863,96.0,100.0,21.2,24.1,17.1,0.494,Separated Traffic,80,93.2,0.0,37.7,Moderate Misalignment,0.0,None,61.6
+288,Sarjapur Road Seg-5,12.01,Highway,Peri-Urban,80,80.46013698560036,96.1,100.0,5.9,22.1,11.5,0.519,Separated Traffic,80,99.3,0.0,36.5,Moderate Misalignment,0.0,None,59.3
+289,Sarjapur Road Seg-6,12.95,Highway,Peri-Urban,70,57.07430450981891,63.1,100.0,10.6,18.6,4.1,0.551,Separated Traffic,80,80.6,0.0,18.0,Aligned,0.0,None,71.3
+290,Sarjapur Road Seg-7,13.88,Highway,Peri-Urban,80,54.83494703810626,70.7,100.0,10.6,21.1,10.5,0.502,Separated Traffic,80,62.3,0.0,18.9,Aligned,0.166,Light,70.8
+291,Sarjapur Road Seg-8,14.82,Highway,Peri-Urban,60,54.94779421032167,59.9,100.0,29.4,23.8,15.2,0.524,Separated Traffic,80,92.4,0.0,17.4,Aligned,0.0,None,75.4
+292,Sarjapur Road Seg-9,15.75,Highway,Peri-Urban,80,48.68901763965563,54.9,100.0,28.2,26.6,19.0,0.534,Separated Traffic,80,53.0,0.0,18.5,Aligned,0.0,None,74.5
+293,Sarjapur Road Seg-10,16.67,Highway,Peri-Urban,60,43.988345852804926,55.1,100.0,20.0,22.4,13.2,0.505,Separated Traffic,80,76.0,0.0,18.1,Aligned,0.133,Light,73.1
+294,Sarjapur Road Seg-11,17.58,Highway,Peri-Urban,80,47.25256989410397,64.9,100.0,5.9,21.2,11.7,0.505,Separated Traffic,80,50.9,6.0,19.5,Aligned,0.214,Light,68.3
+295,Sarjapur Road Seg-12,18.5,Highway,Peri-Urban,90,57.09912945701148,66.3,100.0,47.1,28.7,21.0,0.602,Side Impact Potential,50,50.6,9.0,68.6,High Misalignment,0.0,None,46.5
+296,Sarjapur Road Seg-13,19.41,Highway,Peri-Urban,70,49.62959722480798,57.7,100.0,15.3,22.9,9.9,0.597,Separated Traffic,80,69.4,15.0,18.9,Aligned,0.0,None,68.7
+297,Sarjapur Road Seg-14,20.33,Highway,Rural,90,50.90824672104909,59.1,100.0,0.0,16.7,8.6,0.405,Separated Traffic,80,41.4,6.0,31.7,Moderate Misalignment,0.0,None,59.8
+298,Sarjapur Road Seg-15,21.25,Highway,Rural,70,40.599246243961865,48.6,100.0,0.0,19.3,10.6,0.46,Separated Traffic,80,55.9,6.0,19.6,Aligned,0.0,None,67.0
+299,Sarjapur Road Seg-16,22.17,Highway,Rural,80,44.071558989800195,55.0,100.0,16.5,16.3,11.0,0.35,Side Impact Potential,50,46.1,0.0,55.3,High Misalignment,0.0,None,50.1
+300,Sarjapur Road Seg-17,23.08,Highway,Rural,60,53.98389366969778,67.3,100.0,14.1,22.0,14.6,0.462,Separated Traffic,80,91.0,0.0,26.3,Moderate Misalignment,0.0,None,67.0
+301,Sarjapur Road Seg-18,24.0,Highway,Rural,70,53.90409258576435,62.9,100.0,5.9,15.8,9.0,0.357,Separated Traffic,80,75.9,0.0,17.7,Aligned,0.0,None,70.6
+302,Sarjapur Road Seg-19,24.86,Highway,Rural,60,12.452647269446008,44.1,100.0,0.0,13.2,2.0,0.403,Side Impact Potential,50,28.7,0.0,30.5,Moderate Misalignment,0.724,Severe,61.7
+303,Sarjapur Road Seg-20,25.73,Highway,Rural,90,54.822937914361084,68.2,100.0,10.6,16.5,5.0,0.459,Side Impact Potential,50,47.2,6.0,69.1,High Misalignment,0.0,None,39.5
+304,Sarjapur Road Seg-21,26.59,Highway,Rural,70,69.65442837768643,92.9,100.0,0.0,15.7,10.9,0.341,Separated Traffic,80,99.5,0.0,42.1,Moderate Misalignment,0.183,Light,54.7
+305,Sarjapur Road Seg-22,27.45,Highway,Rural,80,92.31455893714534,105.6,100.0,0.0,12.4,4.8,0.331,Separated Traffic,80,81.5,0.0,43.8,Moderate Misalignment,0.0,None,53.7
+306,Sarjapur Road Seg-23,28.32,Highway,Rural,90,53.36777409296074,69.5,100.0,0.0,13.4,1.9,0.414,Separated Traffic,80,45.1,0.0,30.5,Moderate Misalignment,0.164,Light,61.7
+307,Sarjapur Road Seg-24,29.18,Highway,Rural,80,28.316011291063038,78.5,100.0,0.0,14.1,0.3,0.466,Separated Traffic,80,22.5,0.0,17.8,Aligned,0.644,Severe,69.3
+308,Sarjapur Road Seg-25,30.05,Highway,Rural,80,30.552468591402356,85.3,100.0,10.6,19.4,11.4,0.445,Separated Traffic,80,25.8,0.0,23.8,Aligned,0.639,Severe,67.8
+309,Sarjapur Road Seg-26,30.92,Highway,Rural,90,59.149977521054694,75.5,100.0,0.0,15.2,8.2,0.362,Separated Traffic,80,53.7,0.0,31.2,Moderate Misalignment,0.152,Light,61.3
+310,Outer Ring Road (ORR) Seg-1,8.16,Arterial,Urban,40,36.50174972233484,41.7,85.5,35.3,29.0,19.3,0.626,Side Impact Potential,50,94.8,0.0,20.2,Aligned,0.0,None,74.9
+311,Outer Ring Road (ORR) Seg-2,8.0,Arterial,Urban,40,19.573456820049135,26.6,88.0,30.6,38.0,33.9,0.684,Side Impact Potential,50,69.4,6.0,22.1,Aligned,0.212,Light,71.7
+312,Outer Ring Road (ORR) Seg-3,7.87,Arterial,Urban,50,27.964624026246742,39.5,80.0,25.9,31.3,20.1,0.66,Side Impact Potential,50,66.9,0.0,20.4,Aligned,0.243,Light,72.9
+313,Outer Ring Road (ORR) Seg-4,7.76,Arterial,Urban,50,54.174547104976654,63.3,80.5,37.6,34.2,28.8,0.608,Side Impact Potential,50,93.7,0.0,33.7,Moderate Misalignment,0.0,None,67.3
+314,Outer Ring Road (ORR) Seg-5,7.67,Arterial,Urban,40,26.957417971793898,35.1,80.5,9.4,22.5,4.8,0.661,Side Impact Potential,50,80.4,0.0,19.5,Aligned,0.174,Light,70.2
+315,Outer Ring Road (ORR) Seg-6,7.61,Arterial,Urban,50,18.558928508082477,48.1,85.5,42.4,39.8,37.8,0.611,Side Impact Potential,50,52.8,0.0,21.2,Aligned,0.607,Severe,75.8
+316,Outer Ring Road (ORR) Seg-7,7.58,Arterial,Urban,50,29.602921850698955,37.9,80.5,24.7,30.4,19.7,0.666,Side Impact Potential,50,69.4,0.0,20.3,Aligned,0.155,Light,72.8
+317,Outer Ring Road (ORR) Seg-8,7.57,Arterial,Urban,40,33.04209632122438,40.9,85.5,83.5,60.6,84.2,0.608,Significant Pedestrian Interaction,30,89.6,0.0,37.0,Moderate Misalignment,0.0,None,74.5
+318,Outer Ring Road (ORR) Seg-9,7.59,Arterial,Urban,50,9.71762598853638,36.6,72.5,35.3,45.6,53.7,0.566,Significant Pedestrian Interaction,30,39.6,6.0,50.1,High Misalignment,0.755,Severe,55.8
+319,Outer Ring Road (ORR) Seg-10,7.63,Arterial,Urban,40,49.92169574102359,53.1,78.0,67.1,49.4,62.9,0.565,Significant Pedestrian Interaction,30,85.1,0.0,47.9,Moderate Misalignment,0.0,None,64.7
+320,Outer Ring Road (ORR) Seg-11,7.7,Arterial,Urban,50,46.37493709071295,58.4,78.0,10.6,19.4,5.1,0.551,Separated Traffic,70,94.6,0.0,27.0,Moderate Misalignment,0.143,Light,65.9
+321,Outer Ring Road (ORR) Seg-12,7.8,Arterial,Urban,40,25.032282369014005,28.8,75.0,43.5,32.5,28.3,0.588,Side Impact Potential,50,77.5,0.0,18.5,Aligned,0.0,None,77.6
+322,Outer Ring Road (ORR) Seg-13,7.92,Arterial,Urban,40,44.897253445051675,52.9,80.5,32.9,27.1,13.5,0.648,Side Impact Potential,50,92.7,0.0,31.4,Moderate Misalignment,0.0,None,67.7
+323,Outer Ring Road (ORR) Seg-14,8.07,Arterial,Urban,50,28.393562103931977,40.2,80.5,24.7,40.9,43.9,0.586,Significant Pedestrian Interaction,30,67.6,0.0,49.8,Moderate Misalignment,0.242,Light,55.1
+324,Outer Ring Road (ORR) Seg-15,8.13,Arterial,Urban,50,31.198885563549563,39.7,80.0,44.7,47.3,51.5,0.633,Side Impact Potential,50,71.8,0.0,23.5,Aligned,0.147,Light,74.8
+325,Outer Ring Road (ORR) Seg-16,8.22,Arterial,Urban,40,33.67981034239697,36.7,80.0,28.2,26.9,18.9,0.568,Side Impact Potential,50,90.5,0.0,18.6,Aligned,0.0,None,74.5
+326,Outer Ring Road (ORR) Seg-17,8.33,Arterial,Urban,40,39.5530228218458,43.9,80.0,35.3,33.8,29.6,0.576,Side Impact Potential,50,99.3,0.0,24.1,Aligned,0.0,None,72.6
+327,Outer Ring Road (ORR) Seg-18,8.47,Arterial,Urban,60,42.20929749299082,50.4,83.0,84.7,41.8,42.2,0.648,Side Impact Potential,50,73.3,0.0,29.4,Moderate Misalignment,0.0,None,79.3
+328,Outer Ring Road (ORR) Seg-19,8.62,Arterial,Urban,40,37.818452639749204,46.3,78.0,51.8,52.0,61.0,0.689,Significant Pedestrian Interaction,30,96.7,0.0,43.7,Moderate Misalignment,0.0,None,64.1
+329,Outer Ring Road (ORR) Seg-20,8.8,Arterial,Urban,50,35.099347204840434,40.7,85.5,31.8,31.8,21.4,0.663,Separated Traffic,70,77.6,0.0,19.8,Aligned,0.0,None,74.5
+330,Outer Ring Road (ORR) Seg-21,8.99,Arterial,Urban,50,30.837263107720847,37.9,85.5,24.7,46.0,48.1,0.651,Side Impact Potential,50,71.3,0.0,25.6,Moderate Misalignment,0.0,None,69.6
+331,Outer Ring Road (ORR) Seg-22,9.2,Arterial,Urban,50,15.00622532692217,41.3,88.0,20.0,36.9,36.8,0.569,Significant Pedestrian Interaction,30,47.5,0.0,49.0,Moderate Misalignment,0.627,Severe,54.6
+332,Outer Ring Road (ORR) Seg-23,9.43,Arterial,Urban,40,26.663403447272522,34.8,83.0,34.1,38.9,39.4,0.583,Side Impact Potential,50,80.0,0.0,22.0,Aligned,0.176,Light,73.6
+333,Outer Ring Road (ORR) Seg-24,9.67,Arterial,Urban,40,33.726376453696616,39.4,70.0,31.8,27.7,14.1,0.684,Side Impact Potential,50,90.6,0.0,18.4,Aligned,0.0,None,75.3
+334,Outer Ring Road (ORR) Seg-25,9.93,Arterial,Urban,40,30.01748619945086,37.4,83.0,18.8,24.2,11.1,0.595,Side Impact Potential,50,85.0,0.0,18.9,Aligned,0.0,None,72.4
+335,Outer Ring Road (ORR) Seg-26,10.19,Arterial,Peri-Urban,60,37.23095127369472,40.4,83.0,20.0,30.3,22.9,0.615,Side Impact Potential,50,65.8,0.0,33.8,Moderate Misalignment,0.0,None,63.7
+336,Outer Ring Road (ORR) Seg-27,10.48,Arterial,Peri-Urban,50,60.52284420853932,65.3,77.5,20.0,36.2,39.4,0.499,Side Impact Potential,50,84.2,3.0,38.7,Moderate Misalignment,0.0,None,60.2
+337,Outer Ring Road (ORR) Seg-28,10.77,Arterial,Peri-Urban,40,23.10989543179891,27.3,80.5,32.9,41.4,48.9,0.517,Significant Pedestrian Interaction,30,74.7,0.0,36.0,Moderate Misalignment,0.0,None,65.0
+338,Outer Ring Road (ORR) Seg-29,11.07,Arterial,Peri-Urban,40,29.943848952035136,34.7,80.5,0.0,24.4,13.0,0.569,Side Impact Potential,50,84.9,0.0,21.4,Aligned,0.0,None,67.2
+339,Outer Ring Road (ORR) Seg-30,11.0,Arterial,Peri-Urban,50,43.187063083182466,55.2,78.0,38.8,39.1,47.3,0.512,Significant Pedestrian Interaction,30,89.8,12.0,52.7,High Misalignment,0.149,Light,53.7
+340,Outer Ring Road (ORR) Seg-31,10.94,Arterial,Peri-Urban,60,49.90372687346921,53.7,80.0,25.9,26.3,21.8,0.49,Side Impact Potential,50,84.9,0.0,31.6,Moderate Misalignment,0.0,None,66.2
+341,Outer Ring Road (ORR) Seg-32,10.9,Arterial,Peri-Urban,40,9.06479968448435,27.7,77.5,5.9,25.1,14.1,0.572,Side Impact Potential,50,53.6,0.0,20.9,Aligned,0.672,Severe,68.6
+342,Outer Ring Road (ORR) Seg-33,10.88,Arterial,Peri-Urban,50,35.330225834471925,39.9,75.0,14.1,24.8,16.8,0.508,Side Impact Potential,50,78.0,0.0,19.7,Aligned,0.0,None,71.0
+343,Outer Ring Road (ORR) Seg-34,10.88,Arterial,Peri-Urban,50,7.722036160875258,35.9,72.5,0.0,21.6,11.9,0.519,Side Impact Potential,50,36.6,0.0,20.4,Aligned,0.803,Severe,67.8
+344,Outer Ring Road (ORR) Seg-35,10.89,Arterial,Peri-Urban,40,29.909090199378166,35.2,85.5,24.7,27.7,23.7,0.491,Side Impact Potential,50,84.9,0.0,19.3,Aligned,0.0,None,73.4
+345,Outer Ring Road (ORR) Seg-36,10.93,Arterial,Peri-Urban,40,28.677530300676,35.9,83.0,21.2,29.4,23.4,0.579,Side Impact Potential,50,83.0,0.0,20.4,Aligned,0.134,Light,72.0
+346,Outer Ring Road (ORR) Seg-37,10.98,Arterial,Peri-Urban,50,11.376058837691675,45.4,77.5,25.9,20.6,11.5,0.484,Side Impact Potential,50,42.1,0.0,16.7,Aligned,0.769,Severe,75.2
+347,Outer Ring Road (ORR) Seg-38,11.04,Arterial,Peri-Urban,50,33.45736920604574,38.7,70.0,24.7,21.1,10.8,0.502,Side Impact Potential,50,75.2,0.0,17.0,Aligned,0.0,None,74.7
+348,Outer Ring Road (ORR) Seg-39,11.12,Arterial,Peri-Urban,50,49.16597187964652,63.6,70.0,9.4,22.4,11.5,0.527,Side Impact Potential,50,98.7,0.0,33.6,Moderate Misalignment,0.168,Light,61.7
+349,Outer Ring Road (ORR) Seg-40,11.22,Arterial,Peri-Urban,40,23.492067933960858,28.9,77.5,42.4,40.8,44.2,0.579,Side Impact Potential,50,75.2,0.0,21.6,Aligned,0.0,None,75.5
+350,Outer Ring Road (ORR) Seg-41,11.34,Arterial,Peri-Urban,50,35.80860397385692,48.8,70.0,14.1,25.9,19.0,0.533,Side Impact Potential,50,78.7,0.0,20.1,Aligned,0.216,Light,70.8
+351,Outer Ring Road (ORR) Seg-42,11.47,Arterial,Peri-Urban,40,10.310845865028128,39.1,85.5,21.2,24.5,12.9,0.585,Side Impact Potential,50,55.5,0.0,18.7,Aligned,0.742,Severe,73.0
+352,Outer Ring Road (ORR) Seg-43,11.62,Arterial,Peri-Urban,50,31.07526774530468,33.0,75.0,0.0,24.3,14.2,0.57,Side Impact Potential,50,71.6,6.0,21.4,Aligned,0.0,None,66.0
+353,Outer Ring Road (ORR) Seg-44,11.45,Arterial,Peri-Urban,40,28.45546262721179,33.9,78.0,20.0,22.3,13.9,0.499,Side Impact Potential,50,82.7,0.0,18.1,Aligned,0.0,None,73.1
+354,Outer Ring Road (ORR) Seg-45,11.29,Arterial,Peri-Urban,60,13.978107559257506,54.1,85.5,21.2,26.6,21.0,0.529,Side Impact Potential,50,31.0,6.0,32.4,Moderate Misalignment,0.751,Severe,63.6
+355,Outer Ring Road (ORR) Seg-46,11.15,Arterial,Peri-Urban,40,24.128533861902355,29.2,77.5,38.8,35.4,34.9,0.596,Side Impact Potential,50,76.2,0.0,20.2,Aligned,0.0,None,75.6
+356,Outer Ring Road (ORR) Seg-47,11.03,Arterial,Peri-Urban,40,40.50478379732451,50.9,80.0,16.5,28.3,20.3,0.565,Side Impact Potential,50,99.2,0.0,31.9,Moderate Misalignment,0.133,Light,64.2
+357,Outer Ring Road (ORR) Seg-48,10.92,Arterial,Peri-Urban,40,9.74154550307863,26.0,80.0,21.2,23.6,13.7,0.55,Side Impact Potential,50,54.6,0.0,18.4,Aligned,0.623,Severe,73.2
+358,Outer Ring Road (ORR) Seg-49,10.85,Arterial,Peri-Urban,60,44.04526843692699,53.8,85.5,20.0,27.4,22.5,0.485,Separated Traffic,70,76.1,0.0,19.8,Aligned,0.0,None,72.1
+359,Outer Ring Road (ORR) Seg-50,10.83,Arterial,Peri-Urban,50,48.40020676917712,57.1,88.0,41.2,30.0,21.0,0.609,Separated Traffic,70,97.6,0.0,25.3,Moderate Misalignment,0.0,None,73.1
+360,Outer Ring Road (ORR) Seg-51,10.76,Arterial,Peri-Urban,50,34.17362944008271,39.3,78.0,34.1,44.1,53.3,0.576,Significant Pedestrian Interaction,30,76.3,3.0,49.7,Moderate Misalignment,0.0,None,56.4
+361,Outer Ring Road (ORR) Seg-52,10.7,Arterial,Peri-Urban,50,36.53507839461367,46.5,80.0,25.9,21.0,10.7,0.511,Side Impact Potential,50,79.8,0.0,16.9,Aligned,0.153,Light,75.0
+362,Outer Ring Road (ORR) Seg-53,10.66,Arterial,Peri-Urban,40,49.100813568553455,52.9,80.0,24.7,37.4,35.1,0.615,Side Impact Potential,50,86.3,0.0,36.0,Moderate Misalignment,0.0,None,63.3
+363,Outer Ring Road (ORR) Seg-54,10.64,Arterial,Peri-Urban,50,47.87064790637322,58.6,85.5,5.9,21.2,9.8,0.538,Side Impact Potential,50,96.8,0.0,28.4,Moderate Misalignment,0.0,None,64.1
+364,Outer Ring Road (ORR) Seg-55,10.63,Arterial,Peri-Urban,40,40.2410820150015,51.5,80.0,21.2,23.7,16.9,0.49,Side Impact Potential,50,99.6,0.0,30.3,Moderate Misalignment,0.164,Light,66.1
+365,Outer Ring Road (ORR) Seg-56,10.65,Arterial,Peri-Urban,50,33.745511257409625,39.3,85.5,28.2,43.2,48.4,0.539,Side Impact Potential,50,75.6,0.0,24.2,Aligned,0.0,None,71.1
+366,Outer Ring Road (ORR) Seg-57,10.68,Arterial,Peri-Urban,40,40.64187871144617,45.7,88.0,55.3,46.8,59.5,0.531,Significant Pedestrian Interaction,30,99.0,0.0,40.8,Moderate Misalignment,0.0,None,66.6
+367,Outer Ring Road (ORR) Seg-58,10.73,Arterial,Peri-Urban,40,23.429470214319483,30.9,80.0,23.5,39.7,39.7,0.573,Significant Pedestrian Interaction,30,75.1,0.0,36.6,Moderate Misalignment,0.179,Light,62.7
+368,Outer Ring Road (ORR) Seg-59,10.8,Arterial,Peri-Urban,50,42.481338055185084,47.6,83.0,30.6,31.3,29.3,0.513,Side Impact Potential,50,88.7,0.0,19.8,Aligned,0.0,None,74.2
+369,Outer Ring Road (ORR) Seg-60,10.88,Arterial,Peri-Urban,50,39.12513866634707,44.2,88.0,41.2,31.8,31.2,0.505,Separated Traffic,70,83.7,0.0,18.6,Aligned,0.0,None,77.1
+370,Outer Ring Road (ORR) Seg-61,10.75,Arterial,Peri-Urban,50,31.012394224592697,39.3,88.0,10.6,24.4,13.3,0.59,Separated Traffic,70,71.5,0.0,20.0,Aligned,0.153,Light,70.1
+371,Outer Ring Road (ORR) Seg-62,10.63,Arterial,Peri-Urban,60,60.212324379489004,78.0,72.5,0.0,21.5,12.7,0.49,Side Impact Potential,50,99.7,0.0,52.0,High Misalignment,0.164,Light,48.8
+372,Outer Ring Road (ORR) Seg-63,10.4,Arterial,Peri-Urban,40,39.723767306853254,48.9,70.0,20.0,41.1,44.5,0.549,Significant Pedestrian Interaction,30,99.6,0.0,46.7,Moderate Misalignment,0.0,None,56.0
+373,Outer Ring Road (ORR) Seg-64,10.19,Arterial,Peri-Urban,40,33.26887590793836,40.0,70.0,10.6,24.5,16.2,0.518,Side Impact Potential,50,89.9,0.0,20.0,Aligned,0.0,None,70.1
+374,Outer Ring Road (ORR) Seg-65,9.99,Arterial,Urban,50,40.149020990153595,48.1,70.0,64.7,33.0,29.2,0.593,Side Impact Potential,50,85.2,0.0,16.0,Aligned,0.0,None,83.3
+375,Outer Ring Road (ORR) Seg-66,9.8,Arterial,Urban,40,23.29253460040206,27.0,83.0,20.0,27.0,19.6,0.555,Side Impact Potential,50,74.9,0.0,19.7,Aligned,0.0,None,72.2
+376,Outer Ring Road (ORR) Seg-67,9.64,Arterial,Urban,50,30.932915942882723,38.7,78.0,68.2,36.3,31.1,0.673,Side Impact Potential,50,71.4,6.0,16.7,Aligned,0.131,Light,82.4
+377,Outer Ring Road (ORR) Seg-68,9.49,Arterial,Urban,40,26.837228217466656,32.6,72.5,23.5,34.2,32.1,0.585,Side Impact Potential,50,80.3,0.0,21.7,Aligned,0.0,None,71.7
+378,Outer Ring Road (ORR) Seg-69,9.37,Arterial,Urban,50,33.73408214732968,39.6,72.5,21.2,33.9,23.9,0.672,Side Impact Potential,50,75.6,0.0,21.9,Aligned,0.0,None,71.1
+379,Outer Ring Road (ORR) Seg-70,9.27,Arterial,Urban,40,35.847024440709916,46.6,85.5,15.3,25.9,14.5,0.588,Separated Traffic,70,93.8,0.0,26.8,Moderate Misalignment,0.171,Light,67.0
+380,Outer Ring Road (ORR) Seg-71,9.24,Arterial,Urban,40,43.374869808963375,49.4,80.5,24.7,32.1,22.7,0.69,Side Impact Potential,50,94.9,0.0,30.6,Moderate Misalignment,0.0,None,66.6
+381,Outer Ring Road (ORR) Seg-72,9.18,Arterial,Urban,40,27.001904971828996,33.5,80.0,28.2,28.2,15.6,0.667,Side Impact Potential,50,80.5,0.0,19.0,Aligned,0.0,None,74.2
+382,Outer Ring Road (ORR) Seg-73,9.12,Arterial,Urban,50,40.29010903693794,52.2,70.0,41.2,34.0,29.0,0.6,Side Impact Potential,50,85.4,0.0,21.6,Aligned,0.161,Light,75.3
+383,Outer Ring Road (ORR) Seg-74,9.09,Arterial,Urban,50,13.049751044274524,52.8,88.0,67.1,36.1,29.8,0.64,Side Impact Potential,50,44.6,0.0,19.6,Aligned,0.772,Severe,81.7
+384,Outer Ring Road (ORR) Seg-75,9.07,Arterial,Urban,50,48.17089072070783,63.1,75.0,30.6,26.4,13.7,0.65,Side Impact Potential,50,97.3,0.0,31.7,Moderate Misalignment,0.177,Light,67.1
+385,Outer Ring Road (ORR) Seg-76,8.87,Arterial,Urban,50,35.27959523611086,44.3,72.5,68.2,40.8,40.7,0.639,Significant Pedestrian Interaction,30,77.9,0.0,44.1,Moderate Misalignment,0.145,Light,67.2
+386,Outer Ring Road (ORR) Seg-77,8.69,Arterial,Urban,40,21.448475134750407,26.1,78.0,29.4,27.9,15.8,0.666,Separated Traffic,70,72.2,0.0,18.8,Aligned,0.0,None,74.6
+387,Outer Ring Road (ORR) Seg-78,8.53,Arterial,Urban,50,34.032863799454475,36.3,72.5,14.1,38.7,38.8,0.562,Significant Pedestrian Interaction,30,76.0,0.0,50.4,High Misalignment,0.0,None,52.6
+388,Outer Ring Road (ORR) Seg-79,8.39,Arterial,Urban,50,34.620122645588346,38.4,75.0,0.0,26.4,13.0,0.663,Side Impact Potential,50,76.9,0.0,22.1,Aligned,0.0,None,66.7
+389,Outer Ring Road (ORR) Seg-80,8.27,Arterial,Urban,40,23.233190164280842,29.6,78.0,37.6,48.0,54.4,0.665,Side Impact Potential,50,74.8,0.0,24.7,Aligned,0.147,Light,72.7
+390,Outer Ring Road (ORR) Seg-81,8.18,Arterial,Urban,40,25.287408391541454,31.4,78.0,25.9,30.1,18.0,0.676,Side Impact Potential,50,77.9,0.0,20.0,Aligned,0.0,None,73.2
+391,Outer Ring Road (ORR) Seg-82,8.11,Arterial,Urban,40,36.492870451875426,43.7,78.0,40.0,27.8,20.4,0.58,Separated Traffic,70,94.7,0.0,21.2,Aligned,0.0,None,75.3
+392,Outer Ring Road (ORR) Seg-83,8.07,Arterial,Urban,50,28.7705696543487,38.4,77.5,15.3,27.2,13.1,0.666,Side Impact Potential,50,68.2,16.0,20.4,Aligned,0.193,Light,67.6
+393,Outer Ring Road (ORR) Seg-84,8.05,Arterial,Urban,50,27.149276052852255,32.7,70.0,28.2,37.7,39.8,0.566,Side Impact Potential,50,65.7,0.0,22.3,Aligned,0.0,None,72.3
+394,Outer Ring Road (ORR) Seg-85,8.06,Arterial,Urban,40,29.918125515037673,38.1,70.0,25.9,27.1,13.7,0.642,Side Impact Potential,50,84.9,0.0,19.0,Aligned,0.153,Light,73.8
+395,Outer Ring Road (ORR) Seg-86,8.1,Arterial,Urban,50,43.41915349568248,55.5,75.0,45.9,28.5,22.6,0.554,Side Impact Potential,50,90.1,3.0,22.6,Aligned,0.149,Light,75.0
+396,Outer Ring Road (ORR) Seg-87,8.16,Arterial,Urban,50,51.33175440163744,65.2,80.5,43.5,29.8,20.3,0.639,Separated Traffic,70,98.0,0.0,33.4,Moderate Misalignment,0.145,Light,68.7
+397,Outer Ring Road (ORR) Seg-88,8.24,Arterial,Urban,50,43.56848616158641,58.9,75.0,20.0,32.4,21.9,0.684,Side Impact Potential,50,90.4,6.0,30.8,Moderate Misalignment,0.201,Light,64.3
+398,Outer Ring Road (ORR) Seg-89,8.35,Arterial,Urban,40,26.174581738517624,32.3,88.0,20.0,29.7,20.0,0.644,Side Impact Potential,50,79.3,0.0,20.6,Aligned,0.0,None,71.6
+399,Outer Ring Road (ORR) Seg-90,8.48,Arterial,Urban,40,28.382719268942573,38.8,80.0,68.2,50.2,58.3,0.594,Significant Pedestrian Interaction,30,82.6,3.0,34.4,Moderate Misalignment,0.208,Light,72.4
+400,Outer Ring Road (ORR) Seg-91,8.64,Arterial,Urban,50,33.93255863067159,43.0,83.0,0.0,18.7,2.8,0.569,Side Impact Potential,50,75.9,0.0,19.4,Aligned,0.144,Light,68.4
+401,Outer Ring Road (ORR) Seg-92,8.56,Arterial,Urban,50,34.32664814976438,44.7,85.5,18.8,26.8,11.9,0.667,Side Impact Potential,50,76.5,0.0,19.8,Aligned,0.174,Light,71.9
+402,Outer Ring Road (ORR) Seg-93,8.51,Arterial,Urban,50,45.94910892332769,58.4,80.0,42.4,33.5,29.0,0.589,Side Impact Potential,50,93.9,0.0,27.7,Moderate Misalignment,0.142,Light,71.9
+403,Outer Ring Road (ORR) Seg-94,8.48,Arterial,Urban,50,45.419844511071844,49.7,75.0,11.8,23.5,8.7,0.626,Side Impact Potential,50,93.1,0.0,19.5,Aligned,0.0,None,70.7
+404,Outer Ring Road (ORR) Seg-95,8.47,Arterial,Urban,40,31.311052040078653,35.2,85.5,16.5,29.8,18.8,0.668,Separated Traffic,70,87.0,0.0,21.1,Aligned,0.0,None,70.6
+405,Outer Ring Road (ORR) Seg-96,8.49,Arterial,Urban,50,30.104834032396777,34.4,80.5,20.0,22.9,10.5,0.589,Side Impact Potential,50,70.2,0.0,18.3,Aligned,0.0,None,73.0
+406,Outer Ring Road (ORR) Seg-97,8.52,Arterial,Urban,40,29.17884997925255,33.1,77.5,29.4,37.2,32.6,0.673,Side Impact Potential,50,83.8,0.0,22.0,Aligned,0.0,None,72.7
+407,Outer Ring Road (ORR) Seg-98,8.54,Arterial,Urban,50,48.200312226360765,55.4,80.5,23.5,31.0,23.1,0.624,Separated Traffic,70,97.3,0.0,26.2,Moderate Misalignment,0.0,None,69.0
+408,Outer Ring Road (ORR) Seg-99,8.61,Arterial,Urban,50,26.40952214044999,34.8,78.0,34.1,31.8,25.2,0.588,Separated Traffic,70,64.6,0.0,19.5,Aligned,0.177,Light,75.1
+409,Outer Ring Road (ORR) Seg-100,8.7,Arterial,Urban,50,27.687112956710983,33.4,85.5,24.7,28.5,20.0,0.596,Side Impact Potential,50,66.5,0.0,19.6,Aligned,0.0,None,73.2
+410,Outer Ring Road (ORR) Seg-101,8.82,Arterial,Urban,40,21.243992273641908,26.7,75.0,0.0,25.8,15.0,0.582,Side Impact Potential,50,71.9,0.0,21.9,Aligned,0.134,Light,66.9
+411,Outer Ring Road (ORR) Seg-102,8.96,Arterial,Urban,40,20.216584169292837,27.0,80.5,0.0,20.9,7.5,0.554,Side Impact Potential,50,70.3,0.0,20.2,Aligned,0.193,Light,67.9
+412,Outer Ring Road (ORR) Seg-103,9.12,Arterial,Urban,40,39.25137655901412,47.3,70.0,20.0,25.4,10.6,0.654,Side Impact Potential,50,98.9,0.0,26.7,Moderate Misalignment,0.0,None,68.0
+413,Outer Ring Road (ORR) Seg-104,9.3,Arterial,Urban,50,15.446738427849285,46.0,80.5,48.2,35.0,29.7,0.606,Separated Traffic,70,48.2,0.0,18.8,Aligned,0.662,Severe,78.4
+414,Outer Ring Road (ORR) Seg-105,9.49,Arterial,Urban,40,27.22926945345981,34.4,80.0,58.8,31.2,26.1,0.604,Side Impact Potential,50,80.8,0.0,16.1,Aligned,0.142,Light,82.1
+415,Outer Ring Road (ORR) Seg-106,9.71,Arterial,Urban,40,32.301118593508086,36.2,83.0,20.0,24.2,10.9,0.619,Side Impact Potential,50,88.5,3.0,18.7,Aligned,0.0,None,72.2
+416,Outer Ring Road (ORR) Seg-107,9.56,Arterial,Urban,50,48.88665945526715,53.8,80.0,12.9,23.4,10.3,0.595,Side Impact Potential,50,98.3,9.0,23.3,Aligned,0.0,None,66.8
+417,Outer Ring Road (ORR) Seg-108,9.42,Arterial,Urban,40,45.67702751025092,50.0,80.0,40.0,44.8,46.1,0.645,Side Impact Potential,50,91.5,0.0,33.6,Moderate Misalignment,0.0,None,67.8
+418,Outer Ring Road (ORR) Seg-109,9.31,Arterial,Urban,40,31.98464997619513,37.0,88.0,20.0,26.4,14.6,0.627,Side Impact Potential,50,88.0,6.0,19.5,Aligned,0.0,None,71.1
+419,Outer Ring Road (ORR) Seg-110,9.22,Arterial,Urban,40,23.21404440739599,28.4,78.0,27.1,27.6,12.6,0.68,Side Impact Potential,50,74.8,0.0,19.0,Aligned,0.0,None,74.0
+420,Outer Ring Road (ORR) Seg-111,9.19,Arterial,Urban,40,26.506438874508774,31.0,70.0,51.8,40.1,41.8,0.589,Significant Pedestrian Interaction,30,79.8,3.0,33.1,Moderate Misalignment,0.0,None,69.9
+421,Outer Ring Road (ORR) Seg-112,9.16,Arterial,Urban,40,24.054003543228664,31.8,83.0,55.3,44.1,46.5,0.594,Side Impact Potential,50,76.1,0.0,21.0,Aligned,0.184,Light,78.5
+422,Outer Ring Road (ORR) Seg-113,9.11,Arterial,Urban,50,40.67036922636928,44.4,72.5,34.1,35.8,34.4,0.605,Side Impact Potential,50,86.0,0.0,20.9,Aligned,0.0,None,74.3
+423,Outer Ring Road (ORR) Seg-114,9.09,Arterial,Urban,40,39.52424426488044,46.5,88.0,40.0,40.9,42.4,0.594,Side Impact Potential,50,99.3,0.0,28.6,Moderate Misalignment,0.0,None,70.8
+424,Outer Ring Road (ORR) Seg-115,9.1,Arterial,Urban,50,33.39105606527369,42.4,72.5,31.8,27.4,19.1,0.56,Side Impact Potential,50,75.1,0.0,18.3,Aligned,0.146,Light,75.4
+425,Outer Ring Road (ORR) Seg-116,9.12,Arterial,Urban,40,33.88109917126651,44.5,78.0,65.9,57.2,66.9,0.656,Significant Pedestrian Interaction,30,90.8,0.0,41.8,Moderate Misalignment,0.174,Light,68.1
+426,Outer Ring Road (ORR) Seg-117,9.17,Arterial,Urban,50,31.951749664203465,37.4,70.0,30.6,33.1,27.8,0.597,Side Impact Potential,50,72.9,0.0,20.4,Aligned,0.0,None,73.9
+427,Outer Ring Road (ORR) Seg-118,9.25,Arterial,Urban,50,48.62408909668969,51.0,72.5,29.4,28.0,15.1,0.663,Side Impact Potential,50,97.9,3.0,19.9,Aligned,0.0,None,73.3
+428,Outer Ring Road (ORR) Seg-119,9.34,Arterial,Urban,50,45.547423306745486,55.4,85.5,32.9,25.8,16.6,0.583,Side Impact Potential,50,93.3,0.0,23.2,Aligned,0.0,None,72.7
+429,Outer Ring Road (ORR) Seg-120,9.46,Arterial,Urban,50,33.96090224600217,40.2,70.0,21.2,28.3,22.7,0.559,Side Impact Potential,50,75.9,0.0,20.0,Aligned,0.0,None,72.2
+430,Outer Ring Road (ORR) Seg-121,9.6,Arterial,Urban,40,28.94381572650949,36.5,77.5,28.2,24.9,11.7,0.624,Side Impact Potential,50,83.4,0.0,17.9,Aligned,0.144,Light,74.9
+431,Outer Ring Road (ORR) Seg-122,9.35,Arterial,Urban,40,27.743652950281046,33.1,80.5,10.6,27.1,15.5,0.618,Side Impact Potential,50,81.6,0.0,20.9,Aligned,0.0,None,69.6
+432,Outer Ring Road (ORR) Seg-123,9.12,Arterial,Urban,40,26.485702423740218,33.2,80.5,30.6,26.1,14.4,0.624,Separated Traffic,70,79.7,0.0,18.0,Aligned,0.131,Light,75.3
+433,Outer Ring Road (ORR) Seg-124,8.9,Arterial,Urban,50,40.29543054751767,43.1,85.5,34.1,32.5,23.4,0.647,Side Impact Potential,50,85.4,0.0,19.8,Aligned,0.0,None,74.9
+434,Outer Ring Road (ORR) Seg-125,8.7,Arterial,Urban,50,43.14375578065343,55.3,88.0,43.5,52.1,60.1,0.637,Significant Pedestrian Interaction,30,89.7,0.0,56.7,High Misalignment,0.161,Light,54.7
+435,Outer Ring Road (ORR) Seg-126,8.51,Arterial,Urban,40,36.41839769544389,49.7,75.0,7.1,20.9,4.6,0.613,Side Impact Potential,50,94.6,0.0,29.3,Moderate Misalignment,0.207,Light,63.8
+436,Outer Ring Road (ORR) Seg-127,8.35,Arterial,Urban,50,28.44193525344363,35.6,85.5,58.8,51.4,55.0,0.684,Significant Pedestrian Interaction,30,67.7,22.0,49.0,Moderate Misalignment,0.13,Light,58.0
+437,Outer Ring Road (ORR) Seg-128,8.21,Arterial,Urban,40,30.048126640043087,33.5,72.5,23.5,39.6,42.0,0.616,Side Impact Potential,50,85.1,0.0,23.6,Aligned,0.0,None,70.5
+438,Outer Ring Road (ORR) Seg-129,8.08,Arterial,Urban,40,30.314993326369635,35.4,70.0,23.5,32.9,27.9,0.569,Side Impact Potential,50,85.5,0.0,21.3,Aligned,0.0,None,71.9
+439,Outer Ring Road (ORR) Seg-130,7.98,Arterial,Urban,40,27.562323858321708,35.9,80.0,14.1,40.5,37.8,0.674,Side Impact Potential,50,81.3,0.0,25.1,Moderate Misalignment,0.176,Light,67.8
+440,Outer Ring Road (ORR) Seg-131,7.91,Arterial,Urban,60,37.14588032246877,43.4,77.5,41.2,29.1,18.9,0.646,Side Impact Potential,50,65.7,0.0,30.6,Moderate Misalignment,0.0,None,69.9
+441,Outer Ring Road (ORR) Seg-132,7.85,Arterial,Urban,50,27.984933733520155,38.3,77.5,10.6,21.6,6.4,0.609,Side Impact Potential,50,67.0,0.0,19.0,Aligned,0.216,Light,70.7
+442,Outer Ring Road (ORR) Seg-133,7.83,Arterial,Urban,40,21.809678927964,28.0,88.0,24.7,25.7,12.9,0.631,Side Impact Potential,50,72.7,0.0,18.6,Aligned,0.162,Light,73.8
+443,Outer Ring Road (ORR) Seg-134,7.82,Arterial,Urban,40,30.04385921975898,35.2,75.0,40.0,34.7,31.8,0.582,Side Impact Potential,50,85.1,0.0,19.8,Aligned,0.0,None,76.1
+444,Outer Ring Road (ORR) Seg-135,7.84,Arterial,Urban,50,30.72314639990236,39.9,78.0,38.8,40.4,45.4,0.555,Significant Pedestrian Interaction,30,71.1,6.0,47.8,Moderate Misalignment,0.164,Light,57.9
+445,Outer Ring Road (ORR) Seg-136,7.89,Arterial,Urban,40,22.82677722103225,29.8,75.0,34.1,35.0,33.6,0.57,Side Impact Potential,50,74.2,0.0,20.6,Aligned,0.166,Light,74.5
+446,Outer Ring Road (ORR) Seg-137,7.95,Arterial,Urban,50,28.128866001704786,36.4,75.0,17.6,29.0,18.7,0.634,Side Impact Potential,50,67.2,0.0,20.7,Aligned,0.167,Light,71.1
+447,Outer Ring Road (ORR) Seg-138,8.05,Arterial,Urban,40,40.00165067782854,50.1,72.5,27.1,29.8,22.7,0.598,Side Impact Potential,50,100.0,0.0,30.2,Moderate Misalignment,0.135,Light,67.3
+448,Inner Ring Road Seg-1,2.6,Arterial,Urban,50,34.43306078246569,40.9,77.5,23.5,40.5,43.7,0.553,Side Impact Potential,50,76.6,0.0,23.9,Aligned,0.0,None,70.4
+449,Inner Ring Road Seg-2,2.48,Arterial,Urban,40,43.351340520934365,51.4,80.5,10.6,21.9,9.6,0.564,Side Impact Potential,50,95.0,12.0,31.0,Moderate Misalignment,0.0,None,61.1
+450,Inner Ring Road Seg-3,2.43,Arterial,Urban,50,30.91956722379536,38.1,77.5,49.4,54.1,64.6,0.596,Significant Pedestrian Interaction,30,71.4,0.0,51.2,High Misalignment,0.0,None,59.2
+451,Inner Ring Road Seg-4,2.44,Arterial,Urban,40,21.86553803397621,29.0,85.5,57.6,42.5,51.6,0.554,Side Impact Potential,50,72.8,0.0,20.2,Aligned,0.182,Light,79.4
+452,Inner Ring Road Seg-5,2.53,Arterial,Urban,40,30.897046279218667,36.0,78.0,49.4,46.5,52.0,0.617,Side Impact Potential,50,86.3,15.0,22.6,Aligned,0.0,None,73.3
+453,Inner Ring Road Seg-6,2.68,Arterial,Urban,40,31.324490300141218,38.8,83.0,76.5,43.2,45.5,0.645,Significant Pedestrian Interaction,30,87.0,0.0,30.9,Moderate Misalignment,0.0,None,76.8
+454,Inner Ring Road Seg-7,2.88,Arterial,Urban,50,26.431287650186036,35.4,77.5,57.6,32.7,27.6,0.575,Side Impact Potential,50,64.6,12.0,16.8,Aligned,0.2,Light,79.0
+455,Inner Ring Road Seg-8,3.13,Arterial,Urban,50,13.831845559333226,61.9,70.0,58.8,47.0,47.8,0.677,Side Impact Potential,50,45.7,6.0,33.9,Moderate Misalignment,0.793,Severe,70.2
+456,Inner Ring Road Seg-9,3.05,Arterial,Urban,40,33.99172615485503,43.8,85.5,23.5,33.2,25.6,0.619,Side Impact Potential,50,91.0,0.0,25.3,Moderate Misalignment,0.161,Light,69.5
+457,Inner Ring Road Seg-10,3.03,Arterial,Urban,50,46.267786134705936,56.8,88.0,45.9,32.5,24.0,0.627,Side Impact Potential,50,94.4,0.0,25.3,Moderate Misalignment,0.0,None,74.0
+458,Inner Ring Road Seg-11,3.08,Arterial,Urban,50,43.36131452059275,49.1,88.0,25.9,34.1,25.1,0.661,Side Impact Potential,50,90.0,0.0,21.4,Aligned,0.0,None,72.3
+459,Inner Ring Road Seg-12,3.2,Arterial,Urban,60,35.446689833393776,48.0,85.5,49.4,49.3,57.1,0.652,Significant Pedestrian Interaction,30,63.2,0.0,62.5,High Misalignment,0.2,Light,52.4
+460,Inner Ring Road Seg-13,3.37,Arterial,Urban,60,63.51478338839759,67.9,88.0,29.4,30.3,23.1,0.604,Side Impact Potential,50,94.7,6.0,40.8,Moderate Misalignment,0.0,None,60.2
+461,Inner Ring Road Seg-14,3.02,Arterial,Urban,50,40.467788184510745,53.8,72.5,22.4,30.3,23.1,0.608,Side Impact Potential,50,85.7,0.0,24.5,Aligned,0.194,Light,69.8
+462,Inner Ring Road Seg-15,2.7,Arterial,Urban,50,35.16410194006878,40.3,80.5,27.1,27.0,14.5,0.643,Side Impact Potential,50,77.7,0.0,18.8,Aligned,0.0,None,74.1
+463,Inner Ring Road Seg-16,2.44,Arterial,Urban,40,24.734392512295027,32.2,78.0,65.9,48.9,56.1,0.571,Significant Pedestrian Interaction,30,77.1,0.0,34.3,Moderate Misalignment,0.165,Light,72.6
+464,Inner Ring Road Seg-17,2.25,Arterial,Urban,50,32.65353912656556,36.8,85.5,61.2,34.2,25.7,0.676,Side Impact Potential,50,74.0,0.0,16.8,Aligned,0.0,None,82.2
+465,Inner Ring Road Seg-18,2.16,Arterial,Urban,50,38.19597063474522,41.0,72.5,35.3,42.4,46.8,0.611,Side Impact Potential,50,82.3,0.0,23.0,Aligned,0.0,None,73.3
+466,Inner Ring Road Seg-19,1.84,Arterial,Urban,40,7.8961457167262035,36.5,88.0,24.7,31.5,25.5,0.597,Side Impact Potential,50,51.8,0.0,20.6,Aligned,0.804,Severe,72.6
+467,Inner Ring Road Seg-20,1.57,Arterial,Urban,40,20.42045248705307,27.5,83.0,37.6,30.9,23.3,0.619,Side Impact Potential,50,70.6,0.0,18.8,Aligned,0.203,Light,76.2
+468,Inner Ring Road Seg-21,1.48,Arterial,Urban,50,31.922146931998917,40.9,88.0,22.4,29.0,19.5,0.633,Side Impact Potential,50,72.9,0.0,20.1,Aligned,0.155,Light,72.4
+469,Inner Ring Road Seg-22,1.44,Arterial,Urban,50,35.07737870640151,41.7,70.0,14.1,28.0,14.9,0.673,Side Impact Potential,50,77.6,0.0,20.8,Aligned,0.0,None,70.3
+470,Inner Ring Road Seg-23,1.37,Arterial,Urban,40,33.332393017190945,41.7,78.0,51.8,51.3,66.2,0.588,Significant Pedestrian Interaction,30,90.0,0.0,38.7,Moderate Misalignment,0.131,Light,67.1
+471,Inner Ring Road Seg-24,1.28,Arterial,Urban,40,41.89270408555802,50.9,72.5,32.9,37.9,33.6,0.678,Side Impact Potential,50,97.2,6.0,33.1,Moderate Misalignment,0.0,None,65.5
+472,Inner Ring Road Seg-25,1.33,Arterial,Urban,40,26.713227801428413,29.5,78.0,0.0,22.8,7.5,0.629,Side Impact Potential,50,80.1,0.0,20.8,Aligned,0.0,None,67.5
+473,Inner Ring Road Seg-26,1.49,Arterial,Urban,50,17.51039315043387,42.5,75.0,63.5,52.7,64.7,0.675,Significant Pedestrian Interaction,30,51.3,0.0,48.9,Moderate Misalignment,0.569,Severe,63.4
+474,Inner Ring Road Seg-27,1.74,Arterial,Urban,40,35.18823057713336,42.3,85.5,27.1,25.4,12.4,0.637,Side Impact Potential,50,92.8,19.0,20.6,Aligned,0.0,None,69.3
+475,Inner Ring Road Seg-28,1.61,Arterial,Urban,40,33.98607592557815,36.5,77.5,20.0,27.9,14.8,0.663,Side Impact Potential,50,91.0,0.0,20.0,Aligned,0.0,None,72.0
+476,Inner Ring Road Seg-29,1.59,Arterial,Urban,60,62.14904531750906,71.5,72.5,41.2,27.3,20.7,0.555,Side Impact Potential,50,96.8,0.0,41.9,Moderate Misalignment,0.0,None,63.1
+477,Inner Ring Road Seg-30,1.69,Arterial,Urban,40,28.961863843274713,39.0,70.0,71.8,61.9,79.7,0.61,Significant Pedestrian Interaction,30,83.4,0.0,38.0,Moderate Misalignment,0.195,Light,71.6
+478,Inner Ring Road Seg-31,1.9,Arterial,Urban,50,15.106285245651028,41.3,83.0,35.3,31.6,26.4,0.573,Side Impact Potential,50,47.7,6.0,19.3,Aligned,0.632,Severe,74.3
+479,Inner Ring Road Seg-32,2.02,Arterial,Urban,40,15.776804517623107,41.6,85.5,10.6,24.4,13.9,0.573,Side Impact Potential,50,63.7,0.0,21.7,Aligned,0.606,Severe,69.1
+480,Inner Ring Road Seg-33,2.17,Arterial,Urban,50,34.17448311340767,36.7,80.0,10.6,22.6,6.5,0.629,Side Impact Potential,50,76.3,0.0,19.4,Aligned,0.0,None,70.5
+481,Inner Ring Road Seg-34,2.12,Arterial,Urban,50,57.307090979733296,63.8,88.0,72.9,58.3,77.4,0.551,Significant Pedestrian Interaction,30,89.0,0.0,63.9,High Misalignment,0.0,None,56.2
+482,Inner Ring Road Seg-35,2.19,Arterial,Urban,40,35.91696100083136,48.0,80.5,54.1,36.4,35.7,0.551,Significant Pedestrian Interaction,30,93.9,0.0,39.8,Moderate Misalignment,0.193,Light,66.9
+483,Inner Ring Road Seg-36,2.35,Arterial,Urban,40,29.95836250806425,37.1,70.0,58.8,50.2,57.2,0.638,Significant Pedestrian Interaction,30,84.9,0.0,35.6,Moderate Misalignment,0.0,None,70.4
+484,Devanahalli-Doddaballapur Rd (SH-9) Seg-1,32.36,Highway,Rural,70,80.21537275104548,93.7,100.0,0.0,10.9,0.6,0.352,Separated Traffic,80,84.7,0.0,41.3,Moderate Misalignment,0.0,None,55.2
+485,Devanahalli-Doddaballapur Rd (SH-9) Seg-2,32.48,Highway,Rural,60,75.32249257444032,80.6,100.0,9.4,18.4,11.1,0.423,Separated Traffic,80,77.0,0.0,39.4,Moderate Misalignment,0.0,None,58.2
+486,Devanahalli-Doddaballapur Rd (SH-9) Seg-3,32.64,Highway,Rural,90,72.09140611934738,86.8,100.0,0.0,14.7,5.9,0.39,Separated Traffic,80,73.1,0.0,31.0,Moderate Misalignment,0.0,None,61.4
+487,Devanahalli-Doddaballapur Rd (SH-9) Seg-4,32.81,Highway,Rural,90,58.75810526896999,79.2,100.0,14.1,16.3,4.7,0.455,Separated Traffic,80,53.1,0.0,29.7,Moderate Misalignment,0.206,Light,65.0
+488,Devanahalli-Doddaballapur Rd (SH-9) Seg-5,33.02,Highway,Rural,60,40.140545662167746,52.3,100.0,14.1,21.4,15.9,0.428,Separated Traffic,80,70.2,0.0,18.5,Aligned,0.167,Light,71.7
+489,Devanahalli-Doddaballapur Rd (SH-9) Seg-6,33.25,Highway,Rural,70,54.06025038951204,66.0,100.0,9.4,18.8,12.0,0.403,Separated Traffic,80,76.1,0.0,18.2,Aligned,0.0,None,71.0
+490,Devanahalli-Doddaballapur Rd (SH-9) Seg-7,33.5,Highway,Rural,90,60.77504175277417,79.0,100.0,10.6,16.0,9.3,0.357,Separated Traffic,80,56.2,0.0,30.1,Moderate Misalignment,0.162,Light,64.1
+491,Devanahalli-Doddaballapur Rd (SH-9) Seg-8,33.78,Highway,Rural,80,58.76932630198632,73.5,100.0,4.7,20.3,12.8,0.456,Separated Traffic,80,68.2,6.0,19.4,Aligned,0.141,Light,68.1
+492,Devanahalli-Doddaballapur Rd (SH-9) Seg-9,34.08,Highway,Rural,70,54.86795387450648,68.3,100.0,5.9,17.2,10.9,0.387,Separated Traffic,80,77.3,3.0,18.1,Aligned,0.0,None,69.7
+493,Devanahalli-Doddaballapur Rd (SH-9) Seg-10,34.41,Highway,Rural,60,38.72294994108011,47.3,100.0,32.9,24.0,18.6,0.468,Separated Traffic,80,68.1,0.0,17.0,Aligned,0.0,None,76.4
+494,Devanahalli-Doddaballapur Rd (SH-9) Seg-11,34.75,Highway,Rural,70,52.245567432806965,63.9,100.0,12.9,18.1,13.6,0.368,Separated Traffic,80,73.4,0.0,17.5,Aligned,0.0,None,72.1
+495,Devanahalli-Doddaballapur Rd (SH-9) Seg-12,35.12,Highway,Rural,70,13.15811042929786,52.8,100.0,10.6,17.7,11.0,0.383,Separated Traffic,80,14.7,0.0,17.7,Aligned,0.766,Severe,71.5
+496,Devanahalli-Doddaballapur Rd (SH-9) Seg-13,35.51,Highway,Rural,80,81.9968001168571,90.4,100.0,0.0,16.3,6.2,0.426,Separated Traffic,80,97.0,9.0,29.4,Moderate Misalignment,0.0,None,60.6
+497,Devanahalli-Doddaballapur Rd (SH-9) Seg-14,35.55,Highway,Rural,80,66.19158997333166,86.8,100.0,0.0,14.1,6.0,0.355,Separated Traffic,80,79.3,0.0,24.9,Aligned,0.168,Light,65.1
+498,Devanahalli-Doddaballapur Rd (SH-9) Seg-15,35.62,Highway,Rural,70,22.538870390329812,69.4,100.0,0.0,12.2,3.9,0.334,Separated Traffic,80,28.8,0.0,17.2,Aligned,0.678,Severe,69.7
+499,Devanahalli-Doddaballapur Rd (SH-9) Seg-16,35.71,Highway,Rural,60,47.62290735220569,58.9,100.0,0.0,16.3,7.6,0.404,Side Impact Potential,50,81.4,0.0,31.5,Moderate Misalignment,0.0,None,61.1
+500,Devanahalli-Doddaballapur Rd (SH-9) Seg-17,35.82,Highway,Rural,70,49.51419551139291,64.1,100.0,9.4,19.2,14.8,0.358,Separated Traffic,80,69.3,19.0,18.4,Aligned,0.174,Light,67.0
+501,Devanahalli-Doddaballapur Rd (SH-9) Seg-18,35.95,Highway,Rural,80,65.5553997450335,75.8,100.0,0.0,13.7,0.5,0.446,Separated Traffic,80,78.3,0.0,17.7,Aligned,0.0,None,69.4
+502,Devanahalli-Doddaballapur Rd (SH-9) Seg-19,36.1,Highway,Rural,70,62.10655891708619,67.2,100.0,10.6,20.0,13.9,0.416,Separated Traffic,80,88.2,0.0,18.5,Aligned,0.0,None,71.0
+503,Devanahalli-Doddaballapur Rd (SH-9) Seg-20,36.28,Highway,Rural,90,73.12226793180241,77.7,100.0,0.0,12.4,3.0,0.361,Separated Traffic,80,74.7,0.0,30.2,Moderate Misalignment,0.0,None,61.9
+504,Devanahalli-Doddaballapur Rd (SH-9) Seg-21,36.47,Highway,Rural,80,52.305517345208564,58.8,100.0,9.4,16.2,7.8,0.402,Separated Traffic,80,58.5,9.0,17.3,Aligned,0.0,None,69.7
+505,Devanahalli-Doddaballapur Rd (SH-9) Seg-22,36.69,Highway,Rural,90,31.298594940559834,114.6,100.0,5.9,20.8,13.2,0.457,Separated Traffic,80,11.9,0.0,57.8,High Misalignment,0.737,Severe,46.5
+506,Devanahalli-Doddaballapur Rd (SH-9) Seg-23,36.92,Highway,Rural,70,23.575746107511307,64.1,100.0,0.0,15.0,5.5,0.406,Separated Traffic,80,30.4,0.0,18.1,Aligned,0.628,Severe,69.1
+507,Anekal-Attibele Rd (SH-82) Seg-1,31.06,Highway,Rural,70,45.789351875472896,64.1,100.0,0.0,12.2,0.3,0.402,Side Impact Potential,50,63.7,0.0,43.1,Moderate Misalignment,0.233,Light,54.1
+508,Anekal-Attibele Rd (SH-82) Seg-2,30.86,Highway,Rural,60,38.53495583848107,54.4,100.0,0.0,13.0,5.5,0.332,Separated Traffic,80,67.8,0.0,17.4,Aligned,0.245,Light,69.6
+509,Anekal-Attibele Rd (SH-82) Seg-3,30.68,Highway,Rural,90,110.75654228285387,119.1,100.0,5.9,16.8,7.7,0.421,Separated Traffic,80,68.9,6.0,61.1,High Misalignment,0.0,None,43.3
+510,Anekal-Attibele Rd (SH-82) Seg-4,30.53,Highway,Rural,70,50.22057538246749,61.6,100.0,9.4,15.9,6.8,0.4,Separated Traffic,80,70.3,0.0,17.2,Aligned,0.0,None,71.6
+511,Anekal-Attibele Rd (SH-82) Seg-5,30.5,Highway,Rural,90,80.95259082815028,104.3,100.0,9.4,17.7,9.6,0.422,Separated Traffic,80,86.4,0.0,45.6,Moderate Misalignment,0.157,Light,54.5
+512,Anekal-Attibele Rd (SH-82) Seg-6,30.44,Highway,Rural,60,37.57295117076712,50.2,100.0,10.6,16.5,9.8,0.37,Separated Traffic,80,66.4,3.0,17.3,Aligned,0.19,Light,71.1
+513,Anekal-Attibele Rd (SH-82) Seg-7,30.4,Highway,Rural,80,65.4822849633099,70.4,100.0,0.0,16.6,5.1,0.463,Separated Traffic,80,78.2,13.0,18.7,Aligned,0.0,None,66.2
+514,Anekal-Attibele Rd (SH-82) Seg-8,30.3,Highway,Rural,70,40.17978950000018,51.0,100.0,7.1,16.4,5.2,0.46,Separated Traffic,80,55.3,0.0,17.7,Aligned,0.146,Light,70.8
+515,Anekal-Attibele Rd (SH-82) Seg-9,30.23,Highway,Rural,90,87.81132525666912,115.8,100.0,0.0,15.1,7.7,0.369,Separated Traffic,80,96.7,0.0,57.9,High Misalignment,0.186,Light,45.3
+516,Anekal-Attibele Rd (SH-82) Seg-10,30.18,Highway,Rural,80,88.91828756879926,99.4,100.0,0.0,16.7,9.5,0.389,Side Impact Potential,50,86.6,0.0,77.7,Critical Misalignment,0.0,None,33.4
+517,Anekal-Attibele Rd (SH-82) Seg-11,30.16,Highway,Rural,60,46.690807140791776,50.9,100.0,21.2,19.3,14.0,0.408,Separated Traffic,80,80.0,0.0,16.9,Aligned,0.0,None,74.1
+518,Anekal-Attibele Rd (SH-82) Seg-12,30.16,Highway,Rural,90,57.123376024186754,66.6,100.0,10.6,19.1,12.5,0.422,Separated Traffic,80,50.7,0.0,31.1,Moderate Misalignment,0.0,None,63.5
+519,Anekal-Attibele Rd (SH-82) Seg-13,30.19,Highway,Rural,80,76.06702416351186,88.6,100.0,4.7,12.2,3.1,0.351,Separated Traffic,80,94.1,0.0,25.5,Moderate Misalignment,0.0,None,65.6
+520,Anekal-Attibele Rd (SH-82) Seg-14,30.25,Highway,Rural,60,48.53531733819517,52.7,100.0,14.1,19.3,11.4,0.446,Side Impact Potential,50,82.8,0.0,30.8,Moderate Misalignment,0.0,None,64.3
+521,Anekal-Attibele Rd (SH-82) Seg-15,30.59,Highway,Rural,60,54.6903862953008,70.9,100.0,14.1,18.8,9.4,0.465,Separated Traffic,80,92.0,0.0,28.9,Moderate Misalignment,0.172,Light,65.5
+522,Anekal-Attibele Rd (SH-82) Seg-16,30.94,Highway,Rural,70,51.16903101682342,65.0,100.0,0.0,13.1,4.1,0.368,Separated Traffic,80,71.8,0.0,17.5,Aligned,0.14,Light,69.5
+523,Anekal-Attibele Rd (SH-82) Seg-17,31.32,Highway,Rural,80,79.8793416703635,98.2,100.0,10.6,14.4,6.9,0.351,Separated Traffic,80,99.8,0.0,35.4,Moderate Misalignment,0.0,None,60.9
+524,Anekal-Attibele Rd (SH-82) Seg-18,31.71,Highway,Rural,90,63.19103026573588,82.8,100.0,0.0,13.8,3.4,0.396,Side Impact Potential,50,59.8,0.0,69.6,High Misalignment,0.18,Light,38.2
+525,Anekal-Attibele Rd (SH-82) Seg-19,32.13,Highway,Rural,60,37.79306995963234,46.5,100.0,18.8,17.5,8.7,0.424,Side Impact Potential,50,66.7,0.0,29.5,Moderate Misalignment,0.0,None,66.1
+526,Anekal-Attibele Rd (SH-82) Seg-20,32.56,Highway,Rural,70,58.42497080636659,67.6,100.0,9.4,21.8,15.1,0.468,Separated Traffic,80,82.6,0.0,19.3,Aligned,0.0,None,70.3
+527,Anekal-Attibele Rd (SH-82) Seg-21,33.01,Highway,Rural,90,83.0267969911764,94.8,100.0,0.0,16.7,9.5,0.392,Side Impact Potential,50,89.5,0.0,75.5,Critical Misalignment,0.0,None,34.7
+528,Anekal-Attibele Rd (SH-82) Seg-22,33.48,Highway,Rural,90,80.879786740501,100.9,100.0,0.0,16.3,4.3,0.464,Separated Traffic,80,86.3,0.0,42.8,Moderate Misalignment,0.0,None,54.3
+529,Anekal-Attibele Rd (SH-82) Seg-23,33.96,Highway,Rural,60,67.82612586364316,80.5,100.0,15.3,12.9,4.7,0.349,Separated Traffic,80,88.3,3.0,36.7,Moderate Misalignment,0.0,None,60.4
+530,Anekal-Attibele Rd (SH-82) Seg-24,34.46,Highway,Rural,80,80.43802800241832,107.3,100.0,0.0,12.0,2.6,0.356,Separated Traffic,80,99.3,0.0,45.4,Moderate Misalignment,0.194,Light,52.8
+531,Anekal-Attibele Rd (SH-82) Seg-25,34.97,Highway,Rural,90,23.37780330696527,97.3,100.0,0.0,14.0,0.3,0.461,Separated Traffic,80,0.1,0.0,38.3,Moderate Misalignment,0.772,Severe,57.0
+532,Anekal-Attibele Rd (SH-82) Seg-26,35.5,Highway,Rural,60,63.24137883033776,75.5,100.0,0.0,19.0,9.3,0.464,Separated Traffic,80,95.1,0.0,35.6,Moderate Misalignment,0.0,None,58.6
+533,Arterial Rd Zone0-533,4.65,Arterial,Urban,40,26.623644264512585,35.3,85.5,31.8,26.8,18.9,0.55,Side Impact Potential,50,79.9,0.0,18.1,Aligned,0.181,Light,75.5
+534,Arterial Rd Zone0-534,4.57,Arterial,Urban,40,9.061129014063573,30.1,88.0,36.5,29.2,20.4,0.623,Side Impact Potential,50,53.6,0.0,18.3,Aligned,0.701,Severe,76.3
+535,Arterial Rd Zone0-535,3.87,Arterial,Urban,50,31.08956251751542,39.3,85.5,30.6,44.4,43.3,0.651,Side Impact Potential,50,71.6,0.0,24.3,Aligned,0.134,Light,71.5
+536,Arterial Rd Zone0-536,4.97,Arterial,Urban,50,30.453938090070324,42.4,72.5,45.9,53.2,60.0,0.654,Significant Pedestrian Interaction,30,70.7,19.0,51.3,High Misalignment,0.231,Light,54.6
+537,Arterial Rd Zone0-537,4.68,Arterial,Urban,50,11.55821230866044,37.8,80.0,25.9,33.8,26.3,0.634,Side Impact Potential,50,42.3,0.0,21.3,Aligned,0.7,Severe,72.4
+538,Arterial Rd Zone0-538,4.48,Arterial,Urban,50,30.90973526906163,35.1,72.5,49.4,32.9,26.1,0.604,Side Impact Potential,50,71.4,0.0,17.9,Aligned,0.0,None,79.1
+539,Arterial Rd Zone0-539,0.78,Arterial,Urban,40,30.46741801768857,38.7,85.5,12.9,25.8,13.7,0.602,Side Impact Potential,50,85.7,3.0,20.2,Aligned,0.148,Light,69.9
+540,Arterial Rd Zone0-540,4.21,Arterial,Urban,50,28.562630624787165,34.6,80.0,52.9,35.6,36.1,0.578,Side Impact Potential,50,67.8,3.0,18.4,Aligned,0.0,None,78.9
+541,Arterial Rd Zone0-541,3.86,Arterial,Urban,50,54.76253445478383,60.0,83.0,50.6,43.1,45.9,0.61,Side Impact Potential,50,92.9,19.0,31.7,Moderate Misalignment,0.0,None,67.3
+542,Arterial Rd Zone0-542,1.2,Arterial,Urban,60,52.05207723277628,56.7,85.5,54.1,47.4,55.2,0.607,Significant Pedestrian Interaction,30,88.1,0.0,61.2,High Misalignment,0.0,None,54.1
+543,Arterial Rd Zone0-543,2.76,Arterial,Urban,40,36.64123810983877,42.6,80.0,40.0,32.5,29.5,0.569,Side Impact Potential,50,95.0,0.0,21.7,Aligned,0.0,None,75.0
+544,Arterial Rd Zone0-544,3.4,Arterial,Urban,50,37.88055256586075,47.6,78.0,50.6,54.0,62.8,0.69,Significant Pedestrian Interaction,30,81.8,0.0,51.0,High Misalignment,0.141,Light,59.5
+545,Arterial Rd Zone0-545,0.19,Arterial,Urban,50,45.07252423975774,51.5,70.0,35.3,30.8,25.2,0.605,Side Impact Potential,50,92.6,0.0,20.6,Aligned,0.0,None,74.7
+546,Arterial Rd Zone0-546,0.35,Arterial,Urban,50,32.142017753525764,42.3,75.0,0.0,23.2,12.2,0.565,Side Impact Potential,50,73.2,0.0,21.0,Aligned,0.185,Light,67.4
+547,Arterial Rd Zone0-547,3.99,Arterial,Urban,60,53.587847845672094,69.8,78.0,43.5,51.8,60.8,0.645,Significant Pedestrian Interaction,30,90.4,0.0,74.2,High Misalignment,0.163,Light,44.2
+548,Arterial Rd Zone0-548,4.34,Arterial,Urban,50,32.34809791557347,37.8,80.0,68.2,47.8,54.1,0.648,Side Impact Potential,50,73.5,0.0,20.6,Aligned,0.0,None,81.3
+549,Arterial Rd Zone0-549,2.68,Arterial,Urban,40,41.37062191808233,53.6,88.0,35.3,47.7,51.2,0.673,Significant Pedestrian Interaction,30,97.9,0.0,51.9,High Misalignment,0.172,Light,55.9
+550,Arterial Rd Zone0-550,0.71,Arterial,Urban,40,21.57424842136539,26.5,72.5,40.0,52.0,59.4,0.602,Significant Pedestrian Interaction,30,72.4,0.0,38.7,Moderate Misalignment,0.0,None,64.8
+551,Arterial Rd Zone0-551,4.68,Arterial,Urban,40,29.27964636122015,38.1,80.5,23.5,36.2,29.8,0.68,Side Impact Potential,50,83.9,0.0,22.4,Aligned,0.17,Light,71.3
+552,Arterial Rd Zone0-552,2.74,Arterial,Urban,40,41.59121240275694,46.3,85.5,14.1,35.9,29.5,0.677,Side Impact Potential,50,97.6,0.0,30.1,Moderate Misalignment,0.0,None,64.8
+553,Arterial Rd Zone0-553,4.56,Arterial,Urban,40,29.052902673775716,35.5,75.0,83.5,63.2,80.6,0.671,Significant Pedestrian Interaction,30,83.6,0.0,36.9,Moderate Misalignment,0.0,None,74.6
+554,Arterial Rd Zone0-554,0.51,Arterial,Urban,40,23.830142581279585,30.0,78.0,56.5,36.8,35.2,0.614,Significant Pedestrian Interaction,30,75.7,6.0,31.3,Moderate Misalignment,0.13,Light,71.3
+555,Arterial Rd Zone0-555,0.62,Arterial,Urban,50,54.76362225082894,60.9,85.5,0.0,28.0,14.1,0.682,Side Impact Potential,50,92.9,0.0,33.9,Moderate Misalignment,0.0,None,59.7
+556,Arterial Rd Zone0-556,0.34,Arterial,Urban,50,49.138422069665275,56.0,77.5,21.2,29.1,16.7,0.67,Side Impact Potential,50,98.7,0.0,26.5,Moderate Misalignment,0.0,None,68.3
+557,Arterial Rd Zone0-557,5.76,Arterial,Urban,60,66.13287712982792,74.3,78.0,55.3,54.1,64.5,0.658,Significant Pedestrian Interaction,30,90.8,3.0,78.2,Critical Misalignment,0.0,None,43.5
+558,Arterial Rd Zone0-558,5.64,Arterial,Urban,50,31.016143087167013,34.2,77.5,38.8,40.9,43.3,0.573,Side Impact Potential,50,71.5,0.0,22.1,Aligned,0.0,None,74.5
+559,Arterial Rd Zone0-559,2.64,Arterial,Urban,50,50.276356485405024,60.2,75.0,44.7,35.9,33.1,0.619,Side Impact Potential,50,99.6,0.0,30.1,Moderate Misalignment,0.0,None,70.9
+560,Arterial Rd Zone0-560,2.75,Arterial,Urban,50,37.65598653930297,52.6,80.0,14.1,27.9,18.0,0.592,Side Impact Potential,50,81.5,0.0,23.5,Aligned,0.229,Light,68.7
+561,Arterial Rd Zone0-561,1.69,Arterial,Urban,40,36.227742271684086,48.2,88.0,37.6,39.4,37.6,0.681,Side Impact Potential,50,94.3,19.0,30.2,Moderate Misalignment,0.188,Light,65.6
+562,Arterial Rd Zone0-562,1.38,Arterial,Urban,40,20.401673092047712,26.1,77.5,31.8,35.1,33.8,0.551,Side Impact Potential,50,70.6,6.0,21.0,Aligned,0.154,Light,72.6
+563,Arterial Rd Zone0-563,1.91,Arterial,Urban,50,38.089251849419895,47.6,72.5,20.0,28.7,16.2,0.653,Side Impact Potential,50,82.1,0.0,20.3,Aligned,0.128,Light,71.8
+564,Arterial Rd Zone0-564,0.99,Arterial,Urban,60,49.17148450086576,56.7,80.5,28.2,26.2,14.3,0.604,Side Impact Potential,50,83.8,3.0,31.3,Moderate Misalignment,0.0,None,66.3
+565,Arterial Rd Zone0-565,0.69,Arterial,Urban,50,43.05737103584927,49.2,77.5,10.6,27.1,12.0,0.674,Side Impact Potential,50,89.6,0.0,20.9,Aligned,0.0,None,69.6
+566,Arterial Rd Zone0-566,3.12,Arterial,Urban,40,8.034899276889588,28.8,78.0,64.7,51.1,58.4,0.652,Significant Pedestrian Interaction,30,52.1,0.0,35.2,Moderate Misalignment,0.736,Severe,71.8
+567,Arterial Rd Zone0-567,4.49,Arterial,Urban,50,27.627767020872938,36.2,72.5,25.9,24.9,15.5,0.551,Side Impact Potential,50,66.4,0.0,18.2,Aligned,0.172,Light,74.3
+568,Arterial Rd Zone0-568,0.92,Arterial,Urban,40,27.53205405330915,37.7,75.0,54.1,41.0,44.6,0.563,Side Impact Potential,50,81.3,0.0,20.1,Aligned,0.22,Light,78.8
+569,Arterial Rd Zone0-569,0.67,Arterial,Urban,40,25.66715871496299,33.2,80.0,0.0,24.5,14.0,0.56,Side Impact Potential,50,78.5,0.0,21.4,Aligned,0.165,Light,67.2
+570,Arterial Rd Zone0-570,3.01,Arterial,Urban,50,31.582968331418293,36.8,77.5,60.0,55.0,70.4,0.621,Significant Pedestrian Interaction,30,72.4,0.0,50.1,High Misalignment,0.0,None,61.9
+571,Arterial Rd Zone0-571,0.73,Arterial,Urban,40,20.58089441713319,26.2,80.0,10.6,22.6,8.5,0.599,Side Impact Potential,50,70.9,0.0,19.4,Aligned,0.158,Light,70.5
+572,Arterial Rd Zone0-572,4.3,Arterial,Urban,40,23.621869728787985,29.0,78.0,10.6,29.2,16.1,0.668,Side Impact Potential,50,75.4,0.0,21.7,Aligned,0.0,None,69.1
+573,Arterial Rd Zone0-573,1.81,Arterial,Urban,50,34.128538774397455,44.3,72.5,14.1,28.4,16.6,0.661,Side Impact Potential,50,76.2,6.0,20.9,Aligned,0.174,Light,69.1
+574,Arterial Rd Zone0-574,1.98,Arterial,Urban,40,30.731150333669376,36.3,80.5,15.3,25.1,12.7,0.598,Side Impact Potential,50,86.1,0.0,19.6,Aligned,0.0,None,71.3
+575,Arterial Rd Zone0-575,3.81,Arterial,Urban,50,60.05752689231534,67.1,85.5,22.4,25.3,10.3,0.663,Side Impact Potential,50,84.9,0.0,36.5,Moderate Misalignment,0.0,None,62.6
+576,Arterial Rd Zone0-576,5.61,Arterial,Urban,50,49.31232825321753,58.6,83.0,38.8,29.9,18.2,0.663,Side Impact Potential,50,99.0,22.0,27.2,Moderate Misalignment,0.0,None,67.0
+577,Arterial Rd Zone0-577,4.99,Arterial,Urban,40,26.109254581770028,33.1,72.5,5.9,23.6,6.9,0.658,Side Impact Potential,50,79.2,0.0,20.3,Aligned,0.151,Light,69.0
+578,Arterial Rd Zone0-578,3.63,Arterial,Urban,50,37.817386406466355,41.6,77.5,21.2,29.4,23.4,0.568,Side Impact Potential,50,81.7,15.0,20.4,Aligned,0.0,None,69.0
+579,Arterial Rd Zone0-579,2.73,Arterial,Urban,40,38.74557089158761,48.1,77.5,34.1,30.3,19.8,0.657,Side Impact Potential,50,98.1,0.0,27.4,Moderate Misalignment,0.0,None,70.4
+580,Arterial Rd Zone0-580,0.4,Arterial,Urban,60,68.44673697042285,79.0,88.0,47.1,31.5,23.9,0.649,Side Impact Potential,50,87.3,0.0,50.4,High Misalignment,0.0,None,59.2
+581,Arterial Rd Zone0-581,0.14,Arterial,Urban,50,53.161091603435636,64.4,83.0,45.9,44.6,49.2,0.638,Side Impact Potential,50,95.3,0.0,37.3,Moderate Misalignment,0.0,None,66.8
+582,Arterial Rd Zone0-582,1.71,Arterial,Urban,40,26.762430688612888,37.5,78.0,85.9,58.0,75.4,0.604,Significant Pedestrian Interaction,30,80.1,0.0,34.8,Moderate Misalignment,0.236,Light,76.3
+583,Arterial Rd Zone0-583,0.32,Arterial,Urban,50,41.544766616841926,53.2,80.0,20.0,31.3,20.8,0.669,Side Impact Potential,50,87.3,0.0,24.5,Aligned,0.155,Light,69.3
+584,Arterial Rd Zone0-584,5.26,Arterial,Urban,50,27.040170469178502,36.5,70.0,20.0,29.8,20.7,0.632,Side Impact Potential,50,65.6,0.0,20.7,Aligned,0.201,Light,71.6
+585,Arterial Rd Zone0-585,3.43,Arterial,Urban,40,24.52642021338346,32.1,70.0,40.0,31.2,26.7,0.593,Side Impact Potential,50,76.8,0.0,18.6,Aligned,0.184,Light,76.8
+586,Arterial Rd Zone0-586,5.01,Arterial,Urban,50,56.06518819671145,61.8,77.5,17.6,24.3,8.4,0.654,Side Impact Potential,50,90.9,0.0,31.3,Moderate Misalignment,0.0,None,64.7
+587,Arterial Rd Zone0-587,5.89,Arterial,Urban,40,28.967570194253117,34.9,75.0,40.0,27.6,21.0,0.564,Side Impact Potential,50,83.5,0.0,17.3,Aligned,0.0,None,77.6
+588,Arterial Rd Zone0-588,3.22,Arterial,Urban,40,44.838148544777674,52.4,85.5,14.1,24.4,11.5,0.621,Side Impact Potential,50,92.7,0.0,32.4,Moderate Misalignment,0.0,None,63.4
+589,Arterial Rd Zone0-589,1.6,Arterial,Urban,60,39.47996292707857,47.8,78.0,51.8,50.3,60.5,0.595,Significant Pedestrian Interaction,30,69.2,0.0,62.5,High Misalignment,0.0,None,52.9
+590,Arterial Rd Zone0-590,2.2,Arterial,Urban,50,30.387638826577643,40.7,85.5,14.1,26.5,15.2,0.628,Side Impact Potential,50,70.6,0.0,20.3,Aligned,0.196,Light,70.6
+591,Arterial Rd Zone0-591,5.51,Arterial,Urban,40,7.0867808481795835,26.2,75.0,36.5,31.3,20.4,0.669,Side Impact Potential,50,50.6,0.0,19.0,Aligned,0.746,Severe,75.9
+592,Arterial Rd Zone0-592,4.83,Arterial,Urban,50,42.16650289741593,49.3,80.0,20.0,31.0,23.9,0.575,Side Impact Potential,50,88.2,6.0,21.1,Aligned,0.0,None,70.1
+593,Arterial Rd Zone0-593,4.18,Arterial,Urban,50,49.97807681092331,63.5,85.5,67.1,42.2,38.5,0.679,Significant Pedestrian Interaction,30,100.0,0.0,58.8,High Misalignment,0.153,Light,58.1
+594,Arterial Rd Zone0-594,0.51,Arterial,Urban,40,21.62529584372741,27.4,88.0,54.1,53.1,59.1,0.665,Significant Pedestrian Interaction,30,72.4,0.0,37.3,Moderate Misalignment,0.138,Light,68.4
+595,Arterial Rd Zone0-595,0.77,Arterial,Urban,50,58.34097513806604,61.3,85.5,28.2,23.3,12.7,0.556,Side Impact Potential,50,87.5,3.0,29.1,Moderate Misalignment,0.0,None,67.6
+596,Arterial Rd Zone0-596,5.69,Arterial,Urban,40,9.713185585324272,30.4,80.0,22.4,23.3,11.2,0.564,Side Impact Potential,50,54.6,0.0,18.1,Aligned,0.683,Severe,73.6
+597,Arterial Rd Zone0-597,3.4,Arterial,Urban,50,52.727828628225,59.3,70.0,47.1,32.5,28.9,0.565,Side Impact Potential,50,95.9,0.0,27.7,Moderate Misalignment,0.0,None,72.8
+598,Arterial Rd Zone0-598,2.96,Arterial,Urban,50,31.49380959717051,37.3,77.5,37.6,44.0,46.6,0.659,Side Impact Potential,50,72.2,0.0,23.3,Aligned,0.0,None,73.5
+599,Collector Rd Zone0-599,3.95,Collector,Urban,40,20.583325662729077,26.7,52.5,50.6,32.3,25.1,0.648,Side Impact Potential,50,70.9,0.0,17.6,Aligned,0.175,Light,79.6
+600,Collector Rd Zone0-600,4.58,Collector,Urban,30,21.819806259657177,26.7,52.5,21.2,28.3,14.5,0.677,Side Impact Potential,50,87.7,0.0,20.0,Aligned,0.0,None,72.2
+601,Collector Rd Zone0-601,5.63,Collector,Urban,40,11.989065365908921,47.2,50.0,20.0,24.2,8.6,0.65,Side Impact Potential,50,58.0,9.0,26.2,Moderate Misalignment,0.76,Severe,66.5
+602,Collector Rd Zone0-602,4.69,Collector,Urban,40,27.62229214193831,35.8,52.5,55.3,53.5,64.7,0.674,Significant Pedestrian Interaction,30,81.4,0.0,37.2,Moderate Misalignment,0.168,Light,68.7
+603,Collector Rd Zone0-603,4.98,Collector,Urban,30,22.20560186404358,28.1,50.0,9.4,22.3,7.1,0.616,Side Impact Potential,50,88.3,0.0,19.4,Aligned,0.142,Light,70.2
+604,Collector Rd Zone0-604,3.83,Collector,Urban,30,26.874637442607806,31.2,50.0,42.4,37.2,37.4,0.615,Significant Pedestrian Interaction,30,95.3,0.0,21.6,Aligned,0.0,None,75.5
+605,Collector Rd Zone0-605,4.96,Collector,Urban,30,30.1312403050901,37.0,55.0,21.2,26.1,14.0,0.628,Side Impact Potential,50,99.8,0.0,26.5,Moderate Misalignment,0.0,None,68.3
+606,Collector Rd Zone0-606,4.7,Collector,Urban,40,20.662883439862437,28.0,55.0,4.7,20.2,5.3,0.583,Side Impact Potential,50,71.0,0.0,19.3,Aligned,0.198,Light,69.4
+607,Collector Rd Zone0-607,4.92,Collector,Urban,30,27.21525236183685,33.4,52.5,52.9,55.8,67.4,0.576,Significant Pedestrian Interaction,30,95.8,0.0,28.9,Moderate Misalignment,0.0,None,73.2
+608,Collector Rd Zone0-608,4.0,Collector,Urban,40,41.772363975714995,50.1,55.0,40.0,34.7,31.4,0.621,Side Impact Potential,50,97.3,9.0,30.2,Moderate Misalignment,0.0,None,68.1
+609,Collector Rd Zone0-609,3.77,Collector,Urban,40,33.21920839521294,36.9,58.0,20.0,38.2,34.5,0.689,Side Impact Potential,50,89.8,3.0,23.6,Aligned,0.0,None,69.2
+610,Collector Rd Zone0-610,1.19,Collector,Urban,30,15.055520717541762,20.9,55.0,62.4,37.6,38.9,0.6,Side Impact Potential,50,77.6,0.0,17.9,Aligned,0.235,Light,81.7
+611,Collector Rd Zone0-611,3.64,Collector,Urban,30,16.402965175003974,20.0,50.0,30.6,30.1,18.3,0.658,Side Impact Potential,50,79.6,0.0,19.4,Aligned,0.0,None,74.5
+612,Collector Rd Zone0-612,3.4,Collector,Urban,50,42.83924227724917,47.9,52.5,12.9,22.1,5.6,0.632,Side Impact Potential,50,89.3,0.0,18.9,Aligned,0.0,None,71.2
+613,Collector Rd Zone0-613,4.2,Collector,Urban,30,22.832154697154227,25.9,50.0,9.4,30.5,18.8,0.683,Side Impact Potential,50,89.2,0.0,22.3,Aligned,0.0,None,68.5
+614,Collector Rd Zone0-614,4.48,Collector,Urban,30,15.996743565947403,20.5,52.5,45.9,41.4,41.6,0.634,Side Impact Potential,50,79.0,0.0,21.3,Aligned,0.159,Light,76.4
+615,Collector Rd Zone0-615,1.63,Collector,Urban,30,28.004232629387793,34.8,60.5,20.0,22.2,9.9,0.569,Side Impact Potential,50,97.0,0.0,23.0,Aligned,0.0,None,70.2
+616,Collector Rd Zone0-616,0.25,Collector,Urban,40,21.709627323144215,26.8,52.5,24.7,31.4,21.9,0.672,Side Impact Potential,50,72.6,6.0,20.6,Aligned,0.0,None,71.4
+617,Collector Rd Zone0-617,5.89,Collector,Urban,30,22.686189663476465,26.1,60.5,27.1,24.0,11.3,0.591,Side Impact Potential,50,89.0,0.0,17.7,Aligned,0.0,None,74.8
+618,Collector Rd Zone0-618,5.69,Collector,Urban,30,34.361489909769475,40.2,50.0,32.9,37.4,32.1,0.644,Side Impact Potential,50,93.5,0.0,32.2,Moderate Misalignment,0.0,None,67.3
+619,Collector Rd Zone0-619,0.89,Collector,Urban,40,29.358635564795886,36.0,52.5,49.4,44.0,50.4,0.563,Side Impact Potential,50,84.0,6.0,21.8,Aligned,0.0,None,75.6
+620,Collector Rd Zone0-620,1.67,Collector,Urban,40,25.169033921193478,27.3,55.0,70.6,35.2,34.0,0.605,Side Impact Potential,50,77.8,0.0,16.0,Aligned,0.0,None,84.5
+621,Collector Rd Zone0-621,2.46,Collector,Urban,40,37.01103415450158,42.5,60.5,0.0,25.8,12.2,0.643,Side Impact Potential,50,95.5,0.0,24.5,Aligned,0.0,None,65.3
+622,Collector Rd Zone0-622,2.85,Collector,Urban,40,30.4424504342413,39.2,52.5,56.5,36.1,30.9,0.613,Side Impact Potential,50,85.7,6.0,18.1,Aligned,0.153,Light,79.2
+623,Collector Rd Zone0-623,3.92,Collector,Urban,30,25.795674663354223,29.8,50.0,10.6,24.9,12.5,0.604,Side Impact Potential,50,93.7,15.0,20.2,Aligned,0.0,None,67.0
+624,Collector Rd Zone0-624,2.17,Collector,Urban,40,39.61624217201835,52.3,60.5,17.6,24.9,11.6,0.62,Side Impact Potential,50,99.4,0.0,32.0,Moderate Misalignment,0.188,Light,64.3
+625,Collector Rd Zone0-625,2.26,Collector,Urban,40,23.47896414062316,30.4,55.0,48.2,34.1,30.7,0.601,Side Impact Potential,50,75.2,0.0,18.5,Aligned,0.166,Light,78.5
+626,Collector Rd Zone0-626,1.89,Collector,Urban,40,35.8210469720779,39.7,52.5,57.6,48.1,52.0,0.684,Significant Pedestrian Interaction,30,93.7,0.0,35.1,Moderate Misalignment,0.0,None,70.5
+627,Collector Rd Zone0-627,0.33,Collector,Urban,40,44.34803166463292,52.0,50.0,7.1,27.4,14.5,0.649,Side Impact Potential,50,93.5,0.0,33.9,Moderate Misalignment,0.0,None,61.1
+628,Collector Rd Zone0-628,0.09,Collector,Urban,30,21.07158277774768,27.0,55.0,0.0,22.5,3.9,0.676,Side Impact Potential,50,86.6,0.0,20.7,Aligned,0.158,Light,67.6
+629,Collector Rd Zone0-629,0.72,Collector,Urban,30,24.112020342371416,26.4,55.0,43.5,42.9,40.5,0.667,Side Impact Potential,50,91.2,3.0,22.1,Aligned,0.0,None,74.8
+630,Collector Rd Zone0-630,0.46,Collector,Urban,40,22.260237269119777,28.9,52.5,34.1,34.0,25.8,0.685,Side Impact Potential,50,73.4,0.0,20.3,Aligned,0.169,Light,74.6
+631,Collector Rd Zone0-631,2.33,Collector,Urban,30,36.362971432191664,39.6,50.0,20.0,30.9,18.9,0.681,Side Impact Potential,50,90.5,6.0,31.0,Moderate Misalignment,0.0,None,64.2
+632,Collector Rd Zone0-632,1.0,Collector,Urban,40,13.981078290231563,47.6,55.0,42.4,32.6,25.3,0.656,Side Impact Potential,50,61.0,0.0,26.6,Moderate Misalignment,0.717,Severe,72.5
+633,Collector Rd Zone0-633,0.85,Collector,Urban,40,44.05905882113829,52.2,50.0,0.0,24.8,15.2,0.568,Side Impact Potential,50,93.9,0.0,34.2,Moderate Misalignment,0.0,None,59.5
+634,Collector Rd Zone0-634,2.82,Collector,Urban,30,20.848037228402593,23.5,55.0,4.7,29.6,17.3,0.667,Side Impact Potential,50,86.3,29.0,22.6,Aligned,0.0,None,61.6
+635,Collector Rd Zone0-635,3.07,Collector,Urban,30,17.48742810368687,21.0,60.5,0.0,20.8,2.5,0.65,Side Impact Potential,50,81.2,0.0,20.1,Aligned,0.0,None,67.9
+636,Collector Rd Zone0-636,3.52,Collector,Urban,30,29.223189879668876,34.3,52.5,61.2,51.6,59.8,0.671,Significant Pedestrian Interaction,30,98.8,0.0,27.3,Moderate Misalignment,0.0,None,75.9
+637,Collector Rd Zone0-637,3.9,Collector,Urban,30,22.18948252166833,29.9,55.0,48.2,44.8,47.6,0.68,Side Impact Potential,50,88.3,0.0,22.2,Aligned,0.203,Light,76.3
+638,Collector Rd Zone0-638,2.03,Collector,Urban,30,29.572519735008715,36.8,50.0,35.3,46.0,51.4,0.552,Significant Pedestrian Interaction,30,99.4,0.0,31.3,Moderate Misalignment,0.0,None,68.3
+639,Collector Rd Zone0-639,5.47,Collector,Urban,40,7.781875347825652,31.5,50.0,34.1,30.6,20.0,0.637,Side Impact Potential,50,51.7,0.0,19.1,Aligned,0.759,Severe,75.4
+640,Collector Rd Zone0-640,0.63,Collector,Urban,40,32.02886816949256,37.2,55.0,12.9,20.2,5.6,0.567,Side Impact Potential,50,88.0,0.0,18.3,Aligned,0.0,None,71.6
+641,Collector Rd Zone0-641,1.15,Collector,Urban,30,5.811252358437552,20.4,55.0,35.3,31.4,28.3,0.563,Side Impact Potential,50,63.7,0.0,19.2,Aligned,0.722,Severe,75.5
+642,Collector Rd Zone0-642,0.04,Collector,Urban,30,14.554220370887185,20.8,55.0,54.1,40.8,40.9,0.622,Side Impact Potential,50,76.8,0.0,20.0,Aligned,0.248,Light,78.8
+643,Collector Rd Zone0-643,2.87,Collector,Urban,30,25.550634576150486,31.8,58.0,60.0,33.5,30.3,0.555,Side Impact Potential,50,93.3,0.0,18.6,Aligned,0.0,None,80.8
+644,Collector Rd Zone0-644,5.21,Collector,Urban,30,16.426141903471095,20.9,50.0,40.0,35.2,33.0,0.578,Side Impact Potential,50,79.6,3.0,19.9,Aligned,0.157,Light,75.5
+645,Collector Rd Zone0-645,5.83,Collector,Urban,40,25.27910377430328,34.6,60.5,38.8,31.9,24.6,0.625,Side Impact Potential,50,77.9,6.0,19.0,Aligned,0.209,Light,75.2
+646,Collector Rd Zone0-646,0.74,Collector,Urban,30,22.05586851136236,28.1,55.0,10.6,29.4,19.0,0.656,Side Impact Potential,50,88.1,0.0,21.7,Aligned,0.153,Light,69.1
+647,Collector Rd Zone0-647,5.88,Collector,Urban,30,19.331489098187387,25.4,55.0,74.1,54.1,70.7,0.577,Significant Pedestrian Interaction,30,84.0,0.0,22.0,Aligned,0.173,Light,81.6
+648,Collector Rd Zone0-648,5.56,Collector,Urban,40,41.6584406576889,48.2,55.0,67.1,61.8,75.5,0.636,Significant Pedestrian Interaction,30,97.5,0.0,47.1,Moderate Misalignment,0.0,None,65.2
+649,Collector Rd Zone0-649,4.06,Collector,Urban,40,35.45016338844127,45.9,52.5,16.5,26.6,14.4,0.636,Side Impact Potential,50,93.2,0.0,26.1,Moderate Misalignment,0.161,Light,67.6
+650,Collector Rd Zone0-650,4.4,Collector,Urban,30,27.825522413045686,38.4,55.0,52.9,51.8,64.7,0.553,Significant Pedestrian Interaction,30,96.7,0.0,32.7,Moderate Misalignment,0.223,Light,71.0
+651,Collector Rd Zone0-651,3.74,Collector,Urban,30,33.51285691639766,39.9,50.0,14.1,28.4,20.2,0.603,Side Impact Potential,50,94.7,3.0,31.2,Moderate Misalignment,0.0,None,63.5
+652,Collector Rd Zone0-652,2.41,Collector,Urban,40,28.37132925528054,35.2,58.0,21.2,26.5,17.7,0.561,Side Impact Potential,50,82.6,0.0,19.4,Aligned,0.0,None,72.6
+653,Collector Rd Zone0-653,5.13,Collector,Urban,30,33.09425232192325,37.1,52.5,37.6,45.1,51.5,0.575,Significant Pedestrian Interaction,30,95.4,0.0,31.0,Moderate Misalignment,0.0,None,68.9
+654,Collector Rd Zone0-654,1.13,Collector,Urban,40,28.136642667614865,34.3,50.0,32.9,26.2,17.7,0.572,Side Impact Potential,50,82.2,0.0,17.7,Aligned,0.0,None,76.0
+655,Collector Rd Zone0-655,1.78,Collector,Urban,40,25.144814516076966,30.6,55.0,28.2,27.3,18.5,0.563,Side Impact Potential,50,77.7,0.0,18.7,Aligned,0.0,None,74.4
+656,Collector Rd Zone0-656,3.58,Collector,Urban,30,18.671012556624316,25.9,63.0,65.9,37.7,36.5,0.584,Side Impact Potential,50,83.0,19.0,17.4,Aligned,0.22,Light,78.9
+657,Collector Rd Zone0-657,0.4,Collector,Urban,30,28.4857008606429,32.3,50.0,62.4,47.6,54.4,0.59,Significant Pedestrian Interaction,30,97.7,6.0,23.7,Aligned,0.0,None,77.1
+658,Collector Rd Zone0-658,2.53,Collector,Urban,40,27.6774707583307,31.8,50.0,38.8,32.7,25.3,0.645,Side Impact Potential,50,81.5,0.0,19.2,Aligned,0.0,None,76.2
+659,Collector Rd Zone0-659,1.41,Collector,Urban,40,29.562121920589764,37.4,50.0,48.2,35.7,34.2,0.613,Side Impact Potential,50,84.3,6.0,19.0,Aligned,0.146,Light,77.0
+660,Collector Rd Zone0-660,3.93,Collector,Urban,30,23.46667372392576,32.3,50.0,63.5,55.3,71.0,0.632,Significant Pedestrian Interaction,30,90.2,0.0,26.2,Moderate Misalignment,0.225,Light,77.0
+661,Collector Rd Zone0-661,1.7,Collector,Urban,30,19.428383091741868,26.3,52.5,9.4,27.5,15.0,0.657,Side Impact Potential,50,84.1,0.0,21.2,Aligned,0.2,Light,69.2
+662,Collector Rd Zone0-662,5.98,Collector,Urban,40,41.5515688707693,47.6,52.5,15.3,20.6,6.4,0.567,Side Impact Potential,50,97.7,6.0,26.0,Moderate Misalignment,0.0,None,66.3
+663,Collector Rd Zone0-663,6.22,Collector,Urban,40,7.734525370371999,28.2,55.0,34.1,31.5,28.1,0.579,Side Impact Potential,50,51.6,9.0,19.4,Aligned,0.733,Severe,73.4
+664,Collector Rd Zone0-664,3.92,Collector,Urban,30,21.788334976892088,28.5,60.5,65.9,43.7,51.8,0.57,Side Impact Potential,50,87.7,0.0,19.5,Aligned,0.17,Light,81.5
+665,Collector Rd Zone0-665,0.62,Collector,Urban,30,19.242150127796567,22.1,55.0,16.5,26.7,19.4,0.557,Side Impact Potential,50,83.9,0.0,20.0,Aligned,0.0,None,71.3
+666,Collector Rd Zone0-666,1.88,Collector,Urban,30,25.57339051956661,31.4,63.0,29.4,31.6,23.4,0.62,Side Impact Potential,50,93.4,0.0,21.5,Aligned,0.0,None,73.0
+667,Collector Rd Zone0-667,1.24,Collector,Urban,30,19.806703803995404,23.1,55.0,32.9,44.4,47.2,0.683,Side Impact Potential,50,84.7,0.0,24.0,Aligned,0.0,None,72.2
+668,Collector Rd Zone0-668,5.19,Collector,Urban,40,28.905280605487157,34.6,50.0,10.6,24.7,9.0,0.66,Side Impact Potential,50,83.4,0.0,20.1,Aligned,0.0,None,70.1
+669,Collector Rd Zone0-669,4.69,Collector,Urban,50,38.31307707817818,49.1,52.5,24.7,31.3,21.6,0.678,Side Impact Potential,50,82.5,0.0,20.6,Aligned,0.161,Light,72.6
+670,Collector Rd Zone0-670,4.11,Collector,Urban,30,25.095607046798143,28.1,55.0,50.6,27.5,21.2,0.561,Side Impact Potential,50,92.6,12.0,15.9,Aligned,0.0,None,78.2
+671,Collector Rd Zone0-671,4.32,Collector,Urban,30,21.771550266237178,24.6,55.0,32.9,44.9,43.9,0.659,Side Impact Potential,50,87.7,0.0,24.2,Aligned,0.0,None,72.1
+672,Collector Rd Zone0-672,0.28,Collector,Urban,30,17.079216584115837,21.5,50.0,16.5,28.3,22.3,0.559,Side Impact Potential,50,80.6,13.0,20.6,Aligned,0.148,Light,68.3
+673,Collector Rd Zone0-673,0.66,Collector,Urban,30,19.744086955214545,26.0,55.0,38.8,35.7,29.6,0.661,Side Impact Potential,50,84.6,3.0,20.3,Aligned,0.184,Light,75.0
+674,Collector Rd Zone0-674,0.03,Collector,Urban,40,13.351426688784358,34.2,55.0,21.2,33.5,31.3,0.569,Side Impact Potential,50,60.0,0.0,21.8,Aligned,0.594,Severe,71.2
+675,Collector Rd Zone0-675,1.53,Collector,Urban,40,23.7975814589954,26.9,50.0,54.1,56.2,70.1,0.586,Significant Pedestrian Interaction,30,75.7,0.0,38.3,Moderate Misalignment,0.0,None,67.8
+676,Collector Rd Zone0-676,4.89,Collector,Urban,30,27.919375585958775,33.5,50.0,49.4,55.8,65.4,0.643,Significant Pedestrian Interaction,30,96.9,0.0,29.5,Moderate Misalignment,0.0,None,72.2
+677,Collector Rd Zone0-677,1.91,Collector,Urban,30,28.368277114438875,33.1,58.0,42.4,45.4,51.7,0.584,Side Impact Potential,50,97.6,0.0,26.4,Moderate Misalignment,0.0,None,72.6
+678,Collector Rd Zone0-678,4.36,Collector,Urban,30,21.542907705899086,25.0,52.5,56.5,47.0,54.6,0.591,Side Impact Potential,50,87.3,0.0,21.9,Aligned,0.0,None,78.2
+679,Collector Rd Zone0-679,0.76,Collector,Urban,30,19.564648712949047,21.4,50.0,29.4,30.9,27.9,0.555,Side Impact Potential,50,84.3,0.0,19.8,Aligned,0.0,None,74.0
+680,Collector Rd Zone0-680,0.02,Collector,Urban,40,32.31134177583377,35.0,58.0,42.4,31.4,19.8,0.672,Side Impact Potential,50,88.5,0.0,18.3,Aligned,0.0,None,77.5
+681,Collector Rd Zone0-681,5.29,Collector,Urban,30,29.461371353780272,32.7,50.0,58.8,31.8,27.3,0.566,Side Impact Potential,50,99.2,0.0,19.1,Aligned,0.0,None,80.3
+682,Collector Rd Zone0-682,1.77,Collector,Urban,40,37.69255542429583,49.7,50.0,15.3,26.0,13.3,0.637,Side Impact Potential,50,96.5,0.0,30.0,Moderate Misalignment,0.181,Light,65.1
+683,Arterial Rd Zone1-683,11.26,Arterial,Urban,50,13.365077650047686,41.1,72.5,0.0,25.3,12.0,0.635,Side Impact Potential,50,45.0,9.0,21.7,Aligned,0.684,Severe,65.2
+684,Arterial Rd Zone1-684,10.37,Arterial,Urban,40,23.298843301266164,26.4,72.5,52.9,51.8,58.8,0.644,Significant Pedestrian Interaction,30,74.9,0.0,37.0,Moderate Misalignment,0.0,None,68.4
+685,Arterial Rd Zone1-685,10.51,Arterial,Urban,50,14.871411501847852,53.9,83.0,68.2,50.3,65.9,0.568,Significant Pedestrian Interaction,30,47.3,0.0,51.5,High Misalignment,0.733,Severe,62.7
+686,Arterial Rd Zone1-686,9.14,Arterial,Urban,40,39.12697674522062,44.7,85.5,23.5,32.6,23.7,0.646,Separated Traffic,70,98.7,0.0,26.0,Moderate Misalignment,0.0,None,69.1
+687,Arterial Rd Zone1-687,9.01,Arterial,Urban,40,35.755047898798985,39.3,80.5,32.9,30.4,21.5,0.64,Side Impact Potential,50,93.6,0.0,19.2,Aligned,0.0,None,75.1
+688,Arterial Rd Zone1-688,7.08,Arterial,Urban,50,55.869756904219614,60.9,83.0,28.2,31.3,22.5,0.617,Side Impact Potential,50,91.2,0.0,31.4,Moderate Misalignment,0.0,None,66.8
+689,Arterial Rd Zone1-689,6.92,Arterial,Urban,50,30.95254860660237,38.6,77.5,37.6,42.4,46.1,0.595,Side Impact Potential,50,71.4,0.0,22.7,Aligned,0.0,None,73.9
+690,Arterial Rd Zone1-690,8.29,Arterial,Urban,40,29.19428537781627,39.7,70.0,30.6,45.8,45.8,0.688,Significant Pedestrian Interaction,30,83.8,21.0,37.8,Moderate Misalignment,0.204,Light,59.2
+691,Arterial Rd Zone1-691,6.64,Arterial,Urban,50,30.88838023648656,36.1,80.0,16.5,28.8,22.1,0.588,Side Impact Potential,50,71.3,0.0,20.8,Aligned,0.0,None,70.8
+692,Arterial Rd Zone1-692,10.48,Arterial,Urban,60,46.59553720743046,52.1,80.0,14.1,36.2,35.8,0.597,Side Impact Potential,50,79.9,6.0,36.6,Moderate Misalignment,0.0,None,59.7
+693,Arterial Rd Zone1-693,8.38,Arterial,Urban,50,39.59290479141942,49.1,80.5,28.2,25.6,16.4,0.564,Side Impact Potential,50,84.4,0.0,18.1,Aligned,0.0,None,74.8
+694,Arterial Rd Zone1-694,11.63,Arterial,Urban,50,48.23602150041497,61.5,88.0,16.5,27.4,18.6,0.575,Separated Traffic,70,97.4,6.0,32.2,Moderate Misalignment,0.158,Light,62.8
+695,Arterial Rd Zone1-695,6.99,Arterial,Urban,40,25.332068793103613,28.2,72.5,28.2,31.1,23.4,0.598,Side Impact Potential,50,78.0,0.0,20.0,Aligned,0.0,None,73.6
+696,Arterial Rd Zone1-696,6.82,Arterial,Urban,50,32.97307456691739,40.7,88.0,42.4,27.3,17.9,0.588,Side Impact Potential,50,74.5,0.0,16.9,Aligned,0.0,None,78.3
+697,Arterial Rd Zone1-697,7.68,Arterial,Urban,40,45.16296929504177,50.7,77.5,45.9,53.5,64.3,0.601,Significant Pedestrian Interaction,30,92.3,0.0,49.5,Moderate Misalignment,0.0,None,59.5
+698,Arterial Rd Zone1-698,6.28,Arterial,Urban,50,49.896060046526806,59.6,80.5,20.0,30.0,23.8,0.567,Side Impact Potential,50,99.8,0.0,30.7,Moderate Misalignment,0.0,None,65.6
+699,Arterial Rd Zone1-699,7.53,Arterial,Urban,40,24.124232831743093,29.4,70.0,54.1,38.5,34.7,0.639,Side Impact Potential,50,76.2,0.0,19.2,Aligned,0.0,None,79.3
+700,Arterial Rd Zone1-700,7.06,Arterial,Urban,40,43.6807762534271,50.6,80.5,32.9,33.5,25.1,0.65,Side Impact Potential,50,94.5,9.0,31.3,Moderate Misalignment,0.0,None,66.0
+701,Arterial Rd Zone1-701,6.44,Arterial,Urban,40,24.920338508096236,29.8,85.5,21.2,28.2,22.4,0.554,Side Impact Potential,50,77.4,0.0,20.0,Aligned,0.0,None,72.2
+702,Arterial Rd Zone1-702,9.72,Arterial,Urban,40,21.340866437280148,27.8,72.5,25.9,29.7,20.4,0.621,Side Impact Potential,50,72.0,22.0,19.9,Aligned,0.165,Light,68.8
+703,Arterial Rd Zone1-703,9.52,Arterial,Urban,50,40.84149808939491,51.6,75.0,64.7,53.0,64.7,0.672,Significant Pedestrian Interaction,30,86.3,3.0,50.5,High Misalignment,0.148,Light,62.0
+704,Arterial Rd Zone1-704,10.65,Arterial,Urban,50,27.127158033802893,37.4,70.0,16.5,26.4,18.1,0.559,Side Impact Potential,50,65.7,15.0,19.9,Aligned,0.214,Light,68.4
+705,Arterial Rd Zone1-705,7.6,Arterial,Urban,50,33.37994162739137,39.5,75.0,9.4,25.2,13.8,0.579,Side Impact Potential,50,75.1,0.0,20.4,Aligned,0.0,None,69.6
+706,Arterial Rd Zone1-706,10.28,Arterial,Urban,50,31.467587588118946,37.3,78.0,17.6,30.5,21.1,0.627,Side Impact Potential,50,72.2,16.0,21.2,Aligned,0.0,None,67.6
+707,Arterial Rd Zone1-707,7.48,Arterial,Urban,40,35.911000734969484,41.6,88.0,24.7,41.6,45.0,0.569,Side Impact Potential,50,93.9,0.0,25.8,Moderate Misalignment,0.0,None,69.5
+708,Arterial Rd Zone1-708,7.57,Arterial,Urban,40,24.69998260935338,30.3,75.0,15.3,29.3,20.6,0.586,Side Impact Potential,50,77.0,0.0,21.1,Aligned,0.0,None,70.4
+709,Arterial Rd Zone1-709,9.24,Arterial,Urban,50,33.89978760697156,38.7,80.0,40.0,36.0,36.0,0.599,Significant Pedestrian Interaction,30,75.8,0.0,46.1,Moderate Misalignment,0.0,None,60.3
+710,Arterial Rd Zone1-710,11.74,Arterial,Urban,50,35.67238046368948,44.9,78.0,38.8,35.2,29.5,0.644,Separated Traffic,70,78.5,0.0,20.1,Aligned,0.143,Light,75.7
+711,Arterial Rd Zone1-711,6.73,Arterial,Urban,50,12.634429212157947,35.5,70.0,24.7,34.0,25.8,0.643,Side Impact Potential,50,44.0,0.0,21.5,Aligned,0.645,Severe,72.0
+712,Arterial Rd Zone1-712,9.21,Arterial,Urban,50,37.89198758925693,44.5,78.0,43.5,35.7,36.5,0.579,Side Impact Potential,50,81.8,0.0,19.7,Aligned,0.0,None,76.9
+713,Arterial Rd Zone1-713,9.35,Arterial,Urban,40,25.23731685798428,30.9,83.0,35.3,39.1,38.6,0.659,Side Impact Potential,50,77.9,0.0,21.9,Aligned,0.0,None,73.9
+714,Arterial Rd Zone1-714,8.06,Arterial,Urban,50,28.02160037948001,34.1,80.0,45.9,40.9,39.2,0.624,Side Impact Potential,50,67.0,3.0,21.1,Aligned,0.0,None,75.9
+715,Arterial Rd Zone1-715,10.78,Arterial,Urban,50,37.62207560916199,51.7,77.5,32.9,28.5,20.3,0.604,Side Impact Potential,50,81.4,0.0,20.3,Aligned,0.217,Light,74.4
+716,Arterial Rd Zone1-716,11.98,Arterial,Urban,40,36.046095497832084,44.0,75.0,58.8,53.8,58.9,0.675,Significant Pedestrian Interaction,30,94.1,22.0,41.0,Moderate Misalignment,0.0,None,62.8
+717,Arterial Rd Zone1-717,9.81,Arterial,Urban,40,40.90938964350162,45.2,80.0,57.6,41.6,46.1,0.571,Side Impact Potential,50,98.6,0.0,25.3,Moderate Misalignment,0.0,None,76.3
+718,Arterial Rd Zone1-718,9.98,Arterial,Urban,40,25.719311201472877,29.9,78.0,48.2,27.0,19.8,0.571,Side Impact Potential,50,78.6,6.0,16.0,Aligned,0.0,None,78.8
+719,Arterial Rd Zone1-719,10.22,Arterial,Urban,40,42.97645384836273,53.0,70.0,34.1,44.7,48.8,0.649,Side Impact Potential,50,95.5,16.0,37.5,Moderate Misalignment,0.0,None,61.1
+720,Arterial Rd Zone1-720,6.25,Arterial,Urban,40,43.07555178754525,53.6,85.5,11.8,24.1,13.5,0.572,Side Impact Potential,50,95.4,0.0,33.9,Moderate Misalignment,0.0,None,62.0
+721,Arterial Rd Zone1-721,9.98,Arterial,Urban,40,25.999454374944428,29.0,88.0,36.5,29.1,21.7,0.574,Side Impact Potential,50,79.0,0.0,18.3,Aligned,0.0,None,76.3
+722,Arterial Rd Zone1-722,9.39,Arterial,Urban,40,21.893120347949843,29.8,80.5,21.2,30.1,20.9,0.611,Side Impact Potential,50,72.8,0.0,20.6,Aligned,0.216,Light,71.9
+723,Arterial Rd Zone1-723,9.48,Arterial,Urban,40,34.78273206183714,37.7,80.5,83.5,56.0,69.7,0.565,Significant Pedestrian Interaction,30,92.2,0.0,34.4,Moderate Misalignment,0.0,None,76.1
+724,Arterial Rd Zone1-724,8.65,Arterial,Urban,40,36.954616687993564,45.3,83.0,69.4,50.6,56.2,0.636,Significant Pedestrian Interaction,30,95.4,6.0,39.9,Moderate Misalignment,0.0,None,68.7
+725,Arterial Rd Zone1-725,6.13,Arterial,Urban,50,42.751123214672866,55.8,85.5,78.8,41.9,43.4,0.637,Significant Pedestrian Interaction,30,89.1,6.0,49.1,Moderate Misalignment,0.171,Light,65.1
+726,Arterial Rd Zone1-726,10.02,Arterial,Urban,50,55.687425087965046,62.4,80.5,10.6,19.5,5.1,0.565,Side Impact Potential,50,91.5,0.0,31.2,Moderate Misalignment,0.0,None,63.4
+727,Arterial Rd Zone1-727,11.48,Arterial,Urban,40,28.323035839234393,33.9,88.0,57.6,36.9,36.8,0.562,Side Impact Potential,50,82.5,0.0,18.2,Aligned,0.0,None,80.6
+728,Arterial Rd Zone1-728,7.54,Arterial,Urban,40,31.98818156442402,40.9,83.0,14.1,24.3,12.2,0.584,Side Impact Potential,50,88.0,0.0,20.5,Aligned,0.156,Light,70.5
+729,Arterial Rd Zone1-729,7.43,Arterial,Urban,40,27.437041908959646,33.8,77.5,29.4,41.6,44.8,0.563,Side Impact Potential,50,81.2,0.0,23.5,Aligned,0.0,None,71.8
+730,Arterial Rd Zone1-730,11.27,Arterial,Urban,40,27.9221913672109,33.1,77.5,5.9,28.5,14.0,0.689,Side Impact Potential,50,81.9,0.0,22.0,Aligned,0.0,None,68.0
+731,Arterial Rd Zone1-731,11.51,Arterial,Urban,40,27.51926303638076,32.1,83.0,18.8,28.5,16.5,0.646,Side Impact Potential,50,81.3,0.0,20.4,Aligned,0.0,None,71.5
+732,Arterial Rd Zone1-732,9.81,Arterial,Urban,50,9.188618587871758,36.9,75.0,31.8,28.6,16.8,0.643,Side Impact Potential,50,38.8,6.0,18.7,Aligned,0.771,Severe,73.9
+733,Arterial Rd Zone1-733,10.22,Arterial,Urban,40,37.003778267061776,42.0,80.0,11.8,28.0,13.8,0.671,Side Impact Potential,50,95.5,0.0,23.2,Aligned,0.0,None,68.4
+734,Arterial Rd Zone1-734,10.61,Arterial,Urban,40,25.245636980373984,31.7,80.5,36.5,29.7,18.7,0.651,Separated Traffic,70,77.9,6.0,18.5,Aligned,0.138,Light,75.0
+735,Arterial Rd Zone1-735,7.75,Arterial,Urban,40,31.623315797535675,35.0,80.0,30.6,34.0,28.8,0.638,Side Impact Potential,50,87.4,0.0,20.7,Aligned,0.0,None,73.7
+736,Arterial Rd Zone1-736,11.18,Arterial,Urban,50,35.33595551226435,42.7,85.5,40.0,30.8,25.2,0.572,Side Impact Potential,50,78.0,0.0,18.4,Aligned,0.0,None,77.0
+737,Arterial Rd Zone1-737,6.84,Arterial,Urban,50,44.03711258801969,49.3,70.0,31.8,37.2,31.7,0.645,Side Impact Potential,50,91.1,0.0,21.7,Aligned,0.0,None,73.3
+738,Arterial Rd Zone1-738,6.94,Arterial,Urban,50,32.62294789983909,36.8,80.0,31.8,35.1,28.6,0.656,Side Impact Potential,50,73.9,0.0,21.0,Aligned,0.0,None,73.8
+739,Arterial Rd Zone1-739,7.11,Arterial,Urban,50,40.877006627211614,55.3,80.5,31.8,33.4,29.7,0.573,Side Impact Potential,50,86.3,22.0,25.9,Moderate Misalignment,0.205,Light,66.4
+740,Arterial Rd Zone1-740,7.64,Arterial,Urban,50,41.86486814264035,56.5,70.0,63.5,34.2,31.3,0.562,Side Impact Potential,50,87.8,0.0,23.3,Aligned,0.197,Light,78.7
+741,Arterial Rd Zone1-741,8.56,Arterial,Urban,50,34.261100926551705,41.4,72.5,35.3,28.3,22.0,0.572,Side Impact Potential,50,76.4,0.0,18.2,Aligned,0.0,None,76.1
+742,Arterial Rd Zone1-742,12.02,Arterial,Urban,40,29.602879744490355,35.0,70.0,24.7,26.9,13.9,0.645,Side Impact Potential,50,84.4,0.0,19.1,Aligned,0.0,None,73.5
+743,Arterial Rd Zone1-743,8.78,Arterial,Urban,40,27.979760496406346,34.8,72.5,41.2,32.0,26.9,0.613,Side Impact Potential,50,82.0,0.0,18.7,Aligned,0.0,None,77.0
+744,Arterial Rd Zone1-744,11.01,Arterial,Urban,50,41.55385550290524,46.2,70.0,44.7,38.2,37.2,0.626,Side Impact Potential,50,87.3,0.0,20.4,Aligned,0.0,None,76.7
+745,Arterial Rd Zone1-745,8.96,Arterial,Urban,40,47.071232465309244,50.7,83.0,31.8,35.4,28.1,0.657,Side Impact Potential,50,89.4,0.0,32.2,Moderate Misalignment,0.0,None,67.0
+746,Arterial Rd Zone1-746,8.97,Arterial,Urban,40,27.683223987487718,35.8,80.0,34.1,43.2,40.3,0.68,Significant Pedestrian Interaction,30,81.5,0.0,36.4,Moderate Misalignment,0.164,Light,65.0
+747,Arterial Rd Zone1-747,6.33,Arterial,Urban,50,51.59808418083827,59.7,88.0,31.8,31.6,23.7,0.648,Side Impact Potential,50,97.6,0.0,29.8,Moderate Misalignment,0.0,None,68.5
+748,Arterial Rd Zone1-748,10.96,Arterial,Urban,40,28.866336218165884,37.7,80.0,36.5,38.6,37.0,0.615,Side Impact Potential,50,83.3,0.0,21.6,Aligned,0.17,Light,74.3
+749,Arterial Rd Zone1-749,11.41,Arterial,Urban,40,35.91803221404515,43.5,72.5,34.1,33.8,29.4,0.629,Side Impact Potential,50,93.9,0.0,23.8,Aligned,0.0,None,72.5
+750,Collector Rd Zone1-750,8.38,Collector,Urban,40,40.38884935083379,46.3,50.0,30.6,32.0,26.1,0.582,Side Impact Potential,50,99.4,0.0,26.6,Moderate Misalignment,0.0,None,70.2
+751,Collector Rd Zone1-751,8.8,Collector,Urban,30,24.003063786541972,33.3,63.0,31.8,38.2,37.0,0.631,Side Impact Potential,50,91.0,0.0,25.5,Moderate Misalignment,0.223,Light,71.1
+752,Collector Rd Zone1-752,6.53,Collector,Urban,30,21.384782820980277,27.6,55.0,47.1,37.2,34.0,0.654,Side Impact Potential,50,87.1,0.0,19.7,Aligned,0.156,Light,77.6
+753,Collector Rd Zone1-753,6.84,Collector,Urban,50,34.79882435259441,43.7,55.0,24.7,33.4,25.8,0.665,Side Impact Potential,50,77.2,0.0,21.3,Aligned,0.133,Light,72.2
+754,Collector Rd Zone1-754,8.71,Collector,Urban,30,31.08676147065732,37.3,50.0,24.7,38.4,33.9,0.636,Side Impact Potential,50,98.4,6.0,30.6,Moderate Misalignment,0.0,None,65.4
+755,Collector Rd Zone1-755,8.33,Collector,Urban,40,48.06321138319727,52.6,55.0,14.1,29.8,18.0,0.684,Side Impact Potential,50,87.9,3.0,34.5,Moderate Misalignment,0.0,None,61.5
+756,Collector Rd Zone1-756,7.75,Collector,Urban,40,32.69529429919921,34.1,52.5,41.2,32.5,25.2,0.632,Side Impact Potential,50,89.0,0.0,18.8,Aligned,0.0,None,77.0
+757,Collector Rd Zone1-757,6.17,Collector,Urban,50,29.61805670820611,34.6,60.5,25.9,27.9,14.7,0.673,Side Impact Potential,50,69.4,0.0,19.2,Aligned,0.0,None,73.7
+758,Collector Rd Zone1-758,10.57,Collector,Urban,30,29.362177614209838,33.8,52.5,25.9,23.0,11.0,0.566,Side Impact Potential,50,99.0,0.0,21.5,Aligned,0.0,None,72.3
+759,Collector Rd Zone1-759,7.9,Collector,Urban,40,11.544529311613777,34.3,52.5,18.8,25.3,10.5,0.647,Side Impact Potential,50,57.3,0.0,19.3,Aligned,0.674,Severe,72.2
+760,Collector Rd Zone1-760,11.39,Collector,Urban,30,24.66870716586997,31.1,55.0,29.4,38.0,38.0,0.623,Side Impact Potential,50,92.0,0.0,23.4,Aligned,0.133,Light,71.8
+761,Collector Rd Zone1-761,11.07,Collector,Urban,40,39.16325371500998,43.7,55.0,44.7,50.6,59.9,0.582,Significant Pedestrian Interaction,30,98.7,6.0,41.4,Moderate Misalignment,0.0,None,62.9
+762,Collector Rd Zone1-762,7.3,Collector,Urban,40,24.98880261682962,28.8,50.0,20.0,34.7,34.5,0.581,Side Impact Potential,50,77.5,6.0,22.4,Aligned,0.0,None,69.4
+763,Collector Rd Zone1-763,7.25,Collector,Urban,30,31.94430193383666,39.1,55.0,40.0,33.6,24.4,0.658,Side Impact Potential,50,97.1,0.0,28.8,Moderate Misalignment,0.0,None,70.7
+764,Collector Rd Zone1-764,8.18,Collector,Urban,30,25.809877764454313,28.9,50.0,25.9,27.8,17.8,0.616,Side Impact Potential,50,93.7,0.0,19.2,Aligned,0.0,None,73.7
+765,Collector Rd Zone1-765,11.35,Collector,Urban,40,45.3623166209864,50.4,52.5,55.3,36.0,34.1,0.571,Side Impact Potential,50,92.0,0.0,29.0,Moderate Misalignment,0.0,None,73.7
+766,Collector Rd Zone1-766,6.74,Collector,Urban,30,23.69373167840802,28.1,52.5,30.6,45.5,48.8,0.684,Significant Pedestrian Interaction,30,90.5,0.0,24.7,Aligned,0.0,None,71.3
+767,Collector Rd Zone1-767,7.01,Collector,Urban,30,17.300482258248334,21.7,63.0,30.6,27.9,19.6,0.593,Side Impact Potential,50,81.0,0.0,18.6,Aligned,0.134,Light,75.0
+768,Collector Rd Zone1-768,7.96,Collector,Urban,40,29.06532601655839,37.4,50.0,34.1,47.4,54.2,0.607,Side Impact Potential,50,83.6,0.0,24.9,Aligned,0.155,Light,71.9
+769,Collector Rd Zone1-769,7.77,Collector,Urban,40,24.60593489222317,31.7,52.5,30.6,27.3,18.6,0.585,Side Impact Potential,50,76.9,0.0,18.4,Aligned,0.159,Light,75.1
+770,Collector Rd Zone1-770,11.85,Collector,Urban,30,27.966036521629565,31.3,50.0,100.0,67.8,95.0,0.618,Significant Pedestrian Interaction,30,96.9,0.0,24.8,Aligned,0.0,None,85.1
+771,Collector Rd Zone1-771,7.17,Collector,Urban,40,39.72167557878015,51.3,55.0,27.1,32.0,26.5,0.59,Side Impact Potential,50,99.6,0.0,32.2,Moderate Misalignment,0.158,Light,66.1
+772,Collector Rd Zone1-772,8.6,Collector,Urban,30,24.54571217971717,31.9,60.5,40.0,36.8,30.5,0.676,Side Impact Potential,50,91.8,0.0,22.5,Aligned,0.175,Light,74.5
+773,Collector Rd Zone1-773,8.53,Collector,Urban,30,18.319243437825474,24.9,55.0,69.4,54.3,59.0,0.681,Significant Pedestrian Interaction,30,82.5,0.0,22.7,Aligned,0.213,Light,80.3
+774,Collector Rd Zone1-774,8.79,Collector,Urban,40,39.67509870045485,54.0,55.0,36.5,44.8,48.8,0.661,Side Impact Potential,50,99.5,0.0,38.2,Moderate Misalignment,0.216,Light,64.4
+775,Collector Rd Zone1-775,6.58,Collector,Urban,30,28.345852750972306,32.3,50.0,48.2,45.3,47.0,0.616,Side Impact Potential,50,97.5,19.0,24.7,Aligned,0.0,None,71.0
+776,Collector Rd Zone1-776,10.55,Collector,Urban,30,26.20701359818045,29.1,55.0,31.8,36.6,32.1,0.627,Side Impact Potential,50,94.3,0.0,21.5,Aligned,0.0,None,73.5
+777,Collector Rd Zone1-777,10.24,Collector,Urban,30,25.39622133825066,28.1,55.0,0.0,20.3,1.8,0.645,Side Impact Potential,50,93.1,0.0,20.0,Aligned,0.0,None,68.0
+778,Collector Rd Zone1-778,8.37,Collector,Urban,50,30.795650983365892,36.1,55.0,49.4,30.6,20.0,0.651,Side Impact Potential,50,71.2,0.0,17.1,Aligned,0.0,None,79.6
+779,Collector Rd Zone1-779,9.39,Collector,Urban,40,30.754575229021917,41.0,55.0,34.1,29.0,19.5,0.613,Side Impact Potential,50,86.1,0.0,19.6,Aligned,0.19,Light,75.1
+780,Collector Rd Zone1-780,9.33,Collector,Urban,40,40.45744031543869,49.9,55.0,38.8,35.2,28.5,0.626,Side Impact Potential,50,99.3,0.0,30.4,Moderate Misalignment,0.0,None,69.5
+781,Collector Rd Zone1-781,8.0,Collector,Urban,30,24.831004424751736,27.6,55.0,24.7,28.2,17.4,0.63,Side Impact Potential,50,92.2,0.0,19.5,Aligned,0.0,None,73.2
+782,Collector Rd Zone1-782,10.67,Collector,Urban,40,34.053686694327645,44.7,55.0,34.1,37.9,33.7,0.637,Side Impact Potential,50,91.1,0.0,26.5,Moderate Misalignment,0.183,Light,70.9
+783,Collector Rd Zone1-783,11.05,Collector,Urban,40,35.448977160147265,40.9,50.0,31.8,30.1,24.2,0.575,Side Impact Potential,50,93.2,0.0,20.2,Aligned,0.0,None,74.2
+784,Collector Rd Zone1-784,11.29,Collector,Urban,30,24.25953322455924,27.6,55.0,9.4,24.8,8.8,0.675,Side Impact Potential,50,91.4,0.0,20.3,Aligned,0.0,None,69.7
+785,Collector Rd Zone1-785,11.25,Collector,Urban,30,26.305713630654697,31.2,55.0,55.3,34.0,28.8,0.603,Side Impact Potential,50,94.5,3.0,18.8,Aligned,0.0,None,79.2
+786,Collector Rd Zone1-786,8.57,Collector,Urban,30,21.01732197532959,26.9,55.0,49.4,42.8,45.4,0.634,Significant Pedestrian Interaction,30,86.5,0.0,21.3,Aligned,0.158,Light,77.1
+787,Collector Rd Zone1-787,7.72,Collector,Urban,50,50.43266294179211,59.7,55.0,75.3,54.2,61.6,0.652,Significant Pedestrian Interaction,30,99.4,0.0,57.9,High Misalignment,0.0,None,60.3
+788,Collector Rd Zone1-788,10.16,Collector,Urban,40,21.52160682581691,27.4,55.0,23.5,23.6,9.7,0.611,Side Impact Potential,50,72.3,0.0,18.1,Aligned,0.157,Light,73.8
+789,Collector Rd Zone1-789,8.79,Collector,Urban,40,29.871918898764108,34.0,60.5,20.0,31.0,23.4,0.587,Side Impact Potential,50,84.8,0.0,21.1,Aligned,0.0,None,71.3
+790,Collector Rd Zone1-790,6.59,Collector,Urban,40,25.908321143351323,34.3,50.0,70.6,34.4,28.7,0.628,Side Impact Potential,50,78.9,3.0,15.7,Aligned,0.179,Light,84.1
+791,Collector Rd Zone1-791,6.21,Collector,Urban,40,34.617782890211124,39.6,50.0,11.8,20.6,7.4,0.561,Side Impact Potential,50,91.9,3.0,18.5,Aligned,0.0,None,70.7
+792,Collector Rd Zone1-792,9.82,Collector,Urban,30,28.405170417380134,32.8,50.0,0.0,22.8,9.1,0.592,Side Impact Potential,50,97.6,0.0,23.7,Aligned,0.0,None,65.8
+793,Collector Rd Zone1-793,11.77,Collector,Urban,30,5.3065993393557145,24.3,58.0,55.3,43.3,49.4,0.618,Significant Pedestrian Interaction,30,63.0,0.0,20.8,Aligned,0.801,Severe,78.6
+794,Collector Rd Zone1-794,11.63,Collector,Urban,30,26.0851344231976,29.3,55.0,38.8,35.5,28.9,0.673,Side Impact Potential,50,94.1,0.0,20.2,Aligned,0.0,None,75.6
+795,Collector Rd Zone1-795,9.23,Collector,Urban,40,37.55088404688314,46.6,55.0,24.7,32.3,25.2,0.607,Side Impact Potential,50,96.3,3.0,27.8,Moderate Misalignment,0.0,None,67.7
+796,Collector Rd Zone1-796,11.83,Collector,Urban,30,20.782514170768945,28.9,50.0,14.1,30.0,18.7,0.66,Side Impact Potential,50,86.2,0.0,21.5,Aligned,0.23,Light,69.9
+797,Collector Rd Zone1-797,11.22,Collector,Urban,40,27.830016442783982,31.1,60.5,64.7,56.9,77.9,0.592,Significant Pedestrian Interaction,30,81.7,9.0,37.2,Moderate Misalignment,0.0,None,68.8
+798,Collector Rd Zone1-798,11.5,Collector,Urban,30,20.84694875702379,23.1,55.0,22.4,29.9,21.3,0.634,Side Impact Potential,50,86.3,0.0,20.4,Aligned,0.0,None,72.2
+799,Collector Rd Zone1-799,9.29,Collector,Urban,30,25.388151859866586,29.9,63.0,32.9,36.4,28.5,0.668,Side Impact Potential,50,93.1,0.0,21.3,Aligned,0.0,None,73.8
+800,Collector Rd Zone1-800,9.08,Collector,Urban,30,21.125498960421357,23.6,52.5,14.1,30.5,18.8,0.674,Side Impact Potential,50,86.7,0.0,21.7,Aligned,0.0,None,69.8
+801,Collector Rd Zone1-801,8.18,Collector,Urban,40,21.555519396673947,29.5,63.0,43.5,37.8,33.2,0.674,Side Impact Potential,50,72.3,0.0,20.4,Aligned,0.219,Light,76.5
+802,Collector Rd Zone1-802,11.61,Collector,Urban,40,27.207991911694517,28.9,50.0,64.7,64.4,77.2,0.669,Significant Pedestrian Interaction,30,80.8,0.0,39.8,Moderate Misalignment,0.0,None,69.1
+803,Collector Rd Zone1-803,7.33,Collector,Urban,40,27.427765572799046,35.7,55.0,42.4,52.2,61.4,0.58,Significant Pedestrian Interaction,30,81.1,0.0,38.5,Moderate Misalignment,0.173,Light,65.4
+804,Collector Rd Zone1-804,7.08,Collector,Urban,40,27.118709788846775,34.9,63.0,34.1,28.4,18.0,0.629,Side Impact Potential,50,80.7,6.0,18.4,Aligned,0.164,Light,74.6
+805,Collector Rd Zone1-805,7.18,Collector,Urban,30,20.0988790263068,22.0,52.5,29.4,27.8,19.7,0.569,Side Impact Potential,50,85.1,0.0,18.8,Aligned,0.0,None,74.6
+806,Collector Rd Zone1-806,10.82,Collector,Urban,30,24.49566443336291,31.3,50.0,43.5,32.1,21.5,0.675,Side Impact Potential,50,91.7,0.0,19.8,Aligned,0.15,Light,76.8
+807,Collector Rd Zone1-807,10.83,Collector,Urban,30,36.22176931586499,40.4,50.0,60.0,46.6,53.7,0.617,Side Impact Potential,50,90.7,0.0,32.1,Moderate Misalignment,0.0,None,72.7
+808,Collector Rd Zone1-808,11.7,Collector,Urban,30,28.557942690280097,33.6,52.5,20.0,23.8,12.2,0.574,Side Impact Potential,50,97.8,0.0,22.3,Aligned,0.0,None,70.6
+809,Collector Rd Zone1-809,9.94,Collector,Urban,30,11.649519872514016,39.0,50.0,44.7,36.9,30.8,0.669,Side Impact Potential,50,72.5,0.0,29.2,Moderate Misalignment,0.716,Severe,71.4
+810,Collector Rd Zone1-810,11.64,Collector,Urban,30,30.536482225767767,33.0,50.0,36.5,26.8,15.0,0.614,Side Impact Potential,50,99.2,0.0,20.6,Aligned,0.0,None,74.9
+811,Collector Rd Zone1-811,8.64,Collector,Urban,50,43.8134964004139,48.5,58.0,27.1,31.2,22.5,0.661,Side Impact Potential,50,90.7,0.0,20.2,Aligned,0.0,None,73.3
+812,Collector Rd Zone1-812,9.57,Collector,Urban,30,16.60905508342049,22.0,55.0,40.0,33.2,28.5,0.574,Side Impact Potential,50,79.9,0.0,19.2,Aligned,0.186,Light,76.5
+813,Collector Rd Zone1-813,11.4,Collector,Urban,40,29.429443327089185,39.3,52.5,34.1,28.1,16.2,0.64,Side Impact Potential,50,84.1,0.0,18.2,Aligned,0.186,Light,75.9
+814,Collector Rd Zone1-814,11.1,Collector,Urban,30,18.359195433986432,24.6,52.5,49.4,35.6,33.0,0.62,Side Impact Potential,50,82.5,0.0,18.9,Aligned,0.191,Light,78.5
+815,Collector Rd Zone1-815,11.16,Collector,Urban,30,20.251527568845564,26.2,52.5,30.6,28.8,17.2,0.637,Side Impact Potential,50,85.4,0.0,18.9,Aligned,0.159,Light,74.8
+816,Collector Rd Zone1-816,8.24,Collector,Urban,40,34.85323379956656,41.8,55.0,36.5,26.8,15.3,0.623,Side Impact Potential,50,92.3,0.0,19.4,Aligned,0.0,None,75.7
+817,Collector Rd Zone1-817,7.31,Collector,Urban,40,32.7042383487201,35.7,58.0,55.3,44.5,46.1,0.614,Side Impact Potential,50,89.1,0.0,21.2,Aligned,0.0,None,78.3
+818,Collector Rd Zone1-818,11.39,Collector,Urban,30,31.03280729920638,34.1,50.0,48.2,45.5,52.0,0.588,Side Impact Potential,50,98.5,9.0,26.7,Moderate Misalignment,0.0,None,71.8
+819,Collector Rd Zone1-819,11.53,Collector,Urban,30,19.63307395657258,25.7,52.5,24.7,27.5,19.4,0.583,Side Impact Potential,50,84.4,0.0,19.3,Aligned,0.171,Light,73.4
+820,Collector Rd Zone1-820,11.32,Collector,Urban,30,22.376477365235374,28.6,55.0,9.4,24.9,9.1,0.665,Side Impact Potential,50,88.6,16.0,20.3,Aligned,0.163,Light,66.5
+821,Collector Rd Zone1-821,6.9,Collector,Urban,30,31.418909377065876,37.6,52.5,9.4,24.5,8.7,0.651,Side Impact Potential,50,97.9,0.0,28.1,Moderate Misalignment,0.0,None,65.0
+822,Collector Rd Zone1-822,6.43,Collector,Urban,40,20.33166221442823,26.2,55.0,32.9,44.2,51.9,0.582,Side Impact Potential,50,70.5,0.0,24.0,Aligned,0.156,Light,72.2
+823,Collector Rd Zone1-823,10.94,Collector,Urban,30,24.14581794062394,29.1,55.0,20.0,30.6,23.2,0.61,Side Impact Potential,50,91.2,9.0,20.9,Aligned,0.0,None,69.7
+824,Collector Rd Zone1-824,7.46,Collector,Urban,50,38.34624028769151,42.4,52.5,64.7,52.6,66.2,0.637,Significant Pedestrian Interaction,30,82.5,12.0,48.7,Moderate Misalignment,0.0,None,61.3
+825,Collector Rd Zone1-825,7.83,Collector,Urban,30,9.387567696384329,37.1,55.0,25.9,24.6,13.8,0.58,Side Impact Potential,50,69.1,0.0,25.5,Moderate Misalignment,0.763,Severe,69.9
+826,Collector Rd Zone1-826,9.87,Collector,Urban,40,39.35000738549198,48.9,55.0,0.0,26.1,12.2,0.648,Side Impact Potential,50,99.0,0.0,31.2,Moderate Misalignment,0.0,None,61.3
+827,Collector Rd Zone1-827,10.77,Collector,Urban,30,5.909790936336552,19.9,50.0,17.6,27.6,14.7,0.648,Side Impact Potential,50,63.9,0.0,20.2,Aligned,0.712,Severe,71.4
+828,Collector Rd Zone1-828,8.46,Collector,Urban,40,35.43521076373488,43.9,52.5,27.1,31.3,21.0,0.647,Side Impact Potential,50,93.2,0.0,24.3,Aligned,0.0,None,70.8
+829,Collector Rd Zone1-829,8.72,Collector,Urban,40,35.80438452312118,49.0,50.0,27.1,27.4,18.0,0.587,Side Impact Potential,50,93.7,0.0,28.2,Moderate Misalignment,0.216,Light,68.5
+830,Collector Rd Zone1-830,11.99,Collector,Urban,30,21.308457792712453,26.3,52.5,23.5,27.5,15.3,0.646,Side Impact Potential,50,87.0,0.0,19.4,Aligned,0.0,None,73.1
+831,Collector Rd Zone1-831,9.65,Collector,Urban,30,25.08100992668781,28.5,50.0,47.1,46.2,52.3,0.571,Side Impact Potential,50,92.6,0.0,22.8,Aligned,0.0,None,75.7
+832,Collector Rd Zone1-832,7.18,Collector,Urban,30,21.016432281880604,26.4,63.0,27.1,24.4,14.2,0.565,Side Impact Potential,50,86.5,0.0,17.9,Aligned,0.13,Light,74.7
+833,Collector Rd Zone2-833,13.56,Collector,Peri-Urban,30,22.07604428074084,28.0,50.0,4.7,18.5,3.2,0.56,Side Impact Potential,50,88.1,0.0,18.7,Aligned,0.139,Light,69.7
+834,Collector Rd Zone2-834,17.45,Collector,Peri-Urban,30,19.88981036542624,23.0,55.0,45.9,35.9,36.3,0.515,Side Impact Potential,50,84.8,0.0,19.4,Aligned,0.0,None,77.5
+835,Collector Rd Zone2-835,15.47,Collector,Peri-Urban,30,16.67143974018617,19.8,55.0,25.9,24.3,16.5,0.526,Side Impact Potential,50,80.0,0.0,18.0,Aligned,0.0,None,74.4
+836,Collector Rd Zone2-836,18.71,Collector,Peri-Urban,40,27.156792012059643,31.7,52.5,42.4,44.6,56.2,0.484,Significant Pedestrian Interaction,30,80.7,0.0,35.8,Moderate Misalignment,0.0,None,67.0
+837,Collector Rd Zone2-837,13.69,Collector,Peri-Urban,30,16.40214869571582,21.3,52.5,30.6,31.0,27.1,0.516,Side Impact Potential,50,79.6,0.0,19.7,Aligned,0.17,Light,74.3
+838,Collector Rd Zone2-838,15.0,Collector,Peri-Urban,40,23.97089504970407,30.3,55.0,54.1,37.4,34.9,0.579,Side Impact Potential,50,76.0,0.0,18.9,Aligned,0.14,Light,79.5
+839,Collector Rd Zone2-839,17.17,Collector,Peri-Urban,40,40.08505060674554,43.8,52.5,14.1,22.5,11.5,0.554,Side Impact Potential,50,99.9,0.0,22.8,Aligned,0.0,None,69.1
+840,Collector Rd Zone2-840,13.99,Collector,Peri-Urban,40,43.13628410016686,52.1,50.0,32.9,44.8,49.3,0.612,Side Impact Potential,50,95.3,0.0,36.7,Moderate Misalignment,0.0,None,64.6
+841,Collector Rd Zone2-841,13.51,Collector,Peri-Urban,40,16.80553414054022,48.6,50.0,0.0,24.3,14.2,0.548,Side Impact Potential,50,65.2,6.0,30.3,Moderate Misalignment,0.655,Severe,60.6
+842,Collector Rd Zone2-842,14.15,Collector,Peri-Urban,40,37.70710460161867,45.2,52.5,21.2,27.9,17.6,0.601,Side Impact Potential,50,96.6,0.0,25.2,Moderate Misalignment,0.0,None,69.1
+843,Collector Rd Zone2-843,13.82,Collector,Peri-Urban,30,35.289232319156916,38.6,52.5,10.6,22.6,12.9,0.527,Side Impact Potential,50,92.1,0.0,28.3,Moderate Misalignment,0.0,None,65.1
+844,Collector Rd Zone2-844,18.29,Collector,Peri-Urban,40,38.66502372509031,49.3,63.0,16.5,22.8,14.1,0.52,Side Impact Potential,50,98.0,0.0,28.3,Moderate Misalignment,0.159,Light,66.3
+845,Collector Rd Zone2-845,18.2,Collector,Peri-Urban,30,18.064456686572694,22.0,50.0,0.0,17.8,6.0,0.484,Side Impact Potential,50,82.1,0.0,19.1,Aligned,0.0,None,68.5
+846,Collector Rd Zone2-846,14.47,Collector,Peri-Urban,40,36.98049526851998,43.9,50.0,32.9,31.9,27.7,0.547,Side Impact Potential,50,95.5,0.0,23.8,Aligned,0.0,None,72.3
+847,Collector Rd Zone2-847,17.86,Collector,Peri-Urban,40,42.291641651372515,51.5,55.0,14.1,21.3,7.6,0.573,Side Impact Potential,50,96.6,0.0,30.4,Moderate Misalignment,0.0,None,64.6
+848,Collector Rd Zone2-848,18.03,Collector,Peri-Urban,30,23.18036867716491,25.4,55.0,28.2,26.6,20.4,0.502,Side Impact Potential,50,89.8,6.0,18.5,Aligned,0.0,None,73.3
+849,Collector Rd Zone2-849,16.69,Collector,Peri-Urban,30,28.56430785728389,31.3,55.0,9.4,22.8,14.2,0.495,Side Impact Potential,50,97.8,0.0,21.0,Aligned,0.0,None,69.3
+850,Collector Rd Zone2-850,16.47,Collector,Peri-Urban,30,21.67713198922674,24.9,50.0,9.4,21.0,12.1,0.497,Side Impact Potential,50,87.5,0.0,19.0,Aligned,0.0,None,70.5
+851,Collector Rd Zone2-851,13.53,Collector,Peri-Urban,40,44.24100894582783,50.2,52.5,0.0,24.5,13.3,0.583,Side Impact Potential,50,93.6,0.0,32.0,Moderate Misalignment,0.0,None,60.8
+852,Collector Rd Zone2-852,14.84,Collector,Peri-Urban,30,18.464932203947594,20.8,55.0,0.0,20.3,5.1,0.588,Side Impact Potential,50,82.7,0.0,20.0,Aligned,0.0,None,68.0
+853,Collector Rd Zone2-853,14.98,Collector,Peri-Urban,40,36.329824618932825,41.6,55.0,35.3,29.4,24.6,0.563,Side Impact Potential,50,94.5,0.0,20.2,Aligned,0.0,None,74.9
+854,Collector Rd Zone2-854,18.34,Collector,Peri-Urban,40,26.70913384878929,35.7,52.5,5.9,23.4,15.3,0.521,Side Impact Potential,50,80.1,0.0,20.3,Aligned,0.188,Light,69.0
+855,Collector Rd Zone2-855,18.1,Collector,Peri-Urban,30,20.469336096449254,25.4,52.5,11.8,22.1,13.0,0.504,Side Impact Potential,50,85.7,6.0,19.1,Aligned,0.0,None,69.7
+856,Collector Rd Zone2-856,17.3,Collector,Peri-Urban,40,26.932265262511926,35.6,52.5,14.1,28.7,22.1,0.542,Side Impact Potential,50,80.4,0.0,21.0,Aligned,0.178,Light,70.2
+857,Collector Rd Zone2-857,15.99,Collector,Peri-Urban,40,20.686285820488987,26.3,50.0,36.5,28.3,20.1,0.567,Side Impact Potential,50,71.0,0.0,18.0,Aligned,0.145,Light,76.5
+858,Collector Rd Zone2-858,15.93,Collector,Peri-Urban,40,24.623696249470477,29.5,55.0,0.0,22.7,9.0,0.594,Side Impact Potential,50,76.9,0.0,20.8,Aligned,0.0,None,67.5
+859,Collector Rd Zone2-859,18.03,Collector,Peri-Urban,40,43.645777057552756,49.6,52.5,20.0,20.7,10.0,0.522,Side Impact Potential,50,94.5,0.0,27.5,Moderate Misalignment,0.0,None,67.5
+860,Collector Rd Zone2-860,16.28,Collector,Peri-Urban,40,39.521216476973656,44.6,52.5,10.6,27.5,19.1,0.57,Side Impact Potential,50,99.3,0.0,25.9,Moderate Misalignment,0.0,None,66.6
+861,Collector Rd Zone2-861,17.71,Collector,Peri-Urban,40,30.299728192249272,32.0,55.0,17.6,25.1,14.8,0.582,Side Impact Potential,50,85.4,0.0,19.3,Aligned,0.0,None,71.9
+862,Collector Rd Zone2-862,17.15,Collector,Peri-Urban,40,24.648391409087534,29.1,55.0,48.2,51.1,65.8,0.566,Significant Pedestrian Interaction,30,77.0,0.0,37.3,Moderate Misalignment,0.0,None,67.3
+863,Collector Rd Zone2-863,17.04,Collector,Peri-Urban,30,18.988336117180747,22.8,55.0,10.6,27.1,19.8,0.562,Side Impact Potential,50,83.5,0.0,20.9,Aligned,0.0,None,69.6
+864,Collector Rd Zone2-864,19.26,Collector,Peri-Urban,30,22.31679952592428,27.5,50.0,0.0,22.6,7.5,0.616,Side Impact Potential,50,88.5,0.0,20.8,Aligned,0.0,None,67.5
+865,Collector Rd Zone2-865,12.98,Collector,Peri-Urban,30,19.837390924024206,27.0,55.0,30.6,23.2,16.2,0.484,Side Impact Potential,50,84.8,0.0,17.0,Aligned,0.207,Light,75.9
+866,Collector Rd Zone2-866,16.67,Collector,Peri-Urban,40,46.657342966406304,52.3,52.5,16.5,27.7,20.9,0.56,Side Impact Potential,50,90.0,16.0,33.1,Moderate Misalignment,0.0,None,60.2
+867,Collector Rd Zone2-867,16.89,Collector,Peri-Urban,30,27.513699466607168,29.5,52.5,9.4,24.8,19.1,0.487,Side Impact Potential,50,96.3,0.0,20.3,Aligned,0.0,None,69.7
+868,Collector Rd Zone2-868,14.79,Collector,Peri-Urban,30,18.433149959630473,20.0,52.5,9.4,21.7,13.5,0.495,Side Impact Potential,50,82.6,0.0,19.2,Aligned,0.0,None,70.4
+869,Collector Rd Zone2-869,13.99,Collector,Peri-Urban,30,16.868244615932284,22.0,50.0,16.5,25.1,17.2,0.537,Side Impact Potential,50,80.3,0.0,19.5,Aligned,0.179,Light,71.6
+870,Collector Rd Zone2-870,18.15,Collector,Peri-Urban,40,42.29378611953637,49.7,55.0,9.4,23.6,15.6,0.508,Side Impact Potential,50,96.6,0.0,29.9,Moderate Misalignment,0.0,None,63.9
+871,Collector Rd Zone2-871,16.58,Collector,Peri-Urban,30,22.587237459778876,27.9,52.5,7.1,23.4,11.0,0.595,Side Impact Potential,50,88.9,0.0,20.1,Aligned,0.0,None,69.4
+872,Collector Rd Zone2-872,13.1,Collector,Peri-Urban,30,22.9314643517003,25.4,50.0,10.6,21.0,5.4,0.609,Side Impact Potential,50,89.4,0.0,18.8,Aligned,0.0,None,70.8
+873,Collector Rd Zone2-873,15.3,Collector,Peri-Urban,30,21.386898629080715,26.6,63.0,27.1,32.4,25.1,0.612,Side Impact Potential,50,87.1,0.0,20.6,Aligned,0.0,None,73.1
+874,Collector Rd Zone2-874,18.67,Collector,Peri-Urban,50,48.83827685726296,62.4,52.5,10.6,20.4,9.1,0.514,Side Impact Potential,50,98.3,0.0,31.5,Moderate Misalignment,0.149,Light,63.2
+875,Collector Rd Zone2-875,19.46,Collector,Peri-Urban,30,17.657213712329263,23.4,50.0,14.1,37.3,40.2,0.541,Side Impact Potential,50,81.5,0.0,24.0,Aligned,0.182,Light,68.4
+876,Collector Rd Zone2-876,16.15,Collector,Peri-Urban,40,22.509594755714613,28.5,60.5,21.2,36.7,33.6,0.617,Side Impact Potential,50,73.8,19.0,22.9,Aligned,0.151,Light,66.7
+877,Collector Rd Zone2-877,15.63,Collector,Peri-Urban,30,19.413003696585637,23.8,50.0,14.1,25.0,12.6,0.598,Side Impact Potential,50,84.1,0.0,19.8,Aligned,0.0,None,70.9
+878,Collector Rd Zone2-878,18.19,Collector,Peri-Urban,30,28.578977484167936,34.0,52.5,34.1,40.5,46.8,0.51,Significant Pedestrian Interaction,30,97.9,0.0,26.7,Moderate Misalignment,0.0,None,70.8
+879,Collector Rd Zone2-879,13.36,Collector,Peri-Urban,30,15.706177706980142,20.9,55.0,10.6,21.8,13.6,0.489,Side Impact Potential,50,78.6,0.0,19.1,Aligned,0.188,Light,70.7
+880,Collector Rd Zone2-880,13.87,Collector,Peri-Urban,40,37.99492492329819,44.1,50.0,18.8,22.2,9.2,0.58,Side Impact Potential,50,97.0,0.0,22.4,Aligned,0.0,None,70.3
+881,Collector Rd Zone2-881,13.82,Collector,Peri-Urban,40,32.803614746390565,36.2,55.0,12.9,26.4,17.9,0.557,Side Impact Potential,50,89.2,0.0,20.4,Aligned,0.0,None,70.3
+882,Collector Rd Zone2-882,19.96,Collector,Peri-Urban,40,32.60742156056005,39.8,52.5,18.8,29.5,21.5,0.595,Side Impact Potential,50,88.9,6.0,20.7,Aligned,0.0,None,70.1
+883,Collector Rd Zone2-883,20.26,Collector,Peri-Urban,40,29.99184198465051,39.0,50.0,16.5,21.9,9.7,0.545,Side Impact Potential,50,85.0,0.0,18.4,Aligned,0.168,Light,72.3
+884,Collector Rd Zone2-884,14.45,Collector,Peri-Urban,30,31.85015996583335,34.6,50.0,0.0,20.7,8.7,0.533,Side Impact Potential,50,97.2,0.0,24.9,Aligned,0.0,None,65.1
+885,Collector Rd Zone2-885,14.08,Collector,Peri-Urban,40,29.0156124180271,32.4,50.0,0.0,15.2,0.3,0.501,Side Impact Potential,50,83.5,0.0,18.2,Aligned,0.0,None,69.1
+886,Collector Rd Zone2-886,16.41,Collector,Peri-Urban,40,49.481302293561406,53.7,50.0,25.9,24.6,13.1,0.599,Side Impact Potential,50,85.8,3.0,32.3,Moderate Misalignment,0.0,None,65.2
+887,Collector Rd Zone2-887,14.7,Collector,Peri-Urban,30,28.47193907225424,37.3,50.0,10.6,28.1,18.3,0.589,Side Impact Potential,50,97.7,0.0,28.9,Moderate Misalignment,0.168,Light,64.8
+888,Collector Rd Zone2-888,13.85,Collector,Peri-Urban,30,11.659457289945237,40.1,55.0,14.1,35.5,32.5,0.61,Side Impact Potential,50,72.5,0.0,33.9,Moderate Misalignment,0.726,Severe,62.5
+889,Collector Rd Zone2-889,17.28,Collector,Peri-Urban,30,29.488334664517335,36.9,52.5,21.2,26.3,17.9,0.578,Side Impact Potential,50,99.2,0.0,26.4,Moderate Misalignment,0.138,Light,68.4
+890,Collector Rd Zone2-890,18.82,Collector,Peri-Urban,40,31.493526117480585,35.8,50.0,25.9,41.1,47.8,0.547,Side Impact Potential,50,87.2,0.0,23.8,Aligned,0.0,None,70.9
+891,Collector Rd Zone2-891,18.45,Collector,Peri-Urban,40,21.365897855494502,28.1,63.0,0.0,22.1,6.6,0.614,Side Impact Potential,50,72.0,9.0,20.6,Aligned,0.187,Light,65.8
+892,Collector Rd Zone2-892,13.22,Collector,Peri-Urban,40,24.727050277720533,32.3,52.5,10.6,24.9,18.1,0.513,Side Impact Potential,50,77.1,0.0,20.2,Aligned,0.177,Light,70.0
+893,Collector Rd Zone2-893,15.98,Collector,Peri-Urban,30,17.847635769446583,19.5,55.0,0.0,20.1,2.7,0.618,Side Impact Potential,50,81.8,0.0,19.9,Aligned,0.0,None,68.1
+894,Collector Rd Zone2-894,14.84,Collector,Peri-Urban,40,41.34598442845163,45.4,55.0,0.0,20.4,10.3,0.483,Side Impact Potential,50,98.0,0.0,25.6,Moderate Misalignment,0.0,None,64.6
+895,Collector Rd Zone2-895,18.24,Collector,Peri-Urban,30,21.16091794621619,25.0,55.0,0.0,21.0,9.9,0.523,Side Impact Potential,50,86.7,9.0,20.2,Aligned,0.0,None,66.1
+896,Collector Rd Zone2-896,13.99,Collector,Peri-Urban,30,23.654669941460945,27.9,55.0,0.0,18.2,2.5,0.561,Side Impact Potential,50,90.5,3.0,19.2,Aligned,0.0,None,67.9
+897,Collector Rd Zone2-897,18.63,Collector,Peri-Urban,30,29.859814589376366,35.6,58.0,0.0,20.1,9.3,0.515,Side Impact Potential,50,99.8,0.0,25.7,Moderate Misalignment,0.0,None,64.6
+898,Collector Rd Zone2-898,18.59,Collector,Peri-Urban,40,29.5524503718546,35.1,60.5,52.9,44.8,54.4,0.537,Side Impact Potential,50,84.3,16.0,21.6,Aligned,0.0,None,74.4
+899,Local Rd Zone2-899,18.14,Local,Peri-Urban,20,18.899985151540907,23.9,27.5,0.0,24.6,11.1,0.615,Side Impact Potential,50,98.3,6.0,25.5,Moderate Misalignment,0.14,Light,63.5
+900,Local Rd Zone2-900,18.35,Local,Peri-Urban,30,20.963172203601417,25.0,30.0,30.6,26.6,22.1,0.514,Side Impact Potential,50,86.4,0.0,18.2,Aligned,0.0,None,75.2
+901,Local Rd Zone2-901,16.95,Local,Peri-Urban,30,21.313481665460255,25.9,27.5,14.1,18.6,7.1,0.498,Side Impact Potential,50,87.0,0.0,17.6,Aligned,0.0,None,72.3
+902,Local Rd Zone2-902,17.87,Local,Peri-Urban,20,14.138055083459417,16.2,27.5,0.0,20.4,5.8,0.581,Side Impact Potential,50,91.2,0.0,20.0,Aligned,0.0,None,68.0
+903,Local Rd Zone2-903,17.9,Local,Peri-Urban,30,5.99146401971233,25.9,30.0,10.6,20.6,5.9,0.576,Side Impact Potential,50,64.0,0.0,18.7,Aligned,0.789,Severe,70.9
+904,Local Rd Zone2-904,17.9,Local,Peri-Urban,20,19.416595067727084,23.3,30.0,20.0,22.0,13.2,0.509,Side Impact Potential,50,99.1,0.0,21.4,Aligned,0.0,None,71.2
+905,Local Rd Zone2-905,16.98,Local,Peri-Urban,30,22.96258466406935,29.1,27.5,14.1,24.6,16.3,0.532,Side Impact Potential,50,89.4,0.0,19.6,Aligned,0.153,Light,71.1
+906,Local Rd Zone2-906,12.73,Local,Peri-Urban,20,25.200035304556106,26.7,30.0,20.0,25.0,17.4,0.519,Side Impact Potential,50,92.2,0.0,25.9,Moderate Misalignment,0.0,None,68.5
+907,Local Rd Zone2-907,14.31,Local,Peri-Urban,20,14.879290866504302,19.0,27.5,0.0,22.9,9.0,0.6,Side Impact Potential,50,92.3,0.0,20.9,Aligned,0.153,Light,67.5
+908,Local Rd Zone2-908,19.66,Local,Peri-Urban,20,16.80829887262072,21.3,30.0,24.7,28.4,19.7,0.588,Side Impact Potential,50,95.2,0.0,20.9,Aligned,0.139,Light,72.4
+909,Local Rd Zone2-909,19.44,Local,Peri-Urban,30,14.86195394877025,19.6,30.0,16.5,23.4,16.2,0.489,Side Impact Potential,50,77.3,0.0,18.9,Aligned,0.186,Light,72.0
+910,Local Rd Zone2-910,12.4,Local,Peri-Urban,20,4.930367015843546,18.0,30.0,31.8,26.1,18.9,0.508,Side Impact Potential,50,77.4,0.0,17.9,Aligned,0.731,Severe,75.6
+911,Local Rd Zone2-911,14.26,Local,Peri-Urban,20,23.75698842628829,26.0,27.5,0.0,19.5,1.9,0.617,Side Impact Potential,50,94.4,0.0,25.9,Moderate Misalignment,0.0,None,64.5
+912,Local Rd Zone2-912,12.13,Local,Peri-Urban,30,18.25825135250019,24.8,27.5,0.0,17.5,4.2,0.512,Side Impact Potential,50,82.4,0.0,19.0,Aligned,0.214,Light,68.6
+913,Local Rd Zone2-913,16.27,Local,Peri-Urban,30,21.307201316178766,24.9,27.5,10.6,22.6,7.9,0.606,Side Impact Potential,50,87.0,0.0,19.4,Aligned,0.0,None,70.5
+914,Local Rd Zone2-914,12.82,Local,Peri-Urban,40,33.821207266624945,40.9,30.0,20.0,20.8,9.3,0.533,Side Impact Potential,50,90.7,0.0,18.5,Aligned,0.0,None,72.9
+915,Local Rd Zone2-915,14.3,Local,Peri-Urban,30,19.50495510192651,24.6,35.5,0.0,19.5,7.7,0.519,Side Impact Potential,50,84.3,0.0,19.7,Aligned,0.144,Light,68.2
+916,Local Rd Zone2-916,14.47,Local,Peri-Urban,20,14.449041112419001,17.5,27.5,28.2,23.9,10.7,0.612,Side Impact Potential,50,91.7,0.0,17.6,Aligned,0.0,None,75.1
+917,Local Rd Zone2-917,13.2,Local,Peri-Urban,30,28.80733114174236,33.1,27.5,5.9,18.5,6.1,0.506,Side Impact Potential,50,98.2,0.0,21.8,Aligned,0.0,None,68.1
+918,Local Rd Zone2-918,14.62,Local,Peri-Urban,30,17.945098969650317,20.2,30.0,0.0,20.3,5.0,0.586,Side Impact Potential,50,81.9,0.0,20.0,Aligned,0.0,None,68.0
+919,Local Rd Zone2-919,19.6,Local,Peri-Urban,30,20.5670403743289,26.5,30.0,0.0,22.4,10.0,0.554,Side Impact Potential,50,85.9,0.0,20.7,Aligned,0.166,Light,67.6
+920,Local Rd Zone2-920,16.05,Local,Peri-Urban,30,23.875210332998545,29.9,27.5,23.5,26.9,19.0,0.554,Side Impact Potential,50,90.8,0.0,19.2,Aligned,0.143,Light,73.2
+921,Local Rd Zone2-921,14.26,Local,Peri-Urban,30,14.890566963037625,20.3,27.5,9.4,17.7,4.8,0.499,Side Impact Potential,50,77.3,0.0,17.9,Aligned,0.21,Light,71.1
+922,Local Rd Zone2-922,14.44,Local,Peri-Urban,30,22.893071378496117,29.1,27.5,47.1,25.8,19.0,0.515,Side Impact Potential,50,89.3,0.0,15.8,Aligned,0.141,Light,79.9
+923,Local Rd Zone2-923,17.43,Local,Peri-Urban,30,31.160351526416438,38.8,27.5,0.0,21.5,11.6,0.5,Side Impact Potential,50,98.3,0.0,29.5,Moderate Misalignment,0.0,None,62.3
+924,Local Rd Zone2-924,14.91,Local,Peri-Urban,30,34.62395373045609,40.1,30.0,10.6,19.0,4.6,0.548,Side Impact Potential,50,93.1,0.0,28.6,Moderate Misalignment,0.0,None,65.0
+925,Local Rd Zone2-925,12.33,Local,Peri-Urban,30,30.350824679960787,37.2,30.0,11.8,25.3,14.4,0.585,Side Impact Potential,50,99.5,0.0,27.6,Moderate Misalignment,0.0,None,65.8
+926,Local Rd Zone2-926,18.49,Local,Peri-Urban,20,16.071366363247353,22.1,30.0,0.0,20.8,7.6,0.567,Side Impact Potential,50,94.1,3.0,22.3,Aligned,0.22,Light,66.0
+927,Local Rd Zone2-927,14.76,Local,Peri-Urban,20,13.750728776223246,16.1,27.5,38.8,32.5,26.9,0.593,Significant Pedestrian Interaction,30,90.6,0.0,19.2,Aligned,0.0,None,76.2
+928,Local Rd Zone2-928,12.13,Local,Peri-Urban,30,20.683740610746483,27.8,27.5,0.0,18.7,5.6,0.527,Side Impact Potential,50,86.0,0.0,19.4,Aligned,0.201,Light,68.4
+929,Local Rd Zone2-929,14.22,Local,Peri-Urban,30,16.360513297969696,22.4,27.5,24.7,25.9,14.5,0.611,Side Impact Potential,50,79.5,0.0,18.7,Aligned,0.219,Light,73.7
+930,Local Rd Zone2-930,14.74,Local,Peri-Urban,20,13.396643280484104,15.3,30.0,43.5,37.4,42.2,0.515,Significant Pedestrian Interaction,30,90.1,3.0,20.2,Aligned,0.0,None,76.0
+931,Local Rd Zone2-931,19.96,Local,Peri-Urban,20,14.790869621255352,17.4,30.0,0.0,17.4,3.6,0.521,Side Impact Potential,50,92.2,0.0,19.0,Aligned,0.0,None,68.6
+932,Local Rd Zone2-932,18.15,Local,Peri-Urban,20,5.7216380682749,24.0,27.5,16.5,25.3,14.0,0.578,Side Impact Potential,50,78.6,0.0,23.7,Aligned,0.782,Severe,69.1
+933,Local Rd Zone2-933,14.49,Local,Peri-Urban,20,18.180319702846372,19.8,27.5,5.9,20.6,6.2,0.574,Side Impact Potential,50,97.3,0.0,19.3,Aligned,0.0,None,69.6
+934,Local Rd Zone2-934,14.63,Local,Peri-Urban,30,22.810707201704634,25.9,30.0,14.1,19.2,6.8,0.522,Side Impact Potential,50,89.2,0.0,17.8,Aligned,0.0,None,72.1
+935,Local Rd Zone2-935,18.19,Local,Peri-Urban,20,19.59739253279015,23.1,27.5,24.7,21.8,12.0,0.502,Side Impact Potential,50,99.4,0.0,20.5,Aligned,0.0,None,72.6
+936,Local Rd Zone2-936,18.25,Local,Peri-Urban,30,23.92683678573407,30.7,30.0,0.0,23.6,10.1,0.609,Side Impact Potential,50,90.9,0.0,21.8,Aligned,0.152,Light,66.9
+937,Local Rd Zone2-937,15.61,Local,Peri-Urban,30,21.99645799530258,26.9,30.0,23.5,29.2,19.4,0.607,Side Impact Potential,50,88.0,0.0,20.0,Aligned,0.0,None,72.7
+938,Local Rd Zone2-938,19.18,Local,Peri-Urban,30,17.055566059752277,21.6,27.5,7.1,22.2,8.1,0.587,Side Impact Potential,50,80.6,0.0,19.7,Aligned,0.142,Light,69.6
+939,Local Rd Zone2-939,16.05,Local,Peri-Urban,30,29.36354210202695,36.3,30.0,16.5,25.6,16.4,0.579,Side Impact Potential,50,99.0,0.0,26.2,Moderate Misalignment,0.0,None,67.6
+940,Local Rd Zone2-940,14.08,Local,Peri-Urban,20,12.061039456271562,16.1,30.0,21.2,34.6,30.0,0.593,Significant Pedestrian Interaction,30,88.1,0.0,22.2,Aligned,0.2,Light,70.9
+941,Local Rd Zone2-941,14.19,Local,Peri-Urban,30,28.08939145537471,36.3,30.0,9.4,24.3,11.4,0.611,Side Impact Potential,50,97.1,0.0,26.7,Moderate Misalignment,0.162,Light,65.9
+942,Local Rd Zone2-942,18.58,Local,Peri-Urban,30,32.80694071817966,37.6,27.5,7.1,22.5,7.6,0.61,Side Impact Potential,50,95.8,6.0,27.7,Moderate Misalignment,0.0,None,63.6
+943,Local Rd Zone2-943,18.51,Local,Peri-Urban,20,17.698353249526157,21.3,30.0,20.0,20.1,6.7,0.548,Side Impact Potential,50,96.5,38.0,18.7,Aligned,0.0,None,65.2
+944,Local Rd Zone2-944,16.81,Local,Peri-Urban,30,15.893704028696332,21.6,27.5,30.6,35.8,34.2,0.548,Significant Pedestrian Interaction,30,78.8,0.0,21.4,Aligned,0.212,Light,73.3
+945,Local Rd Zone2-945,12.97,Local,Peri-Urban,20,14.708732702267396,17.8,30.0,0.0,19.4,2.6,0.599,Side Impact Potential,50,92.1,0.0,19.7,Aligned,0.0,None,68.2
+946,Local Rd Zone2-946,17.78,Local,Peri-Urban,30,19.2963688160681,22.3,30.0,14.1,27.5,17.0,0.614,Side Impact Potential,50,83.9,0.0,20.6,Aligned,0.0,None,70.5
+947,Local Rd Zone2-947,19.01,Local,Peri-Urban,30,17.800066248572247,22.5,27.5,21.2,22.4,14.9,0.484,Side Impact Potential,50,81.7,0.0,17.9,Aligned,0.14,Light,73.5
+948,Local Rd Zone2-948,19.62,Local,Peri-Urban,30,30.141204920649024,33.0,30.0,14.1,21.8,12.8,0.484,Side Impact Potential,50,99.8,0.0,21.8,Aligned,0.0,None,69.7
+949,Local Rd Zone2-949,19.22,Local,Peri-Urban,20,15.212226724116297,17.8,27.5,10.6,25.1,12.6,0.616,Side Impact Potential,50,92.8,0.0,20.3,Aligned,0.0,None,69.9
+950,Local Rd Zone2-950,14.74,Local,Peri-Urban,20,15.012031575992346,18.1,30.0,7.1,18.4,4.0,0.539,Side Impact Potential,50,92.5,0.0,18.4,Aligned,0.0,None,70.4
+951,Local Rd Zone2-951,14.5,Local,Peri-Urban,20,16.998989994220658,19.5,30.0,21.2,27.6,16.6,0.609,Side Impact Potential,50,95.5,0.0,19.7,Aligned,0.0,None,72.4
+952,Local Rd Zone2-952,14.97,Local,Peri-Urban,20,19.283342287035126,20.9,30.0,0.0,22.1,8.5,0.588,Side Impact Potential,50,98.9,0.0,21.5,Aligned,0.0,None,67.1
+953,Local Rd Zone2-953,15.11,Local,Peri-Urban,40,25.40877347224554,29.1,30.0,0.0,21.3,5.8,0.611,Side Impact Potential,50,78.1,0.0,20.3,Aligned,0.0,None,67.8
+954,Local Rd Zone2-954,16.3,Local,Peri-Urban,30,26.05988703491283,29.7,30.0,0.0,15.8,1.2,0.506,Side Impact Potential,50,94.1,6.0,18.4,Aligned,0.0,None,67.8
+955,Local Rd Zone2-955,19.31,Local,Peri-Urban,30,22.285846899681694,25.0,27.5,56.5,36.5,37.9,0.573,Significant Pedestrian Interaction,30,88.4,0.0,18.2,Aligned,0.0,None,80.4
+956,Local Rd Zone2-956,15.69,Local,Peri-Urban,20,23.674328683899176,24.8,30.0,5.9,17.7,5.0,0.498,Side Impact Potential,50,94.5,0.0,23.3,Aligned,0.0,None,67.2
+957,Local Rd Zone2-957,17.82,Local,Peri-Urban,30,17.065047315509,22.4,27.5,0.0,24.4,11.8,0.594,Side Impact Potential,50,80.6,6.0,21.4,Aligned,0.18,Light,66.0
+958,Local Rd Zone2-958,18.99,Local,Peri-Urban,20,7.792788067482929,23.2,27.5,34.1,27.2,21.4,0.509,Side Impact Potential,50,81.7,6.0,21.3,Aligned,0.666,Severe,72.8
+959,Local Rd Zone2-959,15.39,Local,Peri-Urban,30,20.34375854691793,25.4,27.5,30.6,24.5,18.1,0.491,Side Impact Potential,50,85.5,0.0,17.5,Aligned,0.0,None,75.6
+960,Local Rd Zone2-960,19.14,Local,Peri-Urban,20,10.852078965102018,13.2,27.5,20.0,27.9,18.1,0.585,Side Impact Potential,50,86.3,0.0,20.0,Aligned,0.0,None,72.0
+961,Local Rd Zone2-961,16.92,Local,Peri-Urban,20,17.04094493022555,21.4,27.5,25.9,25.0,14.1,0.579,Side Impact Potential,50,95.6,0.0,19.7,Aligned,0.131,Light,73.4
+962,Local Rd Zone2-962,12.06,Local,Peri-Urban,20,12.535204234066045,15.4,27.5,14.1,25.5,14.0,0.589,Side Impact Potential,50,88.8,0.0,19.9,Aligned,0.0,None,70.9
+963,Local Rd Zone2-963,15.52,Local,Peri-Urban,30,24.190166404911942,26.8,30.0,36.5,23.7,15.1,0.518,Side Impact Potential,50,91.3,0.0,16.4,Aligned,0.0,None,77.5
+964,Local Rd Zone2-964,19.99,Local,Peri-Urban,20,21.703534121194064,26.2,27.5,56.5,41.1,47.3,0.563,Significant Pedestrian Interaction,30,97.4,0.0,26.3,Moderate Misalignment,0.0,None,75.5
+965,Local Rd Zone2-965,13.42,Local,Peri-Urban,20,14.060924049281073,17.3,35.5,12.9,17.8,4.5,0.51,Side Impact Potential,50,91.1,0.0,17.4,Aligned,0.0,None,72.1
+966,Local Rd Zone2-966,13.4,Local,Peri-Urban,20,22.541942519675377,25.9,27.5,40.0,22.4,14.0,0.514,Side Impact Potential,50,96.2,0.0,21.6,Aligned,0.0,None,75.0
+967,Local Rd Zone2-967,14.13,Local,Peri-Urban,30,26.821611847106567,31.3,30.0,0.0,17.6,2.0,0.552,Side Impact Potential,50,95.2,19.0,20.4,Aligned,0.0,None,64.0
+968,Local Rd Zone2-968,16.67,Local,Peri-Urban,30,17.392930341266762,23.2,30.0,5.9,22.1,10.5,0.556,Side Impact Potential,50,81.1,0.0,19.8,Aligned,0.197,Light,69.3
+969,Local Rd Zone2-969,18.98,Local,Peri-Urban,20,14.173486054201385,18.0,30.0,16.5,19.3,6.1,0.532,Side Impact Potential,50,91.3,6.0,17.5,Aligned,0.149,Light,71.6
+970,Local Rd Zone2-970,17.86,Local,Peri-Urban,20,15.191679258111742,18.0,27.5,10.6,20.5,8.1,0.535,Side Impact Potential,50,92.8,0.0,18.7,Aligned,0.0,None,70.9
+971,Local Rd Zone2-971,12.73,Local,Peri-Urban,30,19.573794627893257,24.8,27.5,28.2,30.5,21.6,0.608,Side Impact Potential,50,84.4,0.0,19.8,Aligned,0.142,Light,73.8
+972,Local Rd Zone2-972,12.92,Local,Peri-Urban,40,31.104438935967657,36.2,27.5,15.3,17.9,5.1,0.503,Side Impact Potential,50,86.7,0.0,17.2,Aligned,0.0,None,72.7
+973,Local Rd Zone2-973,15.94,Local,Peri-Urban,30,18.33726216675711,21.0,30.0,0.0,23.9,12.3,0.566,Side Impact Potential,50,82.5,9.0,21.2,Aligned,0.0,None,65.5
+974,Local Rd Zone2-974,15.85,Local,Peri-Urban,30,22.66943865204138,28.1,27.5,0.0,18.7,0.2,0.62,Side Impact Potential,50,89.0,0.0,19.4,Aligned,0.0,None,68.4
+975,Local Rd Zone2-975,14.96,Local,Peri-Urban,30,27.09547377102656,29.7,27.5,32.9,39.6,42.1,0.558,Significant Pedestrian Interaction,30,95.6,0.0,22.4,Aligned,0.0,None,73.1
+976,Local Rd Zone2-976,14.95,Local,Peri-Urban,20,15.692859448070356,19.3,30.0,14.1,28.9,27.1,0.506,Significant Pedestrian Interaction,30,93.5,0.0,21.1,Aligned,0.0,None,70.2
+977,Local Rd Zone2-977,18.81,Local,Peri-Urban,20,15.705724630593723,18.7,30.0,20.0,21.0,10.5,0.508,Side Impact Potential,50,93.6,0.0,17.6,Aligned,0.0,None,73.4
+978,Local Rd Zone2-978,19.93,Local,Peri-Urban,30,21.428261027569754,23.8,30.0,23.5,23.0,14.5,0.524,Side Impact Potential,50,87.1,0.0,17.9,Aligned,0.0,None,74.0
+979,Local Rd Zone2-979,14.9,Local,Peri-Urban,30,27.94710060442675,36.1,27.5,0.0,22.7,11.5,0.547,Side Impact Potential,50,96.9,0.0,27.1,Moderate Misalignment,0.154,Light,63.7
+980,Local Rd Zone2-980,14.74,Local,Peri-Urban,30,20.951057261435658,25.4,30.0,22.4,21.0,9.0,0.547,Side Impact Potential,50,86.4,0.0,17.3,Aligned,0.0,None,74.1
+981,Local Rd Zone2-981,16.8,Local,Peri-Urban,20,16.425358222571138,21.4,30.0,0.0,20.5,6.2,0.574,Side Impact Potential,50,94.6,0.0,21.5,Aligned,0.169,Light,67.1
+982,Local Rd Zone2-982,17.06,Local,Peri-Urban,20,13.824862444832755,16.8,27.5,11.8,20.1,10.3,0.482,Side Impact Potential,50,90.7,0.0,18.4,Aligned,0.0,None,71.3
+983,Local Rd Zone3-983,24.99,Local,Rural,30,23.69841934471207,28.4,27.5,0.0,16.7,8.9,0.405,Side Impact Potential,50,90.5,6.0,18.7,Aligned,0.0,None,67.6
+984,Local Rd Zone3-984,24.99,Local,Rural,30,32.70234171145164,38.0,27.5,10.6,13.9,7.1,0.33,Side Impact Potential,50,95.9,0.0,24.7,Aligned,0.0,None,67.3
+985,Local Rd Zone3-985,23.59,Local,Rural,30,26.388139036680656,28.2,27.5,21.2,17.8,7.3,0.469,Side Impact Potential,50,94.6,0.0,16.4,Aligned,0.0,None,74.4
+986,Local Rd Zone3-986,23.43,Local,Rural,30,24.77623383731726,32.1,30.0,34.1,20.5,16.7,0.388,Side Impact Potential,50,92.2,3.0,17.8,Aligned,0.165,Light,75.5
+987,Local Rd Zone3-987,33.57,Local,Rural,30,10.009183598700313,31.5,27.5,0.0,16.8,8.2,0.421,Side Impact Potential,50,70.0,0.0,20.3,Aligned,0.679,Severe,67.8
+988,Local Rd Zone3-988,32.48,Local,Rural,20,15.89662528940577,19.5,27.5,28.2,27.3,30.5,0.391,Significant Pedestrian Interaction,30,93.8,0.0,18.7,Aligned,0.0,None,74.4
+989,Local Rd Zone3-989,28.87,Local,Rural,30,21.8422875432224,24.8,30.0,0.0,15.0,1.8,0.468,Side Impact Potential,50,87.8,0.0,18.1,Aligned,0.0,None,69.1
+990,Local Rd Zone3-990,23.08,Local,Rural,30,25.55667628307051,29.2,30.0,20.0,19.5,12.6,0.437,Side Impact Potential,50,93.3,0.0,17.1,Aligned,0.0,None,73.7
+991,Local Rd Zone3-991,28.8,Local,Rural,30,19.15872691361664,21.4,27.5,0.0,14.6,6.0,0.378,Side Impact Potential,50,83.7,3.0,18.0,Aligned,0.0,None,68.6
+992,Local Rd Zone3-992,29.42,Local,Rural,20,13.89559462912051,15.6,27.5,0.0,16.7,10.7,0.362,Side Impact Potential,50,90.8,0.0,18.7,Aligned,0.0,None,68.8
+993,Local Rd Zone3-993,33.16,Local,Rural,40,22.0266788066328,28.4,27.5,16.5,14.1,6.6,0.35,Side Impact Potential,50,73.0,0.0,15.7,Aligned,0.168,Light,73.9
+994,Local Rd Zone3-994,32.47,Local,Rural,20,15.989183225127496,21.1,30.0,14.1,18.7,13.4,0.39,Side Impact Potential,50,94.0,0.0,18.7,Aligned,0.18,Light,71.6
+995,Local Rd Zone3-995,30.9,Local,Rural,20,22.59963652987421,25.6,27.5,10.6,20.3,12.6,0.447,Side Impact Potential,50,96.1,0.0,24.4,Aligned,0.0,None,67.5
+996,Local Rd Zone3-996,25.64,Local,Rural,30,27.80837449758169,36.7,27.5,21.2,19.7,17.8,0.339,Side Impact Potential,50,96.7,0.0,24.0,Aligned,0.185,Light,69.8
+997,Local Rd Zone3-997,32.3,Local,Rural,20,12.110534714560991,13.6,30.0,0.0,15.3,6.8,0.379,Side Impact Potential,50,88.2,6.0,18.2,Aligned,0.0,None,67.9
+998,Local Rd Zone3-998,32.17,Local,Rural,20,15.096784018903566,18.4,27.5,0.0,17.5,8.8,0.431,Side Impact Potential,50,92.6,0.0,19.0,Aligned,0.0,None,68.6
+999,Local Rd Zone3-999,20.8,Local,Rural,30,21.117419966633346,25.4,27.5,0.0,12.2,1.3,0.384,Side Impact Potential,50,86.7,0.0,17.2,Aligned,0.0,None,69.7
+1000,Local Rd Zone3-1000,32.35,Local,Rural,20,5.350979926595237,23.9,27.5,0.0,14.8,4.3,0.416,Side Impact Potential,50,78.0,0.0,22.1,Aligned,0.791,Severe,66.7
+1001,Local Rd Zone3-1001,24.2,Local,Rural,20,13.728579457059636,19.3,30.0,0.0,14.7,3.2,0.434,Side Impact Potential,50,90.6,0.0,18.0,Aligned,0.235,Light,69.2
+1002,Local Rd Zone3-1002,24.37,Local,Rural,30,18.956019629135085,25.1,27.5,14.1,15.8,6.7,0.397,Side Impact Potential,50,83.4,0.0,16.6,Aligned,0.177,Light,72.9
+1003,Local Rd Zone3-1003,21.83,Local,Rural,20,20.625024853595693,23.2,27.5,0.0,15.4,5.5,0.411,Side Impact Potential,50,99.1,0.0,21.6,Aligned,0.0,None,67.0
+1004,Local Rd Zone3-1004,21.94,Local,Rural,20,13.74903700906287,15.6,30.0,0.0,14.8,8.7,0.341,Side Impact Potential,50,90.6,0.0,18.1,Aligned,0.0,None,69.1
+1005,Local Rd Zone3-1005,22.49,Local,Rural,30,19.205033799931602,26.7,27.5,0.0,16.4,11.2,0.355,Side Impact Potential,50,83.8,0.0,18.6,Aligned,0.226,Light,68.8
+1006,Local Rd Zone3-1006,33.76,Local,Rural,30,24.850771996734395,28.4,30.0,29.4,28.9,36.4,0.35,Significant Pedestrian Interaction,30,92.3,0.0,19.1,Aligned,0.0,None,74.4
+1007,Local Rd Zone3-1007,30.41,Local,Rural,30,7.531655607083509,21.6,27.5,14.1,16.1,11.7,0.336,Side Impact Potential,50,66.3,0.0,16.7,Aligned,0.657,Severe,72.8
+1008,Local Rd Zone3-1008,20.22,Local,Rural,30,31.274093837177293,39.2,27.5,14.1,21.2,12.6,0.468,Side Impact Potential,50,98.1,0.0,28.0,Moderate Misalignment,0.129,Light,66.0
+1009,Local Rd Zone3-1009,27.97,Local,Rural,20,11.472723864676931,13.6,30.0,10.6,19.8,15.2,0.396,Side Impact Potential,50,87.2,0.0,18.4,Aligned,0.0,None,71.1
+1010,Local Rd Zone3-1010,28.2,Local,Rural,20,23.944146666935698,26.9,30.0,0.0,14.8,5.3,0.401,Side Impact Potential,50,94.1,0.0,25.2,Moderate Misalignment,0.0,None,64.9
+1011,Local Rd Zone3-1011,28.32,Local,Rural,30,17.48620673673122,19.6,30.0,10.6,16.3,7.2,0.412,Side Impact Potential,50,81.2,0.0,17.2,Aligned,0.0,None,71.8
+1012,Local Rd Zone3-1012,27.0,Local,Rural,20,4.709883670089392,19.8,27.5,0.0,14.5,2.2,0.444,Side Impact Potential,50,77.1,0.0,18.0,Aligned,0.778,Severe,69.2
+1013,Local Rd Zone3-1013,29.11,Local,Rural,30,27.786179976926114,38.4,30.0,0.0,19.8,11.3,0.458,Side Impact Potential,50,96.7,0.0,28.5,Moderate Misalignment,0.225,Light,62.9
+1014,Local Rd Zone3-1014,20.27,Local,Rural,30,20.61813023291664,27.4,27.5,16.5,15.8,7.9,0.391,Side Impact Potential,50,85.9,0.0,16.3,Aligned,0.182,Light,73.5
+1015,Local Rd Zone3-1015,20.36,Local,Rural,20,13.203748422781443,17.7,30.0,0.0,11.8,2.7,0.346,Side Impact Potential,50,89.8,0.0,17.0,Aligned,0.204,Light,69.8
+1016,Local Rd Zone3-1016,21.87,Local,Rural,20,6.520782123941728,26.7,30.0,5.9,14.2,4.3,0.394,Side Impact Potential,50,79.8,0.0,24.0,Aligned,0.77,Severe,66.8
+1017,Local Rd Zone3-1017,22.0,Local,Rural,20,16.31105171124414,21.5,27.5,0.0,16.8,6.8,0.433,Side Impact Potential,50,94.5,0.0,20.3,Aligned,0.186,Light,67.8
+1018,Local Rd Zone3-1018,25.06,Local,Rural,20,11.663008619409357,14.5,27.5,0.0,16.9,5.6,0.461,Side Impact Potential,50,87.5,0.0,18.8,Aligned,0.0,None,68.7
+1019,Local Rd Zone3-1019,29.84,Local,Rural,20,15.926910877187684,20.4,30.0,20.0,15.2,9.3,0.346,Side Impact Potential,50,93.9,0.0,16.0,Aligned,0.147,Light,74.4
+1020,Local Rd Zone3-1020,29.91,Local,Rural,30,15.694690533153343,20.5,27.5,0.0,17.1,10.2,0.386,Side Impact Potential,50,78.5,0.0,18.9,Aligned,0.173,Light,68.7
+1021,Local Rd Zone3-1021,26.22,Local,Rural,30,18.523385755267938,22.3,30.0,5.9,17.5,9.2,0.425,Side Impact Potential,50,82.8,0.0,18.2,Aligned,0.0,None,70.3
+1022,Local Rd Zone3-1022,29.26,Local,Rural,20,6.274828137819917,17.6,30.0,0.0,14.5,6.1,0.371,Side Impact Potential,50,79.4,0.0,18.0,Aligned,0.642,Severe,69.2
+1023,Local Rd Zone3-1023,27.44,Local,Rural,30,20.37708602236376,25.3,30.0,10.6,15.7,5.1,0.427,Side Impact Potential,50,85.6,0.0,17.0,Aligned,0.0,None,71.9
+1024,Local Rd Zone3-1024,32.4,Local,Rural,30,29.757101371970755,34.6,30.0,0.0,15.9,5.9,0.43,Side Impact Potential,50,99.6,0.0,23.2,Aligned,0.0,None,66.1
+1025,Local Rd Zone3-1025,32.58,Local,Rural,40,43.33536576496556,52.2,30.0,10.6,14.8,3.5,0.432,Side Impact Potential,50,95.0,12.0,29.3,Moderate Misalignment,0.0,None,62.1
+1026,Local Rd Zone3-1026,28.46,Local,Rural,30,22.329269221208843,29.4,27.5,0.0,15.9,8.5,0.372,Side Impact Potential,50,88.5,0.0,18.5,Aligned,0.184,Light,68.9
+1027,Local Rd Zone3-1027,33.38,Local,Rural,20,19.74439432606366,26.8,27.5,0.0,13.8,2.6,0.412,Side Impact Potential,50,99.6,0.0,24.8,Aligned,0.204,Light,65.1
+1028,Local Rd Zone3-1028,32.4,Local,Rural,20,18.768408895181707,23.5,30.0,0.0,10.7,1.4,0.33,Side Impact Potential,50,98.2,6.0,20.3,Aligned,0.142,Light,66.6
+1029,Local Rd Zone3-1029,24.4,Local,Rural,20,13.27255979952728,16.9,30.0,14.1,24.6,23.7,0.406,Side Impact Potential,50,89.9,0.0,19.6,Aligned,0.148,Light,71.1
+1030,Local Rd Zone3-1030,34.96,Local,Rural,20,16.906815057156617,19.8,38.0,0.0,11.7,1.1,0.37,Separated Traffic,70,95.4,0.0,17.0,Aligned,0.0,None,69.8
+1031,Local Rd Zone3-1031,25.96,Local,Rural,20,12.572519601857367,14.9,27.5,0.0,15.7,6.3,0.418,Side Impact Potential,50,88.9,3.0,18.4,Aligned,0.0,None,68.4
+1032,Local Rd Zone3-1032,25.96,Local,Rural,30,13.903010489013372,36.5,27.5,0.0,14.2,7.2,0.348,Side Impact Potential,50,75.9,12.0,24.6,Aligned,0.612,Severe,62.8
+1033,Local Rd Zone3-1033,25.97,Local,Rural,20,13.853292949912902,17.5,27.5,23.5,27.8,28.0,0.416,Significant Pedestrian Interaction,30,90.8,0.0,19.5,Aligned,0.137,Light,73.0
+1034,Local Rd Zone3-1034,29.27,Local,Rural,20,13.988347769927888,17.7,27.5,5.9,18.9,9.2,0.47,Side Impact Potential,50,91.0,0.0,18.7,Aligned,0.142,Light,70.0
+1035,Local Rd Zone3-1035,27.13,Local,Rural,20,13.199621000653627,16.9,27.5,0.0,12.6,3.6,0.353,Side Impact Potential,50,89.8,0.0,17.3,Aligned,0.159,Light,69.6
+1036,Local Rd Zone3-1036,22.34,Local,Rural,30,24.05632941233479,32.7,30.0,0.0,16.1,7.8,0.402,Side Impact Potential,50,91.1,0.0,21.3,Aligned,0.214,Light,67.2
+1037,Local Rd Zone3-1037,23.87,Local,Rural,30,28.360279560887314,35.6,38.0,14.1,17.3,12.6,0.355,Side Impact Potential,50,97.5,0.0,22.9,Aligned,0.142,Light,69.1
+1038,Local Rd Zone3-1038,33.17,Local,Rural,30,26.57404288464776,29.3,27.5,0.0,18.8,12.3,0.416,Side Impact Potential,50,94.9,0.0,19.5,Aligned,0.0,None,68.3
+1039,Local Rd Zone3-1039,30.39,Local,Rural,30,23.180004852860286,25.5,27.5,5.9,21.2,13.9,0.443,Side Impact Potential,50,89.8,0.0,19.5,Aligned,0.0,None,69.5
+1040,Local Rd Zone3-1040,30.54,Local,Rural,20,18.182810747272594,22.5,30.0,0.0,17.1,11.9,0.369,Side Impact Potential,50,97.3,0.0,21.5,Aligned,0.0,None,67.1
+1041,Local Rd Zone3-1041,22.6,Local,Rural,20,14.730005214059245,17.5,27.5,0.0,11.7,1.3,0.366,Side Impact Potential,50,92.1,0.0,17.0,Aligned,0.0,None,69.8
+1042,Local Rd Zone3-1042,32.96,Local,Rural,30,21.95519166604324,26.7,27.5,21.2,17.3,7.0,0.451,Side Impact Potential,50,87.9,0.0,16.2,Aligned,0.0,None,74.5
+1043,Local Rd Zone3-1043,32.94,Local,Rural,30,24.581173175959357,29.2,27.5,7.1,18.0,10.6,0.409,Side Impact Potential,50,91.9,6.0,18.3,Aligned,0.0,None,69.2
+1044,Local Rd Zone3-1044,25.38,Local,Rural,30,28.30502203619345,30.7,30.0,9.4,18.4,13.0,0.38,Side Impact Potential,50,97.5,0.0,18.8,Aligned,0.0,None,70.6
+1045,Local Rd Zone3-1045,25.94,Local,Rural,20,12.464408958903661,16.7,30.0,0.0,15.1,5.3,0.414,Side Impact Potential,50,88.7,0.0,18.2,Aligned,0.196,Light,69.1
+1046,Local Rd Zone3-1046,24.12,Local,Rural,20,13.937133947113471,15.5,27.5,14.1,24.9,23.9,0.386,Side Impact Potential,50,90.9,0.0,19.7,Aligned,0.0,None,71.0
+1047,Local Rd Zone3-1047,21.43,Local,Rural,20,11.442979229982672,16.0,27.5,0.0,16.7,8.4,0.415,Side Impact Potential,50,87.2,0.0,18.7,Aligned,0.237,Light,68.8
+1048,Local Rd Zone3-1048,23.13,Local,Rural,20,12.967025652430538,15.0,27.5,0.0,13.1,2.7,0.391,Side Impact Potential,50,89.5,13.0,17.5,Aligned,0.0,None,66.9
+1049,Local Rd Zone3-1049,32.61,Local,Rural,20,14.111594792656591,17.3,27.5,0.0,16.5,5.0,0.461,Side Impact Potential,50,91.2,0.0,18.7,Aligned,0.0,None,68.8
+1050,Local Rd Zone3-1050,30.17,Local,Rural,30,23.94101624004448,28.5,30.0,0.0,12.8,4.1,0.348,Side Impact Potential,50,90.9,0.0,17.4,Aligned,0.0,None,69.6
+1051,Local Rd Zone3-1051,30.28,Local,Rural,20,18.169048707835625,24.2,30.0,0.0,16.0,9.3,0.371,Side Impact Potential,50,97.3,0.0,22.8,Aligned,0.189,Light,66.3
+1052,Local Rd Zone3-1052,26.73,Local,Rural,30,33.24697016577997,39.5,30.0,0.0,14.6,6.3,0.368,Side Impact Potential,50,95.1,0.0,27.8,Moderate Misalignment,0.0,None,63.3
+1053,Local Rd Zone3-1053,26.82,Local,Rural,40,45.193035981450286,48.5,27.5,11.8,15.4,4.8,0.427,Side Impact Potential,50,92.2,0.0,25.6,Moderate Misalignment,0.0,None,67.0
+1054,Local Rd Zone3-1054,31.37,Local,Rural,20,20.012574630630855,26.2,27.5,10.6,19.0,13.8,0.375,Side Impact Potential,50,100.0,0.0,24.6,Aligned,0.174,Light,67.4
+1055,Local Rd Zone3-1055,21.79,Local,Rural,30,32.094797223118206,39.2,27.5,0.0,11.4,0.4,0.372,Side Impact Potential,50,96.9,0.0,26.4,Moderate Misalignment,0.0,None,64.2
+1056,Local Rd Zone3-1056,30.36,Local,Rural,20,14.673996153426796,17.8,30.0,20.0,20.7,13.4,0.436,Side Impact Potential,50,92.0,0.0,17.5,Aligned,0.0,None,73.5
+1057,Local Rd Zone3-1057,31.15,Local,Rural,30,29.751805174801344,33.9,27.5,9.4,15.7,7.9,0.39,Side Impact Potential,50,99.6,3.0,21.2,Aligned,0.0,None,68.6
+1058,MDR Rd Zone3-1058,30.24,Collector,Rural,50,15.385071386679698,59.0,50.0,10.6,22.2,18.2,0.395,Side Impact Potential,50,48.1,9.0,28.6,Moderate Misalignment,0.745,Severe,63.2
+1059,MDR Rd Zone3-1059,21.82,Collector,Rural,40,24.58782705439607,33.8,55.0,14.1,23.4,25.3,0.332,Side Impact Potential,50,76.9,0.0,19.2,Aligned,0.222,Light,71.3
+1060,MDR Rd Zone3-1060,20.71,Collector,Rural,30,22.91630518414435,29.1,50.0,0.0,18.8,12.2,0.419,Side Impact Potential,50,89.4,0.0,19.5,Aligned,0.145,Light,68.3
+1061,MDR Rd Zone3-1061,24.28,Collector,Rural,40,30.27296989693955,31.6,50.0,0.0,17.8,7.5,0.467,Side Impact Potential,50,85.4,0.0,19.1,Aligned,0.0,None,68.5
+1062,MDR Rd Zone3-1062,24.44,Collector,Rural,40,29.281549763277685,39.2,50.0,0.0,15.3,6.2,0.403,Side Impact Potential,50,83.9,15.0,18.2,Aligned,0.19,Light,66.1
+1063,MDR Rd Zone3-1063,34.77,Collector,Rural,30,28.361701519814257,31.4,52.5,0.0,21.0,13.8,0.465,Side Impact Potential,50,97.5,6.0,21.7,Aligned,0.0,None,65.8
+1064,MDR Rd Zone3-1064,23.37,Collector,Rural,30,15.730719597264072,20.3,50.0,10.6,23.5,17.7,0.454,Side Impact Potential,50,78.6,0.0,19.7,Aligned,0.156,Light,70.3
+1065,MDR Rd Zone3-1065,23.72,Collector,Rural,30,28.538424876136933,37.0,52.5,0.0,13.9,0.3,0.458,Side Impact Potential,50,97.8,3.0,25.0,Moderate Misalignment,0.165,Light,64.4
+1066,MDR Rd Zone3-1066,25.62,Collector,Rural,30,17.692974638816256,21.2,52.5,0.0,14.7,6.9,0.364,Side Impact Potential,50,81.5,0.0,18.0,Aligned,0.0,None,69.2
+1067,MDR Rd Zone3-1067,23.18,Collector,Rural,30,26.420017653340043,31.3,55.0,10.6,17.2,9.8,0.399,Side Impact Potential,50,94.6,0.0,18.9,Aligned,0.0,None,70.8
+1068,MDR Rd Zone3-1068,25.75,Collector,Rural,30,25.886549628293935,30.9,55.0,0.0,16.6,5.0,0.466,Side Impact Potential,50,93.8,0.0,19.6,Aligned,0.0,None,68.2
+1069,MDR Rd Zone3-1069,29.97,Collector,Rural,30,7.506853306206496,27.4,52.5,0.0,13.9,4.0,0.389,Side Impact Potential,50,66.3,6.0,17.8,Aligned,0.734,Severe,68.1
+1070,MDR Rd Zone3-1070,24.81,Collector,Rural,40,21.37106153393116,28.1,55.0,0.0,13.7,7.2,0.33,Side Impact Potential,50,72.1,0.0,17.7,Aligned,0.172,Light,69.4
+1071,MDR Rd Zone3-1071,34.02,Collector,Rural,30,19.311200112105965,25.2,55.0,0.0,13.2,3.5,0.38,Side Impact Potential,50,84.0,0.0,17.5,Aligned,0.18,Light,69.5
+1072,MDR Rd Zone3-1072,21.81,Collector,Rural,40,9.305529548224795,31.2,50.0,9.4,18.0,11.9,0.389,Side Impact Potential,50,54.0,0.0,18.0,Aligned,0.707,Severe,71.1
+1073,MDR Rd Zone3-1073,22.47,Collector,Rural,30,22.28261572331505,28.7,50.0,24.7,30.9,38.6,0.345,Side Impact Potential,50,88.4,0.0,20.4,Aligned,0.165,Light,72.7
+1074,MDR Rd Zone3-1074,20.4,Collector,Rural,30,10.223472574139086,30.7,58.0,0.0,14.0,4.2,0.394,Separated Traffic,70,70.3,0.0,18.5,Aligned,0.663,Severe,68.9
+1075,MDR Rd Zone3-1075,29.32,Collector,Rural,30,29.370423467671074,32.1,50.0,9.4,18.3,12.7,0.372,Side Impact Potential,50,99.1,0.0,20.2,Aligned,0.0,None,69.8
+1076,MDR Rd Zone3-1076,29.4,Collector,Rural,30,23.373219328773466,29.4,58.0,10.6,17.5,8.9,0.428,Separated Traffic,70,90.1,0.0,17.6,Aligned,0.139,Light,71.6
+1077,MDR Rd Zone3-1077,29.67,Collector,Rural,30,16.56718050881405,20.2,55.0,0.0,16.8,10.9,0.366,Side Impact Potential,50,79.9,0.0,18.8,Aligned,0.0,None,68.7
+1078,MDR Rd Zone3-1078,34.58,Collector,Rural,30,32.605530759170826,38.0,55.0,10.6,23.0,17.1,0.457,Side Impact Potential,50,96.1,16.0,27.8,Moderate Misalignment,0.0,None,62.2
+1079,MDR Rd Zone3-1079,28.06,Collector,Rural,40,38.23868202003365,49.5,52.5,0.0,12.9,2.7,0.381,Side Impact Potential,50,97.4,0.0,27.3,Moderate Misalignment,0.158,Light,63.6
+1080,MDR Rd Zone3-1080,20.55,Collector,Rural,30,23.750459567592902,27.7,60.5,14.1,20.9,14.0,0.447,Separated Traffic,70,90.6,0.0,18.4,Aligned,0.0,None,71.8
+1081,MDR Rd Zone3-1081,20.94,Collector,Rural,40,27.61058251592928,38.0,55.0,5.9,16.4,9.1,0.383,Side Impact Potential,50,81.4,0.0,17.9,Aligned,0.227,Light,70.4
+1082,MDR Rd Zone3-1082,28.96,Collector,Rural,40,39.33500634245065,43.3,55.0,0.0,18.0,10.7,0.399,Side Impact Potential,50,99.0,0.0,22.6,Aligned,0.0,None,66.4
+1083,MDR Rd Zone3-1083,28.75,Collector,Rural,40,28.73638881285304,38.4,58.0,10.6,15.9,11.2,0.342,Separated Traffic,70,83.1,0.0,17.1,Aligned,0.199,Light,71.9
+1084,MDR Rd Zone3-1084,23.71,Collector,Rural,40,22.90718908439914,32.1,52.5,14.1,28.0,28.0,0.405,Side Impact Potential,50,74.4,6.0,20.8,Aligned,0.24,Light,69.1
+1085,MDR Rd Zone3-1085,24.3,Collector,Rural,30,33.17908212872951,40.0,52.5,10.6,13.5,5.6,0.347,Side Impact Potential,50,95.2,0.0,26.6,Moderate Misalignment,0.0,None,66.2
+1086,MDR Rd Zone3-1086,22.34,Collector,Rural,30,25.936308397595663,29.6,52.5,0.0,18.3,8.1,0.461,Side Impact Potential,50,93.9,0.0,19.3,Aligned,0.0,None,68.4
+1087,MDR Rd Zone3-1087,22.12,Collector,Rural,30,30.041369587457424,36.2,55.0,25.9,35.9,44.0,0.366,Side Impact Potential,50,99.9,0.0,28.4,Moderate Misalignment,0.0,None,68.1
+1088,MDR Rd Zone3-1088,23.76,Collector,Rural,30,19.119007653099537,21.7,55.0,23.5,22.0,18.1,0.413,Side Impact Potential,50,83.7,0.0,17.5,Aligned,0.0,None,74.2
+1089,MDR Rd Zone3-1089,23.96,Collector,Rural,40,18.189221511352326,50.6,52.5,16.5,21.3,16.0,0.441,Side Impact Potential,50,67.3,0.0,29.2,Moderate Misalignment,0.64,Severe,65.8
+1090,MDR Rd Zone3-1090,24.85,Collector,Rural,30,33.796479850872664,38.7,55.0,20.0,20.6,17.2,0.39,Side Impact Potential,50,94.3,0.0,26.5,Moderate Misalignment,0.0,None,68.1
+1091,MDR Rd Zone3-1091,21.96,Collector,Rural,40,36.30914654048104,44.0,50.0,10.6,16.4,7.1,0.429,Side Impact Potential,50,94.5,0.0,21.4,Aligned,0.0,None,69.3
+1092,MDR Rd Zone3-1092,21.65,Collector,Rural,30,8.065925673648398,38.5,52.5,0.0,21.1,14.1,0.465,Side Impact Potential,50,67.1,0.0,29.1,Moderate Misalignment,0.821,Severe,62.5
+1093,MDR Rd Zone3-1093,29.26,Collector,Rural,40,30.443307217880175,32.9,50.0,11.8,21.6,19.1,0.356,Side Impact Potential,50,85.7,0.0,18.9,Aligned,0.0,None,71.0
+1094,MDR Rd Zone3-1094,20.95,Collector,Rural,40,37.92805823013105,44.5,50.0,0.0,15.3,6.3,0.398,Side Impact Potential,50,96.9,16.0,22.9,Aligned,0.0,None,63.1
+1095,MDR Rd Zone3-1095,24.69,Collector,Rural,40,34.04829708175882,37.8,55.0,0.0,19.5,14.4,0.401,Side Impact Potential,50,91.1,0.0,19.7,Aligned,0.0,None,68.2
+1096,MDR Rd Zone3-1096,34.74,Collector,Rural,30,14.271576226421766,19.6,52.5,21.2,22.0,19.0,0.373,Side Impact Potential,50,76.4,0.0,17.8,Aligned,0.213,Light,73.6
+1097,MDR Rd Zone3-1097,21.3,Collector,Rural,30,29.536381152062912,36.0,58.0,0.0,13.0,0.2,0.431,Separated Traffic,70,99.3,0.0,23.7,Aligned,0.0,None,65.8
+1098,MDR Rd Zone3-1098,24.43,Collector,Rural,40,33.28337760215114,39.6,52.5,0.0,13.3,2.4,0.401,Side Impact Potential,50,89.9,0.0,17.6,Aligned,0.0,None,69.4
+1099,MDR Rd Zone3-1099,34.28,Collector,Rural,30,19.321432265354478,23.8,50.0,10.6,16.8,7.9,0.412,Side Impact Potential,50,84.0,0.0,17.4,Aligned,0.0,None,71.7
+1100,MDR Rd Zone3-1100,27.16,Collector,Rural,30,25.406661230734805,32.2,50.0,29.4,24.7,24.9,0.381,Side Impact Potential,50,93.1,0.0,20.0,Aligned,0.144,Light,73.9
+1101,MDR Rd Zone3-1101,29.09,Collector,Rural,50,38.76076954436402,49.3,52.5,0.0,13.1,0.4,0.429,Side Impact Potential,50,83.1,15.0,17.5,Aligned,0.144,Light,66.5
+1102,MDR Rd Zone3-1102,34.85,Collector,Rural,40,25.113403851699108,31.7,52.5,10.6,18.5,12.4,0.393,Side Impact Potential,50,77.7,0.0,18.0,Aligned,0.137,Light,71.3
+1103,MDR Rd Zone3-1103,25.74,Collector,Rural,30,21.124468334001655,23.5,50.0,12.9,14.0,5.8,0.361,Side Impact Potential,50,86.7,0.0,16.1,Aligned,0.0,None,72.9
+1104,MDR Rd Zone3-1104,26.97,Collector,Rural,40,32.85809986745784,42.7,52.5,5.9,17.0,8.9,0.397,Side Impact Potential,50,89.3,0.0,20.9,Aligned,0.171,Light,68.6
+1105,MDR Rd Zone3-1105,29.78,Collector,Rural,30,29.071626000744697,37.8,52.5,0.0,19.2,13.4,0.399,Side Impact Potential,50,98.6,6.0,27.7,Moderate Misalignment,0.167,Light,62.2
+1106,MDR Rd Zone3-1106,23.28,Collector,Rural,30,22.02787716720268,26.3,50.0,0.0,16.7,7.2,0.429,Side Impact Potential,50,88.0,0.0,18.7,Aligned,0.0,None,68.8
+1107,MDR Rd Zone3-1107,25.66,Collector,Rural,30,32.85906964370838,36.2,55.0,4.7,19.2,11.6,0.444,Side Impact Potential,50,95.7,0.0,25.4,Moderate Misalignment,0.0,None,65.7
+1108,MDR Rd Zone3-1108,20.28,Collector,Rural,40,25.95515370100309,35.5,50.0,0.0,13.1,3.1,0.382,Side Impact Potential,50,78.9,0.0,17.5,Aligned,0.217,Light,69.5
+1109,MDR Rd Zone3-1109,25.11,Collector,Rural,30,20.11526797370713,23.4,60.5,5.9,16.8,10.4,0.366,Separated Traffic,70,85.2,0.0,18.0,Aligned,0.0,None,70.4
+1110,MDR Rd Zone3-1110,29.94,Collector,Rural,40,27.169814240062188,37.0,50.0,0.0,16.3,4.5,0.465,Side Impact Potential,50,80.8,0.0,18.6,Aligned,0.209,Light,68.8
+1111,MDR Rd Zone3-1111,28.25,Collector,Rural,30,18.165352032108864,24.7,55.0,0.0,15.1,3.2,0.442,Side Impact Potential,50,82.2,6.0,18.2,Aligned,0.204,Light,67.9
+1112,MDR Rd Zone3-1112,28.61,Collector,Rural,40,33.87504278695792,38.9,58.0,10.6,20.6,15.2,0.424,Separated Traffic,70,90.8,0.0,18.7,Aligned,0.0,None,70.9
