@@ -357,12 +357,28 @@ def sync_segment_crashes(active_crashes_df):
     df['crash_risk_score'] = 0
 
     if not active_crashes_df.empty:
-        counts = active_crashes_df.groupby('segment_id').size()
-        fatals = active_crashes_df[active_crashes_df['severity'] == 'Fatal'].groupby('segment_id').size()
+        
+        minor_counts = active_crashes_df[
+        active_crashes_df['severity'] == 'Minor'
+        ].groupby('segment_id').size()
 
-        df['crash_count'] = df['segment_id'].map(counts).fillna(0).astype(int)
-        df['fatal_crashes'] = df['segment_id'].map(fatals).fillna(0).astype(int)
-        df['crash_risk_score'] = (df['crash_count'] * 3 + df['fatal_crashes'] * 10).clip(upper=100)
+        major_counts = active_crashes_df[
+            active_crashes_df['severity'] == 'Major'
+        ].groupby('segment_id').size()
+
+        fatal_counts = active_crashes_df[
+            active_crashes_df['severity'] == 'Fatal'
+        ].groupby('segment_id').size()
+
+        df['minor_crashes'] = df['segment_id'].map(minor_counts).fillna(0).astype(int)
+        df['major_crashes'] = df['segment_id'].map(major_counts).fillna(0).astype(int)
+        df['fatal_crashes'] = df['segment_id'].map(fatal_counts).fillna(0).astype(int)
+
+        df['crash_risk_score'] = (
+            df['minor_crashes'] * 5
+            + df['major_crashes'] * 20
+            + df['fatal_crashes'] * 40
+        ).clip(upper=100)
         df['blackspot_flag'] = ((df['crash_risk_score'] >= 50) | (df['fatal_crashes'] > 0)).map({True: 'Yes', False: 'No'})
 
     # Recalculate ML predictions (misalignment classifier), road_risk_score,
@@ -399,9 +415,9 @@ def sync_segment_crashes(active_crashes_df):
             # weight has been REMOVED — the challenge framing is explicit that
             # this is not about measuring whether drivers are speeding.
             df['hotspot_score'] = (
-                0.50 * df['misalignment_score'] +
+                0.40 * df['misalignment_score'] +
                 0.25 * df['exposure_score'] +
-                0.15 * df['crash_risk_score'] +
+                0.25 * df['crash_risk_score'] +
                 0.10 * (100 - df['infrastructure_score'])
             ).round(1)
 
@@ -421,7 +437,11 @@ def sync_segment_crashes(active_crashes_df):
             df['ai_recommended_speed'] = np.minimum(df['speed_p85'], df['human_tolerance_limit']).round().astype(int)
             if 'original_safe_speed' not in df.columns:
                 df['original_safe_speed'] = df['ai_recommended_speed']
-            df['recommended_safe_speed'] = df['ai_recommended_speed']
+            
+            df['recommended_safe_speed'] = (
+                df['ai_recommended_speed']
+                - (df['crash_risk_score'] / 5)
+            ).clip(lower=20).round().astype(int)
 
             df['speed_safety_score'] = (100 - (df['misalignment_score']*0.6 +
                                                 df['crash_risk_score']*0.2 +
@@ -451,7 +471,10 @@ def apply_dynamic_hazard_speeds():
     if 'original_safe_speed' not in df.columns:
         df['original_safe_speed'] = df['recommended_safe_speed'].copy()
     
-    df['recommended_safe_speed'] = df['original_safe_speed'].copy()
+    df['recommended_safe_speed'] = (
+        df['ai_recommended_speed']
+        - (df['crash_risk_score'] / 5)
+    ).clip(lower=20).round().astype(int)
     
     for _, hz in st.session_state.hazards.iterrows():
         try:

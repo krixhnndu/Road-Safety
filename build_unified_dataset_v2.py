@@ -157,9 +157,17 @@ df["road_risk_score"] = (
 # speed (what the road is actually carrying) and human_tolerance_limit
 # (Safe System threshold for the road's function/VRU mix).
 # ═══════════════════════════════════════════════════════════════════════
-df["ai_recommended_speed"] = np.minimum(df["speed_p85"], df["human_tolerance_limit"]).round().astype(int)
-df["recommended_safe_speed"] = df["ai_recommended_speed"]
-df["original_safe_speed"] = df["recommended_safe_speed"]
+df["ai_recommended_speed"] = np.minimum(
+    df["speed_p85"],
+    df["human_tolerance_limit"]
+).round().astype(int)
+
+df["original_safe_speed"] = df["ai_recommended_speed"]
+
+df["recommended_safe_speed"] = (
+    df["ai_recommended_speed"]
+    - (df["crash_risk_score"] / 5)
+).clip(lower=20).round().astype(int)
 
 # ═══════════════════════════════════════════════════════════════════════
 # TRAFFIC CONGESTION MODULE — propagation/smoothing.
@@ -226,6 +234,9 @@ df["speed_safety_score"] = (100 - (df["misalignment_score"]*0.6 +
                                     (100 - df["infrastructure_score"])*0.2)).clip(0, 100).round(1)
 
 # ── top_ai_factors: short human-readable summary (mirrors build_factors() logic) ──
+
+
+
 def top_factors(row):
     tags = []
     if row["misalignment_score"] >= 50: tags.append("Speed Limit Misaligned")
