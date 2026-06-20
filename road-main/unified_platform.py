@@ -331,15 +331,6 @@ with st.sidebar:
     sel_hour  = int(sel_time.split(':')[0])
 
 # ─── Helper utilities for crash/hazard calculations and persistence ───────────
-def apply_school_zone_speed(row, base_speed, hour, weekday):
-    schools_count = int(row.get('schools_count', 0)) if pd.notna(row.get('schools_count')) else 0
-    is_sunday = (weekday == 6)
-    if schools_count > 0 and not is_sunday:
-        if 8 <= hour <= 16:
-            final_speed = base_speed * 0.6
-            return int(round(max(20.0, final_speed)))
-    return base_speed
-
 def save_crashes():
     st.session_state.crashes.to_csv("crash_database.csv", index=False)
 
@@ -355,7 +346,45 @@ def is_time_in_range(start, end, now_t):
     else: # Overnight range
         return now_t >= start or now_t <= end
 
+def temporal_exposure(row, hour):
+    base     = float(row.get('exposure_score', 50))
+    schools  = int(row.get('schools_count', 0))
+    rt       = str(row.get('road_type', ''))
+    school_m = 1.5 if (8 <= hour <= 16 and schools > 0) else 0.8
+    peak_m   = 1.4 if (7 <= hour <= 9 or 17 <= hour <= 20) else 1.0
+    night_m  = 0.4 if (hour >= 23 or hour <= 5) else 1.0
+    urb      = str(row.get('urban_rural_flag', ''))
+    market_m = 1.3 if (urb == 'Urban' and (9 <= hour <= 20)) else 1.0
+    return min(100, base * school_m * peak_m * night_m * market_m)
+
+def get_hazard_risk_boost(hazards_df, segment_id, check_date, check_time_str):
+    """Return risk boost points based on active hazard type."""
+    for _, hz in hazards_df.iterrows():
+        try:
+            if int(hz['segment_id']) != segment_id:
+                continue
+            hz_date = pd.to_datetime(hz['date']).date()
+            if hz_date != check_date:
+                continue
+            start = datetime.strptime(str(hz['start_time']), "%H:%M").time()
+            end   = datetime.strptime(str(hz['end_time']),   "%H:%M").time()
+            now_t = datetime.strptime(check_time_str,         "%H:%M").time()
+            if is_time_in_range(start, end, now_t):
+                hz_type = hz.get('hazard_type', 'Other')
+                if hz_type in ['Accident', 'Road Blockage']:
+                    return 25
+                elif hz_type in ['Construction', 'Political Rally', 'Procession']:
+                    return 20
+                elif hz_type in ['Festival', 'Religious Gathering', 'Market Event']:
+                    return 15
+                else:
+                    return 10
+        except Exception:
+            continue
+    return 0
+
 def sync_segment_crashes(active_crashes_df):
+    global df
     # Recalculate crash stats — VALIDATION-ONLY layer. Crash history no longer
     # feeds the ML risk-classification model (that model predicts whether the
     # *posted speed limit* is misaligned with road function/operating speed/
@@ -364,30 +393,15 @@ def sync_segment_crashes(active_crashes_df):
     df['crash_count'] = 0
     df['fatal_crashes'] = 0
     df['crash_risk_score'] = 0
+    df['blackspot_flag'] = 'No'
 
     if not active_crashes_df.empty:
-        
-        minor_counts = active_crashes_df[
-        active_crashes_df['severity'] == 'Minor'
-        ].groupby('segment_id').size()
+        counts = active_crashes_df.groupby('segment_id').size()
+        fatals = active_crashes_df[active_crashes_df['severity'] == 'Fatal'].groupby('segment_id').size()
 
-        major_counts = active_crashes_df[
-            active_crashes_df['severity'] == 'Major'
-        ].groupby('segment_id').size()
-
-        fatal_counts = active_crashes_df[
-            active_crashes_df['severity'] == 'Fatal'
-        ].groupby('segment_id').size()
-
-        df['minor_crashes'] = df['segment_id'].map(minor_counts).fillna(0).astype(int)
-        df['major_crashes'] = df['segment_id'].map(major_counts).fillna(0).astype(int)
-        df['fatal_crashes'] = df['segment_id'].map(fatal_counts).fillna(0).astype(int)
-
-        df['crash_risk_score'] = (
-            df['minor_crashes'] * 5
-            + df['major_crashes'] * 20
-            + df['fatal_crashes'] * 40
-        ).clip(upper=100)
+        df['crash_count'] = df['segment_id'].map(counts).fillna(0).astype(int)
+        df['fatal_crashes'] = df['segment_id'].map(fatals).fillna(0).astype(int)
+        df['crash_risk_score'] = (df['crash_count'] * 3 + df['fatal_crashes'] * 10).clip(upper=100)
         df['blackspot_flag'] = ((df['crash_risk_score'] >= 50) | (df['fatal_crashes'] > 0)).map({True: 'Yes', False: 'No'})
 
     # Recalculate ML predictions (misalignment classifier), road_risk_score,
@@ -395,27 +409,42 @@ def sync_segment_crashes(active_crashes_df):
     model = gb_model if (gb_model is not None) else rf_model
     if model is not None:
         try:
-            X = df[FEATURES]   # crash_risk_score intentionally excluded — see note above
+            X = df[FEATURES].copy()
+            # Dynamic exposure calculation based on selected hour
+            X['exposure_score'] = df.apply(lambda r: temporal_exposure(r, sel_hour), axis=1)
+
             pred_classes = model.predict(X)
             pred_probs = model.predict_proba(X)
-
-            labels = ['Aligned', 'Moderate Misalignment', 'High Misalignment', 'Critical Misalignment']
-            df['ai_risk_label'] = [labels[c] for c in pred_classes]
-            df['risk_category'] = df['ai_risk_label']
-            df['ai_risk_probability'] = [pred_probs[i][pred_classes[i]] for i in range(len(df))]
 
             df['prob_low_risk'] = pred_probs[:, 0]
             df['prob_medium_risk'] = pred_probs[:, 1]
             df['prob_high_risk'] = pred_probs[:, 2]
             df['prob_critical_risk'] = pred_probs[:, 3]
 
-            # road_risk_score: severity-anchored expectation over class probabilities
-            df['road_risk_score'] = (
+            # road_risk_score: expectation over class probabilities, boosted by active hazards
+            base_risk = (
                 df['prob_low_risk'] * 10 +
                 df['prob_medium_risk'] * 40 +
                 df['prob_high_risk'] * 75 +
                 df['prob_critical_risk'] * 100
-            ).round().astype(int)
+            )
+
+            hazard_boosts = df['segment_id'].apply(
+                lambda sid: get_hazard_risk_boost(st.session_state.hazards, int(sid), sel_date, sel_time)
+            )
+
+            df['road_risk_score'] = (base_risk + hazard_boosts).clip(upper=100).round().astype(int)
+
+            # Map the dynamic score back to categories
+            def get_dynamic_risk_label(score):
+                if score >= 75: return 'Critical Misalignment'
+                if score >= 50: return 'High Misalignment'
+                if score >= 25: return 'Moderate Misalignment'
+                return 'Aligned'
+
+            df['ai_risk_label'] = df['road_risk_score'].apply(get_dynamic_risk_label)
+            df['risk_category'] = df['ai_risk_label']
+            df['ai_risk_probability'] = [pred_probs[i][pred_classes[i]] for i in range(len(df))]
 
             # hotspot_score reframed: MISALIGNMENT is now the dominant weight
             # (50%); exposure 25%; crash history kept ONLY as a smaller,
@@ -424,9 +453,9 @@ def sync_segment_crashes(active_crashes_df):
             # weight has been REMOVED — the challenge framing is explicit that
             # this is not about measuring whether drivers are speeding.
             df['hotspot_score'] = (
-                0.40 * df['misalignment_score'] +
+                0.50 * df['misalignment_score'] +
                 0.25 * df['exposure_score'] +
-                0.25 * df['crash_risk_score'] +
+                0.15 * df['crash_risk_score'] +
                 0.10 * (100 - df['infrastructure_score'])
             ).round(1)
 
@@ -444,13 +473,36 @@ def sync_segment_crashes(active_crashes_df):
             # VRU mix (fixes the old disconnect between speed output and risk
             # scoring).
             df['ai_recommended_speed'] = np.minimum(df['speed_p85'], df['human_tolerance_limit']).round().astype(int)
-            if 'original_safe_speed' not in df.columns:
-                df['original_safe_speed'] = df['ai_recommended_speed']
-            
-            df['recommended_safe_speed'] = (
-                df['ai_recommended_speed']
-                - (df['crash_risk_score'] / 5)
-            ).clip(lower=20).round().astype(int)
+            df['recommended_safe_speed'] = df['ai_recommended_speed'].copy()
+
+            # Dynamic Congestion Adjustments (runtime)
+            if 'congestion_category' in df.columns and 'operating_speed_mean' in df.columns:
+                congested_mask = df['congestion_category'].isin(['Moderate', 'Severe'])
+                congestion_adjusted_speed = np.maximum(
+                    df['operating_speed_mean'].round().astype(int),
+                    (df['human_tolerance_limit'] * 0.5).round().astype(int)
+                )
+                df.loc[congested_mask, 'recommended_safe_speed'] = congestion_adjusted_speed[congested_mask]
+
+            # Corridor Tapering / Smoothing (runtime)
+            if 'corridor_base' in df.columns:
+                df = df.sort_values(['corridor_base', 'corridor_seq']).reset_index(drop=True)
+                congested_mask = df['congestion_category'].isin(['Moderate', 'Severe'])
+                shifted_congested = congested_mask.shift(-1).fillna(False)
+                same_corridor_as_next = df['corridor_base'] == df['corridor_base'].shift(-1)
+                taper_mask = shifted_congested & same_corridor_as_next & (~congested_mask)
+                
+                next_seg_speed = df['recommended_safe_speed'].shift(-1)
+                taper_target = ((df['recommended_safe_speed'] + next_seg_speed) / 2).round().astype('Int64')
+                taper_floor = (df['human_tolerance_limit'] * 0.7).round().astype(int)
+                
+                df.loc[taper_mask, 'recommended_safe_speed'] = np.maximum(
+                    taper_target[taper_mask].astype(int), taper_floor[taper_mask]
+                )
+                
+                df['congestion_smoothed'] = taper_mask
+
+            df['original_safe_speed'] = df['recommended_safe_speed'].copy()
 
             df['speed_safety_score'] = (100 - (df['misalignment_score']*0.6 +
                                                 df['crash_risk_score']*0.2 +
@@ -480,10 +532,7 @@ def apply_dynamic_hazard_speeds():
     if 'original_safe_speed' not in df.columns:
         df['original_safe_speed'] = df['recommended_safe_speed'].copy()
     
-    df['recommended_safe_speed'] = (
-        df['ai_recommended_speed']
-        - (df['crash_risk_score'] / 5)
-    ).clip(lower=20).round().astype(int)
+    df['recommended_safe_speed'] = df['original_safe_speed'].copy()
     
     for _, hz in st.session_state.hazards.iterrows():
         try:
@@ -642,18 +691,6 @@ def score_color(v, invert=False):
         if v >= 50: return '#eab308'
         if v >= 25: return '#f97316'
         return '#ef4444'
-
-def temporal_exposure(row, hour):
-    base     = float(row.get('exposure_score', 50))
-    schools  = int(row.get('schools_count', 0))
-    rt       = str(row.get('road_type', ''))
-    school_m = 1.5 if (8 <= hour <= 16 and schools > 0) else 0.8
-    peak_m   = 1.4 if (7 <= hour <= 9 or 17 <= hour <= 20) else 1.0
-    night_m  = 0.4 if (hour >= 23 or hour <= 5) else 1.0
-    urb      = str(row.get('urban_rural_flag', ''))
-    market_m = 1.3 if (urb == 'Urban' and (9 <= hour <= 20)) else 1.0
-    return min(100, base * school_m * peak_m * night_m * market_m)
-
 def build_factors(row, hour=None):
     factors = []
     exp  = float(row.get('exposure_score', 0))
@@ -768,10 +805,6 @@ with st.sidebar:
 
 # ─── Apply Filters ─────────────────────────────────────────────────────────────
 apply_dynamic_hazard_speeds()
-df['final_safe_speed'] = df.apply(
-    lambda r: apply_school_zone_speed(r, r['recommended_safe_speed'], sel_hour, sel_date.weekday()),
-    axis=1
-)
 df_f = df.copy()
 if sel_rt      != "All": df_f = df_f[df_f["road_type"]       == sel_rt]
 if sel_risk    != "All": df_f = df_f[df_f["ai_risk_label"]   == sel_risk]
@@ -801,7 +834,7 @@ n_hotspot= int((df['hotspot_category']=='Severe Hotspot').sum())
 n_high   = int((df_f['ai_risk_label']=='High Misalignment').sum())
 n_crit   = int((df_f['ai_risk_label']=='Critical Misalignment').sum())
 n_congested = int(df_f['congestion_category'].isin(['Moderate','Severe']).sum()) if 'congestion_category' in df_f.columns else 0
-avg_spd  = int(df_f['final_safe_speed'].mean()) if len(df_f) and 'final_safe_speed' in df_f.columns else (int(df_f['recommended_safe_speed'].mean()) if len(df_f) else 0)
+avg_spd  = int(df_f['recommended_safe_speed'].mean()) if len(df_f) else 0
 avg_exp  = int(df_f['temporal_exposure'].mean()) if len(df_f) else 0
 avg_risk = int(df_f['road_risk_score'].mean()) if len(df_f) else 0
 
@@ -937,7 +970,7 @@ with tab_map:
                 speed_calc_note = f"Temporary speed limit override due to active hazard: {hz_temp_spd_map} km/h"
             else:
                 hazard_banner = ''
-                speed_calc_note = f"Vision Zero: min(AI={p.get('ai_recommended_speed',p.get('final_safe_speed', p['recommended_safe_speed']))} km/h, Tolerance={p.get('human_tolerance_limit',70):.0f} km/h) → {p.get('final_safe_speed', p['recommended_safe_speed'])} km/h"
+                speed_calc_note = f"Vision Zero: min(AI={p.get('ai_recommended_speed',p['recommended_safe_speed'])} km/h, Tolerance={p.get('human_tolerance_limit',70):.0f} km/h) → {p['recommended_safe_speed']} km/h"
 
             popup_html = f"""
             <div style="font-family:system-ui;min-width:260px;background:#0d1b2e;
@@ -952,7 +985,7 @@ with tab_map:
                 <tr><td style="color:#64748b;padding:2px 0">Posted Limit</td>
                     <td style="color:#fbbf24;font-weight:700">{p['posted_speed_limit']} km/h</td></tr>
                 <tr><td style="color:#64748b">AI Safe Speed</td>
-                    <td style="color:#22c55e;font-weight:700">{p.get('final_safe_speed', p['recommended_safe_speed'])} km/h</td></tr>
+                    <td style="color:#22c55e;font-weight:700">{p['recommended_safe_speed']} km/h</td></tr>
                 <tr><td style="color:#64748b">Risk Category</td>
                     <td style="color:{color};font-weight:700">{rc}</td></tr>
                 <tr><td style="color:#64748b">Risk Probability</td>
@@ -982,7 +1015,7 @@ with tab_map:
             </div>"""
 
             tooltip = (f"{p.get('human_segment_id','')}: {p['road_name']} | "
-                       f"Safe: {p.get('final_safe_speed', p['recommended_safe_speed'])} km/h | "
+                       f"Safe: {p['recommended_safe_speed']} km/h | "
                        f"Risk: {p['road_risk_score']:.0f}")
 
             if has_hazard:
@@ -1037,7 +1070,7 @@ with tab_map:
                 color="Category", color_discrete_map=HOTSPOT_PALETTE,
                 template="plotly_dark")),
             ("Safe Speed Distribution", lambda: px.histogram(
-                df_f, x="final_safe_speed" if "final_safe_speed" in df_f.columns else "recommended_safe_speed", nbins=12,
+                df_f, x="recommended_safe_speed", nbins=12,
                 color_discrete_sequence=["#a78bfa"], template="plotly_dark")),
             ("Top 10 Risk Segments", lambda: px.bar(
                 df_f.nlargest(10,"road_risk_score")[["road_name","road_risk_score","ai_risk_label"]]
@@ -1121,8 +1154,8 @@ with tab_map:
                 hz_temp_spd = None
 
             # Speed card — temp_speed overrides recommended_safe_speed when active
-            ai_spd  = int(r.get('ai_recommended_speed', r.get('final_safe_speed', r['recommended_safe_speed'])))
-            rec_spd = hz_temp_spd if hz_temp_spd else int(r.get('final_safe_speed', r['recommended_safe_speed']))
+            ai_spd  = int(r.get('ai_recommended_speed', r['recommended_safe_speed']))
+            rec_spd = hz_temp_spd if hz_temp_spd else int(r['recommended_safe_speed'])
             posted  = int(r['posted_speed_limit'])
             tol     = int(r.get('human_tolerance_limit', 70))
 
@@ -1205,6 +1238,45 @@ with tab_map:
             tags = "".join(
                 f'<div class="factor-pill f-{cls}">{lbl}</div>'
                 for lbl, cls in factors)
+
+            # Infrastructure Mitigation Recommendations
+            mitigation_html = ""
+            if rec_spd < posted:
+                exp_tier = r.get('exposure_tier', '')
+                if exp_tier == "Significant Pedestrian Interaction":
+                    mitigation_html = (
+                        '<div class="vz-box" style="margin-top:10px; border-color: #fb923c; background: #24120a;">'
+                        '<b style="color:#fb923c;">🛠️ Infrastructure Recommendations:</b><br>'
+                        'To safely raise the speed limit back toward design limits, implement traffic separation:'
+                        '<ul style="margin: 4px 0 0 14px; padding: 0; font-size:.7rem; color:#d1d5db;">'
+                        '<li>Install physical pedestrian fencing / mid-block barriers.</li>'
+                        '<li>Construct grade-separated crossings (pedestrian bridges/underpasses).</li>'
+                        '<li>Establish signalized, high-visibility pedestrian crossings.</li>'
+                        '</ul>'
+                        '</div>'
+                    )
+                elif exp_tier == "Side Impact Potential":
+                    mitigation_html = (
+                        '<div class="vz-box" style="margin-top:10px; border-color: #fb923c; background: #24120a;">'
+                        '<b style="color:#fb923c;">🛠️ Infrastructure Recommendations:</b><br>'
+                        'To safely raise the speed limit back toward design limits, mitigate intersection conflict points:'
+                        '<ul style="margin: 4px 0 0 14px; padding: 0; font-size:.7rem; color:#d1d5db;">'
+                        '<li>Install continuous central physical medians.</li>'
+                        '<li>Convert high-conflict junctions into roundabouts.</li>'
+                        '<li>Establish channelized left/right turn lanes.</li>'
+                        '</ul>'
+                        '</div>'
+                    )
+
+            if hz_temp_spd:
+                speed_explanation = f"⚠️ <b>Active Hazard Override:</b> Temporary speed limit of <b>{rec_spd} km/h</b> is active."
+            elif r.get('congestion_category') in ('Moderate', 'Severe'):
+                speed_explanation = f"🚦 <b>Congestion Speed Adjustment:</b> Recommended speed reduced to <b>{rec_spd} km/h</b> based on observed operating speeds (Base AI: {ai_spd} km/h)."
+            elif bool(r.get('congestion_smoothed', False)):
+                speed_explanation = f"↘️ <b>Congestion Approach Taper:</b> Speed tapered to <b>{rec_spd} km/h</b> in advance of congestion on the next segment (Base AI: {ai_spd} km/h)."
+            else:
+                speed_explanation = f"🛡️ <b>Vision Zero Baseline:</b> min(85th Pct Speed = {int(r['speed_p85'])} km/h, Human Tolerance = {tol} km/h) → <b>{rec_spd} km/h</b>"
+
             st.markdown(f"""
             <div class="xai-box">
               <div class="xai-title">🤖 AI Explanation — {rec_spd} km/h</div>
@@ -1214,10 +1286,9 @@ with tab_map:
               </div>
               {tags}
               <div class="vz-box" style="margin-top:10px">
-                <b>Vision Zero Constraint:</b><br>
-                min(AI Speed = {ai_spd} km/h, Human Tolerance = {tol} km/h)
-                → <b>{rec_spd} km/h</b>
+                {speed_explanation}
               </div>
+              {mitigation_html}
             </div>""", unsafe_allow_html=True)
 
             # Quick crash add
@@ -1301,7 +1372,7 @@ with tab_hot:
     severe = df[df['hotspot_category']=='Severe Hotspot'][
         ['human_segment_id','road_name','road_type','hotspot_score',
          'road_risk_score','crash_risk_score','fatal_crashes',
-         'crash_count','final_safe_speed' if 'final_safe_speed' in df.columns else 'recommended_safe_speed','posted_speed_limit']
+         'crash_count','recommended_safe_speed','posted_speed_limit']
     ].sort_values('hotspot_score', ascending=False)
     st.dataframe(severe, use_container_width=True, height=280)
 
@@ -1420,10 +1491,49 @@ with tab_xai:
 
     factors_x = build_factors(r_x, sel_hour)
     tags_x = "".join(f'<div class="factor-pill f-{c}">{l}</div>' for l,c in factors_x)
-    ai_spd_x = int(r_x.get('ai_recommended_speed', r_x.get('final_safe_speed', r_x['recommended_safe_speed'])))
+    ai_spd_x = int(r_x.get('ai_recommended_speed',r_x['recommended_safe_speed']))
     hz_temp_spd_x = get_hazard_temp_speed(st.session_state.hazards, int(r_x['segment_id']), sel_date, sel_time)
-    rec_spd_x = hz_temp_spd_x if hz_temp_spd_x else int(r_x.get('final_safe_speed', r_x['recommended_safe_speed']))
+    rec_spd_x = hz_temp_spd_x if hz_temp_spd_x else int(r_x['recommended_safe_speed'])
     tol_x = int(r_x.get('human_tolerance_limit',70))
+
+    # Infrastructure Mitigation Recommendations for TAB 4
+    mitigation_html_x = ""
+    posted_x = int(r_x['posted_speed_limit'])
+    if rec_spd_x < posted_x:
+        exp_tier_x = r_x.get('exposure_tier', '')
+        if exp_tier_x == "Significant Pedestrian Interaction":
+            mitigation_html_x = (
+                '<div class="vz-box" style="margin-top:10px; border-color: #fb923c; background: #24120a;">'
+                '<b style="color:#fb923c;">🛠️ Infrastructure Recommendations:</b><br>'
+                'To safely raise the speed limit back toward design limits, implement traffic separation:'
+                '<ul style="margin: 4px 0 0 14px; padding: 0; font-size:.7rem; color:#d1d5db;">'
+                '<li>Install physical pedestrian fencing / mid-block barriers.</li>'
+                '<li>Construct grade-separated crossings (pedestrian bridges/underpasses).</li>'
+                '<li>Establish signalized, high-visibility pedestrian crossings.</li>'
+                '</ul>'
+                '</div>'
+            )
+        elif exp_tier_x == "Side Impact Potential":
+            mitigation_html_x = (
+                '<div class="vz-box" style="margin-top:10px; border-color: #fb923c; background: #24120a;">'
+                '<b style="color:#fb923c;">🛠️ Infrastructure Recommendations:</b><br>'
+                'To safely raise the speed limit back toward design limits, mitigate intersection conflict points:'
+                '<ul style="margin: 4px 0 0 14px; padding: 0; font-size:.7rem; color:#d1d5db;">'
+                '<li>Install continuous central physical medians.</li>'
+                '<li>Convert high-conflict junctions into roundabouts.</li>'
+                '<li>Establish channelized left/right turn lanes.</li>'
+                '</ul>'
+                '</div>'
+            )
+
+    if hz_temp_spd_x:
+        speed_explanation_x = f"⚠️ <b>Active Hazard Override:</b> Temporary speed limit of <b>{rec_spd_x} km/h</b> is active."
+    elif r_x.get('congestion_category') in ('Moderate', 'Severe'):
+        speed_explanation_x = f"🚦 <b>Congestion Speed Adjustment:</b> Recommended speed reduced to <b>{rec_spd_x} km/h</b> based on observed operating speeds (Base AI: {ai_spd_x} km/h)."
+    elif bool(r_x.get('congestion_smoothed', False)):
+        speed_explanation_x = f"↘️ <b>Congestion Approach Taper:</b> Speed tapered to <b>{rec_spd_x} km/h</b> in advance of congestion on the next segment (Base AI: {ai_spd_x} km/h)."
+    else:
+        speed_explanation_x = f"🛡️ <b>Vision Zero Baseline:</b> min(85th Pct Speed = {int(r_x['speed_p85'])} km/h, Human Tolerance = {tol_x} km/h) → <b>{rec_spd_x} km/h</b>"
 
     st.markdown(f"""
     <div class="xai-box" style="margin-top:16px">
@@ -1439,10 +1549,9 @@ with tab_xai:
                for f in str(r_x.get('top_ai_factors','')).split(' | ') if f.strip())}
       {tags_x}
       <div class="vz-box" style="margin-top:12px">
-        <b>Vision Zero Constraint:</b><br>
-        min(AI Speed = {ai_spd_x} km/h, Human Tolerance = {tol_x} km/h)
-        → <b>{rec_spd_x} km/h</b>
+        {speed_explanation_x}
       </div>
+      {mitigation_html_x}
     </div>""", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -1694,7 +1803,7 @@ with tab_analytics:
         st.plotly_chart(fig, use_container_width=True)
 
     with aa2:
-        fig2 = px.scatter(df, x="infrastructure_score", y="final_safe_speed" if "final_safe_speed" in df.columns else "recommended_safe_speed",
+        fig2 = px.scatter(df, x="infrastructure_score", y="recommended_safe_speed",
                           color="ai_risk_label", color_discrete_map=RISK_PALETTE,
                           size="road_risk_score", hover_name="road_name",
                           title="Infrastructure vs Safe Speed", template="plotly_dark")
@@ -1747,12 +1856,12 @@ with tab_analytics:
 
     with aa5:
         # Top 10 safest
-        safe_cols = ['road_name','road_type','final_safe_speed' if 'final_safe_speed' in df.columns else 'recommended_safe_speed',
+        safe_cols = ['road_name','road_type','recommended_safe_speed',
                      'road_risk_score','infrastructure_score','exposure_score']
         top_safe = df.nsmallest(10,'road_risk_score')[safe_cols].copy()
         top_safe['label'] = top_safe['road_name'].str[:22]
         fig_safe = px.bar(top_safe[::-1], x='infrastructure_score', y='label',
-                          orientation='h', color='final_safe_speed' if 'final_safe_speed' in top_safe.columns else 'recommended_safe_speed',
+                          orientation='h', color='recommended_safe_speed',
                           color_continuous_scale='Greens',
                           title="Top 10 Safest Roads (by Infrastructure)",
                           template="plotly_dark")
@@ -1767,7 +1876,7 @@ with tab_analytics:
     summary = df.groupby('road_type').agg(
         Segments=('segment_id','count'),
         Avg_Risk=('road_risk_score','mean'),
-        Avg_Safe_Speed=('final_safe_speed' if 'final_safe_speed' in df.columns else 'recommended_safe_speed','mean'),
+        Avg_Safe_Speed=('recommended_safe_speed','mean'),
         Avg_Infrastructure=('infrastructure_score','mean'),
         Avg_Exposure=('exposure_score','mean'),
         Avg_Hotspot=('hotspot_score','mean'),
@@ -1782,7 +1891,7 @@ with tab_data:
     st.markdown("## 📂 Unified Predictions Dataset")
 
     show_cols = ['human_segment_id','segment_id','road_name','road_type',
-                 'posted_speed_limit','speed_p85','final_safe_speed' if 'final_safe_speed' in df_f.columns else 'recommended_safe_speed',
+                 'posted_speed_limit','speed_p85','recommended_safe_speed',
                  'misalignment_score','misalignment_category','exposure_tier',
                  'congestion_index','congestion_category',
                  'ai_risk_label','ai_risk_probability',
