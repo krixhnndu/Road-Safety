@@ -264,6 +264,7 @@ df["blackspot_flag"] = np.where(
     "Yes",
     "No"
 )
+
 # ═══════════════════════════════════════════════════════════════════════
 # RECOMMENDED SPEED — now genuinely linked to misalignment, not opaque.
 # ai_recommended_speed = the lower of: 85th-percentile observed operating
