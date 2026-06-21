@@ -364,100 +364,173 @@ def sync_segment_crashes(active_crashes_df):
     df['crash_count'] = 0
     df['fatal_crashes'] = 0
     df['crash_risk_score'] = 0
+    
 
     if not active_crashes_df.empty:
-        
-        minor_counts = active_crashes_df[
-        active_crashes_df['severity'] == 'Minor'
-        ].groupby('segment_id').size()
 
-        major_counts = active_crashes_df[
-            active_crashes_df['severity'] == 'Major'
-        ].groupby('segment_id').size()
+    # Convert crash date
+       
+        active_crashes_df['date'] = pd.to_datetime(
+        active_crashes_df['date'],
+        errors='coerce'
+        )
 
-        fatal_counts = active_crashes_df[
-            active_crashes_df['severity'] == 'Fatal'
-        ].groupby('segment_id').size()
+        active_crashes_df = active_crashes_df.dropna(
+            subset=['date']
+        )
+      
+      
+        today = pd.Timestamp.now().normalize()
 
-        df['minor_crashes'] = df['segment_id'].map(minor_counts).fillna(0).astype(int)
-        df['major_crashes'] = df['segment_id'].map(major_counts).fillna(0).astype(int)
-        df['fatal_crashes'] = df['segment_id'].map(fatal_counts).fillna(0).astype(int)
+        # Calculate crash age
+        active_crashes_df['days_since_crash'] = (
+            today - active_crashes_df['date']
+        ).dt.days
 
+        # Keep only crashes from last 90 days
+        active_crashes_df = active_crashes_df[
+            active_crashes_df['days_since_crash'] <= 90
+        ].copy()
+
+        minor_counts = (
+            active_crashes_df[
+                active_crashes_df['severity'] == 'Minor'
+            ]
+            .groupby('segment_id')
+            .size()
+        )
+
+        major_counts = (
+            active_crashes_df[
+                active_crashes_df['severity'] == 'Major'
+            ]
+            .groupby('segment_id')
+            .size()
+        )
+
+        fatal_counts = (
+            active_crashes_df[
+                active_crashes_df['severity'] == 'Fatal'
+            ]
+            .groupby('segment_id')
+            .size()
+        )
+        all_counts = active_crashes_df.groupby('segment_id').size()
+
+        df['crash_count'] = (
+            df['segment_id']
+            .map(all_counts)
+            .fillna(0)
+            .astype(int)
+)
+
+        df['minor_crashes'] = (
+            df['segment_id'].map(minor_counts)
+            .fillna(0)
+            .astype(int)
+        )
+
+        df['major_crashes'] = (
+            df['segment_id'].map(major_counts)
+            .fillna(0)
+            .astype(int)
+        )
+
+        df['fatal_crashes'] = (
+            df['segment_id'].map(fatal_counts)
+            .fillna(0)
+            .astype(int)
+        )
+
+        # Crash risk weights
         df['crash_risk_score'] = (
-            df['minor_crashes'] * 5
-            + df['major_crashes'] * 20
-            + df['fatal_crashes'] * 40
+            df['minor_crashes'] * 10 +
+            df['major_crashes'] * 25 +
+            df['fatal_crashes'] * 45
         ).clip(upper=100)
-        df['blackspot_flag'] = ((df['crash_risk_score'] >= 50) | (df['fatal_crashes'] > 0)).map({True: 'Yes', False: 'No'})
-
-    # Recalculate ML predictions (misalignment classifier), road_risk_score,
-    # hotspot_score, and hotspot_category
-    model = gb_model if (gb_model is not None) else rf_model
-    if model is not None:
-        try:
-            X = df[FEATURES]   # crash_risk_score intentionally excluded — see note above
-            pred_classes = model.predict(X)
-            pred_probs = model.predict_proba(X)
-
-            labels = ['Aligned', 'Moderate Misalignment', 'High Misalignment', 'Critical Misalignment']
-            df['ai_risk_label'] = [labels[c] for c in pred_classes]
-            df['risk_category'] = df['ai_risk_label']
-            df['ai_risk_probability'] = [pred_probs[i][pred_classes[i]] for i in range(len(df))]
-
-            df['prob_low_risk'] = pred_probs[:, 0]
-            df['prob_medium_risk'] = pred_probs[:, 1]
-            df['prob_high_risk'] = pred_probs[:, 2]
-            df['prob_critical_risk'] = pred_probs[:, 3]
-
-            # road_risk_score: severity-anchored expectation over class probabilities
-            df['road_risk_score'] = (
-                df['prob_low_risk'] * 10 +
-                df['prob_medium_risk'] * 40 +
-                df['prob_high_risk'] * 75 +
-                df['prob_critical_risk'] * 100
-            ).round().astype(int)
-
-            # hotspot_score reframed: MISALIGNMENT is now the dominant weight
-            # (50%); exposure 25%; crash history kept ONLY as a smaller,
-            # secondary VALIDATION weight (15%); infrastructure deficit 10%.
-            # The old 20% "speed_violation_score" (driver-behavior / compliance)
-            # weight has been REMOVED — the challenge framing is explicit that
-            # this is not about measuring whether drivers are speeding.
-            df['hotspot_score'] = (
-                0.40 * df['misalignment_score'] +
-                0.25 * df['exposure_score'] +
-                0.25 * df['crash_risk_score'] +
-                0.10 * (100 - df['infrastructure_score'])
-            ).round(1)
-
-            # Map hotspot_score to hotspot_category
-            def get_hotspot_cat(score):
-                if score >= 75: return 'Severe Hotspot'
-                if score >= 50: return 'High Risk'
-                if score >= 25: return 'Moderate Risk'
-                return 'Safe'
-            df['hotspot_category'] = df['hotspot_score'].apply(get_hotspot_cat)
-
-            # recommended_safe_speed now genuinely tied to the misalignment
-            # logic: lower of observed 85th-percentile operating speed and
-            # the Safe System human_tolerance_limit for this road's function/
-            # VRU mix (fixes the old disconnect between speed output and risk
-            # scoring).
-            df['ai_recommended_speed'] = np.minimum(df['speed_p85'], df['human_tolerance_limit']).round().astype(int)
-            if 'original_safe_speed' not in df.columns:
-                df['original_safe_speed'] = df['ai_recommended_speed']
             
-            df['recommended_safe_speed'] = (
-                df['ai_recommended_speed']
-                - (df['crash_risk_score'] / 5)
-            ).clip(lower=20).round().astype(int)
+        # Recalculate ML predictions (misalignment classifier), road_risk_score,
+        # hotspot_score, and hotspot_category
+        model = gb_model if (gb_model is not None) else rf_model
+        if model is not None:
+            try:
+                X = df[FEATURES]   # crash_risk_score intentionally excluded — see note above
+                pred_classes = model.predict(X)
+                pred_probs = model.predict_proba(X)
 
-            df['speed_safety_score'] = (100 - (df['misalignment_score']*0.6 +
-                                                df['crash_risk_score']*0.2 +
-                                                (100 - df['infrastructure_score'])*0.2)).clip(0, 100).round(1)
+                labels = ['Aligned', 'Moderate Misalignment', 'High Misalignment', 'Critical Misalignment']
+                df['ai_risk_label'] = [labels[c] for c in pred_classes]
+                df['risk_category'] = df['ai_risk_label']
+                df['ai_risk_probability'] = [pred_probs[i][pred_classes[i]] for i in range(len(df))]
 
-        except Exception as e:
-            pass
+                df['prob_low_risk'] = pred_probs[:, 0]
+                df['prob_medium_risk'] = pred_probs[:, 1]
+                df['prob_high_risk'] = pred_probs[:, 2]
+                df['prob_critical_risk'] = pred_probs[:, 3]
+
+                # road_risk_score: severity-anchored expectation over class probabilities
+                df['road_risk_score'] = (
+                    df['prob_low_risk'] * 10 +
+                    df['prob_medium_risk'] * 40 +
+                    df['prob_high_risk'] * 75 +
+                    df['prob_critical_risk'] * 100
+                ).round().astype(int)
+                df['road_risk_score'] = (
+                        df['road_risk_score'] * 0.7 +
+                        df['crash_risk_score'] * 0.3
+                    ).round().astype(int)
+                df['segment_risk_score'] = (
+                    df['road_risk_score'] + df['crash_risk_score']
+                ).clip(upper=100).astype(int)
+
+                df['blackspot_flag'] = np.where(
+                    df['segment_risk_score'] >= 80,
+                    "Yes",
+                    "No"
+                )
+
+                    # hotspot_score reframed: MISALIGNMENT is now the dominant weight
+                    # (50%); exposure 25%; crash history kept ONLY as a smaller,
+                    # secondary VALIDATION weight (15%); infrastructure deficit 10%.
+                    # The old 20% "speed_violation_score" (driver-behavior / compliance)
+                    # weight has been REMOVED — the challenge framing is explicit that
+                    # this is not about measuring whether drivers are speeding.
+                df['hotspot_score'] = (
+                    0.40 * df['misalignment_score'] +
+                    0.25 * df['exposure_score'] +
+                    0.25 * df['crash_risk_score'] +
+                    0.10 * (100 - df['infrastructure_score'])
+                ).round(1)
+
+                # Map hotspot_score to hotspot_category
+                def get_hotspot_cat(score):
+                    if score >= 75: return 'Severe Hotspot'
+                    if score >= 50: return 'High Risk'
+                    if score >= 25: return 'Moderate Risk'
+                    return 'Safe'
+                df['hotspot_category'] = df['hotspot_score'].apply(get_hotspot_cat)
+
+                    # recommended_safe_speed now genuinely tied to the misalignment
+                    # logic: lower of observed 85th-percentile operating speed and
+                    # the Safe System human_tolerance_limit for this road's function/
+                    # VRU mix (fixes the old disconnect between speed output and risk
+                    # scoring).
+                df['ai_recommended_speed'] = np.minimum(df['speed_p85'], df['human_tolerance_limit']).round().astype(int)
+                if 'original_safe_speed' not in df.columns:
+                    df['original_safe_speed'] = df['ai_recommended_speed']
+                
+                df['recommended_safe_speed'] = (
+                    df['ai_recommended_speed']
+                    - (df['crash_risk_score'] / 5)
+                ).clip(lower=20).round().astype(int)
+
+                df['speed_safety_score'] = (100 - (df['misalignment_score']*0.6 +
+                                                    df['crash_risk_score']*0.2 +
+                                                    (100 - df['infrastructure_score'])*0.2)).clip(0, 100).round(1)
+
+            except Exception as e:
+                st.error(f"sync_segment_crashes failed: {e}")
+                raise
 
 def fill_missing_hazard_speeds():
     if not st.session_state.hazards.empty:
@@ -521,8 +594,8 @@ def get_active_crashes(crashes_df, assessment_date):
             days_since = (assessment_date - crash_date).days
             if days_since < 0:
                 return False
-            limit = 60 if row['severity'] == 'Minor' else 80
-            return days_since <= limit
+            
+            return days_since <= 90
         except Exception:
             return False
     mask = crashes_df.apply(_active, axis=1)
@@ -1225,6 +1298,8 @@ with tab_map:
             st.markdown("**🚨 Log Crash on This Segment**")
             crash_type = st.selectbox("Severity", ["Minor","Major","Fatal"],
                                        key=f"quick_crash_{sel_seg_id}")
+            
+            
             if st.button("➕ Add Crash", key=f"add_crash_{sel_seg_id}"):
                 new_crash = pd.DataFrame([{
                     'crash_id':    st.session_state.next_crash_id,
@@ -1236,9 +1311,31 @@ with tab_map:
                 }])
                 st.session_state.crashes = pd.concat(
                     [st.session_state.crashes, new_crash], ignore_index=True)
+                st.success(
+                    f"Crash added. Total crashes = {len(st.session_state.crashes)}"
+                )
+                st.write("Total crashes:", len(st.session_state.crashes))
+                st.write(st.session_state.crashes.tail(5))
                 st.session_state.next_crash_id += 1
                 active_crashes_updated = get_active_crashes(st.session_state.crashes, sel_date)
+                print(active_crashes_updated[active_crashes_updated["severity"] == "Fatal"])
+                st.write("Crashes before update:", len(active_crashes_updated))
+                st.write(active_crashes_updated.tail())
                 sync_segment_crashes(active_crashes_updated)
+                seg = selected_segment
+
+                updated = st.session_state.predictions[
+                    st.session_state.predictions['segment_id'] == seg
+                ]
+
+                st.write("Segment after sync:")
+                st.write(updated[
+                    ['segment_id',
+                    'minor_crashes',
+                    'major_crashes',
+                    'fatal_crashes',
+                    'crash_risk_score']
+                ])
                 save_crashes()
                 save_predictions()
                 st.success(f"✅ {crash_type} crash logged on {r['human_segment_id']}")

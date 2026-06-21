@@ -26,8 +26,12 @@ import pandas as pd
 import json
 
 rng = np.random.default_rng(123)
-SRC = "/home/claude/build/bangalore_data_v2"
-OUT = "/home/claude/build/road-main"
+import os
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+
+SRC = os.path.join(BASE, "bangalore_data_v2")
+OUT = os.path.join(BASE, "road-main")
 
 road = pd.read_csv(f"{SRC}/road_network.csv")
 gps = pd.read_csv(f"{SRC}/gps_probe_data.csv")
@@ -35,7 +39,62 @@ mapillary = pd.read_csv(f"{SRC}/mapillary_imagery.csv")
 exposure = pd.read_csv(f"{SRC}/exposure_landuse.csv")
 scores = pd.read_csv(f"{SRC}/scores_master.csv")
 poi = pd.read_csv(f"{SRC}/poi_infrastructure.csv")
-crash_db = pd.read_csv(f"{SRC}/crash_database.csv")
+crash_db = pd.read_csv(f"{OUT}/crash_database.csv")
+
+# ── crash aging configuration ──────────────────────────────────────
+
+CRASH_EXPIRY_DAYS = 90
+
+SEVERITY_WEIGHT = {
+    "Fatal": 35,
+    "Major": 15,
+    "Minor": 5
+}
+
+if "date" in crash_db.columns:
+
+    crash_db["date"] = pd.to_datetime(
+    crash_db["date"],
+    errors="coerce"
+)
+    crash_db = crash_db.dropna(subset=["date"])
+
+    today = pd.Timestamp.now().normalize()
+
+    crash_db["days_since_crash"] = (
+        today - crash_db["date"]
+    ).dt.days
+    print(crash_db[["date","days_since_crash"]].head(20))
+
+    crash_db = crash_db[
+        crash_db["days_since_crash"] <= CRASH_EXPIRY_DAYS
+    ].copy()
+    crash_db["decay_factor"] = (
+        1 - crash_db["days_since_crash"] / CRASH_EXPIRY_DAYS
+    ).clip(0, 1)
+
+    crash_db["crash_severity_score"] = (
+        crash_db["severity"]
+        .map(SEVERITY_WEIGHT)
+        .fillna(5)
+    )
+    crash_db["crash_severity_score"] = (
+        crash_db["crash_severity_score"]
+        * crash_db["decay_factor"]
+    )
+
+else:
+
+    print(
+        "WARNING: date column not found. "
+        "90-day crash decay cannot be applied."
+    )
+
+    crash_db["crash_severity_score"] = (
+        crash_db["severity"]
+        .map(SEVERITY_WEIGHT)
+        .fillna(5)
+    )
 hazard_db = pd.read_csv(f"{SRC}/hazard_database.csv")
 
 poi_wide = poi.pivot_table(index="segment_id", columns="poi_category",
@@ -51,12 +110,48 @@ df = (road
       .merge(poi_wide, on="segment_id"))
 
 # ── crash aggregation (validation-only layer) ──────────────────────────────
-crash_count = crash_db.groupby("segment_id").size().rename("crash_count")
-fatal_count = crash_db[crash_db.severity == "Fatal"].groupby("segment_id").size().rename("fatal_crashes")
-df = df.merge(crash_count, on="segment_id", how="left").merge(fatal_count, on="segment_id", how="left")
+# ── crash aggregation with 90-day expiry ────────────────────────────
+
+crash_count = (
+    crash_db.groupby("segment_id")
+    .size()
+    .rename("crash_count")
+)
+
+fatal_count = (
+    crash_db[
+        crash_db["severity"] == "Fatal"
+    ]
+    .groupby("segment_id")
+    .size()
+    .rename("fatal_crashes")
+)
+
+recent_crash_impact = (
+    crash_db.groupby("segment_id")
+    ["crash_severity_score"]
+    .sum()
+    .rename("recent_crash_impact")
+)
+print("\nRECENT CRASH IMPACT:")
+print(recent_crash_impact.head(20))
+print("Count:", len(recent_crash_impact))
+
+df = (
+    df.merge(crash_count, on="segment_id", how="left")
+      .merge(fatal_count, on="segment_id", how="left")
+      .merge(recent_crash_impact, on="segment_id", how="left")
+)
+print(
+    df[
+        ["segment_id", "recent_crash_impact"]
+    ].query("recent_crash_impact > 0")
+    .head(20)
+)
+
 df["crash_count"] = df["crash_count"].fillna(0).astype(int)
 df["fatal_crashes"] = df["fatal_crashes"].fillna(0).astype(int)
-df["blackspot_flag"] = np.where((df["crash_risk_score"] >= 50) | (df["fatal_crashes"] > 0), "Yes", "No")
+df["recent_crash_impact"] = df["recent_crash_impact"].fillna(0)
 
 # ── standardized field renames matching the platform's working schema ─────
 df["road_type"] = df["functional_class"]  # Highway / Arterial / Collector / Local
@@ -150,7 +245,25 @@ df["road_risk_score"] = (
     df["prob_low_risk"]*ANCHORS[0] + df["prob_medium_risk"]*ANCHORS[1] +
     df["prob_high_risk"]*ANCHORS[2] + df["prob_critical_risk"]*ANCHORS[3]
 ).round().astype(int)
-
+df["segment_risk_score"] = (
+    df["road_risk_score"] +
+    (df["recent_crash_impact"] * 1.5)
+).clip(0, 100).round().astype(int)
+print(
+    df[
+        ["segment_id",
+         "road_risk_score",
+         "recent_crash_impact",
+         "segment_risk_score"]
+    ]
+    .query("recent_crash_impact > 0")
+    .head(20)
+)
+df["blackspot_flag"] = np.where(
+    df["crash_risk_score"] >= 80,
+    "Yes",
+    "No"
+)
 # ═══════════════════════════════════════════════════════════════════════
 # RECOMMENDED SPEED — now genuinely linked to misalignment, not opaque.
 # ai_recommended_speed = the lower of: 85th-percentile observed operating
@@ -166,7 +279,7 @@ df["original_safe_speed"] = df["ai_recommended_speed"]
 
 df["recommended_safe_speed"] = (
     df["ai_recommended_speed"]
-    - (df["crash_risk_score"] / 5)
+    - (df["segment_risk_score"] / 5)
 ).clip(lower=20).round().astype(int)
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -216,7 +329,7 @@ df = df.drop(columns=["_prev_seg_idx"])
 df["hotspot_score"] = (
     0.50 * df["misalignment_score"] +
     0.25 * df["exposure_score"] +
-    0.15 * df["crash_risk_score"] +
+    0.20 * df["segment_risk_score"] +
     0.10 * (100 - df["infrastructure_score"])
 ).round(1)
 
@@ -243,7 +356,7 @@ def top_factors(row):
     if row["exposure_tier"] == "Significant Pedestrian Interaction": tags.append("High Pedestrian Interaction")
     if row.get("congestion_category") in ("Moderate", "Severe"): tags.append("Active Congestion")
     if row.get("congestion_smoothed"): tags.append("Approach to Congestion (Tapered)")
-    if row["crash_risk_score"] > 50: tags.append("Crash History")
+    if row["recent_crash_impact"] > 15: tags.append("Recent Severe Crash History")
     if row["infrastructure_score"] < 35: tags.append("Poor Infrastructure")
     if row["human_tolerance_limit"] < row["posted_speed_limit"]: tags.append("Above Human Tolerance Limit")
     if not tags: tags = ["Meets Safe System Standards"]
@@ -251,7 +364,7 @@ def top_factors(row):
 df["top_ai_factors"] = df.apply(top_factors, axis=1)
 
 # ── final column selection matching the platform's working schema ────────
-KEEP = ["segment_id", "road_name", "road_type", "road_risk_score", "ai_risk_label",
+KEEP = ["segment_id", "road_name", "road_type", "road_risk_score","segment_risk_score", "ai_risk_label",
         "ai_risk_label", "ai_risk_probability", "prob_low_risk", "prob_medium_risk",
         "prob_high_risk", "prob_critical_risk", "ai_recommended_speed",
         "recommended_safe_speed", "road_function_score", "infrastructure_score",
@@ -270,6 +383,11 @@ KEEP = ["segment_id", "road_name", "road_type", "road_risk_score", "ai_risk_labe
 KEEP = list(dict.fromkeys(KEEP))  # dedupe, preserve order
 df["risk_category"] = df["ai_risk_label"]
 KEEP.insert(3, "risk_category")
+print(df[[
+    "road_risk_score",
+    "segment_risk_score",
+    "blackspot_flag"
+]].head())
 final = df[KEEP].copy()
 final.to_csv(f"{OUT}/unified_platform_data.csv", index=False)
 print("Final dataset:", final.shape)
