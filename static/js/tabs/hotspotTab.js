@@ -1,7 +1,7 @@
 /* hotspotTab.js — TAB 2: Hotspot Detection & Analysis. */
 const HotspotTab = (function () {
   function renderCards(cards) {
-    const colors = { Safe: "#22c55e", "Moderate Risk": "#eab308", "High Risk": "#f97316", "Severe Hotspot": "#ef4444" };
+    const colors = { Safe: "var(--green)", "Moderate Risk": "var(--yellow)", "High Risk": "var(--orange)", "Severe Hotspot": "var(--red)" };
     document.getElementById("hotspot-cards").innerHTML = HOTSPOT_ORDER
       .map((cat) => `<div class="kpi"><div class="kpi-v" style="color:${colors[cat]}">${cards[cat] || 0}</div><div class="kpi-l">${escapeHtml(cat)}</div></div>`)
       .join("");

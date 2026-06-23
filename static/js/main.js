@@ -13,12 +13,14 @@ function initTheme() {
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-    if (theme === "light") {
-      if (themeIcon) themeIcon.textContent = "☀️";
-      if (themeLabel) themeLabel.textContent = "Light";
-    } else {
-      if (themeIcon) themeIcon.textContent = "🌙";
-      if (themeLabel) themeLabel.textContent = "Dark";
+    if (themeIcon) {
+      themeIcon.innerHTML = theme === "light" ? `<i data-lucide="sun"></i>` : `<i data-lucide="moon"></i>`;
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    }
+    if (themeLabel) {
+      themeLabel.textContent = theme === "light" ? "Light" : "Dark";
     }
     // Update Plotly chart colors in charts.js
     if (typeof updateThemeVariables === "function") {
@@ -42,7 +44,45 @@ function initTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  // Initialize Lucide icons on boot
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
   initTheme();
+  
+  // Collapsible Navigation Sidebar
+  const sidebar = document.getElementById("app-sidebar");
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  if (sidebarToggle && sidebar) {
+    sidebarToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("expanded");
+      setTimeout(() => {
+        document.dispatchEvent(new CustomEvent("app:mapResize"));
+      }, 300);
+    });
+  }
+
+  // Collapsible Filters Panel
+  const filtersToggle = document.getElementById("filters-toggle-btn");
+  const filtersPanel = document.getElementById("filters-panel");
+  const closeFilters = document.getElementById("close-filters-btn");
+  if (filtersToggle && filtersPanel) {
+    filtersToggle.addEventListener("click", () => {
+      filtersPanel.classList.toggle("collapsed");
+      setTimeout(() => {
+        document.dispatchEvent(new CustomEvent("app:mapResize"));
+      }, 300);
+    });
+  }
+  if (closeFilters && filtersPanel) {
+    closeFilters.addEventListener("click", () => {
+      filtersPanel.classList.add("collapsed");
+      setTimeout(() => {
+        document.dispatchEvent(new CustomEvent("app:mapResize"));
+      }, 300);
+    });
+  }
+
   try {
     await SidebarModule.init();
     TabsModule.init();
@@ -50,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await MapModule.init();
     TabsModule.markLoaded("map");
     WeatherTab.init();
+    RoadNetTab.init();
   } catch (e) {
     console.error("App init failed:", e);
     showToast("Failed to initialize the platform — check the console.", true);

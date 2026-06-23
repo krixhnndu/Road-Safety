@@ -4,7 +4,7 @@ const CrashTab = (function () {
   let _segSS = null;   // SearchableSelect for crash-segment
 
   function renderKpis(k) {
-    const items = [[k.minor, "Minor Crashes", "#22c55e"], [k.major, "Major Crashes", "#f97316"], [k.fatal, "Fatal Crashes", "#ef4444"], [k.total, "Total Crashes", "#60a5fa"]];
+    const items = [[k.minor, "Minor Crashes", "var(--green)"], [k.major, "Major Crashes", "var(--orange)"], [k.fatal, "Fatal Crashes", "var(--red)"], [k.total, "Total Crashes", "var(--blue)"]];
     document.getElementById("crash-kpis").innerHTML = items
       .map(([v, l, c]) => `<div class="kpi"><div class="kpi-v" style="color:${c}">${v}</div><div class="kpi-l">${escapeHtml(l)}</div></div>`)
       .join("");
@@ -24,7 +24,7 @@ const CrashTab = (function () {
   }
 
   function renderCharts(charts) {
-    const sevColors = { Minor: "#22c55e", Major: "#f97316", Fatal: "#ef4444" };
+    const sevColors = { Minor: "#10b981", Major: "#ff9500", Fatal: "#ff3b30" };
     plot(
       "chart-crash-pie",
       [{ type: "pie", labels: charts.severity_pie.map((d) => d.severity), values: charts.severity_pie.map((d) => d.count), marker: { colors: charts.severity_pie.map((d) => sevColors[d.severity]) }, hole: 0.45, textfont: { size: 9 } }],
@@ -77,7 +77,7 @@ const CrashTab = (function () {
       const description = document.getElementById("crash-desc").value;
       try {
         await apiPost("/crashes", { segment_id, severity, date, time, description });
-        showToast(`✅ ${severity} crash logged`);
+        showToast(`${severity} crash logged`);
         document.getElementById("crash-desc").value = "";
         document.dispatchEvent(new CustomEvent("app:globalChanged"));
       } catch (err) {

@@ -28,12 +28,12 @@ const RoadNetTab = (function () {
       const sh = data.road_classes['State Highway'] || 0;
       const urb = data.road_classes['Urban Road'] || 0;
       wrap.innerHTML =
-        statCard('Total Segments', formatNum(data.total_segments), '#60a5fa') +
-        statCard('Total Length', formatNum(data.total_length_km) + ' km', '#a78bfa') +
-        statCard('National Highways', formatNum(nh), '#ef4444') +
-        statCard('State Highways', formatNum(sh), '#f97316') +
-        statCard('Urban Roads', formatNum(urb), '#3b82f6') +
-        statCard('Source', data.source, '#94a3b8');
+        statCard('Total Segments', formatNum(data.total_segments), 'var(--sky)') +
+        statCard('Total Length', formatNum(data.total_length_km) + ' km', 'var(--purple)') +
+        statCard('National Highways', formatNum(nh), 'var(--red)') +
+        statCard('State Highways', formatNum(sh), 'var(--orange)') +
+        statCard('Urban Roads', formatNum(urb), 'var(--blue)') +
+        statCard('Source', data.source, 'var(--text-dim)');
     } catch (e) {
       console.warn('Road network stats failed:', e);
     }
@@ -46,5 +46,5 @@ const RoadNetTab = (function () {
     });
   }
 
-  return { init };
+  return { init, refresh: loadStats };
 })();

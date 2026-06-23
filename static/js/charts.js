@@ -4,22 +4,22 @@
    original unified_platform.py). */
 
 const RISK_PALETTE = {
-  "Aligned": "#22c55e",
-  "Moderate Misalignment": "#eab308",
-  "High Misalignment": "#f97316",
-  "Critical Misalignment": "#ef4444",
+  "Aligned": "#10b981",
+  "Moderate Misalignment": "#f59e0b",
+  "High Misalignment": "#ff7a00",
+  "Critical Misalignment": "#ff3b30",
 };
 const HOTSPOT_PALETTE = {
-  "Safe": "#22c55e",
-  "Moderate Risk": "#eab308",
-  "High Risk": "#f97316",
-  "Severe Hotspot": "#ef4444",
+  "Safe": "#10b981",
+  "Moderate Risk": "#f59e0b",
+  "High Risk": "#ff7a00",
+  "Severe Hotspot": "#ff3b30",
 };
 // Problem 5: Only three road categories — National Highway, State Highway, Urban Road
 const ROAD_TYPE_PALETTE = {
-  "National Highway": "#ef4444",   // red  — most prominent
-  "State Highway":    "#f97316",   // orange
-  "Urban Road":       "#60a5fa",   // blue
+  "National Highway": "#ff3b30",   // Apple Red
+  "State Highway":    "#ff9500",   // Apple Orange
+  "Urban Road":       "#007aff",   // Apple Blue
 };
 const ROAD_TYPE_ORDER = ["National Highway", "State Highway", "Urban Road"];
 

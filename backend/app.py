@@ -37,6 +37,7 @@ def create_app():
     app.register_blueprint(api)
 
     @app.route("/")
+    @app.route("/dashboard")
     def index():
         return render_template("index.html")
 

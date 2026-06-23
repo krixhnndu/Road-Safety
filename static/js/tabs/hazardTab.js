@@ -6,7 +6,7 @@ const HazardTab = (function () {
   function hazardItemHtml(hz, isActive) {
     return `<div class="hazard-item ${isActive ? "" : "inactive"}">
       <div class="hazard-type">${escapeHtml(hz.hazard_type)}</div>
-      <div style="font-size:.78rem;color:#e2e8f0;margin-top:2px;">${escapeHtml(hz.human_segment_id)} — ${escapeHtml(hz.road_name)}</div>
+      <div style="font-size:.78rem;color:var(--text-dim);margin-top:2px;">${escapeHtml(hz.human_segment_id)} — ${escapeHtml(hz.road_name)}</div>
       <div class="hazard-meta">${escapeHtml(hz.date)} · ${escapeHtml(hz.start_time)}–${escapeHtml(hz.end_time)} · Temp limit: ${hz.temp_speed} km/h</div>
       ${hz.description ? `<div class="hazard-meta">${escapeHtml(hz.description)}</div>` : ""}
       <button class="hazard-remove" data-id="${hz.hazard_id}">Remove</button>
@@ -28,7 +28,7 @@ const HazardTab = (function () {
       btn.addEventListener("click", async () => {
         try {
           await apiDelete(`/hazards/${btn.dataset.id}`);
-          showToast("🗑️ Hazard removed");
+          showToast("Hazard removed");
           document.dispatchEvent(new CustomEvent("app:globalChanged"));
         } catch (e) {
           showToast(e.message, true);
@@ -93,7 +93,7 @@ const HazardTab = (function () {
       };
       try {
         await apiPost("/hazards", body);
-        showToast(`⚠️ ${body.hazard_type} hazard added`);
+        showToast(`${body.hazard_type} hazard added`);
         document.getElementById("hazard-desc").value = "";
         document.dispatchEvent(new CustomEvent("app:globalChanged"));
       } catch (err) {

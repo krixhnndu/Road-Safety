@@ -8,7 +8,7 @@ const ModelTab = (function () {
           ["F1 Score", row.f1], ["CV Accuracy", row.cv_acc != null ? row.cv_acc : row.accuracy],
         ];
         return `<div class="panel"><h4>${row.is_best ? "✅ " : ""}${escapeHtml(row.model)}</h4>
-          ${rows.map(([l, v]) => `<div class="irow"><span class="irow-l">${l}</span><span class="irow-v" style="color:${row.is_best && l === "F1 Score" ? "#22c55e" : "#e2e8f0"}">${(v * 100).toFixed(2)}%</span></div>`).join("")}
+          ${rows.map(([l, v]) => `<div class="irow"><span class="irow-l">${l}</span><span class="irow-v" style="color:${row.is_best && l === "F1 Score" ? "#22c55e" : "var(--text)"}">${(v * 100).toFixed(2)}%</span></div>`).join("")}
         </div>`;
       })
       .join("");
@@ -26,18 +26,16 @@ const ModelTab = (function () {
       fillcolor: colors[i % colors.length],
       opacity: 0.55,
     }));
-    Plotly.newPlot(
+    plot(
       "chart-model-radar",
       traces,
       {
-        polar: { bgcolor: PLOT_BG, radialaxis: { visible: true, range: [0, 1], color: "#64748b", tickfont: { size: 8 } }, angularaxis: { color: "#94a3b8" } },
-        paper_bgcolor: PAPER_BG,
+        polar: { bgcolor: PLOT_BG, radialaxis: { visible: true, range: [0, 1], color: AXIS_COLOR, tickfont: { size: 8 } }, angularaxis: { color: FONT_COLOR } },
         showlegend: true,
-        legend: { font: { color: "#e2e8f0", size: 10 }, bgcolor: "rgba(0,0,0,0)" },
-        title: { text: "Model Performance Comparison", font: { color: "#e2e8f0", size: 14 } },
+        legend: { font: { color: FONT_COLOR, size: 10 }, bgcolor: "rgba(0,0,0,0)" },
+        title: { text: "Model Performance Comparison", font: { color: FONT_COLOR, size: 14 } },
         margin: { t: 50, b: 20 },
-      },
-      { displayModeBar: false, responsive: true }
+      }
     );
   }
 

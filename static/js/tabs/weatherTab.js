@@ -11,11 +11,11 @@ const WeatherTab = (function () {
     "Extreme Rainfall / Storm",
   ];
   const CONDITION_ICONS = {
-    "Clear / Sunny":            "☀",
-    "Light Rain":               "🌦",
-    "Moderate Rain":            "🌧",
-    "Heavy Rainfall":           "⛈",
-    "Extreme Rainfall / Storm": "⚠",
+    "Clear / Sunny":            `<i data-lucide="sun" class="wx-icon" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i>`,
+    "Light Rain":               `<i data-lucide="cloud-sun" class="wx-icon" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i>`,
+    "Moderate Rain":            `<i data-lucide="cloud-rain" class="wx-icon" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i>`,
+    "Heavy Rainfall":           `<i data-lucide="cloud-drizzle" class="wx-icon" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i>`,
+    "Extreme Rainfall / Storm": `<i data-lucide="cloud-lightning" class="wx-icon" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i>`,
   };
   const CONDITION_COLORS = {
     "Clear / Sunny":            "#fbbf24",
@@ -29,7 +29,7 @@ const WeatherTab = (function () {
 
   // ── helpers ──────────────────────────────────────────────────────────────
   function condColor(c) { return CONDITION_COLORS[c] || "#94a3b8"; }
-  function condIcon(c)  { return CONDITION_ICONS[c]  || "☀"; }
+  function condIcon(c)  { return CONDITION_ICONS[c]  || ""; }
 
   function esc(s) {
     if (s == null) return "";
@@ -85,7 +85,7 @@ const WeatherTab = (function () {
     const counts = dist.map(d => d.count);
     const colors = dist.map(d => condColor(d.condition));
 
-    Plotly.newPlot("wx-dist-chart", [{
+    plot("wx-dist-chart", [{
       type: "bar",
       x: labels,
       y: counts,
@@ -93,38 +93,32 @@ const WeatherTab = (function () {
       text: dist.map(d => `${d.pct}%`),
       textposition: "outside",
     }], {
-      paper_bgcolor: "transparent",
-      plot_bgcolor: "#0d1b2e",
-      font: { color: "#e2e8f0", size: 11 },
-      title: { text: "Weather Distribution Across Road Segments", font: { color: "#e2e8f0", size: 13 } },
-      xaxis: { gridcolor: "#1e3a5f", tickfont: { size: 10 } },
-      yaxis: { gridcolor: "#1e3a5f", title: "Segment Count" },
+      title: { text: "Weather Distribution Across Road Segments", font: { color: FONT_COLOR, size: 13 } },
+      xaxis: { tickfont: { size: 10 } },
+      yaxis: { title: "Segment Count" },
       margin: { t: 40, l: 50, r: 20, b: 60 },
-    }, { responsive: true, displayModeBar: false });
+    });
   }
 
   // ── Pie chart for severity distribution ───────────────────────────────
   function renderSeverityPie(dist) {
-    const labels = dist.map(d => `${condIcon(d.condition)} ${d.condition}`);
+    const labels = dist.map(d => d.condition);
     const values = dist.map(d => d.count);
     const colors = dist.map(d => condColor(d.condition));
 
-    Plotly.newPlot("wx-severity-pie", [{
+    plot("wx-severity-pie", [{
       type: "pie",
       labels,
       values,
       marker: { colors },
       textinfo: "label+percent",
-      textfont: { size: 10, color: "#e2e8f0" },
+      textfont: { size: 10, color: FONT_COLOR },
       hole: 0.35,
     }], {
-      paper_bgcolor: "transparent",
-      plot_bgcolor: "transparent",
-      font: { color: "#e2e8f0", size: 11 },
-      title: { text: "Rainfall Severity Distribution", font: { color: "#e2e8f0", size: 13 } },
+      title: { text: "Rainfall Severity Distribution", font: { color: FONT_COLOR, size: 13 } },
       showlegend: false,
       margin: { t: 40, l: 10, r: 10, b: 10 },
-    }, { responsive: true, displayModeBar: false });
+    });
   }
 
   // ── Segment weather table ─────────────────────────────────────────────
@@ -155,7 +149,7 @@ const WeatherTab = (function () {
                 <td>${esc(r.road_name)}</td>
                 <td>${esc(r.road_type)}</td>
                 <td style="color:${r.weather_color}">
-                  ${esc(r.weather_icon)} ${esc(r.weather_condition)}
+                  ${condIcon(r.weather_condition)} ${esc(r.weather_condition)}
                 </td>
                 <td style="text-align:right">${r.rainfall_mmhr.toFixed(2)}</td>
                 <td style="text-align:right;color:${r.speed_reduction > 0 ? '#f97316' : '#22c55e'}">
@@ -198,23 +192,21 @@ const WeatherTab = (function () {
         y: values,
         type: "scatter",
         mode: "lines",
-        name: `${condIcon(d.condition)} ${d.condition}`,
+        name: d.condition,
         line: { color: condColor(d.condition), width: 2 },
         fill: "tonexty",
         stackgroup: "one",
       };
     });
 
-    Plotly.newPlot("wx-trend-chart", traces, {
-      paper_bgcolor: "transparent",
-      plot_bgcolor: "#0d1b2e",
-      font: { color: "#e2e8f0", size: 11 },
-      title: { text: "Simulated 24-Hour Weather Trend (Segment Count by Condition)", font: { color: "#e2e8f0", size: 13 } },
-      xaxis: { gridcolor: "#1e3a5f", title: "Hour of Day" },
-      yaxis: { gridcolor: "#1e3a5f", title: "Segments" },
-      legend: { bgcolor: "transparent", font: { size: 10 }, orientation: "h", y: -0.25 },
+    plot("wx-trend-chart", traces, {
+      title: { text: "Simulated 24-Hour Weather Trend (Segment Count by Condition)", font: { color: FONT_COLOR, size: 13 } },
+      xaxis: { title: "Hour of Day" },
+      yaxis: { title: "Segments" },
+      legend: { bgcolor: "rgba(0,0,0,0)", font: { size: 10, color: FONT_COLOR }, orientation: "h", y: -0.25 },
       margin: { t: 40, l: 50, r: 20, b: 80 },
-    }, { responsive: true, displayModeBar: false });
+      showlegend: true,
+    });
   }
 
   // ── Severity statistics card ───────────────────────────────────────────
@@ -257,6 +249,9 @@ const WeatherTab = (function () {
       renderTrendChart(summary.distribution || []);
       renderSeverityStats(summary.distribution || []);
       renderSegmentTable(segments || []);
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
     } catch (e) {
       setHtml("wx-kpis", `<div class="loading-row" style="color:#ef4444">Weather data unavailable: ${e.message}</div>`);
     }

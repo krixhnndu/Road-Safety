@@ -27,6 +27,14 @@ const MapModule = (function () {
   let _segmentSS = null;        // SearchableSelect instance for segment-select
   let selectedSegmentId = null; // Currently selected segment ID
   let layerById = {};           // Map of segment_id to Leaflet layer
+  let weatherMarkersGroup = null;
+  let _searchSS = null;         // SearchableSelect for topbar global search
+  const OverlaysState = {
+    hazards: true,
+    crashes: true,
+    weather: true,
+    traffic: true
+  };
 
   // ── Basemap definitions (Problem 7: all three restored) ────────────────────
   const TILE_DEFS = {
@@ -71,10 +79,30 @@ const MapModule = (function () {
     if (mode === "Road Type") return roadTypeColor(p.road_type);
     // Speed mode
     const spd = p.posted_speed_limit || 0;
-    if (spd >= 80) return "#ef4444";
-    if (spd >= 60) return "#f97316";
-    if (spd >= 40) return "#60a5fa";
-    return "#34d399";
+    if (spd >= 80) return "#ff3b30";
+    if (spd >= 60) return "#ff9500";
+    if (spd >= 40) return "#007aff";
+    return "#10b981";
+  }
+
+  function getWeatherLucideIcon(cond) {
+    if (!cond) return "sun";
+    const c = cond.toLowerCase();
+    if (c.includes("clear") || c.includes("sunny")) return "sun";
+    if (c.includes("light rain") || c.includes("drizzle")) return "cloud-sun";
+    if (c.includes("moderate")) return "cloud-rain";
+    if (c.includes("heavy")) return "cloud-drizzle";
+    if (c.includes("extreme") || c.includes("storm") || c.includes("thunder")) return "cloud-lightning";
+    return "cloud";
+  }
+
+  function getWeatherIconHtml(cond, color) {
+    if (!cond) return "";
+    const icon = getWeatherLucideIcon(cond);
+    return `<span style="color:${color || 'var(--yellow)'};display:inline-flex;align-items:center;gap:4px;font-weight:700;">
+      <i data-lucide="${icon}" style="width:13px;height:13px;stroke-width:2.5px;"></i>
+      ${escapeHtml(cond)}
+    </span>`;
   }
 
   // ── Popup HTML ──────────────────────────────────────────────────────────────
@@ -82,58 +110,59 @@ const MapModule = (function () {
     if (!p) {
       return `<div style="font-family:system-ui;background:var(--panel-bg);color:var(--text);
               padding:10px;border-radius:8px;min-width:200px;border:1px solid var(--border);">
-        <div style="color:#60a5fa;font-weight:700">${escapeHtml(p && p.human_segment_id || "Road")}</div>
+        <div style="color:var(--blue);font-weight:700">${escapeHtml(p && p.human_segment_id || "Road")}</div>
         <div style="color:var(--text-dimmer);font-size:.8rem">Analytics loading…</div>
       </div>`;
     }
     const rc = p.ai_risk_label;
     const hsc = p.hotspot_category;
-    const color = RISK_PALETTE[rc] || "#eab308";
-    const tcColor = ROAD_TYPE_PALETTE[p.road_type] || "#94a3b8";
+    const color = RISK_PALETTE[rc] || "var(--yellow)";
+    const tcColor = ROAD_TYPE_PALETTE[p.road_type] || "var(--text-dim)";
     const hazardBanner = hasHazard
-      ? `<div style="margin-top:8px;padding:6px 8px;background:#4c0519;border-radius:5px;
-           font-size:.7rem;color:#f87171;font-weight:700">⚠️ ACTIVE HAZARD</div>`
+      ? `<div style="margin-top:8px;padding:6px 8px;background:rgba(255, 69, 58, 0.15);border:1px solid rgba(255, 69, 58, 0.3);border-radius:5px;
+           font-size:.68rem;color:var(--red);font-weight:700;letter-spacing:0.03em;text-transform:uppercase;">Active Hazard</div>`
       : "";
     return `
     <div style="font-family:system-ui;min-width:240px;background:var(--panel-bg);color:var(--text);
                 padding:14px;border-radius:10px;border:1px solid var(--border)">
-      <div style="font-size:1.05rem;font-weight:700;color:#60a5fa">
+      <div style="font-size:1.05rem;font-weight:700;color:var(--blue)">
         ${escapeHtml(p.human_segment_id)}
-        <span style="font-size:.7rem;color:#94a3b8">#${p.segment_id}</span>
+        <span style="font-size:.7rem;color:var(--text-dimmer)">#${p.segment_id}</span>
       </div>
-      <div style="font-size:.8rem;color:#94a3b8;margin-top:2px">${escapeHtml(p.road_name)}</div>
+      <div style="font-size:.8rem;color:var(--text-dim);margin-top:2px">${escapeHtml(p.road_name)}</div>
       <div style="font-size:.68rem;font-weight:700;color:${tcColor}">${escapeHtml(p.road_type)}</div>
-      <hr style="border-color:#1a2d45;margin:8px 0">
+      <hr style="border-color:var(--border);margin:8px 0">
       <table style="width:100%;font-size:.76rem;border-collapse:collapse">
-        <tr><td style="color:#64748b;padding:2px 0">Posted Limit</td>
-            <td style="color:#fbbf24;font-weight:700">${p.posted_speed_limit} km/h</td></tr>
-        <tr><td style="color:#64748b">AI Safe Speed</td>
-            <td style="color:#22c55e;font-weight:700">${p.final_safe_speed} km/h</td></tr>
-        <tr><td style="color:#64748b">Risk Category</td>
+        <tr><td style="color:var(--text-dimmer);padding:2px 0">Posted Limit</td>
+            <td style="color:var(--yellow);font-weight:700">${p.posted_speed_limit} km/h</td></tr>
+        <tr><td style="color:var(--text-dimmer)">AI Safe Speed</td>
+            <td style="color:var(--green);font-weight:700">${p.final_safe_speed} km/h</td></tr>
+        <tr><td style="color:var(--text-dimmer)">Risk Category</td>
             <td style="color:${color};font-weight:700">${escapeHtml(rc)}</td></tr>
-        <tr><td style="color:#64748b">Risk Probability</td>
+        <tr><td style="color:var(--text-dimmer)">Risk Probability</td>
             <td style="color:${color}">${(p.ai_risk_probability * 100).toFixed(1)}%</td></tr>
-        <tr><td style="color:#64748b">Risk Score</td>
+        <tr><td style="color:var(--text-dimmer)">Risk Score</td>
             <td><b>${p.road_risk_score}/100</b></td></tr>
-        <tr><td style="color:#64748b">Hotspot</td>
-            <td style="color:${HOTSPOT_PALETTE[hsc] || '#f97316'}">${p.hotspot_score} — ${escapeHtml(hsc)}</td></tr>
-        <tr><td style="color:#64748b">Infrastructure</td>
+        <tr><td style="color:var(--text-dimmer)">Hotspot</td>
+            <td style="color:${HOTSPOT_PALETTE[hsc] || 'var(--orange)'}">${p.hotspot_score} — ${escapeHtml(hsc)}</td></tr>
+        <tr><td style="color:var(--text-dimmer)">Infrastructure</td>
             <td>${p.infrastructure_score}/100</td></tr>
-        <tr><td style="color:#64748b">Exposure</td>
+        <tr><td style="color:var(--text-dimmer)">Exposure</td>
             <td>${p.exposure_score}/100</td></tr>
-        <tr><td style="color:#64748b">Crash Risk</td>
+        <tr><td style="color:var(--text-dimmer)">Crash Risk</td>
             <td>${p.crash_risk_score}/100</td></tr>
-        <tr><td style="color:#64748b">Fatal Crashes</td>
-            <td style="color:${p.fatal_crashes > 0 ? '#ef4444' : '#e2e8f0'}">${p.fatal_crashes}</td></tr>
-        ${p.weather_icon ? `<tr><td style="color:#64748b">Weather</td>
-            <td style="color:${p.weather_color || '#fbbf24'};font-weight:700">${escapeHtml(p.weather_icon)} ${escapeHtml(p.weather_condition)}</td></tr>
-        <tr><td style="color:#64748b">Rainfall</td>
-            <td style="color:#60a5fa">${typeof p.rainfall_mmhr === 'number' ? p.rainfall_mmhr.toFixed(2) : '0.00'} mm/hr</td></tr>` : ''}
+        <tr><td style="color:var(--text-dimmer)">Fatal Crashes</td>
+            <td style="color:${p.fatal_crashes > 0 ? 'var(--red)' : 'var(--text)'}">${p.fatal_crashes}</td></tr>
+        ${p.weather_condition ? `<tr><td style="color:var(--text-dimmer)">Weather</td>
+            <td>${getWeatherIconHtml(p.weather_condition, p.weather_color)}</td></tr>
+        <tr><td style="color:var(--text-dimmer)">Rainfall</td>
+            <td style="color:var(--blue)">${typeof p.rainfall_mmhr === 'number' ? p.rainfall_mmhr.toFixed(2) : '0.00'} mm/hr</td></tr>` : ''}
       </table>
       ${hazardBanner}
-      <div style="margin-top:8px;padding:6px 8px;background:#030a1a;border-radius:6px;
-                  font-size:.7rem;color:#a78bfa">
-        🤖 ${escapeHtml(p.top_ai_factors || "—")}
+      <div style="margin-top:8px;padding:6px 8px;background:var(--panel-bg-2);border:1px solid var(--border);border-radius:6px;
+                  font-size:.68rem;color:var(--text-dim);display:flex;align-items:center;gap:4px;">
+        <i data-lucide="cpu" style="width:12px;height:12px;stroke-width:2.5px;color:var(--purple);"></i>
+        <span>AI: ${escapeHtml(p.top_ai_factors || "—")}</span>
       </div>
     </div>`;
   }
@@ -222,11 +251,25 @@ const MapModule = (function () {
         const roadType = (seg && seg.road_type) || feature.properties.road_class;
         const color = seg ? colorForSegment(seg, mode) : roadTypeColor(roadType);
         const baseWeight = roadTypeWeight(roadType);
-        const extraWeight = (seg && seg.ai_risk_label === "Critical Misalignment") ? 2 : 0;
+        let extraWeight = (seg && seg.ai_risk_label === "Critical Misalignment") ? 2 : 0;
         const isHazard = activeHazardSet.has(id);
         const isSelected = (id === selectedSegmentId);
+        
+        let strokeColor = color;
+        if (isSelected) {
+          strokeColor = "#00ffff";
+        } else if (isHazard && OverlaysState.hazards) {
+          strokeColor = "#fbbf24";
+        } else if (seg && OverlaysState.crashes && seg.fatal_crashes > 0) {
+          strokeColor = "#ef4444";
+          extraWeight += 1.5;
+        } else if (seg && OverlaysState.traffic && seg.congestion_index > 60) {
+          strokeColor = "#ff4500";
+          extraWeight += 1.5;
+        }
+        
         return {
-          color: isSelected ? "#00ffff" : (isHazard ? "#fbbf24" : color),
+          color: strokeColor,
           weight: (width + baseWeight + extraWeight) + (isSelected ? 5 : 0),
           opacity: isSelected ? 1.0 : 0.88,
           lineCap: "round",
@@ -337,11 +380,25 @@ const MapModule = (function () {
       const roadType = (seg && seg.road_type) || layer.feature.properties.road_class;
       const color = seg ? colorForSegment(seg, mode) : roadTypeColor(roadType);
       const baseWeight = roadTypeWeight(roadType);
-      const extraWeight = (seg && seg.ai_risk_label === "Critical Misalignment") ? 2 : 0;
+      let extraWeight = (seg && seg.ai_risk_label === "Critical Misalignment") ? 2 : 0;
       const isHazard = activeHazardSet.has(id);
       const isSelected = (id === selectedSegmentId);
+      
+      let strokeColor = color;
+      if (isSelected) {
+        strokeColor = "#00ffff";
+      } else if (isHazard && OverlaysState.hazards) {
+        strokeColor = "#fbbf24";
+      } else if (seg && OverlaysState.crashes && seg.fatal_crashes > 0) {
+        strokeColor = "#ef4444";
+        extraWeight += 1.5;
+      } else if (seg && OverlaysState.traffic && seg.congestion_index > 60) {
+        strokeColor = "#ff4500";
+        extraWeight += 1.5;
+      }
+
       layer.setStyle({
-        color: isSelected ? "#00ffff" : (isHazard ? "#fbbf24" : color),
+        color: strokeColor,
         weight: (width + baseWeight + extraWeight) + (isSelected ? 5 : 0),
         opacity: isSelected ? 1.0 : 0.88,
       });
@@ -424,7 +481,7 @@ const MapModule = (function () {
   function renderDetailPanel(d) {
     const s = d.scores;
     const hazardBanner = d.has_active_hazard
-      ? `<div class="congestion-note">⚠️ Active hazard — temporary speed limit: <b>${d.hazard_temp_speed} km/h</b></div>`
+      ? `<div class="congestion-note"><span style="color:var(--red);font-weight:700;letter-spacing:0.02em;text-transform:uppercase;">Hazard Active</span> — temporary speed limit: <b>${d.hazard_temp_speed} km/h</b></div>`
       : "";
     const bsBanner = d.is_blackspot
       ? `<div class="bs-banner"><div class="bs-dot"></div>ACCIDENT BLACKSPOT</div>`
@@ -432,7 +489,7 @@ const MapModule = (function () {
     // ── Traffic detail block — reference-image style ────────────────────
     const trafficInfo = d.traffic;
     const _tScore = trafficInfo ? (trafficInfo.congestion_score * 100).toFixed(0) : 0;
-    const _tColor = trafficInfo ? trafficInfo.condition_color : '#64748b';
+    const _tColor = trafficInfo ? trafficInfo.condition_color : 'var(--text-dimmer)';
 
     // Alert banner (near top of panel, only when congestion >= Heavy)
     const trafficBanner = (trafficInfo && trafficInfo.alert)
@@ -445,8 +502,9 @@ const MapModule = (function () {
 
     // Full traffic card (always rendered after weather panel)
     const trafficDetailHtml = (trafficInfo && trafficInfo.available)
-      ? `<div class="traffic-detail-card">
-          <div class="traffic-detail-header" style="color:${_tColor}">
+      ? `<div class="traffic-detail-card" style="margin-top:0;">
+          <div class="traffic-detail-header" style="color:${_tColor};display:flex;align-items:center;gap:6px;">
+             <i data-lucide="traffic-cone" style="width:14px;height:14px;"></i>
              TRAFFIC CONDITIONS
           </div>
           <div class="traffic-condition-row">
@@ -457,32 +515,111 @@ const MapModule = (function () {
           </div>
           ${irowHtml('Congestion Level', trafficInfo.congestion_level || '—', _tColor)}
           ${irowHtml('Congestion Score', _tScore + '%', _tColor)}
-          ${trafficInfo.avg_speed_kmph != null ? irowHtml('Avg Traffic Speed', trafficInfo.avg_speed_kmph + ' km/h', '#60a5fa') : ''}
-          ${trafficInfo.vehicle_density != null ? irowHtml('Vehicle Density', trafficInfo.vehicle_density + ' veh/km', '#a78bfa') : ''}
-          ${trafficInfo.incident && trafficInfo.incident !== 'None' ? irowHtml('Incident', trafficInfo.incident, '#f87171') : ''}
+          ${trafficInfo.avg_speed_kmph != null ? irowHtml('Avg Traffic Speed', trafficInfo.avg_speed_kmph + ' km/h', 'var(--blue)') : ''}
+          ${trafficInfo.vehicle_density != null ? irowHtml('Vehicle Density', trafficInfo.vehicle_density + ' veh/km', 'var(--purple)') : ''}
+          ${trafficInfo.incident && trafficInfo.incident !== 'None' ? irowHtml('Incident', trafficInfo.incident, 'var(--red)') : ''}
           <div class="traffic-warning-box" style="border-color:${_tColor}40;">
-            <div class="traffic-warning-title" style="color:${_tColor}">⚠ Traffic Warning</div>
+            <div class="traffic-warning-title" style="color:${_tColor}">Traffic Warning</div>
             <div class="traffic-warning-msg">${escapeHtml(trafficInfo.warning || '—')}</div>
           </div>
-          <div style="font-size:.66rem;color:#475569;margin-top:8px;text-align:right;">📅 ${escapeHtml(trafficInfo.timestamp || '—')}</div>
+          <div style="font-size:.66rem;color:var(--text-dimmer);margin-top:8px;text-align:right;">📅 ${escapeHtml(trafficInfo.timestamp || '—')}</div>
         </div>`
-      : `<div class="traffic-detail-card" style="opacity:.45;">
-          <div class="traffic-detail-header">🚦 TRAFFIC CONDITIONS</div>
-          <div style="color:#64748b;font-size:.78rem;padding:6px 0;">No traffic data for this segment.</div>
+      : `<div class="traffic-detail-card" style="opacity:.45;margin-top:0;">
+          <div class="traffic-detail-header">TRAFFIC CONDITIONS</div>
+          <div style="color:var(--text-dimmer);font-size:.78rem;padding:6px 0;">No traffic data for this segment.</div>
          </div>`;
-    const tcColor = ROAD_TYPE_PALETTE[d.road_type] || "#94a3b8";
+    const tcColor = ROAD_TYPE_PALETTE[d.road_type] || "var(--text-dim)";
     const congestionNote =
       ["Moderate", "Severe"].includes(d.congestion_category)
         ? `<div class="congestion-note"> ${escapeHtml(d.congestion_category)} congestion — adjusted to actual flow (${d.operating_speed_mean.toFixed(0)} km/h vs ${d.speed.posted_speed} km/h posted).</div>`
         : d.congestion_smoothed
-          ? `<div class="congestion-note">↘ Speed tapered for downstream congestion.</div>`
+          ? `<div class="congestion-note">Speed tapered for downstream congestion.</div>`
           : "";
 
     const factorsHtml = d.factors.map((f) =>
       `<div class="factor-pill f-${f.severity}">${escapeHtml(f.label)}</div>`
     ).join("");
-    const cardStyle = d.speed.is_hazard_override ? "style='border:2px solid #fbbf24;background:#18150a;'" : "";
-    const speedColor = d.speed.is_hazard_override ? "#fbbf24" : "#60a5fa";
+    const cardStyle = d.speed.is_hazard_override ? "style='border:2px solid var(--orange);background:rgba(255,149,0,0.05);'" : "";
+    const speedColor = d.speed.is_hazard_override ? "var(--orange)" : "var(--blue)";
+
+    const scoresHtml = `
+      ${sbarHtml("Road Risk Score", s.road_risk_score, scoreColor(s.road_risk_score, true))}
+      ${sbarHtml("AI Risk Probability", s.ai_risk_probability, RISK_PALETTE[d.ai_risk_label] || "var(--yellow)")}
+      ${sbarHtml("Hotspot Score", s.hotspot_score, scoreColor(s.hotspot_score, true))}
+      ${sbarHtml("Exposure (Now)", s.exposure_now, scoreColor(s.exposure_now, true))}
+      ${sbarHtml("Infrastructure", s.infrastructure_score, scoreColor(s.infrastructure_score))}
+      ${sbarHtml("Crash Risk", s.crash_risk_score, scoreColor(s.crash_risk_score, true))}
+      ${sbarHtml("Road Function", s.road_function_score, "var(--purple)")}
+      ${sbarHtml("Speed Safety", s.speed_safety_score, scoreColor(s.speed_safety_score))}
+      ${sbarHtml("Congestion Index", s.congestion_index, scoreColor(s.congestion_index, true))}
+      <div style="margin-top:14px; border-top:1px solid var(--border); padding-top:10px;">
+        <h5 style="margin:0 0 10px; font-size:0.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.04em;">Risk Probabilities</h5>
+        ${d.probabilities.map((p) => probBarHtml(p.label, p.value, p.color)).join("")}
+      </div>
+    `;
+
+    const statsHtml = `
+      ${irowHtml("Segment ID", `#${d.segment_id} (${d.human_segment_id})`)}
+      ${irowHtml("Road Type", d.road_type, tcColor)}
+      ${irowHtml("Start KM", `${d.info.start_km.toFixed(1)} km`)}
+      ${irowHtml("End KM", `${d.info.end_km.toFixed(1)} km`)}
+      ${irowHtml("Risk Category", d.info.risk_category, RISK_PALETTE[d.info.risk_category])}
+      ${irowHtml("Hotspot", d.info.hotspot_category, HOTSPOT_PALETTE[d.info.hotspot_category])}
+      ${irowHtml("Exposure Tier", d.info.exposure_tier)}
+      ${irowHtml("Schools Nearby", d.info.schools_count)}
+      ${irowHtml("Minor Crashes", d.info.minor_crashes, "var(--green)")}
+      ${irowHtml("Major Crashes", d.info.major_crashes, "var(--orange)")}
+      ${irowHtml("Fatal Crashes", d.info.fatal_crashes, "var(--red)")}
+      ${irowHtml("Temporal Time", d.info.time)}
+    `;
+
+    const aiHtml = `
+      <div class="xai-title" style="margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+        <i data-lucide="cpu" style="width:14px;height:14px;stroke-width:2.5px;color:var(--purple);"></i>
+        Contributing AI Factors
+      </div>
+      <div style="color:var(--text-dim);font-size:.74rem;margin-bottom:10px;">
+        Safe speed recommendation of <b style="color:var(--blue)">${d.speed.recommended_speed} km/h</b> based on local AI factors:
+      </div>
+      <div style="margin-bottom:12px;">${factorsHtml}</div>
+      <div class="vz-box" style="margin-top:8px;">
+        <b>Vision Zero Constraint:</b><br>
+        min(AI Speed = ${d.speed.ai_speed} km/h, Human Tolerance = ${d.speed.tolerance} km/h)
+        → <b>${d.speed.recommended_speed} km/h</b>
+      </div>
+    `;
+
+    const weatherTrafficHtml = `
+      ${d.weather ? `
+      <div class="wx-detail-panel" style="margin: 0 0 12px 0;">
+        <h4 style="margin:0 0 8px; font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.04em; display:flex; align-items:center; gap:6px;">
+          <i data-lucide="cloud-sun" style="width:14px;height:14px;"></i>
+          Weather Station
+        </h4>
+        <div class="irow">
+          <span class="irow-l">Condition</span>
+          <span class="irow-v">${getWeatherIconHtml(d.weather.weather_condition, d.weather.weather_color)}</span>
+        </div>
+        <div class="irow">
+          <span class="irow-l">Rainfall Intensity</span>
+          <span class="irow-v" style="color:var(--blue);">${d.weather.rainfall_mmhr.toFixed(2)} mm/hr</span>
+        </div>
+        <div class="irow">
+          <span class="irow-l">Speed Reduction</span>
+          <span class="irow-v" style="color:${d.weather.speed_reduction > 0 ? 'var(--orange)' : 'var(--green)'}">${d.weather.speed_reduction > 0 ? `-${d.weather.speed_reduction} km/h` : "None"}</span>
+        </div>
+      </div>` : ""}
+      ${trafficDetailHtml}
+    `;
+
+    const crashReportHtml = `
+      <div class="field" style="margin-bottom:10px;">
+        <select id="quick-crash-severity">
+          <option>Minor</option><option>Major</option><option>Fatal</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-block" id="quick-crash-add-btn">Add Crash Record</button>
+    `;
 
     document.getElementById("segment-detail-panel").innerHTML = `
       <div class="seg-header">
@@ -492,95 +629,96 @@ const MapModule = (function () {
       </div>
       ${bsBanner}${hazardBanner}${trafficBanner}
       <div class="speed-card" ${cardStyle}>
-        <div class="speed-title" style="color:${d.speed.is_hazard_override ? '#fbbf24' : '#64748b'}">
+        <div class="speed-title" style="color:${d.speed.is_hazard_override ? 'var(--orange)' : 'var(--text-dimmer)'}">
           Recommended Safe Speed${d.speed.is_hazard_override ? ' (Hazard Override)' : ''}
         </div>
         <div class="speed-main" style="color:${speedColor}">${d.speed.recommended_speed}</div>
         <div class="speed-unit">km/h</div>
         <div class="speed-range">AI Engine: ${d.speed.ai_speed} km/h &nbsp;|&nbsp; VZ Tolerance: ${d.speed.tolerance} km/h</div>
-        <div class="speed-posted">Posted: <span style="color:#fbbf24">${d.speed.posted_speed} km/h</span></div>
+        <div class="speed-posted">Posted: <span style="color:var(--orange)">${d.speed.posted_speed} km/h</span></div>
         ${d.weather && d.weather.speed_reduction > 0 ? `
         <div class="wx-impact-box">
-          <div class="wx-impact-title">🌦 Weather Impact</div>
-          ${irowHtml('Base Safe Speed', (d.weather.base_speed ?? d.speed.ai_speed) + ' km/h', '#94a3b8')}
-          ${irowHtml('Weather', escapeHtml(d.weather.weather_icon) + ' ' + escapeHtml(d.weather.weather_condition), d.weather.weather_color)}
-          ${irowHtml('Weather Reduction', '-' + d.weather.speed_reduction + ' km/h', '#f97316')}
+          <div class="wx-impact-title" style="display:flex; align-items:center; gap:6px;"><i data-lucide="cloud-rain" style="width:14px;height:14px;"></i>Weather Impact</div>
+          <div class="irow">
+            <span class="irow-l">Base Safe Speed</span>
+            <span class="irow-v" style="color:var(--text-dim);">${(d.weather.base_speed ?? d.speed.ai_speed)} km/h</span>
+          </div>
+          <div class="irow">
+            <span class="irow-l">Weather</span>
+            <span class="irow-v">${getWeatherIconHtml(d.weather.weather_condition, d.weather.weather_color)}</span>
+          </div>
+          <div class="irow">
+            <span class="irow-l">Weather Reduction</span>
+            <span class="irow-v" style="color:var(--orange); font-weight:700;">-${d.weather.speed_reduction} km/h</span>
+          </div>
         </div>` : ""}
       </div>
-      <div class="panel">
-        <h4> Score Profile</h4>
-        ${sbarHtml("Road Risk Score", s.road_risk_score, scoreColor(s.road_risk_score, true))}
-        ${sbarHtml("AI Risk Probability", s.ai_risk_probability, RISK_PALETTE[d.ai_risk_label] || "#eab308")}
-        ${sbarHtml("Hotspot Score", s.hotspot_score, scoreColor(s.hotspot_score, true))}
-        ${sbarHtml("Exposure (Now)", s.exposure_now, scoreColor(s.exposure_now, true))}
-        ${sbarHtml("Infrastructure", s.infrastructure_score, scoreColor(s.infrastructure_score))}
-        ${sbarHtml("Crash Risk", s.crash_risk_score, scoreColor(s.crash_risk_score, true))}
-        ${sbarHtml("Road Function", s.road_function_score, "#a78bfa")}
-        ${sbarHtml("Speed Safety", s.speed_safety_score, scoreColor(s.speed_safety_score))}
-        ${sbarHtml("Congestion Index", s.congestion_index, scoreColor(s.congestion_index, true))}
-      </div>
-      ${congestionNote}
-      <div class="panel">
-        <h4> Segment Info</h4>
-        ${irowHtml("Segment ID", `#${d.segment_id} (${d.human_segment_id})`)}
-        ${irowHtml("Road Type", d.road_type, tcColor)}
-        ${irowHtml("Start KM", `${d.info.start_km.toFixed(1)} km`)}
-        ${irowHtml("End KM", `${d.info.end_km.toFixed(1)} km`)}
-        ${irowHtml("Risk Category", d.info.risk_category, RISK_PALETTE[d.info.risk_category])}
-        ${irowHtml("Hotspot", d.info.hotspot_category, HOTSPOT_PALETTE[d.info.hotspot_category])}
-        ${irowHtml("Exposure Tier", d.info.exposure_tier)}
-        ${irowHtml("Schools Nearby", d.info.schools_count)}
-        ${irowHtml("Minor Crashes", d.info.minor_crashes, "#22c55e")}
-        ${irowHtml("Major Crashes", d.info.major_crashes, "#f97316")}
-        ${irowHtml("Fatal Crashes", d.info.fatal_crashes, "#ef4444")}
-        ${irowHtml("Temporal Time", d.info.time)}
-      </div>
-      <div class="panel">
-        <h4> Risk Probabilities</h4>
-        ${d.probabilities.map((p) => probBarHtml(p.label, p.value, p.color)).join("")}
-      </div>
-      <div class="xai-box">
-        <div class="xai-title"> AI Explanation — ${d.speed.recommended_speed} km/h</div>
-        <div style="color:#94a3b8;font-size:.75rem;margin-bottom:10px;">
-          Safe speed set to <b style="color:#60a5fa">${d.speed.recommended_speed} km/h</b>
-          based on conditions at <b>${escapeHtml(d.info.time)}</b>:
-        </div>
-        ${factorsHtml}
-        <div class="vz-box" style="margin-top:10px;">
-          <b>Vision Zero Constraint:</b><br>
-          min(AI Speed = ${d.speed.ai_speed} km/h, Human Tolerance = ${d.speed.tolerance} km/h)
-          → <b>${d.speed.recommended_speed} km/h</b>
-        </div>
-      </div>
-      ${d.weather ? `
-      <div class="wx-detail-panel">
-        <h4>🌦 Weather Intelligence</h4>
-        ${irowHtml("Current Condition", `${escapeHtml(d.weather.weather_icon)} ${escapeHtml(d.weather.weather_condition)}`, d.weather.weather_color)}
-        ${irowHtml("Rainfall Intensity", `${d.weather.rainfall_mmhr.toFixed(2)} mm/hr`, "#60a5fa")}
-        ${irowHtml("Speed Reduction", d.weather.speed_reduction > 0 ? `-${d.weather.speed_reduction} km/h` : "None", d.weather.speed_reduction > 0 ? "#f97316" : "#22c55e")}
-      </div>` : ""}
-      ${trafficDetailHtml}
-      <hr style="border:none;border-top:1px solid var(--border);margin:14px 0;">
-      <div class="form-card">
-        <div style="font-weight:700;font-size:.85rem;margin-bottom:8px;">🚨 Log Crash on This Segment</div>
-        <div class="field">
-          <select id="quick-crash-severity">
-            <option>Minor</option><option>Major</option><option>Fatal</option>
-          </select>
-        </div>
-        <button class="btn btn-primary btn-block" id="quick-crash-add-btn">➕ Add Crash</button>
-      </div>`;
+
+      <details class="details-section" open>
+        <summary>
+          <span style="display:inline-flex;align-items:center;gap:8px;">
+            <i data-lucide="bar-chart-2"></i>
+            Score Profile &amp; Risk
+          </span>
+        </summary>
+        <div class="details-content">${scoresHtml}</div>
+      </details>
+
+      <details class="details-section">
+        <summary>
+          <span style="display:inline-flex;align-items:center;gap:8px;">
+            <i data-lucide="info"></i>
+            Geometry &amp; Crash Stats
+          </span>
+        </summary>
+        <div class="details-content">${statsHtml}</div>
+      </details>
+
+      <details class="details-section">
+        <summary>
+          <span style="display:inline-flex;align-items:center;gap:8px;">
+            <i data-lucide="brain"></i>
+            Explainable AI (SHAP)
+          </span>
+        </summary>
+        <div class="details-content">${aiHtml}</div>
+      </details>
+
+      <details class="details-section">
+        <summary>
+          <span style="display:inline-flex;align-items:center;gap:8px;">
+            <i data-lucide="cloud-sun"></i>
+            Weather &amp; Traffic telemetry
+          </span>
+        </summary>
+        <div class="details-content">${weatherTrafficHtml}</div>
+      </details>
+
+      <details class="details-section">
+        <summary>
+          <span style="display:inline-flex;align-items:center;gap:8px;">
+            <i data-lucide="alert-octagon"></i>
+            Report Segment Crash
+          </span>
+        </summary>
+        <div class="details-content">${crashReportHtml}</div>
+      </details>
+    `;
 
     document.getElementById("quick-crash-add-btn").onclick = async () => {
       const severity = document.getElementById("quick-crash-severity").value;
       try {
         await apiPost(`/segments/${d.segment_id}/crashes`, { severity });
-        showToast(`✅ ${severity} crash logged on ${d.human_segment_id}`);
+        showToast(`${severity} crash logged on ${d.human_segment_id}`);
         document.dispatchEvent(new CustomEvent("app:globalChanged"));
       } catch (e) {
         showToast(e.message, true);
       }
     };
+
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
   }
 
   async function loadSegmentDetail(id) {
@@ -594,6 +732,10 @@ const MapModule = (function () {
 
   function selectSegment(id, panTo = false) {
     const prevSelectedId = selectedSegmentId;
+    
+    // Open details drawer
+    const drawer = document.getElementById("detail-drawer");
+    if (drawer) drawer.classList.add("active");
 
     // Update the searchable dropdown if it exists, else fall back to native select
     if (_segmentSS) {
@@ -728,12 +870,78 @@ const MapModule = (function () {
 
     renderQuickCharts(data.quick_charts);
     await populateSegmentSelect();
+    updateWeatherMarkers();
   }
+
+  function updateWeatherMarkers() {
+    if (!leafletMap) return;
+    if (weatherMarkersGroup) {
+      leafletMap.removeLayer(weatherMarkersGroup);
+      weatherMarkersGroup = null;
+    }
+    if (!OverlaysState.weather || !cachedSegments || cachedSegments.length === 0) return;
+
+    weatherMarkersGroup = L.layerGroup();
+    
+    cachedSegments.forEach((seg) => {
+      if (seg.rainfall_mmhr > 0) {
+        const feat = featureById[seg.segment_id];
+        if (!feat) return;
+        
+        let coords = [];
+        const g = feat.geometry;
+        if (g.type === "LineString") {
+          coords = g.coordinates;
+        } else if (g.type === "MultiLineString") {
+          coords = g.coordinates[0];
+        }
+        
+        if (coords.length > 0) {
+          const midIdx = Math.floor(coords.length / 2);
+          const midCoord = coords[midIdx];
+          const latLng = [midCoord[1], midCoord[0]];
+          
+          const icon = L.divIcon({
+            html: `<div class="wx-map-badge" style="color:${seg.weather_color}"><i data-lucide="${getWeatherLucideIcon(seg.weather_condition)}"></i></div>`,
+            className: "custom-wx-marker",
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+          });
+          
+          const marker = L.marker(latLng, { icon: icon });
+          marker.bindTooltip(`Weather Station #${seg.segment_id}<br>${seg.weather_condition} (${seg.rainfall_mmhr.toFixed(1)} mm/hr)`);
+          marker.on("click", () => {
+            selectSegment(seg.segment_id, true);
+          });
+          weatherMarkersGroup.addLayer(marker);
+        }
+      }
+    });
+    
+    weatherMarkersGroup.addTo(leafletMap);
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+  }
+
+  document.addEventListener("app:mapResize", () => {
+    if (leafletMap) {
+      setTimeout(() => {
+        leafletMap.invalidateSize();
+      }, 300);
+    }
+  });
 
   // ── Initialization ─────────────────────────────────────────────────────────
   async function init() {
     leafletMap = L.map("leaflet-map", { preferCanvas: true }).setView([12.97, 77.59], 11);
     setTileLayer(AppState.mapOptions.tile);
+
+    leafletMap.on("popupopen", () => {
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    });
 
     // Load the full road network immediately (Problem 4: show complete network first)
     await loadAndRenderNetwork(null);
@@ -755,6 +963,59 @@ const MapModule = (function () {
       setTileLayer(AppState.mapOptions.tile);
       restyleNetwork(cachedSegments);
     });
+
+    // Overlays checkboxes listeners
+    document.getElementById("overlay-hazards").addEventListener("change", (e) => {
+      OverlaysState.hazards = e.target.checked;
+      restyleNetwork();
+    });
+    document.getElementById("overlay-crashes").addEventListener("change", (e) => {
+      OverlaysState.crashes = e.target.checked;
+      restyleNetwork();
+    });
+    document.getElementById("overlay-weather").addEventListener("change", (e) => {
+      OverlaysState.weather = e.target.checked;
+      updateWeatherMarkers();
+    });
+    document.getElementById("overlay-traffic").addEventListener("change", (e) => {
+      OverlaysState.traffic = e.target.checked;
+      restyleNetwork();
+    });
+
+    // Close details drawer
+    const closeBtn = document.getElementById("close-detail-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        const drawer = document.getElementById("detail-drawer");
+        if (drawer) drawer.classList.remove("active");
+        if (selectedSegmentId && layerById[selectedSegmentId]) {
+          const layer = layerById[selectedSegmentId];
+          roadLayer.resetStyle(layer);
+          selectedSegmentId = null;
+        }
+      });
+    }
+
+    // Global Search searchable dropdown in Topbar
+    const globalSearchSelect = document.getElementById("global-search-select");
+    if (globalSearchSelect) {
+      _searchSS = new SearchableSelect(globalSearchSelect, {
+        placeholder: "Search segment globally...",
+      });
+      _searchSS.onChange((val) => {
+        if (val) selectSegment(Number(val), true);
+      });
+      // Populate global search options
+      apiGet("/segments/options", { scope: "all" }).then((opts) => {
+        function segLabel(o) {
+          return `${o.road_type || ""} | Segment #${o.segment_id} | ${o.road_name || o.label}`;
+        }
+        function segSearch(o) {
+          return [String(o.segment_id), o.human_segment_id || "", o.road_name || "", o.road_type || "", o.label || ""].join(" ");
+        }
+        _searchSS.setOptions(opts, "segment_id", segLabel, segSearch);
+      });
+    }
 
     // Full refresh (filters changed, date/time changed, etc.)
     await refresh();

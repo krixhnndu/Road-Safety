@@ -9,7 +9,7 @@ const TabsModule = (function () {
     return {
       map: MapModule, hotspot: HotspotTab,
       crash: CrashTab, hazard: HazardTab, analytics: AnalyticsTab, data: DataTab,
-      weather: WeatherTab,
+      weather: WeatherTab, xai: XaiTab, model: ModelTab, roadnet: RoadNetTab
     };
   }
 
@@ -20,7 +20,9 @@ const TabsModule = (function () {
     const mod = modules()[tabName];
     if (mod && !loadedTabs.has(tabName)) {
       loadedTabs.add(tabName);
-      mod.refresh();
+      if (mod && typeof mod.refresh === 'function') {
+        mod.refresh();
+      }
     }
   }
 
@@ -35,7 +37,9 @@ const TabsModule = (function () {
 
   function refreshActive() {
     const mod = modules()[AppState.activeTab];
-    if (mod) mod.refresh();
+    if (mod && typeof mod.refresh === 'function') {
+      mod.refresh();
+    }
   }
 
   function init() {

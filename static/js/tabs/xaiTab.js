@@ -15,11 +15,11 @@ const XaiTab = (function () {
           marker: { color: probabilities.colors },
           text: probabilities.values.map((v) => `${(v * 100).toFixed(1)}%`),
           textposition: "outside",
-          textfont: { color: "#e2e8f0", size: 10 },
+          textfont: { color: FONT_COLOR, size: 10 },
         },
       ],
       {
-        title: { text: "Risk Probabilities", font: { color: "#e2e8f0", size: 13 } },
+        title: { text: "Risk Probabilities", font: { color: FONT_COLOR, size: 13 } },
         xaxis: { range: [0, 1.15], tickformat: ".0%" },
         margin: { t: 40, b: 10, l: 130, r: 50 },
       }
@@ -27,7 +27,7 @@ const XaiTab = (function () {
   }
 
   function renderFeatureRadar(radar, color) {
-    Plotly.newPlot(
+    plot(
       "chart-xai-radar",
       [
         {
@@ -41,27 +41,27 @@ const XaiTab = (function () {
         },
       ],
       {
-        polar: { bgcolor: PLOT_BG, radialaxis: { visible: true, range: [0, 100], color: "#64748b", tickfont: { size: 8 } }, angularaxis: { color: "#94a3b8", tickfont: { size: 9 } } },
-        paper_bgcolor: PAPER_BG,
-        title: { text: "Feature Score Profile", font: { color: "#e2e8f0", size: 13 } },
+        polar: { bgcolor: PLOT_BG, radialaxis: { visible: true, range: [0, 100], color: AXIS_COLOR, tickfont: { size: 8 } }, angularaxis: { color: FONT_COLOR, tickfont: { size: 9 } } },
+        title: { text: "Feature Score Profile", font: { color: FONT_COLOR, size: 13 } },
         margin: { t: 40, b: 10 },
-        showlegend: false,
-      },
-      { displayModeBar: false, responsive: true }
+      }
     );
   }
 
   function renderExplanationBox(d) {
     const tags = d.factors.map((f) => `<div class="factor-pill f-${f.severity}">${escapeHtml(f.label)}</div>`).join("");
-    const topFactors = d.top_factors.map((f) => `<div class="xai-item">▸ ${escapeHtml(f)}</div>`).join("");
+    const topFactors = d.top_factors.map((f) => `<div class="xai-item">• ${escapeHtml(f)}</div>`).join("");
     document.getElementById("xai-explanation-box").innerHTML = `
       <div class="xai-box" style="margin-top:16px;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
           <span style="font-size:2rem;font-weight:900;color:${d.color}">${d.recommended_speed} km/h</span>
           <span style="background:${d.color}22;color:${d.color};padding:3px 14px;border-radius:20px;font-size:.78rem;font-weight:700">${escapeHtml(d.label)}</span>
-          <span style="color:#64748b;font-size:.76rem">AI Confidence: ${d.confidence.toFixed(1)}%</span>
+          <span style="color:var(--text-dimmer);font-size:.76rem">AI Confidence: ${d.confidence.toFixed(1)}%</span>
         </div>
-        <div class="xai-title">🤖 Top Contributing Factors</div>
+        <div class="xai-title" style="display:flex;align-items:center;gap:6px;">
+          <i data-lucide="cpu" style="width:14px;height:14px;stroke-width:2.5px;color:var(--purple);"></i>
+          Top Contributing Factors
+        </div>
         ${topFactors}
         ${tags}
         <div class="vz-box" style="margin-top:12px;">
@@ -69,6 +69,9 @@ const XaiTab = (function () {
           min(AI Speed = ${d.ai_speed} km/h, Human Tolerance = ${d.tolerance} km/h) → <b>${d.recommended_speed} km/h</b>
         </div>
       </div>`;
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
   }
 
   async function loadSegment(id) {
