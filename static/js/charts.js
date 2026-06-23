@@ -26,8 +26,23 @@ const ROAD_TYPE_ORDER = ["National Highway", "State Highway", "Urban Road"];
 const RISK_ORDER = ["Aligned", "Moderate Misalignment", "High Misalignment", "Critical Misalignment"];
 const HOTSPOT_ORDER = ["Safe", "Moderate Risk", "High Risk", "Severe Hotspot"];
 
-const PAPER_BG = "#080e1a";
-const PLOT_BG  = "#0d1b2e";
+let PAPER_BG = "#080e1a";
+let PLOT_BG  = "#0d1b2e";
+let GRID_COLOR = "#13233a";
+let FONT_COLOR = "#94a3b8";
+let AXIS_COLOR = "#64748b";
+
+function updateThemeVariables() {
+  const rootStyle = getComputedStyle(document.documentElement);
+  PAPER_BG = rootStyle.getPropertyValue('--plotly-paper').trim() || "#080e1a";
+  PLOT_BG = rootStyle.getPropertyValue('--plotly-plot').trim() || "#0d1b2e";
+  GRID_COLOR = rootStyle.getPropertyValue('--plotly-grid').trim() || "#13233a";
+  FONT_COLOR = rootStyle.getPropertyValue('--plotly-font').trim() || "#94a3b8";
+  AXIS_COLOR = rootStyle.getPropertyValue('--plotly-axis').trim() || "#64748b";
+}
+
+// Initial update
+updateThemeVariables();
 
 function scoreColor(v, invert) {
   v = Number(v);
@@ -44,14 +59,15 @@ function scoreColor(v, invert) {
 }
 
 function baseLayout(over) {
+  updateThemeVariables();
   return Object.assign(
     {
       paper_bgcolor: PAPER_BG,
       plot_bgcolor:  PLOT_BG,
-      font: { color: "#94a3b8", size: 11 },
+      font: { color: FONT_COLOR, size: 11 },
       margin: { t: 30, b: 36, l: 46, r: 16 },
-      xaxis: { color: "#64748b", gridcolor: "#13233a", zerolinecolor: "#13233a" },
-      yaxis: { color: "#64748b", gridcolor: "#13233a", zerolinecolor: "#13233a" },
+      xaxis: { color: AXIS_COLOR, gridcolor: GRID_COLOR, zerolinecolor: GRID_COLOR },
+      yaxis: { color: AXIS_COLOR, gridcolor: GRID_COLOR, zerolinecolor: GRID_COLOR },
       showlegend: false,
     },
     over || {}

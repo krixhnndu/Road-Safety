@@ -80,10 +80,10 @@ const MapModule = (function () {
   // ── Popup HTML ──────────────────────────────────────────────────────────────
   function buildPopupHtml(p, hasHazard) {
     if (!p) {
-      return `<div style="font-family:system-ui;background:#0d1b2e;color:#e2e8f0;
-              padding:10px;border-radius:8px;min-width:200px;">
+      return `<div style="font-family:system-ui;background:var(--panel-bg);color:var(--text);
+              padding:10px;border-radius:8px;min-width:200px;border:1px solid var(--border);">
         <div style="color:#60a5fa;font-weight:700">${escapeHtml(p && p.human_segment_id || "Road")}</div>
-        <div style="color:#64748b;font-size:.8rem">Analytics loading…</div>
+        <div style="color:var(--text-dimmer);font-size:.8rem">Analytics loading…</div>
       </div>`;
     }
     const rc = p.ai_risk_label;
@@ -95,8 +95,8 @@ const MapModule = (function () {
            font-size:.7rem;color:#f87171;font-weight:700">⚠️ ACTIVE HAZARD</div>`
       : "";
     return `
-    <div style="font-family:system-ui;min-width:240px;background:#0d1b2e;color:#e2e8f0;
-                padding:14px;border-radius:10px;border:1px solid #1a2d45">
+    <div style="font-family:system-ui;min-width:240px;background:var(--panel-bg);color:var(--text);
+                padding:14px;border-radius:10px;border:1px solid var(--border)">
       <div style="font-size:1.05rem;font-weight:700;color:#60a5fa">
         ${escapeHtml(p.human_segment_id)}
         <span style="font-size:.7rem;color:#94a3b8">#${p.segment_id}</span>
