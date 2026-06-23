@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Road Safety Platform · Bangalore</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- ════════════════════════════ SIDEBAR ════════════════════════════ -->
+    <aside class="sidebar">
+      <h3>Platform Controls</h3>
+      <div class="field">
+        <label for="ctrl-date">Assessment Date</label>
+        <input type="date" id="ctrl-date">
+      </div>
+      <div class="field">
+        <label for="ctrl-time">Time Slot</label>
+        <select id="ctrl-time"></select>
+      </div>
+
+      <hr>
+      <h3>Filters</h3>
+      <div class="field">
+        <label for="filter-road-type">Road Type</label>
+        <select id="filter-road-type"></select>
+      </div>
+      <div class="field">
+        <label for="filter-risk">AI Risk Category</label>
+        <select id="filter-risk"></select>
+      </div>
+      <div class="field">
+        <label for="filter-hotspot">Hotspot Category</label>
+        <select id="filter-hotspot"></select>
+      </div>
+      <div class="field">
+        <label for="filter-crash-severity">Crash Severity Filter</label>
+        <select id="filter-crash-severity">
+          <option>All</option>
+          <option>Fatal</option>
+          <option>Major</option>
+          <option>Minor</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Posted Speed (km/h)</label>
+        <div class="field-row">
+          <input type="number" id="filter-speed-min" placeholder="min">
+          <input type="number" id="filter-speed-max" placeholder="max">
+        </div>
+      </div>
+
+      <hr>
+      <h3>Map Options</h3>
+      <div class="field">
+        <label for="map-mode">Map View</label>
+        <select id="map-mode">
+          <option selected>Road Type</option>
+          <option>Risk Score</option>
+          <option>Hotspot Score</option>
+          <option>Speed Limit</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="map-tile">Base Map</label>
+        <select id="map-tile">
+          <option value="Street" selected>Street</option>
+          <option value="Satellite">Satellite</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="map-line-width">Line Width</label>
+        <input type="range" id="map-line-width" min="1" max="8" value="2" step="1">
+        <div class="range-value" id="map-line-width-val">2</div>
+      </div>
+      <!-- Render cap removed: all roads are always displayed (Detection 9 network) -->
+
+      <hr>
+      <h3>Legend</h3>
+      <div id="sidebar-legend"></div>
+    </aside>
+
+    <!-- ════════════════════════════ MAIN ════════════════════════════ -->
+    <main class="main">
+
+      <div class="topbar">
+        <div class="topbar-brand">
+          <div class="topbar-dot"></div>
+          AI Road Safety Platform
+        </div>
+        <div class="topbar-tag">Safe Speed Assessment</div>
+        <div class="topbar-city">Bangalore, Karnataka, India</div>
+        <div class="topbar-right">
+          <span class="topbar-time" id="topbar-clock"></span>
+          <span class="live-badge">● LIVE</span>
+        </div>
+      </div>
+
+      <div class="kpi-row" id="kpi-row">
+        <div class="loading-row">Loading KPIs…</div>
+      </div>
+
+      <nav class="tab-nav" id="tab-nav">
+        <button class="tab-btn active" data-tab="map">Interactive Map</button>
+        <button class="tab-btn" data-tab="hotspot">Hotspot Analysis</button>
+        <button class="tab-btn" data-tab="crash">Crash Management</button>
+        <button class="tab-btn" data-tab="hazard">Hazard Management</button>
+        <button class="tab-btn" data-tab="analytics">Advanced Analytics</button>
+        <button class="tab-btn" data-tab="data">Data Table</button>
+        <button class="tab-btn" data-tab="weather">Weather Intelligence</button>
+      </nav>
+
+      <!-- ── TAB 1 — Interactive Map ──────────────────────────────────── -->
+      <section class="tab-panel active" id="panel-map">
+        <div class="map-layout">
+          <div class="map-col">
+            <div id="map-cap-warning"></div>
+            <div id="leaflet-map"
+              style="height:560px;border-radius:12px;border:1px solid var(--border);position:relative;"></div>
+            <div class="four-col" style="margin-top:14px;" id="map-quick-charts">
+              <div class="chart-card">
+                <div class="chart-title">Risk Distribution</div>
+                <div id="chart-risk-dist" style="height:220px;"></div>
+              </div>
+              <div class="chart-card">
+                <div class="chart-title">Hotspot Distribution</div>
+                <div id="chart-hotspot-dist" style="height:220px;"></div>
+              </div>
+              <div class="chart-card">
+                <div class="chart-title">Safe Speed Distribution</div>
+                <div id="chart-speed-dist" style="height:220px;"></div>
+              </div>
+              <div class="chart-card">
+                <div class="chart-title">Top 10 Risk Segments</div>
+                <div id="chart-top10-risk" style="height:220px;"></div>
+                <div id="chart-top10-risk-legend"></div>
+              </div>
+            </div>
+          </div>
+          <div class="detail-col">
+            <div class="field">
+              <label for="segment-select">Segment</label>
+              <select id="segment-select"></select>
+            </div>
+            <div id="segment-detail-panel">
+              <div class="loading-row">Select a segment…</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TAB 2 — Hotspot Analysis ─────────────────────────────────── -->
+      <section class="tab-panel" id="panel-hotspot">
+        <div class="section-title">Hotspot Detection &amp; Analysis</div>
+        <div class="section-sub">Hotspot Score = 40% Misalignment + 25% Exposure + 25% Crash Risk (validation) + 10%
+          Infrastructure Deficit</div>
+        <div class="four-col" id="hotspot-cards"></div>
+        <div class="two-col">
+          <div class="chart-card">
+            <div class="chart-title">Top 20 Hotspot Segments</div>
+            <div id="chart-hotspot-top20" style="height:480px;"></div>
+            <div id="chart-hotspot-top20-legend"></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">Crash Risk vs Hotspot Score</div>
+            <div id="chart-hotspot-scatter" style="height:480px;"></div>
+          </div>
+        </div>
+        <div class="section-title" style="font-size:1.05rem;">Severe Hotspot Registry</div>
+        <div id="hotspot-severe-table"></div>
+      </section>
+
+    
+      <!-- ── TAB 4 — Crash Management ─────────────────────────────────── -->
+      <section class="tab-panel" id="panel-crash">
+        <div class="section-title">Crash Management System</div>
+        <div class="four-col" id="crash-kpis"></div>
+        <div class="crash-layout">
+          <div>
+            <div class="form-card">
+              <div class="section-title" style="font-size:1rem;">➕ Log New Crash</div>
+              <form id="crash-form">
+                <div class="field">
+                  <label for="crash-segment">Segment</label>
+                  <select id="crash-segment" required></select>
+                </div>
+                <div class="field">
+                  <label for="crash-severity">Severity</label>
+                  <select id="crash-severity">
+                    <option>Minor</option>
+                    <option>Major</option>
+                    <option>Fatal</option>
+                  </select>
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="crash-date">Date</label>
+                    <input type="date" id="crash-date" required>
+                  </div>
+                  <div class="field">
+                    <label for="crash-time">Time</label>
+                    <select id="crash-time"></select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="crash-desc">Description</label>
+                  <textarea id="crash-desc" rows="2" placeholder="Brief crash description…"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Log Crash</button>
+              </form>
+            </div>
+            <div class="section-title" style="font-size:1rem;margin-top:16px;">Crash Analytics</div>
+            <div class="two-col">
+              <div class="chart-card">
+                <div id="chart-crash-pie" style="height:220px;"></div>
+              </div>
+              <div class="chart-card">
+                <div id="chart-crash-monthly" style="height:220px;"></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="section-title" style="font-size:1rem;">Recent Crash Log</div>
+            <div id="crash-log-table"></div>
+            <button class="btn" style="margin-top:10px;" id="crash-export-btn">⬇️ Export Crash Log</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TAB 5 — Hazard Management ────────────────────────────────── -->
+      <section class="tab-panel" id="panel-hazard">
+        <div class="section-title">Authority Hazard Management System</div>
+        <div class="hazard-layout">
+          <div>
+            <div class="form-card">
+              <div class="section-title" style="font-size:1rem;">➕ Add Temporary Hazard</div>
+              <form id="hazard-form">
+                <div class="field">
+                  <label for="hazard-type">Hazard Type</label>
+                  <select id="hazard-type"></select>
+                </div>
+                <div class="field">
+                  <label for="hazard-segment">Affected Segment</label>
+                  <select id="hazard-segment" required></select>
+                </div>
+                <div class="field">
+                  <label for="hazard-date">Date</label>
+                  <input type="date" id="hazard-date" required>
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="hazard-start">Start Time</label>
+                    <select id="hazard-start"></select>
+                  </div>
+                  <div class="field">
+                    <label for="hazard-end">End Time</label>
+                    <select id="hazard-end"></select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="hazard-speed" id="hazard-speed-label">Temporary Speed Limit (km/h)</label>
+                  <input type="number" id="hazard-speed" min="5" max="100" step="5">
+                </div>
+                <div class="field">
+                  <label for="hazard-desc">Description</label>
+                  <textarea id="hazard-desc" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add Hazard</button>
+              </form>
+            </div>
+          </div>
+          <div>
+            <div class="section-title" style="font-size:1rem;" id="hazard-active-title">Active Hazards</div>
+            <div id="hazard-active-list"></div>
+            <details id="hazard-inactive-details" style="margin-top:12px;">
+              <summary style="color:var(--text-dim);font-size:.82rem;cursor:pointer;" id="hazard-inactive-summary">
+                All Scheduled / Past Hazards</summary>
+              <div id="hazard-inactive-list" style="margin-top:8px;"></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TAB 6 — Advanced Analytics ───────────────────────────────── -->
+      <section class="tab-panel" id="panel-analytics">
+        <div class="section-title">Advanced Analytics Dashboard</div>
+        <div class="three-col">
+          <div class="chart-card">
+            <div id="chart-adv-box" style="height:300px;"></div>
+          </div>
+          <div class="chart-card">
+            <div id="chart-adv-scatter1" style="height:300px;"></div>
+          </div>
+          <div class="chart-card">
+            <div id="chart-adv-scatter2" style="height:300px;"></div>
+          </div>
+        </div>
+        <div class="chart-card" style="margin-bottom: 14px;">
+          <div id="chart-adv-topsafe" style="height:300px;"></div>
+        </div>
+        <div class="section-title" style="font-size:1.05rem;">Road Type Summary Statistics</div>
+        <div id="adv-summary-table"></div>
+      </section>
+
+      <!-- ── TAB 7 — Data Table ───────────────────────────────────────── -->
+      <section class="tab-panel" id="panel-data">
+        <div class="section-title">Unified Predictions Dataset</div>
+        <div id="data-table-wrap"></div>
+        <div class="btn-row">
+          <button class="btn" id="export-filtered-btn">⬇️ Download Filtered Data</button>
+          <button class="btn" id="export-full-btn">⬇️ Download Full Dataset</button>
+        </div>
+      </section>
+
+
+      <!-- ── WEATHER INTELLIGENCE TAB ──────────────────────────────────── -->
+      <section class="tab-panel" id="panel-weather">
+        <div class="section-title">Weather Intelligence</div>
+        <div style="margin-bottom:12px;color:var(--text-muted);font-size:.83rem;">
+          Simulated roadside IoT weather sensing units generate rainfall intensity readings (mm/hr)
+          every 30 minutes for each road segment, mirroring real-world ITS weather stations.
+          Weather conditions are applied to safe speed recommendations using Vision Zero constraints.
+        </div>
+
+        <!-- KPI Cards -->
+        <div id="wx-kpis" style="margin-bottom:16px;"></div>
+
+        <!-- Charts row -->
+        <div class="three-col" style="margin-bottom:14px;">
+          <div class="chart-card" style="grid-column:span 2;">
+            <div id="wx-dist-chart" style="height:300px;"></div>
+          </div>
+          <div class="chart-card">
+            <div id="wx-severity-pie" style="height:300px;"></div>
+          </div>
+        </div>
+
+        <!-- Trend chart -->
+        <div class="chart-card" style="margin-bottom:14px;">
+          <div id="wx-trend-chart" style="height:280px;"></div>
+        </div>
+
+        <!-- Severity statistics -->
+        <div class="section-title" style="font-size:1rem;">Weather Severity Statistics</div>
+        <div id="wx-severity-stats" style="margin-bottom:14px;"></div>
+
+        <!-- Segment table -->
+        <div class="section-title" style="font-size:1rem;">Segment-Level Weather Readings (Top 100 by Rainfall)</div>
+        <div id="wx-segment-table"></div>
+      </section>
+
+      <div class="footer">
+        AI for Safer Roads · Speed Limit Misalignment Platform ·
+        Bengaluru Road Network (OSM edges · NH / SH / Urban Road) 
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.32.0/plotly.min.js"></script>
+
+  <script src="{{ url_for('static', filename='js/searchableSelect.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/state.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/kpis.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/hotspotTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/xaiTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/crashTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/hazardTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/analyticsTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/dataTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs/weatherTab.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
