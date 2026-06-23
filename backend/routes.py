@@ -339,10 +339,10 @@ def analytics_hotspot():
     cards = {cat: int((df['hotspot_category'] == cat).sum()) for cat in pred.HOTSPOT_ORDER}
 
     top20 = df.nlargest(20, "hotspot_score")[
-        ["road_name", "hotspot_score", "hotspot_category", "crash_risk_score",
+        ["segment_id", "human_segment_id", "road_name", "hotspot_score", "hotspot_category", "crash_risk_score",
          "road_risk_score", "fatal_crashes", "crash_count"]]
 
-    scatter = df[["road_name", "crash_risk_score", "hotspot_score", "hotspot_category",
+    scatter = df[["segment_id", "human_segment_id", "road_name", "crash_risk_score", "hotspot_score", "hotspot_category",
                   "road_risk_score", "fatal_crashes", "crash_count", "exposure_score"]]
 
     severe = df[df['hotspot_category'] == 'Severe Hotspot'][

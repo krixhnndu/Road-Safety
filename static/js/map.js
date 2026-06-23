@@ -379,23 +379,12 @@ const MapModule = (function () {
     plot(
       "chart-speed-dist",
       [{ type: "histogram", x: qc.speed_dist, nbinsx: 12, marker: { color: "#a78bfa" } }],
-      { margin: { t: 6, b: 30, l: 30, r: 6 }, xaxis: { tickfont: { size: 7 } }, yaxis: { tickfont: { size: 7 } } }
-    );
-    const top10 = qc.top10_risk.slice().reverse();
-    plot(
-      "chart-top10-risk",
-      [{
-        type: "bar", orientation: "h",
-        x: top10.map((r) => r.road_risk_score),
-        y: top10.map((r) => truncate(r.road_name, 16)),
-        marker: { color: top10.map((r) => RISK_PALETTE[r.ai_risk_label] || "#60a5fa") }
-      }],
       {
-        margin: { t: 6, b: 20, l: 100, r: 6 },
-        xaxis: { range: [0, 100], tickfont: { size: 7 } }, yaxis: { tickfont: { size: 7 } }
+        margin: { t: 15, b: 40, l: 45, r: 15 },
+        xaxis: { title: { text: "speed", font: { size: 9 } }, tickfont: { size: 7 } },
+        yaxis: { title: { text: "segments", font: { size: 9 } }, tickfont: { size: 7 } }
       }
     );
-    renderColorLegend("chart-top10-risk-legend", RISK_PALETTE, RISK_ORDER);
   }
 
   // ── Segment detail panel ────────────────────────────────────────────────────

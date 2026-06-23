@@ -16,13 +16,13 @@ const HotspotTab = (function () {
           type: "bar",
           orientation: "h",
           x: sorted.map((r) => r.hotspot_score),
-          y: sorted.map((r) => truncate(r.road_name, 22)),
+          y: sorted.map((r) => r.human_segment_id || `Segment #${r.segment_id}`),
           marker: { color: sorted.map((r) => HOTSPOT_PALETTE[r.hotspot_category] || "#f97316") },
-          customdata: sorted.map((r) => [r.crash_count, r.fatal_crashes, r.road_risk_score]),
-          hovertemplate: "%{y}<br>Hotspot: %{x}<br>Crashes: %{customdata[0]} (Fatal %{customdata[1]})<br>Risk: %{customdata[2]}<extra></extra>",
+          customdata: sorted.map((r) => [r.crash_count, r.fatal_crashes, r.road_risk_score, r.road_name]),
+          hovertemplate: "Segment: %{y} (%{customdata[3]})<br>Hotspot: %{x}<br>Crashes: %{customdata[0]} (Fatal %{customdata[1]})<br>Risk: %{customdata[2]}<extra></extra>",
         },
       ],
-      { margin: { t: 6, b: 20, l: 150, r: 10 }, xaxis: { range: [0, 100], tickfont: { size: 8 } }, yaxis: { tickfont: { size: 8 } } }
+      { margin: { t: 6, b: 20, l: 80, r: 10 }, xaxis: { range: [0, 100], tickfont: { size: 8 } }, yaxis: { tickfont: { size: 8 } } }
     );
     renderColorLegend("chart-hotspot-top20-legend", HOTSPOT_PALETTE, HOTSPOT_ORDER);
   }
@@ -36,7 +36,7 @@ const HotspotTab = (function () {
         name: cat,
         x: subset.map((r) => r.crash_risk_score),
         y: subset.map((r) => r.hotspot_score),
-        text: subset.map((r) => r.road_name),
+        text: subset.map((r) => `${r.human_segment_id || `Segment #${r.segment_id}`} (${r.road_name})`),
         marker: { color: HOTSPOT_PALETTE[cat], size: subset.map((r) => 6 + r.road_risk_score / 12) },
         hovertemplate: "%{text}<br>Crash Risk: %{x}<br>Hotspot: %{y}<extra></extra>",
       };
