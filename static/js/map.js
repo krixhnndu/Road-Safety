@@ -287,56 +287,13 @@ const MapModule = (function () {
 
         layer.bindTooltip(buildTooltip(roadName, roadType, id), { sticky: true });
         layer.bindPopup(buildPopupHtml(seg, hasHazard), { maxWidth: 300 });
-        layer.on("click", async () => {
+        layer.on("click", () => {
           // Open loading popup immediately
           layer.setPopupContent(buildPopupHtml(null, hasHazard));
           layer.openPopup();
 
           // Load sidebar analytics
           selectSegment(id, false);
-
-          // Update popup with latest analytics data
-          try {
-            const d = await apiGet(`/segments/${id}`, {
-              date: AppState.date,
-              time: AppState.time
-            });
-
-            // Convert detail response to popup-compatible format
-            const popupData = {
-              segment_id: d.segment_id,
-              human_segment_id: d.human_segment_id,
-              road_name: d.road_name,
-              road_type: d.road_type,
-              posted_speed_limit: d.speed.posted_speed,
-              final_safe_speed: d.speed.recommended_speed,
-              ai_risk_label: d.info.risk_category,
-              ai_risk_probability: d.scores.ai_risk_probability / 100,
-              road_risk_score: d.scores.road_risk_score,
-              hotspot_score: d.scores.hotspot_score,
-              hotspot_category: d.info.hotspot_category,
-              infrastructure_score: d.scores.infrastructure_score,
-              exposure_score: d.scores.exposure_now,
-              crash_risk_score: d.scores.crash_risk_score,
-              fatal_crashes: d.info.fatal_crashes,
-              top_ai_factors: d.factors.map(f => f.label).join(", "),
-              weather_icon: d.weather ? d.weather.weather_icon : null,
-              weather_condition: d.weather ? d.weather.weather_condition : null,
-              weather_color: d.weather ? d.weather.weather_color : null,
-              rainfall_mmhr: d.weather ? d.weather.rainfall_mmhr : 0,
-            };
-
-            layer.setPopupContent(
-              buildPopupHtml(popupData, d.has_active_hazard)
-            );
-          } catch (err) {
-            console.error(err);
-            layer.setPopupContent(`
-            <div style="padding:10px;color:#ef4444">
-                Failed to load analytics
-            </div>
-        `);
-          }
         });
       },
       // Use canvas renderer for performance with 5000+ features
@@ -723,8 +680,52 @@ const MapModule = (function () {
     try {
       const d = await apiGet(`/segments/${id}`, { date: AppState.date, time: AppState.time });
       renderDetailPanel(d);
+
+      // Update map popup dynamically if the layer exists
+      if (layerById[id]) {
+        const layer = layerById[id];
+        
+        // Convert detail response to popup-compatible format
+        const popupData = {
+          segment_id: d.segment_id,
+          human_segment_id: d.human_segment_id,
+          road_name: d.road_name,
+          road_type: d.road_type,
+          posted_speed_limit: d.speed.posted_speed,
+          final_safe_speed: d.speed.recommended_speed,
+          ai_risk_label: d.info.risk_category,
+          ai_risk_probability: d.scores.ai_risk_probability / 100,
+          road_risk_score: d.scores.road_risk_score,
+          hotspot_score: d.scores.hotspot_score,
+          hotspot_category: d.info.hotspot_category,
+          infrastructure_score: d.scores.infrastructure_score,
+          exposure_score: d.scores.exposure_now,
+          crash_risk_score: d.scores.crash_risk_score,
+          fatal_crashes: d.info.fatal_crashes,
+          top_ai_factors: d.factors.map(f => f.label).join(", "),
+          weather_icon: d.weather ? d.weather.weather_icon : null,
+          weather_condition: d.weather ? d.weather.weather_condition : null,
+          weather_color: d.weather ? d.weather.weather_color : null,
+          rainfall_mmhr: d.weather ? d.weather.rainfall_mmhr : 0,
+        };
+
+        layer.setPopupContent(
+          buildPopupHtml(popupData, d.has_active_hazard)
+        );
+
+        if (typeof lucide !== "undefined") {
+          lucide.createIcons();
+        }
+      }
     } catch (e) {
       console.error("loadSegmentDetail error:", e);
+      if (layerById[id]) {
+        layerById[id].setPopupContent(`
+          <div style="padding:10px;color:#ef4444">
+              Failed to load analytics
+          </div>
+        `);
+      }
     }
   }
 
