@@ -343,9 +343,9 @@ def sync_segment_crashes(df, active_crashes, model):
     # so that new crashes immediately update the Severe Hotspot KPI.
     # crash_risk_score is already freshly set above from active_crashes.
     df['hotspot_score'] = (
-        0.40 * df['misalignment_score'] +
-        0.25 * df['exposure_score'] +
-        0.25 * df['severity_density'].clip(0, 100) +
+        0.25 * df['misalignment_score'] +
+        0.30 * df['exposure_score'] +
+        0.35 * df['severity_density'].clip(0, 100) +
         0.10 * (100 - df['infrastructure_score'])
     ).clip(0, 100).round(1)
 
