@@ -17,7 +17,6 @@ const KpiModule = (function () {
       [k.severe_hotspots, "Severe Hotspots", "red"],
       [k.high_misalignment, "High Misalignment Roads", "orange"],
       [k.congested_now, "Congested Now", "yellow"],
-      [`${k.avg_safe_speed} km/h`, "Avg Safe Speed", "blue"],
     ];
     document.getElementById("kpi-row").innerHTML = items
       .map(

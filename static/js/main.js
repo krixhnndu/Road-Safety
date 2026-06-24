@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     await MapModule.init();
     TabsModule.markLoaded("map");
     WeatherTab.init();
-    RoadNetTab.init();
   } catch (e) {
     console.error("App init failed:", e);
     showToast("Failed to initialize the platform — check the console.", true);

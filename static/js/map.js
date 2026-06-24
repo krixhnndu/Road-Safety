@@ -32,7 +32,7 @@ const MapModule = (function () {
   const OverlaysState = {
     hazards: true,
     crashes: true,
-    weather: true,
+    weather: false,
     traffic: true
   };
 
@@ -517,7 +517,6 @@ const MapModule = (function () {
           ${irowHtml('Congestion Score', _tScore + '%', _tColor)}
           ${trafficInfo.avg_speed_kmph != null ? irowHtml('Avg Traffic Speed', trafficInfo.avg_speed_kmph + ' km/h', 'var(--blue)') : ''}
           ${trafficInfo.vehicle_density != null ? irowHtml('Vehicle Density', trafficInfo.vehicle_density + ' veh/km', 'var(--purple)') : ''}
-          ${trafficInfo.incident && trafficInfo.incident !== 'None' ? irowHtml('Incident', trafficInfo.incident, 'var(--red)') : ''}
           <div class="traffic-warning-box" style="border-color:${_tColor}40;">
             <div class="traffic-warning-title" style="color:${_tColor}">Traffic Warning</div>
             <div class="traffic-warning-msg">${escapeHtml(trafficInfo.warning || '—')}</div>

@@ -9,7 +9,7 @@ const TabsModule = (function () {
     return {
       map: MapModule, hotspot: HotspotTab,
       crash: CrashTab, hazard: HazardTab, analytics: AnalyticsTab, data: DataTab,
-      weather: WeatherTab, xai: XaiTab, model: ModelTab, roadnet: RoadNetTab
+      weather: WeatherTab, xai: XaiTab
     };
   }
 

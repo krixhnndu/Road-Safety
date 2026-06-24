@@ -275,17 +275,9 @@
           <span class="nav-icon"><i data-lucide="cloud-rain"></i></span>
           <span class="nav-label">Weather Intel</span>
         </button>
-        <button class="tab-btn" data-tab="roadnet" title="Road Network View">
-          <span class="nav-icon"><i data-lucide="route"></i></span>
-          <span class="nav-label">OSMnx Network</span>
-        </button>
         <button class="tab-btn" data-tab="xai" title="Explainable AI">
           <span class="nav-icon"><i data-lucide="brain"></i></span>
           <span class="nav-label">Explainable AI</span>
-        </button>
-        <button class="tab-btn" data-tab="model" title="Model Evaluation">
-          <span class="nav-icon"><i data-lucide="flask-conical"></i></span>
-          <span class="nav-label">Model Evaluation</span>
         </button>
         <button class="tab-btn" data-tab="data" title="Data Table">
           <span class="nav-icon"><i data-lucide="database"></i></span>
@@ -446,7 +438,7 @@
                     <span>Severe Crashes</span>
                   </label>
                   <label class="overlay-item">
-                    <input type="checkbox" id="overlay-weather" checked>
+                    <input type="checkbox" id="overlay-weather">
                     <span>Weather Stations</span>
                   </label>
                   <label class="overlay-item">
@@ -660,18 +652,6 @@
           <div id="wx-segment-table"></div>
         </section>
 
-        <!-- ── TAB 7 — Road Network View (OSMnx iframe) ───────────────────── -->
-        <section class="tab-panel" id="panel-roadnet">
-          <div class="section-title">Road Network Visualization</div>
-          <div class="section-sub">OSMnx-derived Bengaluru road network with segment-level statistics and road classes</div>
-          <div class="kpi-row" id="roadnet-stats" style="margin-bottom: 16px;">
-            <!-- Populated by roadnetTab.js -->
-          </div>
-          <div style="width:100%; height: 620px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 8px var(--shadow);">
-            <iframe src="/static/road_network_visualization.html" style="width:100%; height:100%; border:none;"></iframe>
-          </div>
-        </section>
-
         <!-- ── TAB 8 — Explainable AI (XAI / SHAP) ───────────────────────── -->
         <section class="tab-panel" id="panel-xai">
           <div class="section-title">Explainable AI &amp; SHAP Summary</div>
@@ -700,30 +680,6 @@
             <div class="chart-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
               <div class="chart-title" style="align-self:flex-start;">Global SHAP Feature Contribution Summary</div>
               <img id="img-shap-summary" src="/static/images/shap_summary.png" style="max-width:100%; max-height:290px; object-fit:contain; border-radius:8px;" alt="SHAP summary visualization">
-            </div>
-          </div>
-        </section>
-
-        <!-- ── TAB 9 — ML Model Evaluation ─────────────────────────────── -->
-        <section class="tab-panel" id="panel-model">
-          <div class="section-title">ML Classifier Comparison &amp; Performance</div>
-          <div class="section-sub">Radar metric profiles, feature importances, and model confusion statistics</div>
-          
-          <div class="kpi-row" id="model-cards" style="margin-bottom: 16px;">
-            <!-- Populated by modelTab.js -->
-          </div>
-
-          <div class="three-col">
-            <div class="chart-card">
-              <div id="chart-model-radar" style="height:350px;"></div>
-            </div>
-            <div class="chart-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
-              <div class="chart-title" style="align-self:flex-start;">Feature Importance Profile</div>
-              <img id="img-feature-importance" src="/static/images/feature_importance.png" style="max-width:100%; max-height:290px; object-fit:contain; border-radius:8px;" alt="Feature Importance">
-            </div>
-            <div class="chart-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
-              <div class="chart-title" style="align-self:flex-start;">Model Performance Comparison</div>
-              <img id="img-model-evaluation" src="/static/images/model_evaluation.png" style="max-width:100%; max-height:290px; object-fit:contain; border-radius:8px;" alt="Model Evaluation Summary">
             </div>
           </div>
         </section>
@@ -785,8 +741,6 @@
   <script src="{{ url_for('static', filename='js/tabs/analyticsTab.js') }}"></script>
   <script src="{{ url_for('static', filename='js/tabs/dataTab.js') }}"></script>
   <script src="{{ url_for('static', filename='js/tabs/weatherTab.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/tabs/modelTab.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/tabs/roadnetTab.js') }}"></script>
   
   <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
