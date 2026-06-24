@@ -41,8 +41,7 @@ The platform is directly aligned with **Safe System principles** and **Vision Ze
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-username/bengaluru-road-safety.git
-cd bengaluru-road-safety
+git clone https://github.com/krixhnndu/Road-Safety
 
 pip install -r requirements.txt
 python run.py
