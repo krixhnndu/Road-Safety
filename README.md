@@ -8,11 +8,15 @@
 Submission for the **[ADB AI for Safer Roads Innovation Challenge](https://challenges.adb.org/en/challenges/ai4saferroads)**
 *Asian Development Bank × World Bank · Asia-Pacific Road Safety Initiative*
 
+**[▶ Watch Demo Video](https://your-video-link-here)**
+
 ---
 
 | | |
 |---|---|
+| **Institution** | SCMS School of Engineering and Technology, Karukutty — SIRST (SCMS Institute for Road Safety and Transportation) |
 | **Team** | Anand Krishna S · Aswin P A · Katherin K V · Krishnendu S Binu · Muhammed Nasmil · Shweta Nair |
+| **Mentor** | Ms. Binu John, Assistant Professor, Department of Artificial Intelligence and Data Science |
 | **Focus City** | Bengaluru, Karnataka, India |
 | **Stack** | Python · Flask · Leaflet.js · scikit-learn · OSMnx · Pandas |
 | **Python** | 3.8 or higher |
@@ -170,13 +174,16 @@ The primary interface. Renders all 5,498 road segments on a Leaflet map with col
 ### 2. Hotspot Analysis
 Identifies and ranks road segments by composite hotspot score. Visualizes spatial clustering of risk across the network. Supports filtering by hotspot category (Safe → Severe Hotspot) and road type.
 
-### 3. Crash Management
+### 3. Blackspot Detection
+Identifies accident-prone road segments using a composite risk assessment framework. Unlike traditional approaches that depend solely on crash history, the module combines crash records with infrastructure quality, exposure levels, pedestrian facilities, traffic conditions, and environmental factors to identify both existing and emerging blackspots. Segments exceeding the blackspot threshold are automatically flagged for priority intervention.
+
+### 4. Crash Management
 Log, view, and manage crash events on the road network. Crashes are time-aware — Minor crashes expire after 60 days, Major/Fatal after 80 days. Active crashes dynamically raise risk scores and lower safe speed recommendations across affected segments.
 
-### 4. Hazard Management
+### 5. Hazard Management
 Report temporary hazard events (roadworks, flooding, fallen trees, accidents) with a date, time window, and optional manual speed override. Active hazards are reflected instantly on the map and take absolute priority over all other speed adjustments.
 
-### 5. Advanced Analytics
+### 6. Advanced Analytics
 Charts and KPI dashboards covering:
 - Speed misalignment distribution across the network
 - Risk category breakdown by road type
@@ -185,31 +192,24 @@ Charts and KPI dashboards covering:
 - Feature importance visualization
 - SHAP summary plot
 
-### 6. Weather Intelligence
-Simulates a network of roadside IoT weather sensors. Each sensor refreshes every 30 minutes using weighted probability distributions to mimic real-world rainfall patterns. Weather conditions feed directly into the safe speed pipeline with automatic speed reductions.
+### 7. Explainable AI (XAI)
+For every road segment, the XAI module displays the contribution of each factor to the final safe speed recommendation, providing a transparent audit trail for road safety engineers and policy makers. Includes both per-segment explanations and a network-wide SHAP summary plot. Factors surfaced include infrastructure deficiencies, pedestrian exposure, school zone activity, crash history, and traffic conditions.
 
-| Condition | Rainfall | Speed Reduction |
-|---|---|---|
-| Clear / Sunny | 0 mm/hr | 0 km/h |
-| Light Rain | 0.1–2.5 mm/hr | −3 km/h |
-| Moderate Rain | 2.5–10 mm/hr | −5 km/h |
-| Heavy Rainfall | 10–50 mm/hr | −10 km/h |
-| Extreme / Storm | > 50 mm/hr | −15 km/h |
+### 8. Weather Intelligence
+Simulates a network of roadside IoT weather sensors using a risk-based adaptive sensing framework. Sensor placement is prioritized around severe hotspots, flood-prone corridors, major intersections, bridges, and locations with high vulnerable road user exposure. Each sensor refreshes every 30 minutes using weighted probability distributions to mimic real-world rainfall patterns, including monsoon probability weighting for Bengaluru. Weather conditions feed directly into the safe speed pipeline with automatic speed reductions.
 
-### 7. Traffic Conditions
+The simulation models a deployment of Tipping Bucket Rain Gauges connected via ESP32 microcontrollers, transmitting over a GSM/MQTT pipeline into the `weather.py` ingestion module — a blueprint for real hardware integration.
+
+### 9. Traffic Conditions
 Displays real-time-style congestion levels derived from the 60-day temporal traffic dataset. Each segment is assigned a congestion score (0–1) based on time of day, day of week, road class, and random incident simulation. Traffic conditions are used both for map display and as an input to the AI Explanation panel.
 
-| Condition | Score | Speed Reduction |
-|---|---|---|
-| Low Traffic | 0.00–0.25 | −0 km/h |
-| Light Traffic | 0.25–0.50 | −5 km/h |
-| Moderate Traffic | 0.50–0.75 | −10 km/h |
-| Heavy Traffic | 0.75–1.00 | −15 km/h |
+### 10. Pedestrian Facility Assessment
+The platform evaluates the availability and quality of pedestrian infrastructure such as sidewalks, pedestrian crossings, refuge islands, traffic calming measures, and accessibility facilities. Road segments with inadequate pedestrian facilities are assigned higher risk scores even where historical crash records are limited, enabling proactive identification of safety deficiencies before severe accidents occur.
 
-### 8. Data Table
+### 11. Data Table
 Full tabular view of all road segments with sortable columns. Export-ready for policy review and GIS integration.
 
-### 9. Road Network (Detection 9)
+### 12. Road Network
 Embedded visualization of the OSMnx-derived Bengaluru road network with segment-level statistics, KPIs, and GeoJSON/CSV download links for GIS platforms.
 
 ---
@@ -232,6 +232,8 @@ Two trained classifiers are included. The **Gradient Boosting** model is used by
 
 Note: `crash_risk_score` is deliberately excluded from features — it is a lagging indicator confounded by reporting behavior. The classifier predicts *leading* risk, not observed crash outcomes.
 
+**Model Validation:** Train-test split, K-Fold Cross Validation, and Confusion Matrix analysis were applied. Performance was evaluated using Accuracy, Precision, Recall, F1-Score, and ROC-AUC Score.
+
 ---
 
 ## Dataset
@@ -249,13 +251,15 @@ Note: `crash_risk_score` is deliberately excluded from features — it is a lagg
 | `road_network/bengaluru_road_segments.geojson` | GeoJSON | Leaflet-ready road geometry |
 | `road_network/bengaluru_roads_classified.geojson` | GeoJSON | Road network with classification overlay |
 
+The unified dataset was synthesized by integrating OpenStreetMap road network data, GPS probe-derived operating speed indicators, Mapillary-inspired street-level infrastructure references, traffic congestion patterns, crash records, hazard information, and weather parameters. Statistical relationships from transportation research literature were used to maintain realistic distributions across all variables.
+
 ### Road Network Coverage
 
 | Class | Segments | Color |
 |---|---|---|
-| National Highway | 286 | 🟡 Yellow |
-| State Highway | 380 | 🟠 Orange |
-| Urban Road | 4,832 | 🔵 Blue |
+| National Highway | 286 | Yellow |
+| State Highway | 380 | Orange |
+| Urban Road | 4,832 | Blue |
 | **Total** | **5,498** | |
 
 ---
@@ -363,12 +367,13 @@ This platform directly addresses the ADB AI for Safer Roads challenge brief:
 | Challenge Requirement | Velora Implementation |
 |---|---|
 | Assess whether speed limits follow Safe System principles | ML classifier produces Aligned/Misalignment labels per segment |
-| Identify segments exposing VRUs to unacceptable risk | Exposure score, pedestrian score, school zone detection |
+| Identify segments exposing VRUs to unacceptable risk | Exposure score, pedestrian score, school zone detection, pedestrian facility assessment |
 | Map-based visualization | Interactive Leaflet map with color-coded safe speeds |
 | Speed Safety Score | `speed_safety_score` field per segment (0–100) |
 | Policy-ready outputs | Data Table tab with exportable CSV; Road Network download |
-| Prioritize road interventions | Hotspot Analysis tab with composite risk ranking |
+| Prioritize road interventions | Hotspot Analysis and Blackspot Detection with composite risk ranking |
 | Dynamic / real-time capability | Date + time controls update every score in real time |
+| Scalability | OSMnx pipeline generalizes to any city with OSM road network data, supporting deployment across ADB member countries |
 
 ---
 
@@ -378,6 +383,41 @@ This platform directly addresses the ADB AI for Safer Roads challenge brief:
 - **Human tolerance limits are biological, not political** — `human_tolerance_limit` is derived from biomechanical survivability thresholds, not posted limits
 - **Vulnerable road users have asymmetric risk** — pedestrian exposure, PTW share, and school proximity are weighted heavily in hotspot scoring
 - **Crashes are preventable, not inevitable** — the system treats every Critical Misalignment segment as an intervention opportunity
+
+---
+
+## Individual Contributions
+
+<table>
+<tr>
+<th>Member</th>
+<th>Primary Contributions</th>
+</tr>
+<tr>
+<td><b>Anand Krishna S</b></td>
+<td>Safe speed recommendation engine · Multi-stage speed pipeline · Backend APIs &amp; system integration · Model evaluation</td>
+</tr>
+<tr>
+<td><b>Aswin P A</b></td>
+<td>ML framework (Gradient Boosting &amp; Random Forest) · Road network classification · XAI / SHAP analysis · Crash &amp; Hazard Management</td>
+</tr>
+<tr>
+<td><b>Krishnendu S Binu</b></td>
+<td>Road network segmentation · Leaflet GIS visualization · Segment connectivity mapping · Vision Zero literature review</td>
+</tr>
+<tr>
+<td><b>Katherin K V</b></td>
+<td>Traffic dataset generation (2.9M rows) · Congestion scoring · Unified dataset integration · Temporal traffic simulation</td>
+</tr>
+<tr>
+<td><b>Muhammed Nasmil</b></td>
+<td>Frontend SPA architecture · Dashboard &amp; UI components · Navigation, filters &amp; KPI displays · UI/UX design</td>
+</tr>
+<tr>
+<td><b>Shweta Nair</b></td>
+<td>Weather intelligence module · IoT sensing framework · Weather-based speed adjustment · Analytics dashboards &amp; hotspot charts</td>
+</tr>
+</table>
 
 ---
 
