@@ -108,6 +108,13 @@ def add_crash(segment_id, severity, date, time, description):
     return next_id
 
 
+def delete_crash(crash_id):
+    conn = get_conn()
+    conn.execute("DELETE FROM crashes WHERE crash_id = ?", (crash_id,))
+    conn.commit()
+    conn.close()
+
+
 # ─── Hazards ────────────────────────────────────────────────────────────────
 def get_all_hazards():
     conn = get_conn()

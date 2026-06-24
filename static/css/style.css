@@ -176,7 +176,7 @@ html, body, .main, .panel, .kpi, .chart-card, .form-card, .topbar, button, selec
   flex-shrink: 0;
   background: var(--sidebar-bg);
   border-right: 1px solid var(--sidebar-border);
-  padding: 16px 12px;
+  padding: 16px 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -318,11 +318,13 @@ html, body, .main, .panel, .kpi, .chart-card, .form-card, .topbar, button, selec
 .sidebar-footer {
   margin-top: auto;
   border-top: 1px solid var(--sidebar-border);
-  padding: 16px 4px 4px 4px;
+  padding: 12px 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .sidebar .theme-toggle-btn {
@@ -330,13 +332,13 @@ html, body, .main, .panel, .kpi, .chart-card, .form-card, .topbar, button, selec
   align-items: center;
   gap: 12px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
   padding: 10px 12px;
   border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
@@ -367,9 +369,11 @@ html, body, .main, .panel, .kpi, .chart-card, .form-card, .topbar, button, selec
   .sidebar:not(:hover):not(.expanded) .theme-toggle-btn {
     justify-content: center;
     padding: 10px 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    width: 100%;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    padding-left: 15px;
   }
 }
 

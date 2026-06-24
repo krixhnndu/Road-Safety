@@ -51,6 +51,10 @@ FEATURES = ['road_function_score', 'infrastructure_score', 'exposure_score',
 
 CRASH_EXPIRY_MINOR_DAYS = 60
 CRASH_EXPIRY_OTHER_DAYS = 80
+MINOR_WEIGHT = 10
+MAJOR_WEIGHT = 25
+FATAL_WEIGHT = 45
+MIN_SEGMENT_LENGTH_KM = 0.25
 
 # ─── Module-level state (loaded once at app startup) ──────────────────────────
 _SOURCE_DF = None
@@ -248,6 +252,11 @@ def sync_segment_crashes(df, active_crashes, model):
     df['crash_count'] = 0
     df['crash_risk_score'] = 0.0
 
+    # Defensive handling: Fill missing/invalid segment lengths with 250m, clip to minimum 250m
+    df['segment_length_km'] = df['length_m'].fillna(250.0).clip(lower=250.0) / 1000.0
+    df['effective_length_km'] = df['segment_length_km'].clip(lower=MIN_SEGMENT_LENGTH_KM)
+    df['severity_density'] = 0.0
+
     if active_crashes:
         cdf = pd.DataFrame(active_crashes)
         minor_counts = cdf[cdf['severity'] == 'Minor'].groupby('segment_id').size()
@@ -260,8 +269,15 @@ def sync_segment_crashes(df, active_crashes, model):
         df['crash_count'] = df['minor_crashes'] + df['major_crashes'] + df['fatal_crashes']
 
         df['crash_risk_score'] = (
-            df['minor_crashes'] * 10 + df['major_crashes'] * 25 + df['fatal_crashes'] * 45
-        ).clip(upper=100)
+            (df['minor_crashes'] * MINOR_WEIGHT + df['major_crashes'] * MAJOR_WEIGHT + df['fatal_crashes'] * FATAL_WEIGHT)
+            / df['effective_length_km']
+        ).clip(0, 100)
+
+        df['severity_density'] = (
+            df['minor_crashes'] * MINOR_WEIGHT +
+            df['major_crashes'] * MAJOR_WEIGHT +
+            df['fatal_crashes'] * FATAL_WEIGHT
+        ) / df['effective_length_km']
         
     else:
         df['blackspot_flag'] = 'No'
@@ -282,20 +298,17 @@ def sync_segment_crashes(df, active_crashes, model):
             df['prob_high_risk'] = pred_probs[:, 2]
             df['prob_critical_risk'] = pred_probs[:, 3]
 
+            danger_mass = df['prob_high_risk'] + df['prob_critical_risk']
+            severity_tilt = 1 + (df['prob_critical_risk'] / (danger_mass + 1e-6))
+            ml_base = ((danger_mass * 100) * severity_tilt).clip(0, 100)
             df['road_risk_score'] = (
-                df['prob_low_risk'] * 10 + df['prob_medium_risk'] * 40 +
-                df['prob_high_risk'] * 75 + df['prob_critical_risk'] * 100
-            ).round().astype(int)
-
-            df['road_risk_score'] = (
-                df['road_risk_score'] * 0.7 +
-                df['crash_risk_score'] * 0.3
-            ).round().astype(int)
+                ml_base * 0.7 + df['crash_risk_score'] * 0.3
+            ).clip(0, 100).round().astype(int)
 
             df['segment_risk_score'] = (
-                df['road_risk_score'] +
-                df['crash_risk_score']
-            ).clip(upper=100).astype(int)
+                df['road_risk_score'] * 0.6 +
+                df['crash_risk_score'] * 0.4
+            ).clip(0, 100).round().astype(int)
 
             df['blackspot_flag'] = np.where(
                 df['segment_risk_score'] >= 80,
@@ -303,40 +316,45 @@ def sync_segment_crashes(df, active_crashes, model):
                 "No"
             )
 
-  
-
-            # hotspot_score: misalignment is the dominant weight (40%);
-            # exposure 25%; crash history is a secondary VALIDATION
-            # weight (25%); infrastructure deficit 10%.
-            df['hotspot_score'] = (
-                0.40 * df['misalignment_score'] +
-                0.25 * df['exposure_score'] +
-                0.25 * df['crash_risk_score'] +
-                0.10 * (100 - df['infrastructure_score'])
-            ).round(1)
-
-            def _hotspot_cat(score):
-                if score >= 75: return 'Severe Hotspot'
-                if score >= 50: return 'High Risk'
-                if score >= 25: return 'Moderate Risk'
-                return 'Safe'
-            df['hotspot_category'] = df['hotspot_score'].apply(_hotspot_cat)
 
             df['ai_recommended_speed'] = np.minimum(df['speed_p85'], df['human_tolerance_limit']).round().astype(int)
             if 'original_safe_speed' not in df.columns:
                 df['original_safe_speed'] = df['ai_recommended_speed']
 
+            PENALTY_SCALE = {
+                "National Highway": 3,
+                "State Highway": 4,
+                "Urban Road": 6
+            }
+            penalty_series = df['road_type'].map(PENALTY_SCALE).fillna(5)
             df['recommended_safe_speed'] = (
-                df['ai_recommended_speed'] - (df['crash_risk_score'] / 5)
+                df['ai_recommended_speed'] - (df['crash_risk_score'] / penalty_series)
             ).clip(lower=20).round().astype(int)
 
             df['speed_safety_score'] = (100 - (
-                df['misalignment_score'] * 0.6 +
-                df['crash_risk_score'] * 0.2 +
-                (100 - df['infrastructure_score']) * 0.2
+                df['road_risk_score'] * 0.40 +
+                df['crash_risk_score'] * 0.30 +
+                (100 - df['infrastructure_score']) * 0.30
             )).clip(0, 100).round(1)
         except Exception as e:
             print(f"[prediction] model scoring failed: {e}")
+
+    # hotspot_score / hotspot_category: always recomputed unconditionally
+    # so that new crashes immediately update the Severe Hotspot KPI.
+    # crash_risk_score is already freshly set above from active_crashes.
+    df['hotspot_score'] = (
+        0.40 * df['misalignment_score'] +
+        0.25 * df['exposure_score'] +
+        0.25 * df['severity_density'].clip(0, 100) +
+        0.10 * (100 - df['infrastructure_score'])
+    ).clip(0, 100).round(1)
+
+    def _hotspot_cat(score):
+        if score >= 75: return 'Severe Hotspot'
+        if score >= 50: return 'High Risk'
+        if score >= 25: return 'Moderate Risk'
+        return 'Safe'
+    df['hotspot_category'] = df['hotspot_score'].apply(_hotspot_cat)        
 
     return df
 

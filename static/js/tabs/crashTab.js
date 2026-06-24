@@ -11,16 +11,57 @@ const CrashTab = (function () {
   }
 
   function renderLogTable(rows) {
-    const cols = [["crash_id", "ID"], ["human_segment_id", "Segment"], ["road_name", "Road"], ["severity", "Severity"], ["date", "Date"], ["time", "Time"], ["description", "Description"]];
+    const cols = [
+      ["crash_id", "ID"],
+      ["human_segment_id", "Segment"],
+      ["road_name", "Road"],
+      ["severity", "Severity"],
+      ["date", "Date"],
+      ["time", "Time"],
+      ["description", "Description"]
+    ];
     const el = document.getElementById("crash-log-table");
     if (!rows.length) {
       el.innerHTML = `<div class="loading-row">No crashes logged for the selected conditions.</div>`;
       return;
     }
     el.innerHTML = `<div class="data-table-wrap" style="max-height:460px;"><table class="data-table">
-      <thead><tr>${cols.map((c) => `<th>${c[1]}</th>`).join("")}</tr></thead>
-      <tbody>${rows.map((r) => `<tr>${cols.map((c) => `<td>${escapeHtml(r[c[0]])}</td>`).join("")}</tr>`).join("")}</tbody>
+      <thead>
+        <tr>
+          ${cols.map((c) => `<th>${c[1]}</th>`).join("")}
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map((r) => `
+          <tr>
+            ${cols.map((c) => `<td>${escapeHtml(r[c[0]])}</td>`).join("")}
+            <td>
+              <button class="btn btn-danger btn-delete-crash" data-id="${r.crash_id}" style="padding: 2px 8px; font-size: 0.68rem; line-height: 1;">
+                Delete
+              </button>
+            </td>
+          </tr>
+        `).join("")}
+      </tbody>
     </table></div>`;
+
+    // Add event listeners to the delete buttons
+    el.querySelectorAll(".btn-delete-crash").forEach((btn) => {
+      btn.addEventListener("click", async (e) => {
+        const id = e.currentTarget.dataset.id;
+        if (confirm(`Are you sure you want to delete crash record #${id}?`)) {
+          try {
+            await apiDelete(`/crashes/${id}`);
+            showToast(`Crash record #${id} deleted`);
+            // Trigger global refresh to update scores and reload current tab data
+            document.dispatchEvent(new CustomEvent("app:globalChanged"));
+          } catch (err) {
+            showToast(err.message, true);
+          }
+        }
+      });
+    });
   }
 
   function renderCharts(charts) {

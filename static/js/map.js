@@ -521,7 +521,6 @@ const MapModule = (function () {
             <div class="traffic-warning-title" style="color:${_tColor}">Traffic Warning</div>
             <div class="traffic-warning-msg">${escapeHtml(trafficInfo.warning || '—')}</div>
           </div>
-          <div style="font-size:.66rem;color:var(--text-dimmer);margin-top:8px;text-align:right;">📅 ${escapeHtml(trafficInfo.timestamp || '—')}</div>
         </div>`
       : `<div class="traffic-detail-card" style="opacity:.45;margin-top:0;">
           <div class="traffic-detail-header">TRAFFIC CONDITIONS</div>
@@ -558,18 +557,18 @@ const MapModule = (function () {
     `;
 
     const statsHtml = `
-      ${irowHtml("Segment ID", `#${d.segment_id} (${d.human_segment_id})`)}
-      ${irowHtml("Road Type", d.road_type, tcColor)}
-      ${irowHtml("Start KM", `${d.info.start_km.toFixed(1)} km`)}
-      ${irowHtml("End KM", `${d.info.end_km.toFixed(1)} km`)}
+      ${irowHtml("Segment ID", `#${d.segment_id} (${d.human_segment_id})`, "var(--blue)")}
+      ${irowHtml("Road Type", d.road_type, "var(--blue)")}
+      ${irowHtml("Start KM", `${d.info.start_km.toFixed(1)} km`, "var(--blue)")}
+      ${irowHtml("End KM", `${d.info.end_km.toFixed(1)} km`, "var(--blue)")}
       ${irowHtml("Risk Category", d.info.risk_category, RISK_PALETTE[d.info.risk_category])}
       ${irowHtml("Hotspot", d.info.hotspot_category, HOTSPOT_PALETTE[d.info.hotspot_category])}
-      ${irowHtml("Exposure Tier", d.info.exposure_tier)}
-      ${irowHtml("Schools Nearby", d.info.schools_count)}
+      ${irowHtml("Exposure Tier", d.info.exposure_tier, "var(--orange)")}
+      ${irowHtml("Schools Nearby", d.info.schools_count, "var(--red)")}
       ${irowHtml("Minor Crashes", d.info.minor_crashes, "var(--green)")}
       ${irowHtml("Major Crashes", d.info.major_crashes, "var(--orange)")}
       ${irowHtml("Fatal Crashes", d.info.fatal_crashes, "var(--red)")}
-      ${irowHtml("Temporal Time", d.info.time)}
+      ${irowHtml("Temporal Time", d.info.time, "var(--blue)")}
     `;
 
     const aiHtml = `

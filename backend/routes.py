@@ -509,6 +509,12 @@ def add_crash():
     return jsonify(success=True, crash_id=crash_id)
 
 
+@api.route("/crashes/<int:crash_id>", methods=["DELETE"])
+def remove_crash(crash_id):
+    db.delete_crash(crash_id)
+    return jsonify(success=True)
+
+
 @api.route("/crashes/export")
 def export_crashes():
     df, *_ = pred.compute_state(datetime.now().date(), _parse_time(None))
