@@ -126,7 +126,7 @@ Road Segment
      │
      ▼
 [Stage 3] Hotspot Scoring
-     │   40% misalignment + 25% exposure + 25% crash history + 10% infra deficit
+     │   25% misalignment + 30% exposure + 35% crash severity density + 10% infrastructure deficit
      │   → Safe / Moderate Risk / High Risk / Severe Hotspot
      │
      ▼
