@@ -10,7 +10,7 @@ Submission for the **[ADB AI for Safer Roads Innovation Challenge](https://chall
 
 **[▶ Watch Demo Video](https://drive.google.com/file/d/17b-jtB8lgm0XKolXuyotjMw2IpVf77t7/view?usp=drivesdk)**
 
-**[View Project Documentation](https://drive.google.com/file/d/1YxujexwRLocLCHKlx0_5x6XYaSvXF2gS/view?usp=drivesdk)**
+**[View Project Documentation](https://drive.google.com/file/d/1I3ll4_HbVHiYr-sMOYUA1v4iMMP2N1ys/view?usp=drivesdk)**
 
 ---
 
