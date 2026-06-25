@@ -122,7 +122,7 @@ Road Segment
      ▼
 [Stage 2] Crash History Sync
      │   Active crashes only (Minor: 60-day expiry, Major/Fatal: 80-day expiry)
-     │   → crash_risk_score (Minor×10 + Major×25 + Fatal×45, capped at 100)
+     │   → crash_risk_score (Minor×10 + Major×25 + Fatal×45) ÷ segment length, capped at 100)
      │
      ▼
 [Stage 3] Hotspot Scoring
