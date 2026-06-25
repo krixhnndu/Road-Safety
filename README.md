@@ -423,7 +423,7 @@ This platform directly addresses the ADB AI for Safer Roads challenge brief:
 
 <div align="center">
 
-**[Detailed Study Report](https://drive.google.com/file/d/1b8pgY9ylzRACr4AfCeMu_XD6M12AT0Ew/view?usp=drivesdk)**
+**[Detailed Research Report](https://drive.google.com/file/d/1b8pgY9ylzRACr4AfCeMu_XD6M12AT0Ew/view?usp=drivesdk)**
 
 *Built with Vision Zero principles for the ADB AI for Safer Roads Innovation Challenge*
 *Focused on Bengaluru, India · Scalable to any city with OSM road network data*
