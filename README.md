@@ -8,7 +8,7 @@
 Submission for the **[ADB AI for Safer Roads Innovation Challenge](https://challenges.adb.org/en/challenges/ai4saferroads)**
 *Asian Development Bank × World Bank · Asia-Pacific Road Safety Initiative*
 
-**[▶ Watch Demo Video](https://your-video-link-here)**
+**[▶ Watch Demo Video](https://drive.google.com/file/d/17b-jtB8lgm0XKolXuyotjMw2IpVf77t7/view?usp=drivesdk)**
 
 ---
 
@@ -422,6 +422,8 @@ This platform directly addresses the ADB AI for Safer Roads challenge brief:
 ---
 
 <div align="center">
+
+**[Detailed Study Report](https://drive.google.com/file/d/1b8pgY9ylzRACr4AfCeMu_XD6M12AT0Ew/view?usp=drivesdk)**
 
 *Built with Vision Zero principles for the ADB AI for Safer Roads Innovation Challenge*
 *Focused on Bengaluru, India · Scalable to any city with OSM road network data*
