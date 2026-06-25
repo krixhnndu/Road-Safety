@@ -15,7 +15,7 @@ Submission for the **[ADB AI for Safer Roads Innovation Challenge](https://chall
 | | |
 |---|---|
 | **Team** | Anand Krishna S · Aswin P A · Katherin K V · Krishnendu S Binu · Muhammed Nasmil · Shweta Nair |
-| **Institution** | SCMS School of Engineering and Technology, Karukutty - Center of Excellence SCMS Institute for Road Safety and Transportation (SiRST) |
+|**Institution**| SCMS School of Engineering and Technology, Karukutty<br>Center of Excellence, SCMS Institute for Road Safety and Transportation (SiRST) |
 | **Mentor** | Ms. Binu John, Assistant Professor, Department of Artificial Intelligence and Data Science |
 | **Focus City** | Bengaluru, Karnataka, India |
 | **Stack** | Python · Flask · Leaflet.js · scikit-learn · OSMnx · Pandas |
@@ -423,7 +423,7 @@ This platform directly addresses the ADB AI for Safer Roads challenge brief:
 
 <div align="center">
 
-**[Detailed Research Report](https://drive.google.com/file/d/1b8pgY9ylzRACr4AfCeMu_XD6M12AT0Ew/view?usp=drivesdk)**
+**[Detailed Research Report](https://drive.google.com/file/d/17X8ZyuxsF6Pbr0NhrwOlyoTvZveHG_yU/view?usp=drivesdk)**
 
 *Built with Vision Zero principles for the ADB AI for Safer Roads Innovation Challenge*
 *Focused on Bengaluru, India · Scalable to any city with OSM road network data*
